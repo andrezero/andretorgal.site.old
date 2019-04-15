@@ -1,0 +1,15 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.cache": true,
+    "**/coverage": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/storybook-static": true,
+    "**/*.scss.d.ts": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true
+}
