@@ -13,7 +13,7 @@ if (typeof document !== 'undefined') {
 
   const renderMethod = target.hasChildNodes() ? ReactDOM.hydrate : ReactDOM.render;
 
-  const render = Comp => {
+  const render = (Comp: Function) => {
     renderMethod(<Comp />, target);
   };
 
@@ -21,8 +21,9 @@ if (typeof document !== 'undefined') {
   render(App);
 
   // Hot Module Replacement
-  if (module && module.hot) {
-    module.hot.accept('./App', () => {
+  let m = module as any;
+  if (m && m.hot) {
+    m.hot.accept('./App', () => {
       render(App);
     });
   }

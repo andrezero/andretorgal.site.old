@@ -4,11 +4,13 @@
   "files.exclude": {
     "**/.git": true,
     "**/.cache": true,
+    "**/*.scss.d.ts": true,
+    "**/artifacts": true,
     "**/coverage": true,
-    "**/node_modules": true,
     "**/dist": true,
+    "**/node_modules": true,
     "**/storybook-static": true,
-    "**/*.scss.d.ts": true
+    "**/tmp": true
   },
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true
