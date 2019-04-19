@@ -11,6 +11,7 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "axios": "^0.18.0",
+    "gray-matter": "^4.0.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-static": "^7.0.9",
@@ -18,7 +19,21 @@
     "react-static-plugin-sitemap": "^7.0.8",
     "react-static-plugin-source-filesystem": "^7.0.8",
     "react-static-plugin-typescript": "^7.0.8",
-    "typescript": "^3.4.3"
+    "rehype-autolink-headings": "^2.0.4",
+    "rehype-highlight": "^2.2.1",
+    "rehype-raw": "^4.0.0",
+    "rehype-react": "^3.1.0",
+    "rehype-slug": "^2.0.2",
+    "remark": "^10.0.1",
+    "remark-emoji": "^2.0.2",
+    "remark-html": "^9.0.0",
+    "remark-parse": "^6.0.3",
+    "remark-rehype": "^4.0.0",
+    "remark-toc": "^5.1.1",
+    "strip-markdown": "^3.0.3",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.3",
+    "unified": "^7.1.0"
   },
   "devDependencies": {
     "@types/node": "^11.13.4",
@@ -26,6 +41,7 @@
     "@types/react": "^16.8.13",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.8",
+    "@types/rehype-react": "^3.1.0",
     "@types/webpack-dev-server": "^3.1.5",
     "babel-eslint": "9.x",
     "eslint": "5.x",
@@ -35,7 +51,10 @@
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "7.x",
-    "serve": "10.1.2"
+    "serve": "10.1.2",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0"
   },
   "resolutions": {
     "react-static/webpack-dev-server": "3.2.1"

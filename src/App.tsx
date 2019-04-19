@@ -1,7 +1,7 @@
+import { Link, Router } from '@reach/router';
 import * as React from 'react';
 import { Root, Routes } from 'react-static';
-//
-import { Link, Router } from 'components/Router';
+
 import Dynamic from 'containers/Dynamic';
 
 import './app.css';

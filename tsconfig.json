@@ -17,7 +17,8 @@
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true,
     "types": ["node"],
-    "lib": ["es6", "dom"]
+    "lib": ["es6", "dom"],
+    "esModuleInterop": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "src/node_modules"]
 }
