@@ -9,7 +9,7 @@ updated: '2017-04-08'
 Last week, I had the immense privilege of participating in [London Lean Kanban Days 2017](http://lanyrd.com/2017/llkd17/), including a mind-blowing day of workshops with the speakers. Infinite **thank you** for this amazing opportunity. Here are a few highlights and my retrospection on the event.
 </div>
 
-### Highlights and insights
+## Highlights and insights
 
 [Andy Charmichael's session](http://lanyrd.com/2017/llkd17/sfqrwh/) deconstructed some common business practices, highlighting how _deadlines create turbulence in flow_ and result in less forecastability and how some financial policies, such as capitalisation of work in progress and no recognition of cost of delay, inhibit business agility. His advice is to _"manage to real changes in cost of delay, not iteration boundaries"_. He introduced the "first rule of Kanban Club" ;-) making the case for _undercover change_.
 
@@ -30,7 +30,7 @@ Playing the [NoEstimates](https://github.com/pip72/no-estimates-game) board game
 
 A final word about [this session](https://www.slideshare.net/helenmeek/swimming-in-the-sea-of-feedback-llkd17) by [Helen Meek](http://blogs.ripple-rock.com/helenmeek/default.aspx) and [Richard Arpino](http://blogs.ripple-rock.com/helenmeek/default.aspx) on the many forms of feedback loops. They gifted a creative tool to evaluate our feedback loops, a feedback feedback loop if you will :-D. My take-away: _everything is feedback_.
 
-### A community of needs, not solutions
+## A community of needs, not solutions
 
 As far as I understand, the core group behind this conference goes way back. To them, gathering yearly in London and Scotland has become a bit like coming back home, a family reunion. It was rather explicit in some of the talks and interventions that the group is, in the spirit of Lean/Agile, undergoing a retrospective process, trying to reinvent themselves and their contribution to the world.
 
@@ -48,7 +48,7 @@ The diversity of backgrounds among speakers and attendants is admirable: academi
 
 My question: when will the community recognise that poets, artists, philosophers are needed as well?
 
-### My retrospective
+## My retrospective
 
 I'm kind of late to this party. Having spent the last 10 years in scrum-la-la-land, I was totally missing out on what was happening just around corner.
 

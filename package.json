@@ -2,15 +2,16 @@
   "name": "andretorgal.com",
   "private": true,
   "scripts": {
-    "start": "react-static start",
-    "stage": "react-static build --staging",
-    "build": "react-static build",
+    "start": "node -r ts-node/register node_modules/.bin/react-static start",
+    "stage": "export BUILD_STAGE=stage && node -r ts-node/register node_modules/.bin/react-static build --staging",
+    "build": "export BUILD_STAGE=prod && node -r ts-node/register node_modules/.bin/react-static build",
     "analyze": "react-static build --analyze",
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
     "axios": "^0.18.0",
+    "chokidar": "^2.1.5",
     "gray-matter": "^4.0.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",

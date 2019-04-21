@@ -1,6 +1,6 @@
 ---
 title: 'Hello World'
-tags: ['internet', 'social web', 'social networks', blogging', 'personal', 'perspective', 'the-intent']
+tags: ['internet', 'social web', 'social networks', 'blogging', 'personal', 'perspective', 'the-intent']
 created: '2017-03-11'
 updated: '2017-03-12'
 hero:
@@ -12,8 +12,6 @@ hero:
 <div id="guay-abstract">
 My first website was hosted in [tripod](https://en.wikipedia.org/wiki/Tripod.com), back in 1995. For the next 13 years I had a constant, tireless, and experimental presence on the web. In 2008 I took my last site down. To this day, under [andretorgal.com](http://andretorgal.com), you could only find a placeholder, a 404 or a mysterious timeout. *It's time to change this sad state of affairs.*
 </div>
-
-{{data.urls.static}} - {{data.foo}} - {{meta.image}} - {{meta.thumb}} -
 
 I'm working on a few thoughts about why I'm coming back to my own space on the Internet.
 
@@ -39,7 +37,7 @@ Each one of these could very well be a post on its own.
 
 Finally, how is it going to be, going forward?
 
-### Reclaiming my web
+## Reclaiming my web
 
 This infinite space is still up here to take.
 
@@ -51,14 +49,14 @@ Every journey begins with the first step.
 
 Yada, yada :-)
 
-#### Step 1
+### Step 1
 
 Back online under my own rules on my own domain.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">9 years without a personal website, 2 years without <a href="https://twitter.com/hashtag/oss?src=hash">#oss</a> contributions :-( - this dark period ends today! <a href="https://t.co/tYl2iuRzl5">https://t.co/tYl2iuRzl5</a></p>&mdash; Andre Torgal (@andrezero) <a href="https://twitter.com/andrezero/status/840562552430034945">March 11, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-#### Step 2
+### Step 2
 
 Nops, don't really have a step 2, or a plan.
 
