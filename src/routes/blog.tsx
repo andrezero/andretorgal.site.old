@@ -34,7 +34,7 @@ const getRoutes = async () => {
   const posts = await loadPosts();
   return [
     {
-      path: '/blog',
+      path: '/posts',
       template: 'src/containers/Blog/Blog.container',
       getData: () => ({
         posts

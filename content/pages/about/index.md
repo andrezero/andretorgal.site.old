@@ -45,8 +45,6 @@ Bare with me while I collect my old stuff. Meanwhile, check out the latest track
 
 Got great plans for this website. I'm tired of dumping stuff in social media. More stuff coming soon.
 
-<a name="contact" class="anchor"></a>
-
 ### See you around
 
 <div class="banner banner-contact" aria-label="you can find me elsewhere at">
