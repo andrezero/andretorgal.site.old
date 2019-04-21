@@ -1,10 +1,10 @@
-import { Link, Router } from '@reach/router';
+import { Router } from '@reach/router';
 import * as React from 'react';
 import { Root, Routes } from 'react-static';
 
-import Dynamic from 'containers/Dynamic';
-
 import './app.css';
+
+import Link from 'atoms/Link/Link.component';
 
 function App() {
   return (
@@ -12,13 +12,11 @@ function App() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/dynamic">Dynamic</Link>
+        <Link to="/posts">Blog</Link>
       </nav>
       <div className="content">
         <React.Suspense fallback={<em>Loading...</em>}>
           <Router>
-            <Dynamic path="dynamic" />
             <Routes path="*" />
           </Router>
         </React.Suspense>

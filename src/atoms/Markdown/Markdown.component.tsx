@@ -1,4 +1,3 @@
-import { Link } from '@reach/router';
 import * as React from 'react';
 import rehypeRaw from 'rehype-raw';
 import rehypeReact from 'rehype-react';
@@ -7,6 +6,8 @@ import remarkRehype from 'remark-rehype';
 import unified from 'unified';
 
 import './Markdown.css';
+
+import Link from 'atoms/Link/Link.component';
 
 type ComponentType = string | React.ComponentType<any>;
 
@@ -20,7 +21,6 @@ const components: ComponentMap = {
 
 function createElement(component: string, props: any, children: any) {
   const Tag = (components && component && components[component]) || component || 'div';
-
   return <Tag {...props}>{children}</Tag>;
 }
 

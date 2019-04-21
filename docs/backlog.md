@@ -1,13 +1,16 @@
 # Now
 
-- `[ ]` raw html in markdown
+- `[ ]` watch content directories and re-render on change
 
 # Next
 
-- `[ ]` override local links in markdown renderer
+- `[ ]` anchor: custom markdown component
 - `[ ]` frontmatter
-- `[ ]` markdown with
-- `[ ]` extract text from a specific block
+- `[ ]` abstract: extract text from a specific markdown block
+- `[ ]` env variables in markdown
+- `[ ]` migrate experiments
+- `[ ]` typed scss modules (ide support + compile time)
+- `[ ]` IE11 support
 - `[ ]` Migrate SCSS
 - `[ ]` SEO, helmet
 - `[x]` models: page
@@ -22,7 +25,7 @@
 
 ## Issues
 
-- `[ ]` Types for `remark-parse` added manually, waiting for [this PR](https://github.com/remarkjs/remark/pull/383) to be merged
+- `[ ]` Types for `remark-parse` added manually, waiting for [this PR](https://github.com/remarkjs/remark/pull/383) to be merged, posted on [unified community](https://spectrum.chat/unified/type-definitions/missing-typings-across-plugin-community~49ee93c0-23bf-49f3-9706-2468b0760564)
 
 ## Spikes
 

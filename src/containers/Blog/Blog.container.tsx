@@ -1,8 +1,9 @@
-import { Link } from '@reach/router';
 import * as React from 'react';
 import { useRouteData } from 'react-static';
 
 import './Blog.css';
+
+import Link from 'atoms/Link/Link.component';
 
 export default function Blog() {
   const { posts } = (useRouteData as any)();

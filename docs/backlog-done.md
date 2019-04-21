@@ -1,5 +1,7 @@
 # Done
 
+- `[x]` external vs local links in markdown renderer
+
 - `[x]` markdown POC blog posts [props](https://github.com/s-thom/website/blob/develop/src/components/MdRenderer/index.tsx)
 
 - `[x]` Spike: React Static (+ typescript + sass)
