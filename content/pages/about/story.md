@@ -11,7 +11,7 @@ This is my personal story.
 
 I don't expect you to read this. :-) This is mostly a writing exercise and a reflection about how I arrived here. It helps me better understand where I'm going, so if you do read it, drop me a line, I'd love to hear what you make of it. ;-)
 
-### 8 inch floppy disks
+## 8 inch floppy disks
 
 My name is Andre Torgal and I was born in 1973 in Lisbon, Portugal.
 
@@ -25,7 +25,7 @@ Can't remember exactly what computer this was. But I'm guessing a [5150](https:/
 
 Today, a toddler can tap and swipe away on a tablet before they learn to speak. But I'm pretty sure that, for a 70s child, I grew up in an exceptional environment.
 
-### ZX Spectrum 48K
+## ZX Spectrum 48K
 
 <p class="year">1982</p>
 
@@ -33,7 +33,7 @@ It wasn't long before I got my own computer to play with. My dad brought home th
 
 In a couple of years there would be hundreds of games and a handful of mates to play them with. But I got a head start and had to copy hundreds of lines of code from magazine pages by myself. As an extremely curious and introverted creature, I got to spend days hacking these programs, modifying them, experimenting, invariably breaking them.
 
-### All PC, no consoles
+## All PC, no consoles
 
 <p class="year">1985</p>
 
@@ -43,7 +43,7 @@ Thanks to my father constantly upgrading his PC, I was once again ahead of the g
 
 And I was either playing them or trying to code a "better one" from scratch. I needed a permanent excuse to deep dive into Quick Basic and [Turbo Pascal](https://en.wikipedia.org/wiki/Turbo_Pascal). And what were these Paradox, dBase things? Ah! Persist and query data. Challenge accepted.
 
-### Mix tapes
+## Mix tapes
 
 <p class="year">1988</p>
 
@@ -55,7 +55,7 @@ During high-school, music seized my entire life. I learned how to listen, how to
 
 I started a pop band, then a rock band, then a punk one and then on to metal. We spent countless hours in studios, played dozens of shows, and the tapes became demo tapes. Suddenly, computers didn't seem so relevant. I was acquiring other ways of expression. And growing a social conscience.
 
-### Full-duplex sound cards
+## Full-duplex sound cards
 
 <p class="year">1991</p>
 
@@ -71,7 +71,7 @@ Eventually I discovered MIDI, trackers and audio editing. I had my own nifty Pen
 
 This primitive home studio would later evolve to a shiny full-duplex Terratec with a world of embedded synths. The old Pentium would eventually die and get replaced with a steady stream of audio oriented desktops. But some files dated 1993 lived on until today.
 
-### MP2
+## MP2
 
 <p class="year">1994</p>
 
@@ -83,7 +83,7 @@ And then there was the experience of downloading a song for the first time. We h
 
 Well, MP2 sounded terrible. But you could totally see the future coming.
 
-### Adam Curry's unofficial MTV
+## Adam Curry's unofficial MTV
 
 <p class="year">1995</p>
 
@@ -91,7 +91,7 @@ When I learned about Adam Curry's unofficial MTV website, I gave it a go and lea
 
 Besides, the rock life was in decline. The 90s were a glorious rock decade, but ironically, MTV, the Internet, digital access and the massive summer festivals did nothing for the local music scene. On the contrary, small live venues were closing doors, bands were dissolving, band members were getting jobs and not turning back.
 
-### Systems theory
+## Systems theory
 
 <p class="year">1996</p>
 
@@ -99,7 +99,7 @@ Despite all the art in my life, I did learn a lot during my Economics degree. Th
 
 My favourite subjects were Behavioural Economics, Political Economy and History of Economic Thought. But, being pragmatic about my chances at a good job, I took on some Marketing and Management classes and even threw a bit of Finance in the mix.
 
-### Junior person with a tie
+## Junior person with a tie
 
 <p class="year">1997</p>
 
@@ -107,7 +107,7 @@ Not surprisingly, I soon found myself in a suit, making enough money to muddle t
 
 Despite being no business visionaire, I knew for sure this wasn't the future. But most importantly, I felt there was nothing I could do to change things around me in such an environment. I definitely did not have the skills to do it. And definitely, I did not feel the passion.
 
-### Referendum
+## Referendum
 
 <p class="year">1998</p>
 
@@ -115,7 +115,7 @@ The next chapter was triggered by political events across the globe. East-Timor 
 
 Triggered by the lack of mentions in European media, I decided to create a website in [tripod](https://tripod). In a couple of hours I had several pages up. In a couple of days, I knew all the HTML there was to know at the time. The website now had headlines, news, quotes, galleries and blinking banners.
 
-### Going full-circle
+## Going full-circle
 
 I got a few emails from strangers in different countries, people that had never heard about Timor or its Human Rights struggle.
 
@@ -133,7 +133,7 @@ Just imagining what else was there to come, the future looked full of possibilit
 
 My next website was my online CV, entirely built in Javascript and uploaded to a paid hosting service. I was going to learn how to code for real. I was going full circle.
 
-### Next
+## Next
 
 I have been working with web things and engineering teams since then. This story continues in a page [about my work](/about/work), where I cover 1999 to present day.
 

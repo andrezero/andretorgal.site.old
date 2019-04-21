@@ -1,17 +1,19 @@
 # Now
 
-- [ ] anchor: custom markdown component
+- [ ] fix: internal links should default to top anchor
 
 # Next
 
-- [ ] frontmatter
+- [ ] frontmatter: custom title
+- [ ] custom template
+- [ ] custom slug
+- [ ] head, SEO, helmet
 - [ ] abstract: extract text from a specific markdown block
 - [ ] env variables in markdown
 - [ ] migrate experiments
 - [ ] typed scss modules (ide support + compile time)
 - [ ] IE11 support
 - [ ] Migrate SCSS
-- [ ] SEO, helmet
 - [x] models: page
 - [x] models: post
 - [ ] Image sharp

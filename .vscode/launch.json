@@ -7,20 +7,8 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "test",
-      "args": ["-r", "ts-node/register", "${workspaceFolder}/test.ts", "start"],
-      "internalConsoleOptions": "openOnSessionStart"
-    },
-    {
-      "type": "node",
-      "request": "launch",
       "name": "react-static ts-node",
-      "args": [
-        "-r",
-        "ts-node/register",
-        "${workspaceFolder}/node_modules/react-static/bin/react-static",
-        "start"
-      ],
+      "args": ["-r", "ts-node/register", "${workspaceFolder}/node_modules/react-static/bin/react-static", "start"],
       "internalConsoleOptions": "openOnSessionStart"
     }
   ]
