@@ -17,7 +17,7 @@ if (STAGE === 'dev') {
 
 export default {
   entry: 'index.tsx',
-  siteRoot: 'http://andretorgal.com',
+  // siteRoot: 'http://andretorgal.com',
   getSiteData: () => ({}),
   getRoutes,
   plugins: [

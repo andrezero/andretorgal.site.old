@@ -2,35 +2,39 @@
 
 ## Now
 
-- [ ] head, SEO, helmet
-
-## Next
-
 - [ ] abstract: extract text from a specific markdown block
+
+## next
+
+- [ ] normalise code style
+- [ ] custom headings with anchor
 - [ ] env variables in markdown
 - [ ] typed scss modules (ide support + compile time)
-- [ ] IE11 support
+- [ ] ie11 support
 - [ ] styleguide
-- [ ] normalise code style
-- [ ] Migrate SCSS
+- [ ] migrate scss
+- [ ] suspense fallback loading
 - [ ] migrate experiments
 - [ ] integrate docs into content
-- [x] typed route data
 - [ ] router [transition](https://reach.tech/router/example/animation)
 - [x] models: page
 - [x] models: post
-- [ ] Image sharp
+- [ ] image sharp
 - [ ] models: tags
-- [ ] Husky + Lint Staged
-- [ ] Spike: Gitlab + Pages
-- [ ] Spike: Gitlab + S3
+- [ ] husky + lint staged
+- [ ] spike: gitlab + pages
+- [ ] spike: gitlab + s3
 
 ## Later
+
+- [ ] og image
+- [ ] refactor og generation
 
 ### Issues
 
 - [ ] Types for `rehype-raw` `rehype-react` `remark-parse` and `remark-rehype` added manually, waiting for [this PR](https://github.com/remarkjs/remark/pull/383) to be merged, posted on [unified community](https://spectrum.chat/unified/type-definitions/missing-typings-across-plugin-community~49ee93c0-23bf-49f3-9706-2468b0760564)
 - [ ] `react-static` interfering with `@reach/router` set focus, opened an [issue here](https://github.com/nozzle/react-static/issues/1147)
+- [ ] `react-static` maximum call stack error when using helmet with children, following [issue here](https://github.com/nozzle/react-static/issues/1119)
 
 ### Puzzles
 

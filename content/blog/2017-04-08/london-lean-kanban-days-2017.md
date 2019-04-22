@@ -1,5 +1,4 @@
 ---
-title: 'London Lean Kanban Days 2017'
 tags: ['agile', 'lean', 'kanban', 'conference']
 created: '2017-04-08'
 updated: '2017-04-08'

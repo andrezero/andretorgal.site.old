@@ -1,5 +1,7 @@
 # Done
 
+- [x] typed route data
+- [x] head, seo, helmet
 - [x] frontmatter: custom title
 - [x] custom template
 - [x] custom slug

@@ -1,32 +1,34 @@
 import dayjs from 'dayjs';
 import matter from 'gray-matter';
 
-import { makePath, makeTemplate, makeTitle } from '../lib/file-data';
+import { makeMeta, makePath, makeTemplate, makeTitle } from '../lib/file-data';
 import { collect, Directory, File, map } from '../lib/files';
-import { Page, PageRoute } from '../types/Page.model';
+import { Page, PageRoute, PageRouteData } from '../types/Page.model';
 
 const processFile = (node: File | Directory): PageRoute => {
   const { data, content } = matter(node.contents);
-  const title = makeTitle(data, node.name);
-  const created = dayjs(node.created);
-  const updated = dayjs(node.created);
-  const { path, rel } = makePath([], data.path, title);
+  data.title = makeTitle(data.title, node.name);
+  data.created = dayjs(node.created);
+  data.updated = dayjs(node.created);
+  const { path, rel } = makePath([], data.path, data.title);
   const template = makeTemplate(data, 'Page');
+  const meta = makeMeta(data);
 
   const page: Page = {
-    title,
+    title: data.title,
     rel,
     path,
     content,
     template,
-    created: created.toDate(),
-    updated: updated.toDate(),
-    tags: data.tags
+    created: data.created.toDate(),
+    updated: data.updated.toDate(),
+    tags: data.tags,
+    meta
   };
   return {
     path: node.name || '/',
     template: page.template,
-    getData: () => ({ page })
+    getData: (): PageRouteData => ({ page })
   };
 };
 

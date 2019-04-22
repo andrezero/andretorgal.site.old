@@ -7,6 +7,11 @@ export interface PostRouteData {
   post: Post;
 }
 
+export interface PostListRouteData {
+  posts: Post[];
+  page: Page;
+}
+
 export interface PostRoute extends Route {
   children?: PostRoute[];
   getData(): PostRouteData;
