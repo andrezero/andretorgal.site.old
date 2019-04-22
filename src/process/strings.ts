@@ -1,4 +1,4 @@
-export function titleCase(str: string): string {
+export const titleCase = (str: string): string => {
   return str
     .toLowerCase()
     .split(' ')
@@ -6,7 +6,7 @@ export function titleCase(str: string): string {
       return word.replace(word[0], word[0].toUpperCase());
     })
     .join(' ');
-}
+};
 
 export const humanise = (str: string): string => {
   return titleCase(str.replace(/-/g, ' '));

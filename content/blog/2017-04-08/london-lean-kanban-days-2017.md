@@ -4,9 +4,9 @@ created: '2017-04-08'
 updated: '2017-04-08'
 ---
 
-<div id="guay-abstract">
 Last week, I had the immense privilege of participating in [London Lean Kanban Days 2017](http://lanyrd.com/2017/llkd17/), including a mind-blowing day of workshops with the speakers. Infinite **thank you** for this amazing opportunity. Here are a few highlights and my retrospection on the event.
-</div>
+
+<!-- abstract -->
 
 ## Highlights and insights
 

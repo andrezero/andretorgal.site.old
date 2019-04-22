@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import util from 'util';
 
+import { DirectoryNode, FileNode, FileSysNode } from 'types/File.types';
+
 interface Options {
   root: string;
   index: string;
@@ -10,44 +12,25 @@ interface Options {
   recursive: boolean;
 }
 
-export interface Node {
-  type: string;
-  name: string;
-  path: string;
-  filename: string;
-  contents: string;
-  created: Date;
-}
-
-export interface File extends Node {
-  type: 'file';
-}
-
-export interface Directory extends Node {
-  type: 'dir';
-  hasIndex: boolean;
-  children: Node[];
-}
-
-function filterNodes(nodes: Array<Node | void>): Node[] {
+const filterNodes = (nodes: Array<FileSysNode | void>): FileSysNode[] => {
   return nodes.reduce(
-    (acc, node: Node) => {
+    (acc, node: FileSysNode) => {
       if (!node) {
         return acc;
       }
       if (acc.find(item => item.path === node.path)) {
         return acc;
       }
-      if (node.type === 'dir' && !(node as Directory).hasIndex && !(node as Directory).children.length) {
+      if (node.type === 'dir' && !(node as DirectoryNode).hasIndex && !(node as DirectoryNode).children.length) {
         return acc;
       }
       return acc.concat(node);
     },
-    [] as Node[]
+    [] as FileSysNode[]
   );
-}
+};
 
-async function readNode(options: Options, root: string, filename: string): Promise<Node | void> {
+const readNode = async (options: Options, root: string, filename: string): Promise<FileSysNode | void> => {
   const fullPath = path.resolve(options.root, root, filename);
   const stat = fs.statSync(fullPath);
   const isDir = stat.isDirectory();
@@ -55,15 +38,15 @@ async function readNode(options: Options, root: string, filename: string): Promi
     return await readDir(options, stat, fullPath, root, filename);
   }
   return await readFile(options, stat, fullPath, root, filename);
-}
+};
 
-async function readFile(
+const readFile = async (
   options: Options,
   stat: fs.Stats,
   fullPath: string,
   root: string,
   filename: string
-): Promise<File | void> {
+): Promise<FileNode | void> => {
   const matches = filename.match(options.regexp);
   if (!matches) {
     return;
@@ -78,15 +61,15 @@ async function readFile(
     contents: fs.readFileSync(fullPath, 'utf8'),
     created: new Date(util.inspect(stat.birthtime))
   };
-}
+};
 
-async function readDir(
+const readDir = async (
   options: Options,
   stat: fs.Stats,
   fullPath: string,
   root: string,
   filename: string
-): Promise<Directory> {
+): Promise<DirectoryNode> => {
   const files = fs.readdirSync(fullPath);
   const newRoot = path.join(root, filename);
   const children = await Promise.all(files.map(fname => readNode(options, newRoot, fname)));
@@ -106,9 +89,9 @@ async function readDir(
     hasIndex: !!self,
     children: filtered
   };
-}
+};
 
-export async function collect(root: string, recursive?: boolean): Promise<Directory> {
+export const collect = async (root: string, recursive?: boolean): Promise<DirectoryNode> => {
   const fullPath = path.resolve(root);
   const hasIndex = fs.existsSync(fullPath);
   const stat = fs.statSync(fullPath);
@@ -133,31 +116,31 @@ export async function collect(root: string, recursive?: boolean): Promise<Direct
     recursive: !!recursive
   };
   return readDir(options, stat, root, '', '');
-}
+};
 
-export function flatten(nodes: Node[], includeDirs?: boolean): File[] {
+export const flatten = (nodes: FileSysNode[], includeDirs?: boolean): FileNode[] => {
   return nodes.reduce(
-    (acc, node: Node) => {
+    (acc, node: FileSysNode) => {
       const n = { ...node };
       if (n.type === 'file') {
-        acc.push(n as File);
+        acc.push(n as FileNode);
         return acc;
       } else if (includeDirs) {
-        acc.push(n as File);
+        acc.push(n as FileNode);
       }
-      return acc.concat(flatten((n as Directory).children));
+      return acc.concat(flatten((n as DirectoryNode).children));
     },
-    [] as File[]
+    [] as FileNode[]
   );
-}
+};
 
-export function map<T extends File | Directory, R>(node: T, fn: (node: T) => R | void): R | void {
+export const map = <T extends FileNode | DirectoryNode, R>(node: T, fn: (node: T) => R | void): R | void => {
   if (node.type === 'dir') {
-    const dir = node as Directory;
+    const dir = node as DirectoryNode;
     const children = dir.children.map((child: T) => map<T, R>(child, fn));
     const ret = { ...fn(node), children: children.filter(item => item) };
     return ret as R;
   } else {
     return fn(node);
   }
-}
+};

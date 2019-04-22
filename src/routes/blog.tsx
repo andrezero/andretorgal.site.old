@@ -1,13 +1,14 @@
 import dayjs from 'dayjs';
-import matter from 'gray-matter';
 
-import { Page } from 'types/Page.model';
-import { makeMeta, makePath, makeTemplate, makeTitle } from '../lib/file-data';
-import { collect, File, flatten } from '../lib/files';
-import { Post, PostListRouteData, PostRoute, PostRouteData } from '../types/Post.model';
+import { FileNode } from 'types/File.types';
+import { Page, PageRoute } from 'types/Page.model';
+import { Post, PostListRouteData, PostRoute, PostRouteData } from 'types/Post.model';
+import { makeContent, parseFileContents } from '../process/content';
+import { makeMeta, makePath, makeTemplate, makeTitle } from '../process/data';
+import { collect, flatten } from '../process/files';
 
-const processFile = (file: File): Post => {
-  const { data, content } = matter(file.contents);
+const createPost = (file: FileNode): Post => {
+  const { data, content, abstract } = parseFileContents(file.contents);
   data.title = makeTitle(data.title, file.name);
   data.created = dayjs(file.created);
   data.updated = dayjs(file.created);
@@ -20,7 +21,8 @@ const processFile = (file: File): Post => {
     title: data.title,
     rel,
     path,
-    content,
+    content: makeContent(content),
+    abstract: makeContent(abstract),
     template,
     created: data.created.toDate(),
     updated: data.updated.toDate(),
@@ -31,9 +33,9 @@ const processFile = (file: File): Post => {
 
 const loadPosts = async (): Promise<Post[]> => {
   const tree = await collect('./content/blog', true);
-  const flattened = flatten(tree.children as File[]);
+  const flattened = flatten(tree.children as FileNode[]);
   const sorted = flattened.sort((p1, p2) => p2.created.getTime() - p1.created.getTime());
-  return sorted.map(processFile);
+  return sorted.map(createPost);
 };
 
 const postRoute = (post: Post): PostRoute => {
@@ -46,9 +48,8 @@ const postRoute = (post: Post): PostRoute => {
   };
 };
 
-const getRoutes = async () => {
-  const posts = await loadPosts();
-  const page: Page = {
+const postListPage = (): Page => {
+  return {
     title: 'Latest blog posts',
     path: '/posts',
     rel: '/posts',
@@ -57,17 +58,24 @@ const getRoutes = async () => {
     template: 'src/containers/Blog/Blog.container',
     meta: makeMeta()
   };
-  return [
-    {
-      path: page.path,
-      template: page.template,
-      getData: (): PostListRouteData => ({
-        posts,
-        page
-      })
-    },
-    ...posts.map(postRoute)
-  ];
+};
+
+const postListPageRoute = (posts: Post[]): PageRoute => {
+  const page = postListPage();
+  return {
+    path: page.path,
+    template: page.template,
+    getData: (): PostListRouteData => ({
+      posts,
+      page
+    })
+  };
+};
+
+const getRoutes = async () => {
+  const posts = await loadPosts();
+  const pageRoute = postListPageRoute(posts);
+  return [pageRoute, ...posts.map(postRoute)];
 };
 
 export default getRoutes;

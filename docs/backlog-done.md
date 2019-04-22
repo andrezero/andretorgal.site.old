@@ -1,5 +1,6 @@
 # Done
 
+- [x] abstract: extract text from a specific markdown block
 - [x] typed route data
 - [x] head, seo, helmet
 - [x] frontmatter: custom title

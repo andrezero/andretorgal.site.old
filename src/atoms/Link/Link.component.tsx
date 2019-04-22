@@ -10,8 +10,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-export default function Link(props: Props) {
-  const { href, to, anchor, children } = props;
+const Link: React.StatelessComponent<Props> = ({ href, to, anchor, children }) => {
   const url = href || to || '/';
   const external = isExternal(href);
   if (external) {
@@ -20,4 +19,6 @@ export default function Link(props: Props) {
     const frag = anchor ? `#${anchor}` : '';
     return <RouterLink to={`${url}${frag}`}>{children}</RouterLink>;
   }
-}
+};
+
+export default Link;

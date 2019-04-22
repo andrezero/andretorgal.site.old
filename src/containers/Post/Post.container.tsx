@@ -5,18 +5,21 @@ import './Post.css';
 
 import Link from 'atoms/Link/Link.component';
 import Markdown from 'atoms/Markdown/Markdown.component';
-import LayoutContainer from 'layout/LayoutContainer/LayoutContainer.component';
+import DefaultLayout from 'layout/DefaultLayout/DefaultLayout.component';
 import { PostRouteData } from 'types/Post.model';
 
-export default function Post() {
+const PostContainer: React.StatelessComponent<{}> = () => {
   const routeData: PostRouteData = useRouteData();
   const { post } = routeData;
   return (
-    <LayoutContainer>
+    <DefaultLayout>
       <Head title={post.title} meta={post.meta} />
       <Link to="/posts/">{'<'} Back</Link>
       <h1>{post.title}</h1>
-      <Markdown text={post.content} />
-    </LayoutContainer>
+      <Markdown text={post.abstract.source} />
+      <Markdown text={post.content.source} />
+    </DefaultLayout>
   );
-}
+};
+
+export default PostContainer;

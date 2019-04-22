@@ -15,9 +15,8 @@ if (STAGE === 'dev') {
   watcher.on('all', rebuildRoutes);
 }
 
-export default {
+const config = {
   entry: 'index.tsx',
-  // siteRoot: 'http://andretorgal.com',
   getSiteData: () => ({}),
   getRoutes,
   plugins: [
@@ -32,3 +31,9 @@ export default {
     require.resolve('react-static-plugin-typescript')
   ]
 };
+
+if (STAGE === 'prod') {
+  config.siteRoot = 'http://andretorgal.com';
+}
+
+export default config;

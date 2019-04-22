@@ -2,11 +2,10 @@
 
 ## Now
 
-- [ ] abstract: extract text from a specific markdown block
+- [ ] normalise code style
 
 ## next
 
-- [ ] normalise code style
 - [ ] custom headings with anchor
 - [ ] env variables in markdown
 - [ ] typed scss modules (ide support + compile time)
@@ -29,6 +28,7 @@
 
 - [ ] og image
 - [ ] refactor og generation
+- [ ] search
 
 ### Issues
 

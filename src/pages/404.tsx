@@ -1,7 +1,17 @@
 import * as React from 'react';
+import { Head } from 'react-static';
 
-export default () => (
-  <div>
-    <h1>404 - Ouch</h1>
-  </div>
-);
+import './404.css';
+
+import DefaultLayout from 'layout/DefaultLayout/DefaultLayout.component';
+
+const NotFoundPage: React.StatelessComponent<{}> = () => {
+  return (
+    <DefaultLayout>
+      <Head title="Not found" />
+      <h1>404 Not Found</h1>
+    </DefaultLayout>
+  );
+};
+
+export default NotFoundPage;

@@ -1,5 +1,10 @@
 import { Route } from './Route.model';
 
+export interface PageContent {
+  source: string;
+  stripped: string;
+}
+
 export interface PageMetaItem {
   name: string;
   value: string;
@@ -20,7 +25,8 @@ export interface Page {
   created: Date;
   updated: Date;
   tags?: string[];
-  content?: string;
+  content?: PageContent;
+  abstract?: PageContent;
   meta?: PageMeta;
 }
 

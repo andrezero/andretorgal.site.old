@@ -4,25 +4,29 @@ import { Head, useRouteData } from 'react-static';
 import './Blog.css';
 
 import Link from 'atoms/Link/Link.component';
-import LayoutContainer from 'layout/LayoutContainer/LayoutContainer.component';
-import { PostListRouteData } from 'types/Post.model';
+import Markdown from 'atoms/Markdown/Markdown.component';
+import DefaultLayout from 'layout/DefaultLayout/DefaultLayout.component';
+import { Post, PostListRouteData } from 'types/Post.model';
 
-export default function Blog() {
+const BlogContainer: React.StatelessComponent<{}> = () => {
   const routeData: PostListRouteData = useRouteData();
   const { page, posts } = routeData;
   return (
-    <LayoutContainer>
+    <DefaultLayout>
       <Head title="Recent posts" meta={page.meta} />
       <h1 className="title-page" aria-label={page.title}>
         Latest Posts
       </h1>
       <ul className="article-list">
-        {posts.map((post: any) => (
+        {posts.map((post: Post) => (
           <li key={post.path}>
             <Link to={post.path}>{post.title}</Link>
+            <Markdown text={post.abstract.source} stripped={true} />
           </li>
         ))}
       </ul>
-    </LayoutContainer>
+    </DefaultLayout>
   );
-}
+};
+
+export default BlogContainer;

@@ -9,9 +9,9 @@ hero:
   thumb: '{{data.urls.static}}/img/about/moon-t.jpg'
 ---
 
-<div id="guay-abstract">
-My first website was hosted in [tripod](https://en.wikipedia.org/wiki/Tripod.com), back in 1995. For the next 13 years I had a constant, tireless, and experimental presence on the web. In 2008 I took my last site down. To this day, under [andretorgal.com](http://andretorgal.com), you could only find a placeholder, a 404 or a mysterious timeout. *It's time to change this sad state of affairs.*
-</div>
+My first website was hosted in [tripod](https://en.wikipedia.org/wiki/Tripod.com), back in 1995. For the next 13 years I had a constant, tireless, and experimental presence on the web. In 2008 I took my last site down. To this day, under [andretorgal.com](http://andretorgal.com), you could only find a placeholder, a 404 or a mysterious timeout. _It's time to change this sad state of affairs._
+
+<!-- abstract -->
 
 I'm working on a few thoughts about why I'm coming back to my own space on the Internet.
 
