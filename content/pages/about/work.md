@@ -1,6 +1,6 @@
 ---
 title: 'Work'
-template: 'about'
+template: 'About'
 description: 'I have been developing web things, mostly using open-source technologies, since 1995, professionally since 1999, inspired by agile principles since 2004.'
 tags: ['personal', 'work']
 created: '2017-02-11'

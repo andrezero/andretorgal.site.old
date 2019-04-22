@@ -2,13 +2,10 @@
 
 ## Now
 
-- [ ] frontmatter: custom title
+- [ ] head, SEO, helmet
 
 ## Next
 
-- [ ] custom template
-- [ ] custom slug
-- [ ] head, SEO, helmet
 - [ ] abstract: extract text from a specific markdown block
 - [ ] env variables in markdown
 - [ ] typed scss modules (ide support + compile time)

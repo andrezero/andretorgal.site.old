@@ -3,11 +3,11 @@ import { Route } from './Route.model';
 
 export interface Post extends Page {}
 
-export interface PostData {
+export interface PostRouteData {
   post: Post;
 }
 
 export interface PostRoute extends Route {
   children?: PostRoute[];
-  getData(): PostData;
+  getData(): PostRouteData;
 }

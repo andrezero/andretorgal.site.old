@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import util from 'util';
 
 interface Options {
   root: string;
@@ -15,6 +16,7 @@ export interface Node {
   path: string;
   filename: string;
   contents: string;
+  created: Date;
 }
 
 export interface File extends Node {
@@ -47,14 +49,21 @@ function filterNodes(nodes: Array<Node | void>): Node[] {
 
 async function readNode(options: Options, root: string, filename: string): Promise<Node | void> {
   const fullPath = path.resolve(options.root, root, filename);
-  const isDir = fs.statSync(fullPath).isDirectory();
+  const stat = fs.statSync(fullPath);
+  const isDir = stat.isDirectory();
   if (isDir && options.recursive) {
-    return await readDir(options, fullPath, root, filename);
+    return await readDir(options, stat, fullPath, root, filename);
   }
-  return await readFile(options, fullPath, root, filename);
+  return await readFile(options, stat, fullPath, root, filename);
 }
 
-async function readFile(options: Options, fullPath: string, root: string, filename: string): Promise<File | void> {
+async function readFile(
+  options: Options,
+  stat: fs.Stats,
+  fullPath: string,
+  root: string,
+  filename: string
+): Promise<File | void> {
   const matches = filename.match(options.regexp);
   if (!matches) {
     return;
@@ -66,11 +75,18 @@ async function readFile(options: Options, fullPath: string, root: string, filena
     name: fileNoExt,
     path: path.join(root, pathName),
     filename: fullPath,
-    contents: fs.readFileSync(fullPath, 'utf8')
+    contents: fs.readFileSync(fullPath, 'utf8'),
+    created: new Date(util.inspect(stat.birthtime))
   };
 }
 
-async function readDir(options: Options, fullPath: string, root: string, filename: string): Promise<Directory> {
+async function readDir(
+  options: Options,
+  stat: fs.Stats,
+  fullPath: string,
+  root: string,
+  filename: string
+): Promise<Directory> {
   const files = fs.readdirSync(fullPath);
   const newRoot = path.join(root, filename);
   const children = await Promise.all(files.map(fname => readNode(options, newRoot, fname)));
@@ -86,6 +102,7 @@ async function readDir(options: Options, fullPath: string, root: string, filenam
     path: dirPath === '.' ? '/' : dirPath,
     filename: fullPath,
     contents: self ? self.contents : '',
+    created: new Date(util.inspect(stat.birthtime)),
     hasIndex: !!self,
     children: filtered
   };
@@ -94,7 +111,8 @@ async function readDir(options: Options, fullPath: string, root: string, filenam
 export async function collect(root: string, recursive?: boolean): Promise<Directory> {
   const fullPath = path.resolve(root);
   const hasIndex = fs.existsSync(fullPath);
-  const isDir = hasIndex && fs.statSync(fullPath).isDirectory();
+  const stat = fs.statSync(fullPath);
+  const isDir = hasIndex && stat.isDirectory();
   if (!hasIndex || !isDir) {
     return {
       type: 'dir',
@@ -103,6 +121,7 @@ export async function collect(root: string, recursive?: boolean): Promise<Direct
       path: '',
       hasIndex: false,
       contents: '',
+      created: new Date(),
       children: []
     };
   }
@@ -113,7 +132,7 @@ export async function collect(root: string, recursive?: boolean): Promise<Direct
     regexp: /(.+)\.md$/,
     recursive: !!recursive
   };
-  return readDir(options, root, '', '');
+  return readDir(options, stat, root, '', '');
 }
 
 export function flatten(nodes: Node[], includeDirs?: boolean): File[] {

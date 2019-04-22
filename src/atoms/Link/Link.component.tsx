@@ -17,6 +17,7 @@ export default function Link(props: Props) {
   if (external) {
     return <a href={url}>{children}</a>;
   } else {
-    return <RouterLink to={`${url}#${anchor || 'top'}`}>{children}</RouterLink>;
+    const frag = anchor ? `#${anchor}` : '';
+    return <RouterLink to={`${url}${frag}`}>{children}</RouterLink>;
   }
 }

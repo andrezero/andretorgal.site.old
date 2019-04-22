@@ -10,9 +10,9 @@ export default function Blog() {
   const { posts } = (useRouteData as any)();
   return (
     <LayoutContainer>
-      <h2 className="title-page" aria-label="latest blog posts">
+      <h1 className="title-page" aria-label="latest blog posts">
         Latest Posts
-      </h2>
+      </h1>
       <ul className="article-list">
         {posts.map((post: any) => (
           <li key={post.path}>

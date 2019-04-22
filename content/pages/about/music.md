@@ -1,6 +1,6 @@
 ---
 title: 'My music'
-template: 'about'
+template: 'About'
 description: 'My name is Andre Torgal. I was born in Lisbon, Portugal in 1973.'
 tags: ['personal']
 created: '2017-02-11'

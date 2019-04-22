@@ -10,7 +10,7 @@ export default function Page() {
   const { page } = (useRouteData as any)();
   return (
     <LayoutContainer>
-      <h2>{page.title}</h2>
+      <h1>{page.title}</h1>
       <Markdown text={page.content} />
     </LayoutContainer>
   );

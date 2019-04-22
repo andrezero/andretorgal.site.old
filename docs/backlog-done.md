@@ -1,5 +1,8 @@
 # Done
 
+- [x] frontmatter: custom title
+- [x] custom template
+- [x] custom slug
 - [x] internal links should default to top anchor
 - [x] layout container
 - [x] watch content directories and re-render on change
