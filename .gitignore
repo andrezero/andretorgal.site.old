@@ -3,3 +3,4 @@ artifacts
 dist
 tmp
 yarn-error.log
+!src/node_modules
