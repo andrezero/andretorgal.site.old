@@ -1,11 +1,7 @@
 import path from 'path';
-import slugify from 'slugify';
 
-import { PageMeta } from 'types/Page.model';
-import { humanise } from './strings';
-
-const remove = /[*+~.()'"!:@]/g;
-const slug = (str: string) => slugify(str, { remove, lower: true });
+import { PageMeta } from '../types/Page.model';
+import { humanise, slug } from './strings';
 
 export const makeTitle = (title: string, name: string): string => {
   return title || humanise(name);

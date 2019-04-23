@@ -3,9 +3,9 @@ import { Head, useRouteData } from 'react-static';
 
 import './Page.css';
 
-import Markdown from 'atoms/Markdown/Markdown.component';
-import DefaultLayout from 'layout/DefaultLayout/DefaultLayout.component';
-import { PageRouteData } from 'types/Page.model';
+import Markdown from '../../atoms/Markdown/Markdown.component';
+import DefaultLayout from '../../layout/DefaultLayout/DefaultLayout.component';
+import { PageRouteData } from '../../types/Page.model';
 
 const PageContainer: React.StatelessComponent<{}> = () => {
   const routeData: PageRouteData = useRouteData();

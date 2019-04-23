@@ -6,19 +6,24 @@ const isExternal = (url: string): boolean => /^[a-z]+:/.test(url);
 interface Props {
   href?: string;
   to?: string;
-  anchor?: string;
+  id?: string;
+  className?: string;
   children?: React.ReactNode;
 }
 
-const Link: React.StatelessComponent<Props> = ({ href, to, anchor, children }) => {
+const external = (url: string, id: string, className: string, children?: React.ReactNode) => {
+  const props = { href: url, id, className };
+  return <a {...props}>{children}</a>;
+};
+const internal = (url: string, id: string, className: string, children?: React.ReactNode) => {
+  const props = { to: url, id, className };
+  return <RouterLink {...props}>{children}</RouterLink>;
+};
+
+const Link: React.StatelessComponent<Props> = ({ href, to, id, className, children }) => {
   const url = href || to || '/';
-  const external = isExternal(href);
-  if (external) {
-    return <a href={url}>{children}</a>;
-  } else {
-    const frag = anchor ? `#${anchor}` : '';
-    return <RouterLink to={`${url}${frag}`}>{children}</RouterLink>;
-  }
+  const render = isExternal(href) ? external : internal;
+  return render(url, id, className, children);
 };
 
 export default Link;

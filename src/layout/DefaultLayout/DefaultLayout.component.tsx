@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import './DefaultLayout.scss';
 
-import Anchor from 'atoms/Anchor/Anchor.component';
-import AutoScrollToTop from 'layout/AutoScrollToTop/AutoScrollToTop.component';
+import Anchor from '../../atoms/Anchor/Anchor.component';
+import AutoScrollToTop from '../../layout/AutoScrollToTop/AutoScrollToTop.component';
 
 interface Props {
   className?: string;

@@ -2,13 +2,11 @@
 
 ## Now
 
-- [ ] normalise code style
+- [ ] typed scss modules (ide support + compile time)
 
 ## next
 
-- [ ] custom headings with anchor
 - [ ] env variables in markdown
-- [ ] typed scss modules (ide support + compile time)
 - [ ] ie11 support
 - [ ] styleguide
 - [ ] migrate scss

@@ -1,3 +1,5 @@
+import slugify from 'slugify';
+
 export const titleCase = (str: string): string => {
   return str
     .toLowerCase()
@@ -10,4 +12,9 @@ export const titleCase = (str: string): string => {
 
 export const humanise = (str: string): string => {
   return titleCase(str.replace(/-/g, ' '));
+};
+
+const remove = /[*+~.()'"!:,;@]/g;
+export const slug = (str: string): string => {
+  return slugify(str, { remove, lower: true });
 };

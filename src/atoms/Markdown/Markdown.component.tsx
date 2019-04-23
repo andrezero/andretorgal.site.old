@@ -9,7 +9,8 @@ import { VFileContents } from 'vfile';
 
 import './Markdown.css';
 
-import Link from 'atoms/Link/Link.component';
+import AnchoredHeading from '../../atoms/AnchoredHeading/AnchoredHeading.component';
+import Link from '../../atoms/Link/Link.component';
 
 type ComponentType = string | React.ComponentType<any>;
 
@@ -18,7 +19,10 @@ interface ComponentMap {
 }
 
 const components: ComponentMap = {
-  a: Link
+  a: Link,
+  h2: AnchoredHeading('h2'),
+  h3: AnchoredHeading('h3'),
+  h4: AnchoredHeading('h4')
 };
 
 const createElement = (component: string, props: any, children: any): JSX.Element => {

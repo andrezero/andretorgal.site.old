@@ -1,11 +1,11 @@
 import dayjs from 'dayjs';
 
-import { FileNode } from 'types/File.types';
-import { Page, PageRoute } from 'types/Page.model';
-import { Post, PostListRouteData, PostRoute, PostRouteData } from 'types/Post.model';
 import { makeContent, parseFileContents } from '../process/content';
 import { makeMeta, makePath, makeTemplate, makeTitle } from '../process/data';
 import { collect, flatten } from '../process/files';
+import { FileNode } from '../types/File.types';
+import { Page, PageRoute } from '../types/Page.model';
+import { Post, PostListRouteData, PostRoute, PostRouteData } from '../types/Post.model';
 
 const createPost = (file: FileNode): Post => {
   const { data, content, abstract } = parseFileContents(file.contents);

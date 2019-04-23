@@ -5,8 +5,8 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import unified from 'unified';
 
-import { FileContents } from 'types/File.types';
-import { PageContent } from 'types/Page.model';
+import { FileContents } from '../types/File.types';
+import { PageContent } from '../types/Page.model';
 
 const ABSTRACT_DELIMITER = '<!-- abstract -->';
 

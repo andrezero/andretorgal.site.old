@@ -3,7 +3,7 @@ import { Head } from 'react-static';
 
 import './404.css';
 
-import DefaultLayout from 'layout/DefaultLayout/DefaultLayout.component';
+import DefaultLayout from '../layout/DefaultLayout/DefaultLayout.component';
 
 const NotFoundPage: React.StatelessComponent<{}> = () => {
   return (

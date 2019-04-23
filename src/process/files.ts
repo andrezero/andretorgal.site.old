@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import util from 'util';
 
-import { DirectoryNode, FileNode, FileSysNode } from 'types/File.types';
+import { DirectoryNode, FileNode, FileSysNode } from '../types/File.types';
 
 interface Options {
   root: string;
