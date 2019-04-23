@@ -30,19 +30,26 @@ const createElement = (component: string, props: any, children: any): JSX.Elemen
   return <Tag {...props}>{children}</Tag>;
 };
 
-const parser = unified().use(remarkParse);
+const fullPipeline = unified()
+  .use(remarkParse)
+  .use(remarkRehype, { allowDangerousHTML: true })
+  .use(rehypeRaw)
+  .use(rehypeReact, { createElement });
 
-const pipeline = (base: unified.Processor) =>
-  base
-    .use(remarkRehype, { allowDangerousHTML: true })
-    .use(rehypeRaw)
-    .use(rehypeReact, { createElement });
-
-const fullPipeline = pipeline(parser);
-const strippedPipeline = pipeline(parser.use(remarkUnlink));
+const strippedPipeline = unified()
+  .use(remarkParse)
+  .use(remarkUnlink)
+  .use(remarkRehype, { allowDangerousHTML: true })
+  .use(rehypeRaw)
+  .use(rehypeReact, { createElement });
 
 const render = (text: string, stripped?: boolean): VFileContents => {
-  const processor = stripped ? strippedPipeline : fullPipeline;
+  let processor;
+  if (stripped) {
+    processor = strippedPipeline;
+  } else {
+    processor = fullPipeline;
+  }
   return processor.processSync(text).contents;
 };
 

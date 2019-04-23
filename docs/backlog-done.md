@@ -1,5 +1,6 @@
 # Done
 
+- [x] fix: strip links from abstracts not working
 - [x] custom headings with anchor
 - [x] normalise code style
 - [x] abstract: extract text from a specific markdown block
