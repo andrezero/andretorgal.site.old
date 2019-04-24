@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import './DefaultLayout.scss';
+import * as styles from './DefaultLayout.scss';
 
 import Anchor from '../../atoms/Anchor/Anchor.component';
 import AutoScrollToTop from '../../layout/AutoScrollToTop/AutoScrollToTop.component';
@@ -16,6 +16,7 @@ const DefaultLayout: React.StatelessComponent<Props> = ({ className, children })
       <div className="layout-container">
         <Anchor id="page-contents" />
         <main className={`layout-body ${className}`} role="main">
+          <p className={styles.foo}>scss: green</p>
           {children}
           <p className="to-top" role="navigation">
             <a className="link" href="#page-contents" aria-label="back to the top of the page">

@@ -1,5 +1,8 @@
 # Done
 
+- [x] typed scss modules (ide support + compile time)
+- [x] css ie11 support via postcss and prefixer
+- [x] scss lint
 - [x] fix: strip links from abstracts not working
 - [x] custom headings with anchor
 - [x] normalise code style

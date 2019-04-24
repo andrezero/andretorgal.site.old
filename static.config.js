@@ -33,7 +33,7 @@ const config = {
 };
 
 if (STAGE === 'prod') {
-  config.siteRoot = 'http://andretorgal.com';
+  // config.siteRoot = 'http://andretorgal.com';
 }
 
 export default config;

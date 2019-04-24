@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Head, useRouteData } from 'react-static';
 
-import './Post.css';
+import * as styles from './Post.scss';
 
 import Link from '../../atoms/Link/Link.component';
 import Markdown from '../../atoms/Markdown/Markdown.component';
@@ -15,7 +15,8 @@ const PostContainer: React.StatelessComponent<{}> = () => {
     <DefaultLayout>
       <Head title={post.title} meta={post.meta} />
       <Link to="/posts/">{'<'} Back</Link>
-      <h1>{post.title}</h1>
+      <h1 className={styles.Post}>{post.title}</h1>
+      <h1 id="Post">{post.title}</h1>
       <Markdown text={post.abstract.source} />
       <Markdown text={post.content.source} />
     </DefaultLayout>

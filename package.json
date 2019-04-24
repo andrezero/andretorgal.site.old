@@ -3,22 +3,30 @@
   "private": true,
   "scripts": {
     "start": "node -r ts-node/register node_modules/.bin/react-static start",
+    "clean": "find . -name '*.scss.d.ts' -type f -delete && rm -rf artifacts/ dist/ tmp/",
+    "lint": "npm lint-style",
+    "lint-style": "stylelint --cache 'src/**/*.scss'",
     "stage": "export BUILD_STAGE=stage && node -r ts-node/register node_modules/.bin/react-static build --staging",
     "build": "export BUILD_STAGE=prod && node -r ts-node/register node_modules/.bin/react-static build",
-    "analyze": "react-static build --analyze",
+    "analyze": "export BUILD_STAGE=prod && node -r ts-node/register node_modules/.bin/react-static build --analyze",
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
     "axios": "^0.18.0",
     "chokidar": "^2.1.5",
+    "css-loader": "^2.1.1",
     "dayjs": "^1.8.12",
     "gray-matter": "^4.0.2",
     "mdast-util-to-string": "^1.0.5",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-scss": "^2.0.0",
+    "postcss-utilities": "^0.8.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-static": "^7.0.9",
     "react-static-plugin-reach-router": "^7.0.8",
+    "react-static-plugin-sass": "^7.0.8",
     "react-static-plugin-sitemap": "^7.0.8",
     "react-static-plugin-source-filesystem": "^7.0.8",
     "react-static-plugin-typescript": "^7.0.8",
@@ -38,6 +46,7 @@
     "strip-markdown": "^3.0.3",
     "ts-node": "^8.1.0",
     "typescript": "^3.4.3",
+    "typings-for-css-modules-loader": "git://github.com/andrezero/typings-for-css-modules-loader.git#e9a04758156a04c177a0d458e24b60968af0a5cf",
     "unified": "^7.1.0"
   },
   "devDependencies": {
@@ -57,11 +66,18 @@
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "7.x",
     "serve": "10.1.2",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0"
   },
   "resolutions": {
-    "react-static/webpack-dev-server": "3.2.1"
-  }
+    "react-static/webpack-dev-server": "3.2.1",
+    "react-static/css-loader": "1.0.1"
+  },
+  "browserslist": [
+    "cover 95%",
+    "not dead"
+  ]
 }
