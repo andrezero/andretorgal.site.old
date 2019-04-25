@@ -4,7 +4,7 @@ import { makeContent, parseFileContents } from '../process/content';
 import { makeMeta, makePath, makeTemplate, makeTitle } from '../process/data';
 import { collect, flatten } from '../process/files';
 import { FileNode } from '../types/File.types';
-import { Page, PageRoute } from '../types/Page.model';
+import { ContentPage, PageRoute } from '../types/Page.model';
 import { Post, PostListRouteData, PostRoute, PostRouteData } from '../types/Post.model';
 
 const createPost = (file: FileNode): Post => {
@@ -48,7 +48,7 @@ const postRoute = (post: Post): PostRoute => {
   };
 };
 
-const postListPage = (): Page => {
+const postListPage = (): ContentPage => {
   return {
     title: 'Latest blog posts',
     path: '/posts',
@@ -72,7 +72,7 @@ const postListPageRoute = (posts: Post[]): PageRoute => {
   };
 };
 
-const getRoutes = async () => {
+const getRoutes = async (): Promise<Array<PageRoute | PostRoute>> => {
   const posts = await loadPosts();
   const pageRoute = postListPageRoute(posts);
   return [pageRoute, ...posts.map(postRoute)];

@@ -1,7 +1,7 @@
-import { Page } from './Page.model';
+import { ContentPage } from './Page.model';
 import { Route } from './Route.model';
 
-export interface Post extends Page {}
+export interface Post extends ContentPage {}
 
 export interface PostRouteData {
   post: Post;
@@ -9,7 +9,7 @@ export interface PostRouteData {
 
 export interface PostListRouteData {
   posts: Post[];
-  page: Page;
+  page: ContentPage;
 }
 
 export interface PostRoute extends Route {

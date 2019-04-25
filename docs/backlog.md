@@ -2,6 +2,7 @@
 
 ## Now
 
+- [ ] spike: storybook + typescript + scssd
 - [ ] styleguide
 - [ ] migrate scss
 
@@ -14,6 +15,7 @@
 - [ ] router [transition](https://reach.tech/router/example/animation)
 - [x] models: page
 - [x] models: post
+- [ ] jest + enzyme
 - [ ] image sharp
 - [ ] models: tags
 - [ ] husky + lint staged

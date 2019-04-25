@@ -4,9 +4,9 @@ import { makeContent, parseFileContents } from '../process/content';
 import { makeMeta, makePath, makeTemplate, makeTitle } from '../process/data';
 import { collect, map } from '../process/files';
 import { DirectoryNode, FileNode } from '../types/File.types';
-import { Page, PageRoute, PageRouteData } from '../types/Page.model';
+import { ContentPage, PageRoute, PageRouteData } from '../types/Page.model';
 
-const createPage = (node: FileNode | DirectoryNode): Page => {
+const createPage = (node: FileNode | DirectoryNode): ContentPage => {
   const { data, content, abstract } = parseFileContents(node.contents);
   data.title = makeTitle(data.title, node.name);
   data.created = dayjs(node.created);
@@ -43,9 +43,9 @@ const loadPages = async (): Promise<PageRoute | void> => {
   return map<DirectoryNode, PageRoute>(tree, pageRoute);
 };
 
-const getRoutes = async () => {
+const getRoutes = async (): Promise<PageRoute[]> => {
   const root = await loadPages();
-  return [root];
+  return root ? [root] : [];
 };
 
 export default getRoutes;

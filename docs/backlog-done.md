@@ -1,5 +1,6 @@
 # Done
 
+- [x] cleanup: react static config, watcher, routes, extraneuos 404 page
 - [x] typed scss modules (ide support + compile time)
 - [x] css ie11 support via postcss and prefixer
 - [x] scss lint

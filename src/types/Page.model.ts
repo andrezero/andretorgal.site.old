@@ -17,8 +17,11 @@ export interface PageMetaOpenGraphItem {
 
 export type PageMeta = Array<PageMetaItem | PageMetaOpenGraphItem>;
 
-export interface Page {
+interface Page {
   title: string;
+}
+
+export interface ContentPage extends Page {
   path: string;
   rel: string;
   template: string;
@@ -30,8 +33,14 @@ export interface Page {
   meta?: PageMeta;
 }
 
+export interface ErrorPage extends Page {
+  content?: PageContent;
+  meta?: PageMeta;
+}
+
 export interface PageRouteData {
   page: Page;
+  [key: string]: any;
 }
 
 export interface PageRoute extends Route {

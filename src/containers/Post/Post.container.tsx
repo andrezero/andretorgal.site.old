@@ -16,7 +16,6 @@ const PostContainer: React.StatelessComponent<{}> = () => {
       <Head title={post.title} meta={post.meta} />
       <Link to="/posts/">{'<'} Back</Link>
       <h1 className={styles.Post}>{post.title}</h1>
-      <h1 id="Post">{post.title}</h1>
       <Markdown text={post.abstract.source} />
       <Markdown text={post.content.source} />
     </DefaultLayout>
