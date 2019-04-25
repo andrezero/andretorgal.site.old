@@ -13,9 +13,9 @@ interface Props {
 const DefaultLayout: React.StatelessComponent<Props> = ({ className, children }) => {
   return (
     <AutoScrollToTop>
-      <div className="layout-container">
+      <div className={`layout-container ${className}`}>
         <Anchor id="page-contents" />
-        <main className={`layout-body ${className}`} role="main">
+        <main className="layout-body" role="main">
           {children}
           <p className="to-top" role="navigation">
             <a className="link" href="#page-contents" aria-label="back to the top of the page">

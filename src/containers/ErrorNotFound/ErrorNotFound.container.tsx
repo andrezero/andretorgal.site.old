@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { Head, useRouteData } from 'react-static';
 
-import * as styles from './ErrorNotFound.scss';
+import * as styles from './ErrorNotFound.module.scss';
 
-import Markdown from '../../atoms/Markdown/Markdown.component';
 import DefaultLayout from '../../layout/DefaultLayout/DefaultLayout.component';
 import { ContentPage, PageRouteData } from '../../types/Page.model';
 

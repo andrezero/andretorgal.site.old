@@ -1,0 +1,11 @@
+@import '../common';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-regular;
+  line-height: $line-height-regular;
+}

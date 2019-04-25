@@ -1,0 +1,10 @@
+@import '../common';
+@import 'typography';
+
+.section {
+  padding: 20px;
+
+  h1 {
+    @include heading-1;
+  }
+}

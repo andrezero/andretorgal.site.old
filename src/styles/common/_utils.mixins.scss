@@ -1,0 +1,38 @@
+@import './type.vars';
+
+@mixin loading-placehoder($width: 50%) {
+  &::before {
+    content: '\00a0';
+    display: block;
+    width: $width;
+    color: $background-muted;
+    background: linear-gradient(270deg, $background-dim, $background-muted, $background-dim);
+    background-size: 400% 400%;
+    animation: loading-placeholder-animation 2s ease infinite;
+  }
+}
+
+@mixin pseudo($content: ' ') {
+  content: $content;
+  display: inline-block;
+}
+
+@mixin absolute($top: 0, $left: 0, $bottom: initial, $right: initial) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}
+
+@keyframes loading-placeholder-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  75% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

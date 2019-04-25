@@ -9,7 +9,9 @@
     "stage": "export BUILD_STAGE=stage && node -r ts-node/register node_modules/.bin/react-static build --staging",
     "build": "export BUILD_STAGE=prod && node -r ts-node/register node_modules/.bin/react-static build",
     "analyze": "export BUILD_STAGE=prod && node -r ts-node/register node_modules/.bin/react-static build --analyze",
-    "serve": "serve dist -p 3000"
+    "serve": "serve dist -p 3000",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
@@ -52,12 +54,21 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "@storybook/addon-actions": "^5.0.10",
+    "@storybook/addon-info": "^5.0.10",
+    "@storybook/addon-links": "^5.0.10",
+    "@storybook/addons": "^5.0.10",
+    "@storybook/react": "^5.0.10",
     "@types/node": "^11.13.4",
     "@types/reach__router": "^1.2.4",
     "@types/react": "^16.8.13",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.8",
     "@types/rehype-react": "^3.1.0",
+    "@types/storybook__addon-actions": "^3.4.2",
+    "@types/storybook__addon-info": "^4.1.1",
+    "@types/storybook__addon-links": "^3.3.4",
+    "@types/storybook__react": "^4.0.1",
     "@types/webpack-dev-server": "^3.1.5",
     "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "9.x",

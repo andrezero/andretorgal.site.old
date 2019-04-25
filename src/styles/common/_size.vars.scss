@@ -1,0 +1,11 @@
+$margin-large: 60px;
+$margin-regular: 30px;
+$margin-small: 10px;
+$margin-tiny: 5px;
+
+$padding-regular: 30px;
+
+$container-width: 780px;
+$container-margin-h: $margin-regular;
+
+$breakpoint-medium: ($container-width + $container-margin-h * 2);

@@ -18,7 +18,8 @@
     "suppressImplicitAnyIndexErrors": true,
     "types": ["node"],
     "lib": ["es6", "dom"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "rootDirs": ["src", "stories"]
   },
   "include": ["src/**/*", "src/node_modules"]
 }

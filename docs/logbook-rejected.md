@@ -18,6 +18,8 @@
 
 > Issues
 
+- typed css modules painful
+- integration with storyook painful
 - typed graphql queries
   - https://www.isaacbroyles.com/2018/08/19/gatsbyjs-typescript.html
 

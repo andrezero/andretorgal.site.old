@@ -1,0 +1,9 @@
+@import '../src/styles/base/reset';
+
+#root > div > div:first-child {
+  zoom: 0.7;
+
+  > div {
+    padding-bottom: 10px !important;
+  }
+}

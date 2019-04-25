@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import './AnchoredHeading.css';
+import * as styles from './AnchoredHeading.module.scss';
 
 import { slug } from '../../process/strings';
 
@@ -30,8 +30,8 @@ const AnchoredHeading = (tag: React.ElementType): React.StatelessComponent<Props
   return ({ children }) => {
     const id = idOf(children);
     return (
-      <Tag className="AnchoredHeading">
-        <a className="handle" aria-hidden={true} href={`#${id}`} id={id} />
+      <Tag className={styles.AnchoredHeading}>
+        <a className={styles.handle} aria-hidden={true} href={`#${id}`} id={id} />
         {children}
       </Tag>
     );

@@ -1,0 +1,35 @@
+@import './type.vars';
+
+@mixin heading-1 {
+  @include strong;
+  font-size: 3.5rem;
+}
+@mixin heading-2 {
+  @include strong;
+  font-size: 3.5rem;
+}
+@mixin heading-3 {
+  @include strong;
+  font-size: 3.5rem;
+}
+
+@mixin heading-4 {
+  @include strong;
+  font-size: $font-size-regular;
+}
+
+@mixin strong {
+  font-weight: 700;
+}
+
+@mixin overflow-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin muted {
+  font-size: $font-size-small;
+  color: $type-muted;
+  opacity: $opacity-muted;
+}

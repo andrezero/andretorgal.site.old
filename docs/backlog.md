@@ -2,8 +2,11 @@
 
 ## Now
 
-- [ ] spike: storybook + typescript + scssd
-- [ ] styleguide
+- [x] styleguide: setup storybook
+- [x] segregate css modules and global scope in webpack tests
+- [ ] reafactor component hierarchy
+  - [ ] rename atoms to `.atom.`
+  - [ ] breakdown containers: containers (coupled with `getRouteData()`) and templates (props only)
 - [ ] migrate scss
 
 ## next
@@ -27,6 +30,9 @@
 - [ ] og image
 - [ ] refactor og generation
 - [ ] search
+- [ ] make data available to the 404 page
+  - [ ] fix/workaround issue of `getRouteData()` being useless here
+  - [ ] refactor routes code, decouple routes from sources so that data from one source can be used in different routers
 
 ### Issues
 
@@ -39,6 +45,7 @@
 - [ ] `react-static` tries to build pages for sass typings `404.scss.d.ts`
 - [ ] Types for `rehype-raw` `rehype-react` `remark-parse` and `remark-rehype` added manually, waiting for [this PR](https://github.com/remarkjs/remark/pull/383) to be merged, posted on [unified community](https://spectrum.chat/unified/type-definitions/missing-typings-across-plugin-community~49ee93c0-23bf-49f3-9706-2468b0760564)
 - [ ] `react-static` maximum call stack error when using helmet with children, following [issue here](https://github.com/nozzle/react-static/issues/1119)
+- [ ] `react-static` 404 has no access to `getRouteData()` because it looks up the failed route instead of the `404` path
 
 ### Puzzles
 
@@ -53,3 +60,10 @@
 
 - [ ] svg trickery
   - [ ] via [postcss](https://github.com/jonathantneal/postcss-write-svg)
+
+### Learn/Experiment
+
+- [ ] React Portals - a first-class way to render children into a dom node
+      that exists outside the dom hierarchy of the parent component.
+- [ ] React ErrorBoundary
+- [ ] [Lighthouse](https://developers.google.com/web/tools/lighthouse/)

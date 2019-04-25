@@ -63,6 +63,11 @@
 - using a fork `"typings-for-css-modules-loader": "https://github.com/andrezero/typings-for-css-modules-loader",`
   - merged https://github.com/andrezero/typings-for-css-modules-loader/commit/a4971f0baa82fa129d511572aa9f027e0d55b175 - adds support for css-loader-2
 
+> Why
+
+- css modules because scoping out of global css for atoms, components,
+- typed modules because prevents errors in compile time + faster feedback + better developer experience
+
 > Tradeoffs
 
 - polluting filesystem with extraneous `*.scss.d.ts` (gitignored for)
