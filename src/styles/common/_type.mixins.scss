@@ -6,11 +6,11 @@
 }
 @mixin heading-2 {
   @include strong;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 @mixin heading-3 {
   @include strong;
-  font-size: 3.5rem;
+  font-size: 1.5rem;
 }
 
 @mixin heading-4 {

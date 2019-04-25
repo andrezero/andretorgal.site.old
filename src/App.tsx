@@ -4,8 +4,8 @@ import { Head, Root, Routes } from 'react-static';
 
 import './app.css';
 
-import Anchor from './atoms/Anchor/Anchor.component';
-import Link from './atoms/Link/Link.component';
+import Anchor from './atoms/Anchor/Anchor.atom';
+import Link from './atoms/Link/Link.atom';
 
 const defaultMeta = [
   {

@@ -4,8 +4,9 @@
 
 - [x] styleguide: setup storybook
 - [x] segregate css modules and global scope in webpack tests
-- [ ] reafactor component hierarchy
-  - [ ] rename atoms to `.atom.`
+- [ ] refactor component semantics
+  - [x] rename atoms to `.atom.tsx`
+  - [x] component styles as `.modules.scss`
   - [ ] breakdown containers: containers (coupled with `getRouteData()`) and templates (props only)
 - [ ] migrate scss
 

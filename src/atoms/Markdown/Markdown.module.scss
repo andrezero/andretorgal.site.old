@@ -1,0 +1,15 @@
+@import '../../styles/common';
+
+.Markdown {
+  h2 {
+    @include heading-2;
+  }
+
+  h3 {
+    @include heading-2;
+  }
+
+  h4 {
+    @include heading-2;
+  }
+}

@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import '../../../.storybook/index';
 
-import AnchoredHeading from './AnchoredHeading.component';
+import AnchoredHeading from './AnchoredHeading.atom';
 
 const Heading2 = AnchoredHeading('h2');
 const Heading3 = AnchoredHeading('h3');

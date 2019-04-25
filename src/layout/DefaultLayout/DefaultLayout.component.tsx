@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import * as styles from './DefaultLayout.scss';
+import * as styles from './DefaultLayout.module.scss';
 
-import Anchor from '../../atoms/Anchor/Anchor.component';
+import Anchor from '../../atoms/Anchor/Anchor.atom';
 import AutoScrollToTop from '../../layout/AutoScrollToTop/AutoScrollToTop.component';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 const DefaultLayout: React.StatelessComponent<Props> = ({ className, children }) => {
   return (
     <AutoScrollToTop>
-      <div className={`layout-container ${className}`}>
+      <div className={`${styles.DefaultLayout} ${className}`}>
         <Anchor id="page-contents" />
         <main className="layout-body" role="main">
           {children}

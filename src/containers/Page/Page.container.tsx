@@ -3,7 +3,7 @@ import { Head, useRouteData } from 'react-static';
 
 import './Page.css';
 
-import Markdown from '../../atoms/Markdown/Markdown.component';
+import Markdown from '../../atoms/Markdown/Markdown.atom';
 import DefaultLayout from '../../layout/DefaultLayout/DefaultLayout.component';
 import { ContentPage, PageRouteData } from '../../types/Page.model';
 
