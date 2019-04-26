@@ -2,20 +2,16 @@
 
 ## Now
 
-- [x] styleguide: setup storybook
-- [x] segregate css modules and global scope in webpack tests
-- [ ] refactor component semantics
-  - [x] rename atoms to `.atom.tsx`
-  - [x] component styles as `.modules.scss`
-  - [ ] breakdown containers: containers (coupled with `getRouteData()`) and templates (props only)
 - [ ] migrate scss
 
 ## next
 
+- [ ] re-organise docs
+  - [ ] split records into individual files
+- [ ] integrate docs into content
+- [ ] migrate experiments
 - [ ] env variables in markdown
 - [ ] suspense fallback loading
-- [ ] migrate experiments
-- [ ] integrate docs into content
 - [ ] router [transition](https://reach.tech/router/example/animation)
 - [x] models: page
 - [x] models: post
@@ -55,6 +51,8 @@
 
 ### Spikes
 
+- [ ]
+
 - [ ] [solid](https://solid.inrupt.com/)
 
   - [ ] [linked-data-developer-experience](https://ruben.verborgh.org/blog/2018/12/28/designing-a-linked-data-developer-experience/)
@@ -64,6 +62,7 @@
 
 ### Learn/Experiment
 
+- [ ] CSS Variables
 - [ ] React Portals - a first-class way to render children into a dom node
       that exists outside the dom hierarchy of the parent component.
 - [ ] React ErrorBoundary

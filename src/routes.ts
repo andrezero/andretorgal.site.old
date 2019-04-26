@@ -1,13 +1,27 @@
-import blogRoutes from './routes/blog';
-import pagesRoutes from './routes/pages';
-import siteRoutes from './routes/site';
+import TemplateLocator from './Shared/lib/classes/TemplateLocator';
 
-const getRoutes = async () => {
-  const site = await siteRoutes();
-  const blog = await blogRoutes();
-  const pages = await pagesRoutes();
+import loadPosts from './Blog/posts.source';
+import loadPages from './Pages/pages.source';
 
-  return [...site, ...pages, ...blog];
+import buildBlogRoutes from './Blog/blog.routes';
+import buildPagesRoutes from './Pages/pages.routes';
+import buildSiteRoutes from './Site/site.routes';
+
+const routeBuilder = () => {
+  const templates = new TemplateLocator();
+
+  const getRoutes = async () => {
+    const pages = await loadPages();
+    const posts = await loadPosts();
+
+    const siteRoutes = await buildSiteRoutes(templates);
+    const pagesRoutes = await buildPagesRoutes(templates, { pages });
+    const blogRoutes = await buildBlogRoutes(templates, { posts });
+
+    return [...siteRoutes, ...pagesRoutes, ...blogRoutes];
+  };
+
+  return { getRoutes };
 };
 
-export default getRoutes;
+export default routeBuilder;

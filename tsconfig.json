@@ -9,7 +9,6 @@
     "sourceMap": true,
     "noEmit": true,
     "jsx": "react",
-    "baseUrl": "src",
     "allowJs": true,
     "declaration": false,
     "removeComments": true,
@@ -19,7 +18,7 @@
     "types": ["node"],
     "lib": ["es6", "dom"],
     "esModuleInterop": true,
-    "rootDirs": ["src", "stories"]
+    "rootDirs": ["src"]
   },
   "include": ["src/**/*", "src/node_modules"]
 }

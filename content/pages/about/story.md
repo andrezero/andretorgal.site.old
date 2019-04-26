@@ -1,6 +1,6 @@
 ---
 title: 'My story'
-template: 'About'
+template: 'Pages/About'
 description: 'My name is Andre Torgal. I was born in Lisbon, Portugal in 1973.'
 tags: ['personal']
 created: '2017-02-11'

@@ -28,7 +28,7 @@
 - typescript entry point
 - typescript compiler using tslint.json
 
-> Tradeoffs
+> Trade-offs
 
 - almost no plugins
 - very little documentation
@@ -47,7 +47,7 @@
 - works in both directions
 - complete [working implementation](https://github.com/s-thom/website/blob/develop/src/components/MdRenderer/index.tsx)
 
-> Tradeoffs
+> Trade-offs
 
 - not written in typescript and no typings supplied for many plugins
 - incomplete/inconsistent docs
@@ -68,7 +68,7 @@
 - css modules because scoping out of global css for atoms, components,
 - typed modules because prevents errors in compile time + faster feedback + better developer experience
 
-> Tradeoffs
+> Trade-offs
 
 - polluting filesystem with extraneous `*.scss.d.ts` (gitignored for)
 - had to patch up weback config in `node.api.js`
@@ -92,3 +92,38 @@
   - https://github.com/olegstepura/typed-css-modules-loader
   - https://github.com/Megaputer/dts-css-modules-loader
 - see [typescript-plugin-css-modules](https://github.com/mrmckeb/typescript-plugin-css-modules) for a pure typescript alternative (tested, couldn't get it to work)
+
+## Coding Conventions: Group code by module / atomic-ish semantics
+
+> Details
+
+- see [coding-convetions.md](./coding-convetions.md)
+
+> Why
+
+- pedantic
+- atomic-ish design system
+- clearer module boundaries
+- segregate shared components and utils from specific domains
+
+> Trade-offs
+
+- ugly enterprise import statements
+- even uglier with all the `../../` (bloody typescript struggling with relative paths)
+
+## A11y: shrink to fit
+
+> Details
+
+- not using `shrink-to-fit=no` anymore
+- only `<meta name="viewport" content="width=device-width, initial-scale=1" />`
+
+> Why
+
+- users can pinch to zoom and/or double tap
+
+> Read more
+
+- [shrink-to-fit 2019](https://www.scottohara.me/blog/2018/12/11/shrink-to-fit.html)
+- dropped by: the guardian, gov.uk, css tricks, reddit, google search
+- still kept by: new yorker, amazon, twitter, facebook
