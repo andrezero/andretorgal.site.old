@@ -7,8 +7,8 @@ import remarkUnlink from 'remark-unlink';
 import unified from 'unified';
 import { VFileContents } from 'vfile';
 
-import AnchoredHeading from '../../elements/AnchoredHeading/AnchoredHeading.component';
-import Link from '../../elements/Link/Link.component';
+import { AnchoredHeading } from '../../elements/AnchoredHeading/AnchoredHeading.component';
+import { Link } from '../../elements/Link/Link.component';
 
 import * as styles from './Markdown.module.scss';
 
@@ -58,8 +58,6 @@ interface Props {
   stripped?: boolean;
 }
 
-const Markdown: React.StatelessComponent<Props> = ({ text, stripped }) => {
+export const Markdown: React.StatelessComponent<Props> = ({ text, stripped }) => {
   return <div className={styles.Markdown}>{render(text, stripped)}</div>;
 };
-
-export default Markdown;

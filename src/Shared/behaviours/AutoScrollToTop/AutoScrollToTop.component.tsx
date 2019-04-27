@@ -11,7 +11,7 @@ if (typeof (window as any) !== 'undefined') {
 
 // props: https://gist.github.com/swernerx/2c2ba4e611b4ec7921813a71517ddf5a
 
-const AutoScrollToTop: FunctionComponent = ({ children }) => (
+export const AutoScrollToTop: FunctionComponent = ({ children }) => (
   <Location>
     {() => {
       if (typeof (history as any) !== 'undefined') {
@@ -35,5 +35,3 @@ const AutoScrollToTop: FunctionComponent = ({ children }) => (
     }}
   </Location>
 );
-
-export default AutoScrollToTop;

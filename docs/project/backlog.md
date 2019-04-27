@@ -52,7 +52,7 @@ title: 'Backlog'
 
 ### Spikes
 
-- [ ]
+- [ ] [mdx](https://mdxjs.com/advanced/typescript) how to have side by side (or plugged to) the unified, remark, rehype pipeline
 
 - [ ] [solid](https://solid.inrupt.com/)
 

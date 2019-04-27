@@ -25,7 +25,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const AnchoredHeading = (tag: React.ElementType): React.StatelessComponent<Props> => {
+export const AnchoredHeading = (tag: React.ElementType): React.StatelessComponent<Props> => {
   const Tag = tag;
   return ({ children }) => {
     const id = idOf(children);
@@ -37,5 +37,3 @@ const AnchoredHeading = (tag: React.ElementType): React.StatelessComponent<Props
     );
   };
 };
-
-export default AnchoredHeading;

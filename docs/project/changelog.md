@@ -2,6 +2,7 @@
 title: 'Done'
 ---
 
+- [x] no default exports, except for containers and App
 - [x] integrate docs into content
 - [x] re-organise docs
 - [x] split records into individual files

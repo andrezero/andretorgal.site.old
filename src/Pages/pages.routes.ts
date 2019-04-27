@@ -1,4 +1,4 @@
-import TemplateLocator from '../Shared/lib/classes/TemplateLocator';
+import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
 import { cssClass } from '../Shared/lib/strings';
 import { ContentPage, PageRoute, PageRouteData } from '../Shared/types/Page.model';
 
@@ -19,8 +19,6 @@ interface Data {
   pages: ContentPage[];
 }
 
-const buildRoutes = async (templates: TemplateLocator, data: Data): Promise<PageRoute[]> => {
+export const buildRoutes = async (templates: TemplateLocator, data: Data): Promise<PageRoute[]> => {
   return data.pages.map(page => pageRoute(templates, page));
 };
-
-export default buildRoutes;

@@ -6,7 +6,7 @@ import { ContentPage, PageRouteData } from '../../../Shared/types/Page.model';
 
 import { PageTemplate as Template } from '../../templates/Page/PageTemplate.component';
 
-const PageContainer: React.StatelessComponent<{}> = () => {
+export const PageContainer: React.StatelessComponent<{}> = () => {
   const routeData: PageRouteData = useRouteData();
   React.useEffect(() => {
     const className = routeData.className;
@@ -14,5 +14,3 @@ const PageContainer: React.StatelessComponent<{}> = () => {
   });
   return <Template page={routeData.page as ContentPage} />;
 };
-
-export default PageContainer;

@@ -6,8 +6,6 @@ interface Props {
   id: string;
 }
 
-const Anchor: React.StatelessComponent<Props> = ({ id }) => {
+export const Anchor: React.StatelessComponent<Props> = ({ id }) => {
   return <a className={styles.Anchor} id={id} aria-hidden={true} />;
 };
-
-export default Anchor;

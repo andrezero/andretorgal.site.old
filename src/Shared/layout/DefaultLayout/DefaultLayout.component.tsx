@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import AutoScrollToTop from '../../behaviours/AutoScrollToTop/AutoScrollToTop.component';
-import Anchor from '../../elements/Anchor/Anchor.component';
-import Link from '../../elements/Link/Link.component';
+import { AutoScrollToTop } from '../../behaviours/AutoScrollToTop/AutoScrollToTop.component';
+import { Anchor } from '../../elements/Anchor/Anchor.component';
+import { Link } from '../../elements/Link/Link.component';
 
 import * as styles from './DefaultLayout.module.scss';
 
@@ -11,7 +11,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const DefaultLayout: React.StatelessComponent<Props> = ({ className, children }) => {
+export const DefaultLayout: React.StatelessComponent<Props> = ({ className, children }) => {
   return (
     <AutoScrollToTop>
       <div className={`${styles.DefaultLayout} ${className || ''}`}>
@@ -35,5 +35,3 @@ const DefaultLayout: React.StatelessComponent<Props> = ({ className, children })
     </AutoScrollToTop>
   );
 };
-
-export default DefaultLayout;

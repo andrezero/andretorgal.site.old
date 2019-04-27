@@ -31,11 +31,9 @@ const createPost = (file: FileSysNode): Post => {
   };
 };
 
-const loadPosts = async (): Promise<Post[]> => {
+export const loadPosts = async (): Promise<Post[]> => {
   const tree = await collect('./content/blog', true);
   const flattened = flatten(tree.children);
   const sorted = flattened.sort((p1, p2) => p2.created.getTime() - p1.created.getTime());
   return sorted.map(createPost);
 };
-
-export default loadPosts;

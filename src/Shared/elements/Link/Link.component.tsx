@@ -20,10 +20,8 @@ const internal = (url: string, id: string, className: string, children?: React.R
   return <RouterLink {...props}>{children}</RouterLink>;
 };
 
-const Link: React.StatelessComponent<Props> = ({ href, to, id, className, children }) => {
+export const Link: React.StatelessComponent<Props> = ({ href, to, id, className, children }) => {
   const url = href || to || '/';
   const render = isExternal(href) ? external : internal;
   return render(url, id, className, children);
 };
-
-export default Link;

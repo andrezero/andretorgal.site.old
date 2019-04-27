@@ -29,11 +29,9 @@ const createPage = (node: FileSysNode): ContentPage => {
   };
 };
 
-const loadPages = async (): Promise<ContentPage[]> => {
+export const loadPages = async (): Promise<ContentPage[]> => {
   const tree = await collect('./content/pages', true);
   const flattened = flatten(tree.children, 'indexes');
   flattened.unshift(tree);
   return flattened.map(createPage);
 };
-
-export default loadPages;

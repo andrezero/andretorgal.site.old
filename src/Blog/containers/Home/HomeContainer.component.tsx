@@ -6,7 +6,7 @@ import { PostListRouteData } from '../../types/Post.model';
 
 import { HomeTemplate as Template } from '../../templates/Home/HomeTemplate.component';
 
-const HomeContainer: React.StatelessComponent<{}> = () => {
+export const HomeContainer: React.StatelessComponent<{}> = () => {
   const routeData: PostListRouteData = useRouteData();
   React.useEffect(() => {
     const className = routeData.className;
@@ -14,5 +14,3 @@ const HomeContainer: React.StatelessComponent<{}> = () => {
   });
   return <Template {...routeData} />;
 };
-
-export default HomeContainer;

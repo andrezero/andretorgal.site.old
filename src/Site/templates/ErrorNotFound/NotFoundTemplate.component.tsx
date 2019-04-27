@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Head } from 'react-static';
 
-import DefaultLayout from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
+import { DefaultLayout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { ContentPage } from '../../../Shared/types/Page.model';
 
 import * as styles from './NotFoundTemplate.module.scss';

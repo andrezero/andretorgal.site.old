@@ -53,16 +53,28 @@ src/Blog/components/TagLink/TagLink.component.tsx
 - prefer stateless
 
 ```tsx
-export const HomeContainer: React.StatelessComponent<{}> = () => {
+const HomeContainer: React.StatelessComponent<{}> = () => {};
 ```
 
 - use hooks
 
 - typescript:
 
-  - never `export default` (except for `containers/` because `react-static` requires a default export)
-  - always export named `const` or `class`
-  - import aliased if needed
+- always named exports, never export symbols as default
+
+```tsx
+export class PostTemplate...
+```
+
+- except for `containers/`, export them as default, required by`react-static`
+
+```tsx
+const HomeContainer: React.StatelessComponent<{}> = () => {};
+export default HomeContainer;
+```
+
+- always export named `const` or `class`
+- import aliased if needed
 
 ```tsx
 import { ErrorLayout as Layout } from '../layouts/ErrorLayout.component';
