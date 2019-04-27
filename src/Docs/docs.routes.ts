@@ -5,7 +5,7 @@ import { cssClass } from '../Shared/lib/strings';
 import { ContentPage, PageRoute, PageRouteData } from '../Shared/types/Page.model';
 
 const docRoute = (templates: TemplateLocator, doc: ContentPage): PageRoute => {
-  const template = doc.template || 'Pages/Page';
+  const template = doc.template || 'Docs/Page';
   const className = doc.className || cssClass(template);
   return {
     path: path.join('docs', doc.path),

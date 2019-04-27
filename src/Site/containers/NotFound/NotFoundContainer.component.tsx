@@ -4,7 +4,7 @@ import { bodyClassSwitch } from '../../../Shared/lib/dom';
 
 import { NotFoundTemplate as Template } from '../../templates/ErrorNotFound/NotFoundTemplate.component';
 
-const NotFoundContainer: React.StatelessComponent<{}> = () => {
+export const NotFoundContainer: React.StatelessComponent<{}> = () => {
   React.useEffect(() => {
     bodyClassSwitch('root', 'error');
   });

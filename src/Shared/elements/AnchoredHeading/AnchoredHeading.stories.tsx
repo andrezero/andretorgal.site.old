@@ -4,11 +4,11 @@ import * as React from 'react';
 
 import '../../../../.storybook/index';
 
-import AnchoredHeading from './AnchoredHeading.component';
+import { anchoredHeading } from './AnchoredHeading.factory';
 
-const Heading2 = AnchoredHeading('h2');
-const Heading3 = AnchoredHeading('h3');
-const Heading4 = AnchoredHeading('h4');
+const Heading2 = anchoredHeading('h2');
+const Heading3 = anchoredHeading('h3');
+const Heading4 = anchoredHeading('h4');
 
 const spacer = (Component: React.ElementType, contents?: string) => {
   const style = { padding: '20px' };

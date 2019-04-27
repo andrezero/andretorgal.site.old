@@ -1,4 +1,4 @@
-import TemplateLocator from '../Shared/lib/classes/TemplateLocator';
+import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
 import { ErrorPage, PageRoute } from '../Shared/types/Page.model';
 
 export const buildRoutes = async (templates: TemplateLocator): Promise<PageRoute[]> => {

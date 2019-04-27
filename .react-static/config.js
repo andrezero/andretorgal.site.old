@@ -1,6 +1,6 @@
 import * as React from 'React';
 
-const configure = options => {
+export const configure = options => {
   const { stage, getRoutes } = options;
 
   const config = {
@@ -36,5 +36,3 @@ const configure = options => {
 
   return config;
 };
-
-export default configure;

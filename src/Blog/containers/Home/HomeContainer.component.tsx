@@ -14,3 +14,5 @@ export const HomeContainer: React.StatelessComponent<{}> = () => {
   });
   return <Template {...routeData} />;
 };
+
+export default HomeContainer;

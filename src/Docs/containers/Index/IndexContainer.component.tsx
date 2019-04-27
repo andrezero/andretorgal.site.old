@@ -4,9 +4,9 @@ import { useRouteData } from 'react-static';
 import { bodyClassSwitch } from '../../../Shared/lib/dom';
 import { ContentPage, PageRouteData } from '../../../Shared/types/Page.model';
 
-import { AboutTemplate as Template } from '../../templates/About/AboutTemplate.component';
+import { IndexTemplate as Template } from '../../templates/Index/IndexTemplate.component';
 
-export const AboutContainer: React.StatelessComponent<{}> = () => {
+export const IndexContainer: React.StatelessComponent<{}> = () => {
   const routeData: PageRouteData = useRouteData();
   React.useEffect(() => {
     const className = routeData.className;
@@ -15,4 +15,4 @@ export const AboutContainer: React.StatelessComponent<{}> = () => {
   return <Template page={routeData.page as ContentPage} />;
 };
 
-export default AboutContainer;
+export default IndexContainer;

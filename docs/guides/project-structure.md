@@ -57,10 +57,20 @@ const HomeContainer: React.StatelessComponent<{}> = () => {};
 ```
 
 - use hooks
+- name component units with extension `.component.tsx`
+- unless the unit exports a component factory function
 
-- typescript:
+```tsx
+// injected element type
+export const anchoredHeading = (tag: React.ElementType): React.StatelessComponent<Props> => {
+  // ... return React.StatelessComponent<Props>
+};
+```
 
-- always named exports, never export symbols as default
+### Typescript
+
+- always use named exports, never export symbols as default
+- always export named `const` or `class`
 
 ```tsx
 export class PostTemplate...
@@ -73,7 +83,6 @@ const HomeContainer: React.StatelessComponent<{}> = () => {};
 export default HomeContainer;
 ```
 
-- always export named `const` or `class`
 - import aliased if needed
 
 ```tsx
@@ -82,7 +91,9 @@ import { ErrorLayout as Layout } from '../layouts/ErrorLayout.component';
 
 ### Atomic-ish semantics (translated to back to HTML)
 
-Translate back from chesmistry, into HTML sematics
+Translate atomic design back from chemistry into HTML sematics.
+
+Building blocks:
 
 - `elements/` - think atoms, but even better: think html
 

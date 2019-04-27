@@ -11,7 +11,7 @@ const defaultMeta = [
   }
 ];
 
-function App() {
+export function App() {
   return (
     <Root>
       <Head titleTemplate="%s - André Torgal" defaultTitle="André Torgal" meta={defaultMeta} />
@@ -25,5 +25,3 @@ function App() {
     </Root>
   );
 }
-
-export default App;

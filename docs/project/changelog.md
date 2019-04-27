@@ -2,6 +2,7 @@
 title: 'Done'
 ---
 
+- [x] markdown factory, and specialised markdown elements
 - [x] no default exports, except for containers and App
 - [x] integrate docs into content
 - [x] re-organise docs

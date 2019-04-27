@@ -25,9 +25,10 @@ interface Props {
   children?: React.ReactNode;
 }
 
-export const AnchoredHeading = (tag: React.ElementType): React.StatelessComponent<Props> => {
+export const anchoredHeading = (tag: React.ElementType): React.StatelessComponent<Props> => {
   const Tag = tag;
-  return ({ children }) => {
+  return props => {
+    const { children } = props;
     const id = idOf(children);
     return (
       <Tag className={styles.AnchoredHeading}>

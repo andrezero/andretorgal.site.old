@@ -14,3 +14,5 @@ export const PostContainer: React.StatelessComponent<{}> = () => {
   });
   return <Template {...routeData} />;
 };
+
+export default PostContainer;
