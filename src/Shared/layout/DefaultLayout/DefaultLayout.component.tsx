@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import Anchor from '../../atoms/Anchor/Anchor.atom';
-import Link from '../../atoms/Link/Link.atom';
-import AutoScrollToTop from '../../layout/AutoScrollToTop/AutoScrollToTop.component';
+import AutoScrollToTop from '../../behaviours/AutoScrollToTop/AutoScrollToTop.component';
+import Anchor from '../../elements/Anchor/Anchor.component';
+import Link from '../../elements/Link/Link.component';
 
 import * as styles from './DefaultLayout.module.scss';
 
@@ -22,6 +22,7 @@ const DefaultLayout: React.StatelessComponent<Props> = ({ className, children })
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/posts">Blog</Link>
+            <Link to="/docs">Docs</Link>
           </nav>
           {children}
           <p className="to-top" role="navigation">

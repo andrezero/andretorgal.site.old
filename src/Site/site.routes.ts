@@ -9,7 +9,7 @@ const buildRoutes = async (templates: TemplateLocator): Promise<PageRoute[]> => 
     {
       is404: true,
       path: '404',
-      template: templates.locate('Site/ErrorNotFound'),
+      template: templates.locate('Site/NotFound'),
       getData: () => ({
         className: 'error',
         page

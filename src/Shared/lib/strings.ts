@@ -4,10 +4,15 @@ export const titleCase = (str: string): string => {
   return str
     .toLowerCase()
     .split(' ')
-    .map((word: string) => {
-      return word.replace(word[0], word[0].toUpperCase());
-    })
+    .map(wordCase)
     .join(' ');
+};
+
+export const wordCase = (word: string): string => {
+  if (!word.length) {
+    return word;
+  }
+  return word.replace(word[0], word[0].toUpperCase());
 };
 
 export const humanise = (str: string): string => {

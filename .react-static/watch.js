@@ -4,21 +4,22 @@ import { rebuildRoutes } from 'react-static/node';
 const watch = options => {
   const { stage } = options;
 
-  const watcher = chokidar.watch('content', {
+  const defaultOptions = {
     persistent: true,
     ignoreInitial: true,
     usePolling: true,
     awaitWriteFinish: { stabilityThreshold: 100 }
-  });
-  watcher.on('all', rebuildRoutes);
+  };
 
-  const watcher = chokidar.watch(['src/routes', 'src/process'], {
-    persistent: true,
-    ignoreInitial: true,
-    usePolling: true,
-    awaitWriteFinish: { stabilityThreshold: 1000 }
-  });
-  watcher.on('all', rebuildRoutes);
+  const contentOptions = { ...defaultOptions };
+  const routesOptions = { ...defaultOptions, awaitWriteFinish: { stabilityThreshold: 1000 } };
+
+  const watchers = [];
+
+  watchers.push(chokidar.watch(['content', 'docs'], contentOptions));
+  watchers.push(chokidar.watch(['src/**/*.(routes|source).tsx'], routesOptions));
+
+  watchers.forEach(watcher => watcher.on('all', rebuildRoutes));
 };
 
 export default watch;

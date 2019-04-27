@@ -1,10 +1,9 @@
 import path from 'path';
 
-import { PageMeta } from '../types/Page.model';
 import { humanise, slug } from './strings';
 
 export const makeTitle = (title: string, name: string): string => {
-  return title || humanise(name);
+  return title || humanise(name || 'untitled');
 };
 
 export const makePath = (prefix: string | string[], customPath: string, title?: string): string => {
