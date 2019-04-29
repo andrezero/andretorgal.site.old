@@ -2,4 +2,4 @@
 title: 'Guides'
 ---
 
-<Children />
+- [project-structure](/docs/records/project-structure)

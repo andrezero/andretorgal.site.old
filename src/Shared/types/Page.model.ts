@@ -1,5 +1,6 @@
 import { Route, RouteData } from './Route.model';
 
+// @todo move to Markdown
 export interface PageContent {
   source: string;
   stripped: string;

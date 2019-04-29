@@ -20,8 +20,8 @@ export const PostTemplate: React.StatelessComponent<Props> = props => {
       <Head title={props.post.title} meta={props.post.meta} />
       <Link to="/posts/">{'<'} Back</Link>
       <h1 className={styles.Post}>{props.post.title}</h1>
-      <PostAbstract text={props.post.abstract.source} />
-      <PostContents text={props.post.content.source} />
+      <PostAbstract content={props.post.abstract} />
+      <PostContents content={props.post.content} />
     </Layout>
   );
 };

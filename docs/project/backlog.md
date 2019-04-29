@@ -4,13 +4,13 @@ title: 'Backlog'
 
 ## Now
 
-- [ ] auto link children
-- [ ] breadcrumbs
 - [ ] migrate scss
 
 ## next
 
 - [ ] migrate experiments
+- [ ] auto link children
+- [ ] breadcrumbs
 - [ ] env variables in markdown
 - [ ] suspense fallback loading
 - [ ] router [transition](https://reach.tech/router/example/animation)

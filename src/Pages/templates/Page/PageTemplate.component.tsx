@@ -14,7 +14,7 @@ export const PageTemplate: React.StatelessComponent<Props> = props => {
     <Layout>
       <Head title={props.page.title} meta={props.page.meta} />
       <h1>{props.page.title}</h1>
-      <MarkdownBasic text={props.page.content.source} />
+      <MarkdownBasic content={props.page.content} />
     </Layout>
   );
 };

@@ -24,7 +24,7 @@ export const HomeTemplate: React.StatelessComponent<Props> = props => {
         {props.posts.map((post: Post) => (
           <li key={post.path}>
             <Link to={post.path}>{post.title}</Link>
-            <MarkdownBasic text={post.abstract.source} stripped={true} />
+            <MarkdownBasic content={post.abstract} />
           </li>
         ))}
       </ul>

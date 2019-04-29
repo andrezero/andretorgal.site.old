@@ -1,5 +1,7 @@
 import * as React from 'React';
 
+import { htmlDocument } from '../src/Shared/HtmlDocument.component.tsx';
+
 export const configure = options => {
   const { stage, getRoutes } = options;
 
@@ -16,18 +18,7 @@ export const configure = options => {
       title: 'André Torgal',
       lastBuilt: Date.now()
     }),
-    Document: ({ Html, Head, Body, children, state: { siteData, renderMeta, routeInfo } }) => {
-      const className = (routeInfo && routeInfo.data && routeInfo.data.className) || '';
-      return (
-        <Html lang="en-US">
-          <Head>
-            <meta charSet="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-          </Head>
-          <Body className={`root-${className}`}>{children}</Body>
-        </Html>
-      );
-    }
+    Document: htmlDocument
   };
 
   if (stage === 'prod') {

@@ -3,6 +3,7 @@ import rehypeReact from 'rehype-react';
 import unified from 'unified';
 import { VFileContents } from 'vfile';
 
+import { PageContent } from '../../types/Page.model';
 import { anchoredHeading } from '../AnchoredHeading/AnchoredHeading.factory';
 import { Link } from '../Link/Link.component';
 
@@ -23,7 +24,7 @@ const renderer = (processor: unified.Processor, componentMap: MarkdownComponentM
   processor.use(rehypeReact, { createElement });
 
   return (text: string): VFileContents => {
-    return processor.processSync(text).contents;
+    return processor().processSync(text).contents;
   };
 };
 
@@ -32,7 +33,7 @@ interface StaticProps {
 }
 
 export interface MarkdownComponentProps {
-  text: string;
+  content: PageContent;
   [key: string]: any;
 }
 
@@ -44,10 +45,10 @@ export const markdownFactory = (
 ): React.StatelessComponent<MarkdownComponentProps> => {
   const render = renderer(processor, componentMap);
   return props => {
-    const { text } = props;
+    const { content } = props;
     return (
       <div className={`${styles.Markdown} ${className || ''}`} {...staticProps} {...props}>
-        {render(text)}
+        {render(content.source)}
       </div>
     );
   };
