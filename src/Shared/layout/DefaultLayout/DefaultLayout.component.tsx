@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { SROnly } from '../../../Shared/elements/SROnly/SROnly.component';
+import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
 import { AutoScrollToTop } from '../../behaviours/AutoScrollToTop/AutoScrollToTop.component';
 import { Anchor } from '../../elements/Anchor/Anchor.component';
 
@@ -21,18 +21,7 @@ export const DefaultLayout: React.StatelessComponent<Props> = ({ className, head
         {header}
         <main className={`${className} layout-body ${styles.Body}`} role="main" id="page-contents">
           {children}
-          <SROnly>
-            <p className="to-top" role="navigation">
-              <a className="link" href="#page-contents" aria-label="back to the top of the page">
-                &#8679;
-              </a>
-            </p>
-          </SROnly>
-          <p className="to-top" role="navigation">
-            <a className="link" href="#page-contents" aria-label="back to the top of the site">
-              &#8679;
-            </a>
-          </p>
+          <LinkToTop />
         </main>
         {footer}
       </div>

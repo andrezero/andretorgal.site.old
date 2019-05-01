@@ -4,7 +4,9 @@ title: 'Backlog'
 
 ## Now
 
-- [ ] accessible routing
+- [x] accessible routing: scroll to top on page route change
+- [ ] accessible routing: is announcing "loadding ellipsis" on load
+- [ ] accessible routing: scroll to anchor on page load
 - [ ] migrate scss
 
 ## next
@@ -35,7 +37,7 @@ title: 'Backlog'
 
 ### Issues
 
-- [ ] scroll to anchor
+- [ ] acessible routing: scroll to top when clicking on link to current page (and no anchor in link)
 - [ ] because now using `react-static-plugin-react-router` instead, need to implement accessible routing by hand
 - [ ] `react-static` ssg time vs client time hydration of css module classes breaks down
       / using [typings-for-css-modules-loader](https://github.com/Jimdo/typings-for-css-modules-loader)

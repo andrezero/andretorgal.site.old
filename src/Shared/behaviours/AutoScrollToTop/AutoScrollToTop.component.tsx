@@ -1,4 +1,8 @@
 import * as React from 'react';
+import { useRouteData } from 'react-static';
+
+import { withRouteData } from '../../../Shared/RouteContext';
+import { RouteData } from '../../../Shared/types/Route.model';
 
 // props: https://gist.github.com/swernerx/2c2ba4e611b4ec7921813a71517ddf5a
 
@@ -13,17 +17,16 @@ if (typeof (window as any) !== 'undefined') {
 interface Props {
   children?: React.ReactNode;
 }
-
-export class AutoScrollToTop extends React.Component<Props> {
-  public componentDidMount() {
-    if (lastNavigationFromBrowserUI) {
-      lastNavigationFromBrowserUI = false;
-    } else {
-      window.scrollTo(0, 0);
+export const AutoScrollToTop: React.StatelessComponent<Props> = ({ children }) => {
+  if (lastNavigationFromBrowserUI) {
+    lastNavigationFromBrowserUI = false;
+  } else {
+    if (typeof (window as any) !== 'undefined') {
+      window.setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 1);
     }
   }
-
-  public render() {
-    return this.props.children;
-  }
-}
+  const routeData: RouteData = useRouteData();
+  return withRouteData(<>{children}</>, routeData);
+};
