@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
-import { AutoScrollToTop } from '../../behaviours/AutoScrollToTop/AutoScrollToTop.component';
+import { AcessibleRouting } from '../../behaviours/AcessibleRouting/AcessibleRouting.component';
 import { Anchor } from '../../elements/Anchor/Anchor.component';
 
 import * as styles from './DefaultLayout.module.scss';
@@ -15,16 +15,16 @@ interface Props {
 
 export const DefaultLayout: React.StatelessComponent<Props> = ({ className, header, children, footer }) => {
   return (
-    <AutoScrollToTop>
+    <AcessibleRouting focus="page-contents">
       <div className={`default-layout ${styles.DefaultLayout}`}>
         <Anchor id="top" />
         {header}
-        <main className={`${className} layout-body ${styles.Body}`} role="main" id="page-contents">
+        <main className={`${className} layout-body ${styles.Body}`} role="main" id="page-contents" tabIndex={1}>
           {children}
           <LinkToTop />
         </main>
         {footer}
       </div>
-    </AutoScrollToTop>
+    </AcessibleRouting>
   );
 };

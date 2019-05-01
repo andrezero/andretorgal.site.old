@@ -18,15 +18,15 @@ export const SiteHeader: React.StatelessComponent<Props> = ({ page, children }) 
   const site = useSiteData();
   return (
     <>
-      <header className={`site-header ${styles.Module}`} role="banner">
+      <header className={`site-header ${styles.Module}`} role="banner" aria-label="site header">
         <div className={styles.Container}>
-          <SROnly>
-            current page:{page.title}
-            <Link href="#page-contents">skip to page contents</Link>
-          </SROnly>
           <h1 className={styles.Title}>
             <Link to="/">{site.title}</Link>
           </h1>
+          <SROnly>
+            <p>{`You are on page: ${page.title}.`}</p>
+            <Link href="#page-contents">skip to page contents</Link>
+          </SROnly>
           <SiteNav page={page} />
         </div>
       </header>

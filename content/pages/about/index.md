@@ -47,7 +47,8 @@ Got great plans for this website. I'm tired of dumping stuff in social media. Mo
 
 ## See you around
 
-<div id="contact" class="banner banner-contact" aria-label="you can find me elsewhere at">
+<div tabindex="0" id="contact" class="banner banner-contact" role="navigation" arial-label="contacts">
+  <sronly>Here are some ways of contacting me:</sronly>
   <ul class="nav-extenral">
     <li><a class="email" href="mailto:info@andretorgal.com">Email</a></li>
     <li><a class="github" href="https://github.com/andrezero">Github</a></li>

@@ -2,6 +2,9 @@
 title: 'Done'
 ---
 
+- [x] accessible routing: set focus on page load, route change and anchor navigation
+- [x] accessible routing: scroll to anchor on page load and on route change
+- [x] accessible routing: scroll to top on page route change
 - [x] switch from `@reach/router` to `react-router`
 - [x] markdown factory, and specialised markdown elements
 - [x] no default exports, except for containers and App

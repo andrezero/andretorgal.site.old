@@ -6,6 +6,7 @@ import { VFileContents } from 'vfile';
 import { PageContent } from '../../types/Page.model';
 import { anchoredHeading } from '../AnchoredHeading/AnchoredHeading.factory';
 import { Link } from '../Link/Link.component';
+import { SROnly } from '../SROnly/SROnly.component';
 
 import * as styles from './Markdown.module.scss';
 
@@ -56,6 +57,7 @@ export const markdownFactory = (
 
 export const basicComponentMap: MarkdownComponentMap = {
   a: Link,
+  sronly: SROnly,
   h2: anchoredHeading('h2'),
   h3: anchoredHeading('h3'),
   h4: anchoredHeading('h4')

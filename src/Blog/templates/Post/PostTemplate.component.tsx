@@ -19,9 +19,9 @@ interface Props {
 
 export const PostTemplate: React.StatelessComponent<Props> = ({ post }) => {
   const subHeader = (
-    <header>
+    <header role="navigation" aria-label="navigating blogs and posts">
       <Link id="aria-page-title" to="/posts/">
-        Blog
+        Blog Home
       </Link>
       <Link id="aria-page-title" to="/posts/">
         Next Post

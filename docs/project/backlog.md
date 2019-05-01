@@ -4,10 +4,6 @@ title: 'Backlog'
 
 ## Now
 
-- [x] accessible routing: scroll to top on page route change
-- [x] accessible routing: scroll to anchor on page load and on route change
-- [ ] accessible routing: set focus on page route change
-- [ ] accessible routing: is announcing "loadding ellipsis" on load in dev stage
 - [ ] migrate scss
 
 ## next
