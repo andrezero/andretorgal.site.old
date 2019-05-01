@@ -7,12 +7,11 @@ export const configure = options => {
 
   const config = {
     entry: 'index.tsx',
-    getSiteData: () => ({}),
     getRoutes,
     plugins: [
-      require.resolve('react-static-plugin-reach-router'),
       require.resolve('react-static-plugin-sitemap'),
-      require.resolve('react-static-plugin-typescript')
+      require.resolve('react-static-plugin-typescript'),
+      require.resolve('react-static-plugin-react-router')
     ],
     getSiteData: async () => ({
       title: 'André Torgal',

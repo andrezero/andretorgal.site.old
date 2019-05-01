@@ -2,5 +2,5 @@
 title: 'Project'
 ---
 
-- [backlog](docs/project/backlog)
-- [changelog](docs/project/changelog)
+- [backlog](/docs/project/backlog)
+- [changelog](/docs/project/changelog)

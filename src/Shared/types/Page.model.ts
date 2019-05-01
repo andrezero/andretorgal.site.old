@@ -20,14 +20,14 @@ export type PageMeta = Array<PageMetaItem | PageMetaOpenGraphItem>;
 
 interface Page {
   title: string;
+  path?: string;
   className?: string;
 }
 
 export interface ContentPage extends Page {
-  path: string;
-  template: string;
-  created: Date;
-  updated: Date;
+  template?: string;
+  created?: Date;
+  updated?: Date;
   tags?: string[];
   content?: PageContent;
   abstract?: PageContent;

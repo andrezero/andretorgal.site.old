@@ -1,0 +1,21 @@
+@import '../../../Shared/styles/common';
+
+.Module {
+  @include noselect;
+  @include bg-primary;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+
+  .Container {
+    @include container;
+  }
+
+  .Title {
+    @include heading-1;
+    margin-left: -6px;
+    padding: 0 6px;
+    font-size: 42px;
+    line-height: 1.25;
+  }
+}

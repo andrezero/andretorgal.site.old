@@ -9,5 +9,5 @@ export const makeTitle = (title: string, name: string): string => {
 export const makePath = (prefix: string | string[], customPath: string, title?: string): string => {
   const p = customPath || slug(title);
   const parts = typeof prefix === 'string' ? [prefix] : prefix;
-  return path.join(...parts, p);
+  return path.join('/', ...parts, p);
 };

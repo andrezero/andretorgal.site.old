@@ -1,3 +1,9 @@
-.Post {
+@import '../../../Shared/styles/common';
+
+.Module {
+  @include copy;
+}
+
+.Title {
   background-color: silver;
 }

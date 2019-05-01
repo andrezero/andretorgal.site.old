@@ -2,4 +2,4 @@
 title: 'Guides'
 ---
 
-- [project-structure](/docs/records/project-structure)
+- [project-structure](/docs/guides/project-structure)

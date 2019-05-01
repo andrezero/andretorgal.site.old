@@ -1,0 +1,17 @@
+@mixin bg-primary {
+  background-color: $color-pri;
+  color: $color-pri-aux;
+
+  a {
+    color: $color-pri-aux;
+  }
+}
+
+@mixin bg-secondary {
+  background-color: $color-sec;
+  color: $color-sec-aux;
+
+  a {
+    color: $color-sec-aux;
+  }
+}

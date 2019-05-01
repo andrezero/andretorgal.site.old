@@ -1,10 +1,12 @@
-@import './common/color.vars';
-@import './common/size.vars';
-@import './common/type.vars';
+@import './vars/color';
+@import './vars/size';
+@import './vars/type';
 
-@import './common/utils.mixins';
-@import './common/responsive.mixins';
-@import './common/layout.mixins';
-@import './common/type.mixins';
-@import './common/input.mixins';
-@import './common/card.mixins';
+@import './mixins/reset';
+@import './mixins/utils';
+@import './mixins/a11y';
+@import './mixins/responsive';
+@import './mixins/layout';
+@import './mixins/type';
+@import './mixins/color';
+@import './mixins/input';

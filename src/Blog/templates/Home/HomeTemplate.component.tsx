@@ -6,6 +6,9 @@ import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBa
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { ContentPage } from '../../../Shared/types/Page.model';
 
+import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component';
+import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
+
 import { Post } from '../../types/Post.model';
 
 interface Props {
@@ -13,18 +16,20 @@ interface Props {
   posts: Post[];
 }
 
-export const HomeTemplate: React.StatelessComponent<Props> = props => {
+export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) => {
+  const header = <SiteHeader page={page} />;
+  const footer = <SiteFooter />;
   return (
-    <Layout>
-      <Head title="Recent posts" meta={props.page.meta} />
-      <h1 className="title-page" aria-label={props.page.title}>
+    <Layout className="blog-home" header={header} footer={footer}>
+      <Head title="Recent posts" meta={page.meta} />
+      <h1 className="title-page" aria-label={page.title}>
         Latest Posts
       </h1>
       <ul className="article-list">
-        {props.posts.map((post: Post) => (
+        {posts.map((post: Post) => (
           <li key={post.path}>
             <Link to={post.path}>{post.title}</Link>
-            <MarkdownBasic content={post.abstract} />
+            <MarkdownBasic>{post.abstract}</MarkdownBasic>
           </li>
         ))}
       </ul>

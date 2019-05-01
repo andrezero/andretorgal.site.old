@@ -5,16 +5,21 @@ import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBa
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { ContentPage } from '../../../Shared/types/Page.model';
 
+import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component';
+import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
+
 interface Props {
   page: ContentPage;
 }
 
-export const AboutTemplate: React.StatelessComponent<Props> = props => {
+export const AboutTemplate: React.StatelessComponent<Props> = ({ page }) => {
+  const header = <SiteHeader page={page} />;
+  const footer = <SiteFooter />;
   return (
-    <Layout>
-      <Head title={props.page.title} meta={props.page.meta} />
-      <h1>{props.page.title}</h1>
-      <MarkdownBasic content={props.page.content} />
+    <Layout className="about-page" header={header} footer={footer}>
+      <Head title={page.title} meta={page.meta} />
+      <h1>{page.title}</h1>
+      <MarkdownBasic>{page.content}</MarkdownBasic>
     </Layout>
   );
 };

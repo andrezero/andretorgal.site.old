@@ -1,13 +1,15 @@
-@import './type.vars';
+@import '../vars/type';
 
 @mixin heading-1 {
   @include strong;
   font-size: 3.5rem;
 }
+
 @mixin heading-2 {
   @include strong;
   font-size: 2.5rem;
 }
+
 @mixin heading-3 {
   @include strong;
   font-size: 1.5rem;
@@ -30,6 +32,24 @@
 
 @mixin muted {
   font-size: $font-size-small;
-  color: $type-muted;
+  color: $fg-type-muted;
   opacity: $opacity-muted;
+}
+
+@mixin copy {
+  h1 {
+    @include heading-1;
+  }
+
+  h2 {
+    @include heading-2;
+  }
+
+  h3 {
+    @include heading-3;
+  }
+
+  h4 {
+    @include heading-4;
+  }
 }

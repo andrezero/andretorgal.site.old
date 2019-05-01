@@ -1,0 +1,28 @@
+// - primary
+
+$color-pri: hsl(1, 72%, 43%);
+$color-pri-aux: hsl(46, 15%, 83%);
+
+$color-sec: hsl(216, 18%, 45%);
+$color-sec-aux: hsl(216, 18%, 20%);
+
+$color-dark: hsl(216, 11%, 14%);
+$color-bright: hsl(216, 18%, 97%);
+
+$color-bright-invert: hsl(46, 15%, 93%);
+$color-dark-invert: hsl(203, 18%, 12%);
+
+$color-selected: hsl(95, 100%, 42%);
+
+// - interactive
+
+$color-interactive: hsl(205, 68%, 42%);
+$color-interactive-on: hsl(209, 100%, 57%);
+
+$color-interactive-inverse: hsl(46, 15%, 83%);
+$color-interactive-inverse-on: hsl(58, 48%, 58%);
+
+// - transparent
+
+$color-transparent-dark: rgba(0, 0, 0, 0.3);
+$color-transparent-bright: rgba(255, 255, 255, 0.98);

@@ -3,10 +3,10 @@
 
 @mixin card {
   padding: $margin-regular;
-  background-color: $background-bright;
+  background-color: $bg-bright;
 }
 
 @mixin card-header {
   @include strong;
-  margin-bottom: 23px;
+  margin-bottom: $margin-regular;
 }

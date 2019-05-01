@@ -1,4 +1,4 @@
-@import './type.vars';
+@import '../vars/type';
 
 @mixin loading-placehoder($width: 50%) {
   &::before {

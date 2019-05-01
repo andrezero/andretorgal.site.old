@@ -1,8 +1,8 @@
-import { Router } from '@reach/router';
 import * as React from 'react';
+import { Switch } from 'react-router-dom';
 import { Head, Root, Routes } from 'react-static';
 
-import './app.css';
+import './Shared/styles/_index.scss';
 
 const defaultMeta = [
   {
@@ -11,17 +11,19 @@ const defaultMeta = [
   }
 ];
 
+interface Props {
+  children: React.ReactNode;
+}
+
 export function App() {
   return (
     <Root>
       <Head titleTemplate="%s - André Torgal" defaultTitle="André Torgal" meta={defaultMeta} />
-      <div className="content">
-        <React.Suspense fallback={<em>Loading...</em>}>
-          <Router>
-            <Routes path="*" />
-          </Router>
-        </React.Suspense>
-      </div>
+      <React.Suspense fallback={<em>Loading...</em>}>
+        <Switch>
+          <Routes path="" />
+        </Switch>
+      </React.Suspense>
     </Root>
   );
 }

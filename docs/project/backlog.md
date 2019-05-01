@@ -4,6 +4,7 @@ title: 'Backlog'
 
 ## Now
 
+- [ ] accessible routing
 - [ ] migrate scss
 
 ## next
@@ -35,7 +36,7 @@ title: 'Backlog'
 ### Issues
 
 - [ ] scroll to anchor
-- [ ] `react-static` interfering with `@reach/router` set focus, opened an [issue here](https://github.com/nozzle/react-static/issues/1147)
+- [ ] because now using `react-static-plugin-react-router` instead, need to implement accessible routing by hand
 - [ ] `react-static` ssg time vs client time hydration of css module classes breaks down
       / using [typings-for-css-modules-loader](https://github.com/Jimdo/typings-for-css-modules-loader)
       / following [issue here](https://github.com/nozzle/react-static/issues/984)

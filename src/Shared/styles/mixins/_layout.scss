@@ -1,0 +1,19 @@
+@import '../vars/size';
+@import './responsive';
+
+@mixin container {
+  margin: 0 $container-margin;
+
+  @include breakpoint-medium {
+    max-width: $container-width-large;
+    margin: 0 $container-margin-large;
+  }
+
+  @include breakpoint-large {
+    margin: 0 auto;
+  }
+}
+
+@mixin flex {
+  display: flex;
+}

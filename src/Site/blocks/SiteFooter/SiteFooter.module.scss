@@ -1,0 +1,10 @@
+@import '../../../Shared/styles/common';
+
+.Module {
+  @include noselect;
+  @include bg-secondary;
+
+  .Container {
+    @include container;
+  }
+}

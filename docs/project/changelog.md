@@ -2,6 +2,7 @@
 title: 'Done'
 ---
 
+- [x] switch from `@reach/router` to `react-router`
 - [x] markdown factory, and specialised markdown elements
 - [x] no default exports, except for containers and App
 - [x] integrate docs into content

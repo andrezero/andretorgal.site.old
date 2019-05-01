@@ -33,7 +33,7 @@ interface StaticProps {
 }
 
 export interface MarkdownComponentProps {
-  content: PageContent;
+  children: PageContent;
   [key: string]: any;
 }
 
@@ -44,11 +44,11 @@ export const markdownFactory = (
   staticProps?: StaticProps
 ): React.StatelessComponent<MarkdownComponentProps> => {
   const render = renderer(processor, componentMap);
-  return props => {
-    const { content } = props;
+  return (props: StaticProps | MarkdownComponentProps) => {
+    const { children } = props;
     return (
-      <div className={`${styles.Markdown} ${className || ''}`} {...staticProps} {...props}>
-        {render(content.source)}
+      <div className={`${className || ''} ${styles.Markdown}`} {...staticProps} {...props}>
+        {render(children.source)}
       </div>
     );
   };
