@@ -23,6 +23,14 @@ export const AutoScrollToTop: React.StatelessComponent<Props> = ({ children }) =
   } else {
     if (typeof (window as any) !== 'undefined') {
       window.setTimeout(() => {
+        const { hash } = window.location;
+        if (hash) {
+          const id = hash.replace('#', '');
+          const element = document.getElementById(id);
+          if (element) {
+            return element.scrollIntoView();
+          }
+        }
         window.scrollTo(0, 0);
       }, 1);
     }
