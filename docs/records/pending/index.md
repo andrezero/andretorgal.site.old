@@ -1,6 +1,5 @@
 ---
-title: 'Rejected'
+title: 'Pending'
 ---
 
-- Framework:
-  - [theming-css-variables](/docs/records/pending/theming-css-variables)
+> nothing pending at the moment

@@ -1,0 +1,34 @@
+$color-primitives: (
+  primary: hsl(1, 72%, 43%),
+  primary-alt: hsl(46, 15%, 83%),
+  secondary: hsl(216, 18%, 45%),
+  secondary-fg: hsl(210, 4%, 79%),
+  secondary-bg: hsl(216, 18%, 20%),
+  bright: hsl(216, 18%, 97%),
+  dark: hsl(216, 11%, 14%),
+  selected: hsl(95, 100%, 42%),
+  interactive: hsl(205, 68%, 42%),
+  interactive-on: hsl(209, 100%, 57%)
+);
+$c: $color-primitives;
+
+$color-groups: (
+  base: (
+    bg: map-get($c, 'bright'),
+    fg: map-get($c, 'dark'),
+    a: map-get($c, 'interactive'),
+    alt: map-get($c, 'primary')
+  ),
+  primary: (
+    bg: map-get($c, 'primary'),
+    fg: map-get($c, 'primary-alt'),
+    a: map-get($c, 'primary-alt'),
+    alt: map-get($c, 'bright')
+  ),
+  secondary: (
+    bg: map-get($c, 'secondary-bg'),
+    fg: map-get($c, 'secondary-fg'),
+    a: map-get($c, 'interactive'),
+    alt: map-get($c, 'dark')
+  )
+);

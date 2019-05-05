@@ -1,13 +1,35 @@
-@import '../vars/size';
+// @import '../lib/vars/vars-from-map';
+// @import '../lib/vars/vars-get';
+// @import '../lib/vars/vars-declare.mixin';
+// @import '../lib/vars/vars-use.mixin';
+
+@import '../settings';
+
+$small: space-breakpoint('small');
+$medium: space-breakpoint('medium');
+$compact: space-breakpoint('compact');
+$large: space-breakpoint('large');
+
+@mixin breakpoint-small {
+  @media only screen and (min-width: #{$small}px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-compact {
+  @media only screen and (min-width: #{$compact}px) {
+    @content;
+  }
+}
 
 @mixin breakpoint-medium {
-  @media only screen and (min-width: #{$breakpoint-medium}) {
+  @media only screen and (min-width: #{$medium}px) {
     @content;
   }
 }
 
 @mixin breakpoint-large {
-  @media only screen and (min-width: #{$breakpoint-large}) {
+  @media only screen and (min-width: #{$large}px) {
     @content;
   }
 }

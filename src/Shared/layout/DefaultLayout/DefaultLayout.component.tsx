@@ -4,7 +4,7 @@ import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component'
 import { AcessibleRouting } from '../../behaviours/AcessibleRouting/AcessibleRouting.component';
 import { Anchor } from '../../elements/Anchor/Anchor.component';
 
-import * as styles from './DefaultLayout.module.scss';
+import './DefaultLayout.scss';
 
 interface Props {
   className?: string;
@@ -16,10 +16,10 @@ interface Props {
 export const DefaultLayout: React.StatelessComponent<Props> = ({ className, header, children, footer }) => {
   return (
     <AcessibleRouting focus="page-contents">
-      <div className={`default-layout ${styles.DefaultLayout}`}>
+      <div className={`layout default-layout`}>
         <Anchor id="top" />
         {header}
-        <main className={`${className} layout-body ${styles.Body}`} role="main" id="page-contents" tabIndex={1}>
+        <main id="page-contents" className={`${className} layout-body`} role="main">
           {children}
           <LinkToTop />
         </main>

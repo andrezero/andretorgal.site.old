@@ -1,0 +1,5 @@
+@import '../../../Shared/styles/mixins/type';
+
+.post-abstract {
+  @include copy;
+}

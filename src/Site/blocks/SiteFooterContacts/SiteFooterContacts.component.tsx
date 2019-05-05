@@ -2,11 +2,11 @@ import * as React from 'react';
 
 import { Link } from '../../../Shared/elements/Link/Link.component';
 
-import * as styles from './SiteFooterContacts.module.scss';
+import './SiteFooterContacts.scss';
 
 export const SiteFooterContacts: React.StatelessComponent<{}> = () => {
   return (
-    <div className={`contacts ${styles.Module}`} aria-label="you can find me elsewhere at">
+    <nav className="site-footer-contacts" aria-label="you can find me elsewhere at">
       <ul className="nav-extenral">
         <li>
           <Link className="github" href="https://github.com/andrezero">
@@ -29,6 +29,6 @@ export const SiteFooterContacts: React.StatelessComponent<{}> = () => {
           </Link>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };

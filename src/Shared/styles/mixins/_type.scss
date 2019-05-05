@@ -1,39 +1,92 @@
-@import '../vars/type';
+@import '../lib/vars/vars-from-map';
+@import '../lib/vars/vars-get';
+@import '../lib/vars/vars-declare.mixin';
+@import '../lib/vars/vars-use.mixin';
+
+@import '../settings';
+
+$root-type-families: vars-from-map('root-type-families', settings('type-families'));
+$root-type-sizes: vars-from-map('root-type-sizes', settings('type-sizes'));
+$root-type-weights: vars-from-map('root-type-weights', settings('type-weights'));
+$root-type-heights: vars-from-map('root-type-heights', settings('type-heights'));
+
+$faces: settings('type-faces');
+@mixin font-faces {
+  @each $key, $value in $faces {
+    $family: map-get($value, 'family');
+    $style: map-get($value, 'style');
+    $weight: map-get($value, 'weight');
+    $url: map-get($value, 'url');
+    @font-face {
+      font-family: '#{$family}';
+      font-style: '#{$style}';
+      font-weight: '#{$weight}';
+      src: url('#{$url}.woff') format('woff'), url('#{$url}.ttf') format('truetype');
+    }
+  }
+}
+
+@mixin type-root {
+  @include vars-declare($root-type-families);
+  @include vars-declare($root-type-sizes);
+  @include vars-declare($root-type-weights);
+  @include vars-declare($root-type-heights);
+}
+
+@mixin type-scale {
+  font-size: settings('type-scale');
+}
+
+@mixin type-base {
+  @include vars-use('font-family', $root-type-families, 'base');
+  @include vars-use('font-weight', $root-type-weights, 'base');
+  @include vars-use('line-height', $root-type-heights, 'base');
+  font-size: calc(var(--root-type-sizes-base) + 0.5vw);
+}
+
+@mixin type-alt {
+  @include vars-use('font-family', $root-type-families, 'alt');
+  @include vars-use('line-height', $root-type-heights, 'small');
+}
+
+@mixin type-deco {
+  @include vars-use('font-family', $root-type-families, 'deco');
+  @include vars-use('font-weight', $root-type-weights, 'medium');
+  @include vars-use('line-height', $root-type-heights, 'small');
+}
+
+@mixin type-brand {
+  @include vars-use('font-family', $root-type-families, 'brand');
+  @include vars-use('font-weight', $root-type-weights, 'heavy');
+  @include vars-use('line-height', $root-type-heights, 'small');
+}
+
+@mixin heading {
+  @include type-alt;
+  @include vars-use('font-weight', $root-type-weights, 'light');
+}
 
 @mixin heading-1 {
-  @include strong;
-  font-size: 3.5rem;
+  @include heading;
+  margin-top: calc(var(--root-space-unit) * 3.5px);
+  margin-bottom: calc(var(--root-space-unit) * 2px);
+  font-size: calc(var(--root-type-sizes-h1) + 0.5vw);
 }
 
 @mixin heading-2 {
-  @include strong;
-  font-size: 2.5rem;
+  @include heading;
+  font-size: calc(var(--root-type-sizes-h2) + 0.5vw);
 }
 
 @mixin heading-3 {
-  @include strong;
-  font-size: 1.5rem;
+  @include heading;
+  font-size: calc(var(--root-type-sizes-h3) + 0.5vw);
 }
 
 @mixin heading-4 {
-  @include strong;
-  font-size: $font-size-regular;
-}
-
-@mixin strong {
-  font-weight: 700;
-}
-
-@mixin overflow-ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@mixin muted {
-  font-size: $font-size-small;
-  color: $fg-type-muted;
-  opacity: $opacity-muted;
+  @include heading;
+  @include vars-use('font-weight', $root-type-weights, 'light');
+  font-size: calc(var(--root-type-sizes-h4) + 0.5vw);
 }
 
 @mixin copy {

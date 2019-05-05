@@ -1,0 +1,27 @@
+@import '../../../Shared/styles/mixins/a11y';
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/type';
+@import '../../../Shared/styles/mixins/scheme';
+
+.site-header {
+  @include noselect;
+  @include scheme-primary;
+  overflow: hidden;
+  // position: fixed;
+  width: 100%;
+
+  .container {
+    @include container;
+    padding-top: gap(base);
+  }
+
+  .site-title {
+    @include type-brand;
+    margin: 0 0 gap(small) gap(small, -1);
+    padding: 0 gap(base);
+    font-size: type-size(huge);
+    transform: scale(0.8);
+    transition: transform 0.25s ease;
+    transform-origin: top left;
+  }
+}

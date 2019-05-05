@@ -6,6 +6,8 @@ import {
   markdownFactory
 } from '../../../Shared/elements/Markdown/Markdown.factory';
 
-const createComponent = () => markdownFactory(markdown.basic(), basicComponentMap);
+import './PostContents.scss';
+
+const createComponent = () => markdownFactory(markdown.basic(), basicComponentMap, 'post-contents');
 
 export const PostContents: React.StatelessComponent<MarkdownComponentProps> = createComponent();

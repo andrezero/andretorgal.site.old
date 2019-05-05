@@ -1,0 +1,5 @@
+@import '../../../Shared/styles/mixins/a11y';
+
+.reader-only {
+  @include a11y-sro;
+}

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Link } from '../../../Shared/elements/Link/Link.component';
 import { ContentPage } from '../../../Shared/types/Page.model';
 
-import * as styles from './SiteNav.module.scss';
+import './SiteNav.scss';
 
 interface Props {
   page: ContentPage;
@@ -11,7 +11,7 @@ interface Props {
 
 export const SiteNav: React.StatelessComponent<Props> = ({ page }) => {
   return (
-    <nav className={styles.Module} role="navigation" aria-label="Main sections of the site">
+    <nav className="site-nav" role="navigation" aria-label="Main sections of the site">
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -25,7 +25,7 @@ export const SiteNav: React.StatelessComponent<Props> = ({ page }) => {
         <li>
           <Link to="/about/">About</Link>
         </li>
-        <li className="extra">
+        <li>
           <Link to="/about/#contact">Contact</Link>
         </li>
       </ul>

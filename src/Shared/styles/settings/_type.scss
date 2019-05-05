@@ -1,0 +1,64 @@
+$type-scale: 62.5%;
+
+$type-families: (
+  base: "Maitree, 'Droid Serif', Georgia, FreeSerif, serif",
+  alt: "FiraSans, Roboto, Noto, 'Droid Sans', 'Helvetica Neue', Helvetica, 'Open Sans', FreeSans, sans-serif;",
+  deco: "FiraSansBold, Roboto, Noto, 'Droid Sans', 'Helvetica Neue', Helvetica, 'Open Sans', FreeSans, sans-serif;",
+  brand: "FiraSansHeavy, Roboto, Noto, 'Droid Sans', 'Helvetica Neue', Helvetica, 'Open Sans', FreeSans, sans-serif;"
+);
+
+$type-sizes: (
+  huge: 5rem,
+  h1: 3.5rem,
+  h2: 2.8rem,
+  h3: 2.4rem,
+  h4: 2rem,
+  base: 1.6rem,
+  small: 1.4rem
+);
+
+$type-weights: (
+  heavy: 800,
+  medium: 500,
+  base: 300,
+  light: 100
+);
+
+$type-heights: (
+  large: 2,
+  base: 1.75,
+  small: 1.25
+);
+
+$type-faces: (
+  fira-sans-extra-bold: (
+    family: FiraSansHeavy,
+    style: normal,
+    weight: map-get($type-weights, 'heavy'),
+    url: './fonts/firasans-extrabold'
+  ),
+  fira-sans-bold: (
+    family: FiraSansMedium,
+    style: normal,
+    weight: map-get($type-weights, 'medium'),
+    url: './fonts/firasans-medium'
+  ),
+  fira-sans-base: (
+    family: FiraSans,
+    style: normal,
+    weight: map-get($type-weights, 'base'),
+    url: './fonts/firasans-light'
+  ),
+  maitree-bold: (
+    family: Maitree,
+    style: normal,
+    weight: map-get($type-weights, 'heavy'),
+    url: './fonts/maitree-medium'
+  ),
+  maitree-base: (
+    family: Maitree,
+    style: normal,
+    weight: map-get($type-weights, 'base'),
+    url: './fonts/maitree-light'
+  )
+);

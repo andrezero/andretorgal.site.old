@@ -6,7 +6,7 @@ import { SROnly } from '../../../Shared/elements/SROnly/SROnly.component';
 import { SiteFooterContacts } from '../SiteFooterContacts/SiteFooterContacts.component';
 import { SiteFooterNav } from '../SiteFooterNav/SiteFooterNav.component';
 
-import * as styles from './SiteFooter.module.scss';
+import './SiteFooter.scss';
 
 interface Props {
   children?: React.ReactNode;
@@ -14,17 +14,17 @@ interface Props {
 
 export const SiteFooter: React.StatelessComponent<Props> = ({ children }) => {
   return (
-    <footer className={`site-footer ${styles.Module}`} role="contentinfo">
+    <footer className="site-footer" role="contentinfo">
       <hr />
       {children}
-      <div className={styles.Container}>
+      <div className="container">
         <SROnly>
           <Link href="#page-contents">Go back to top of the page</Link>
         </SROnly>
         <SiteFooterNav />
         <SiteFooterContacts />
         <p className="copyright">
-          <span className="name">andretorgal.com</span> <span className="version">v.0.0.1</span>{' '}
+          <span className="name">andretorgal.com</span> <span className="version">v.2.0.0</span>{' '}
           <span className="year">Copyright © 2017</span> <Link href="/about">André Torgal</Link>
         </p>
         <p className="license">

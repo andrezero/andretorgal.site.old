@@ -1,0 +1,5 @@
+@import '../../../Shared/styles/mixins/layout';
+
+.error-not-found {
+  @include container-compact;
+}

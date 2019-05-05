@@ -1,11 +1,19 @@
-@import '../common';
+@import '../mixins/type';
+
+@include font-faces;
+
+:root {
+  @include type-root;
+}
 
 html {
-  font-size: 62.5%;
+  @include type-scale;
 }
 
 body {
-  font-family: $font-family;
-  font-size: $font-size-regular;
-  line-height: $line-height-regular;
+  @include type-base;
+}
+
+.page-title {
+  @include heading-1;
 }

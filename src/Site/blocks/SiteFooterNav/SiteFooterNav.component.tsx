@@ -2,12 +2,12 @@ import * as React from 'react';
 
 import { Link } from '../../../Shared/elements/Link/Link.component';
 
-import * as styles from './SiteFooterNav.module.scss';
+import './SiteFooterNav.scss';
 
 export const SiteFooterNav: React.StatelessComponent<{}> = () => {
   return (
-    <nav className={`navigation ${styles.Module}`} role="navigation" aria-label="Main sections of the site">
-      <ul className="nav-items">
+    <nav className="site-footer-nav" role="navigation" aria-label="Main sections of the site">
+      <ul>
         <li>
           <Link href="/">Home</Link>
         </li>

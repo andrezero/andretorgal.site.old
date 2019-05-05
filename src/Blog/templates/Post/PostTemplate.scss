@@ -1,0 +1,5 @@
+@import '../../../Shared/styles/mixins/layout';
+
+.blog-post {
+  @include container-compact;
+}

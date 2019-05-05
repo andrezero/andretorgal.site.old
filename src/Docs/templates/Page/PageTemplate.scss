@@ -1,0 +1,5 @@
+@import '../../../Shared/styles/mixins/layout';
+
+.docs-page {
+  @include container-compact;
+}

@@ -8,8 +8,6 @@ import { anchoredHeading } from '../AnchoredHeading/AnchoredHeading.factory';
 import { Link } from '../Link/Link.component';
 import { SROnly } from '../SROnly/SROnly.component';
 
-import * as styles from './Markdown.module.scss';
-
 type ComponentType = string | React.ComponentType<any>;
 
 export interface MarkdownComponentMap {
@@ -48,7 +46,7 @@ export const markdownFactory = (
   return (props: StaticProps | MarkdownComponentProps) => {
     const { children } = props;
     return (
-      <div className={`${className || ''} ${styles.Markdown}`} {...staticProps} {...props}>
+      <div className={className || ''} {...staticProps} {...props}>
         {render(children.source)}
       </div>
     );

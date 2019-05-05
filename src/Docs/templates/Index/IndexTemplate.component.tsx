@@ -9,6 +9,8 @@ import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component
 
 import { DocContents } from '../../elements/DocContents/DocContents.component';
 
+import './IndexTemplate.scss';
+
 interface Props {
   page: ContentPage;
 }
@@ -19,7 +21,9 @@ export const IndexTemplate: React.StatelessComponent<Props> = ({ page }) => {
   return (
     <Layout className="docs-index" header={header} footer={footer}>
       <Head title={page.title} meta={page.meta} />
-      <h1>{page.title}</h1>
+      <h1 className="page-title" aria-label={page.title}>
+        {page.title}
+      </h1>
       <DocContents>{page.content}</DocContents>
     </Layout>
   );

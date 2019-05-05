@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { slug } from '../../lib/strings';
 
-import * as styles from './AnchoredHeading.module.scss';
+import './AnchoredHeading.scss';
 
 const MAX_WORDS = 5;
 
@@ -31,8 +31,8 @@ export const anchoredHeading = (tag: React.ElementType): React.StatelessComponen
     const { children } = props;
     const id = idOf(children);
     return (
-      <Tag className={styles.AnchoredHeading}>
-        <a className={styles.handle} aria-hidden={true} href={`#${id}`} id={id} />
+      <Tag className="has-anchor">
+        <a className="handle" aria-hidden={true} href={`#${id}`} id={id} />
         {children}
       </Tag>
     );

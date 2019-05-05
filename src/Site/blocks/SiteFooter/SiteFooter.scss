@@ -1,0 +1,12 @@
+@import '../../../Shared/styles/mixins/a11y';
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/scheme';
+
+.site-footer {
+  @include noselect;
+  @include scheme-secondary;
+
+  .container {
+    @include container;
+  }
+}

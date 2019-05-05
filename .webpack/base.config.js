@@ -1,3 +1,12 @@
+import ExtractCssChunks from 'extract-css-chunks-webpack-plugin';
+
+const extractCssChunks = {
+  loader: ExtractCssChunks.loader,
+  options: {
+    modules: true
+  }
+};
+
 const styleLoader = {
   loader: 'style-loader',
   options: { sourceMap: true }
@@ -8,18 +17,6 @@ const cssLoader = {
   options: {
     importLoaders: 2,
     modules: false,
-    sourceMap: true
-  }
-};
-
-const cssModulesLoader = {
-  loader: 'typings-for-css-modules-loader',
-  options: {
-    importLoaders: 2,
-    modules: true,
-    namedExport: true,
-    camelCase: true,
-    localIdentName: '[name]__[local]--[hash:base64:5]',
     sourceMap: true
   }
 };
@@ -37,9 +34,9 @@ const sassLoader = {
 };
 
 module.exports = {
+  extractCssChunks,
   styleLoader,
   cssLoader,
-  cssModulesLoader,
   postcssLoader,
   sassLoader
 };

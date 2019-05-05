@@ -1,19 +1,58 @@
-@import '../vars/size';
-@import './responsive';
+@import '../lib/vars/vars-from-map';
+@import '../lib/vars/vars-get';
+@import '../lib/vars/vars-declare.mixin';
+@import '../lib/vars/vars-use.mixin';
+
+@import '../mixins/responsive';
+
+@import '../settings';
+
+$-unit: settings('space-unit');
+$root-space-gaps: vars-from-map('root-space-gaps', settings('space-gaps'));
+$root-space-breakpoints: vars-from-map('root-space-breakpoints', settings('space-breakpoints'));
+
+$container-base: space-container('base');
+$container-compact: space-container('compact');
+$container-small: space-container('small');
+$container-medium: space-container('medium');
+
+@mixin space-root {
+  --root-space-unit: #{$-unit};
+  @include vars-declare($root-space-gaps);
+  @include vars-declare($root-space-breakpoints);
+}
 
 @mixin container {
-  margin: 0 $container-margin;
+  margin: 0 map-get($container-base, 'gap') * 1rem;
+
+  @include breakpoint-small {
+    margin: 0 map-get($container-small, 'gap') * 1rem;
+  }
 
   @include breakpoint-medium {
-    max-width: $container-width-large;
-    margin: 0 $container-margin-large;
+    margin: 0 map-get($container-medium, 'gap') * 1rem;
   }
 
   @include breakpoint-large {
+    max-width: map-get($container-medium, 'width') * 1rem;
     margin: 0 auto;
   }
 }
 
-@mixin flex {
-  display: flex;
+@mixin container-compact {
+  margin: 0 map-get($container-base, 'gap') * 1rem;
+
+  @include breakpoint-small {
+    margin: 0 map-get($container-small, 'gap') * 1rem;
+  }
+
+  @include breakpoint-compact {
+    max-width: map-get($container-compact, 'width') * 1rem;
+    margin: 0 auto;
+  }
+}
+
+@function gap($size, $scale: 1) {
+  $gap: #{space-gap($size) * $scale}px;
+  @return calc(var(--root-space-unit, #{$-unit}) * #{$gap});
 }

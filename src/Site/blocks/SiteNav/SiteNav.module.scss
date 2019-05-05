@@ -1,8 +1,0 @@
-@import '../../../Shared/styles/common';
-
-.Module {
-  ul {
-    @include reset-list;
-    @include flex;
-  }
-}

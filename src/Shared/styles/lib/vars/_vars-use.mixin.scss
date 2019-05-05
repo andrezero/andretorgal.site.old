@@ -1,0 +1,11 @@
+@mixin vars-use($cssProperty, $vars, $key) {
+  @if not map-has-key($vars, $key) {
+    @error 'vars-use(): unknown var "#{$key}" in "#{$vars}" styling "#{$cssProperty}';
+  }
+
+  $var: map-get($vars, $key);
+  $prop: map-get($var, 'prop');
+  $value: map-get($var, 'value');
+
+  #{$cssProperty}: var(--#{$prop}, $value);
+}

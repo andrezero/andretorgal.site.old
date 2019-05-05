@@ -11,7 +11,7 @@ import { PostAbstract } from '../../elements/PostAbstract/PostAbstract.component
 import { PostContents } from '../../elements/PostContents/PostContents.component';
 import { Post } from '../../types/Post.model';
 
-import * as styles from './PostTemplate.module.scss';
+import './PostTemplate.scss';
 
 interface Props {
   post: Post;
@@ -19,6 +19,7 @@ interface Props {
 
 export const PostTemplate: React.StatelessComponent<Props> = ({ post }) => {
   const subHeader = (
+    // @todo extract to blocks/BlogNav
     <header role="navigation" aria-label="navigating blogs and posts">
       <Link id="aria-page-title" to="/posts/">
         Blog Home
@@ -36,8 +37,9 @@ export const PostTemplate: React.StatelessComponent<Props> = ({ post }) => {
   return (
     <Layout className="blog-post" header={header} footer={footer}>
       <Head title={post.title} meta={post.meta} />
-      <article className={`post ${styles.Module}`}>
-        <h1 className={styles.Title}>{post.title}</h1>
+
+      <article className="post">
+        <h1 className="page-title">{post.title}</h1>
         <PostAbstract>{post.abstract}</PostAbstract>
         <PostContents>{post.content}</PostContents>
       </article>

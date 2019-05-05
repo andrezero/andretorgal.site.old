@@ -7,7 +7,7 @@ import { ContentPage } from '../../../Shared/types/Page.model';
 
 import { SiteNav } from '../SiteNav/SiteNav.component';
 
-import * as styles from './SiteHeader.module.scss';
+import './SiteHeader.scss';
 
 interface Props {
   page: ContentPage;
@@ -18,9 +18,9 @@ export const SiteHeader: React.StatelessComponent<Props> = ({ page, children }) 
   const site = useSiteData();
   return (
     <>
-      <header className={`site-header ${styles.Module}`} role="banner" aria-label="site header">
-        <div className={styles.Container}>
-          <h1 className={styles.Title}>
+      <header className="site-header" role="banner" aria-label="site header">
+        <div className="container">
+          <h1 className="site-title">
             <Link to="/">{site.title}</Link>
           </h1>
           <SROnly>

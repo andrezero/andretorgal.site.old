@@ -1,6 +1,9 @@
-@import '../common';
+@import '../mixins/scheme';
+
+:root {
+  @include scheme-root;
+}
 
 body {
-  color: $fg-base;
-  background-color: $bg-base;
+  @include scheme-base;
 }

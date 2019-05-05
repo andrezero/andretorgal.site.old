@@ -1,0 +1,7 @@
+@mixin vars-declare($vars) {
+  @each $key, $var in $vars {
+    $prop: map-get($var, 'prop');
+    $value: map-get($var, 'value');
+    --#{$prop}: #{$value};
+  }
+}

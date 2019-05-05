@@ -1,5 +1,3 @@
-import * as React from 'React';
-
 import { htmlDocument } from '../src/Shared/HtmlDocument.component.tsx';
 
 export const configure = options => {

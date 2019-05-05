@@ -1,0 +1,21 @@
+@function vars-from-map($prefix, $vars) {
+  $result: ();
+  @each $key, $value in $vars {
+    $prop: #{$prefix}-#{$key};
+    @if (type-of($value) == map) {
+      $result: map-merge($result, vars-from-map($prop, $value));
+    } @else {
+      $result: map-merge(
+        $result,
+        (
+          #{$key}:
+            (
+              prop: $prop,
+              value: $value
+            )
+        )
+      );
+    }
+  }
+  @return $result;
+}

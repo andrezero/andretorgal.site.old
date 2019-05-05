@@ -1,10 +1,19 @@
+@import '../mixins/layout';
+
 html {
   overflow-x: hidden;
   height: 100%;
   margin: 0 auto;
-  font-size: 100%;
+}
+
+body {
+  height: 100%;
 }
 
 #root {
   height: 100%;
+}
+
+:root {
+  @include space-root;
 }

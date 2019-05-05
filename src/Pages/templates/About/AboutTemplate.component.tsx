@@ -8,6 +8,8 @@ import { ContentPage } from '../../../Shared/types/Page.model';
 import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component';
 import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
 
+import './AboutTemplate.scss';
+
 interface Props {
   page: ContentPage;
 }
@@ -16,9 +18,11 @@ export const AboutTemplate: React.StatelessComponent<Props> = ({ page }) => {
   const header = <SiteHeader page={page} />;
   const footer = <SiteFooter />;
   return (
-    <Layout className="about-page" header={header} footer={footer}>
+    <Layout className="pages-about" header={header} footer={footer}>
       <Head title={page.title} meta={page.meta} />
-      <h1>{page.title}</h1>
+      <h1 className="page-title" aria-label={page.title}>
+        {page.title}
+      </h1>
       <MarkdownBasic>{page.content}</MarkdownBasic>
     </Layout>
   );

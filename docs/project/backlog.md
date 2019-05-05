@@ -5,9 +5,12 @@ title: 'Backlog'
 ## Now
 
 - [ ] migrate scss
+  - [x] css global variables mixins
+  - [x] move away from css modules
 
 ## next
 
+- [ ] convert `>` to `##` in docs
 - [ ] migrate experiments
 - [ ] auto link children
 - [ ] breadcrumbs

@@ -1,0 +1,10 @@
+@import '../../../Shared/styles/mixins/reset';
+@import '../../../Shared/styles/mixins/type';
+
+.site-nav {
+  ul {
+    @include reset-list;
+    @include type-alt;
+    display: flex;
+  }
+}
