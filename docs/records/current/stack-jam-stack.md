@@ -2,9 +2,11 @@
 title: 'Stack: Jam Stack'
 ---
 
-## [Jam Stack](https://jamstack.org/)
+## Details
 
-> Requirements
+- [Jam Stack](https://jamstack.org/)
+
+## Requirements
 
 - full html static rendering
 - scss
@@ -14,7 +16,7 @@ title: 'Stack: Jam Stack'
 - explicit data & code splitting
 - responsive images
 
-> Why
+## Why
 
 - blazing speed, a11y, s
   eo

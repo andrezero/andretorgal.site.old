@@ -4,13 +4,13 @@ title: 'Backlog'
 
 ## Now
 
+- [x] convert `>` to `##` in docs
 - [ ] migrate scss
   - [x] css global variables mixins
   - [x] move away from css modules
 
 ## next
 
-- [ ] convert `>` to `##` in docs
 - [ ] migrate experiments
 - [ ] auto link children
 - [ ] breadcrumbs

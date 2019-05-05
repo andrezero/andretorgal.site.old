@@ -2,7 +2,7 @@
 title: 'Framework: React Static'
 ---
 
-> Why
+## Why
 
 - non-opinionated, pure react
 - easy to use any data source
@@ -10,12 +10,12 @@ title: 'Framework: React Static'
 - typescript entry point
 - typescript compiler using tslint.json
 
-> Trade-offs
+## Trade-offs
 
 - almost no plugins
 - very little documentation
 
-> Read more
+## Read more
 
 - [react-static-typescript-starter](https://github.com/sw-yx/react-static-typescript-starter)
 - [introducing-react-static](https://medium.com/@tannerlinsley/%EF%B8%8F-introducing-react-static-a-progressive-static-site-framework-for-react-3470d2a51ebc)

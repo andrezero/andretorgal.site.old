@@ -2,7 +2,7 @@
 title: 'Styling: Typed CSS Modules'
 ---
 
-> Why
+## Why
 
 - polluting filesystem with extraneous `*.scss.d.ts` (gitignored for)
 - had to patch up weback config in `node.api.js`
@@ -13,13 +13,13 @@ title: 'Styling: Typed CSS Modules'
   - but both the ssg and client app seem to be working just fine (for now)
 - also, `typings-for-css-modules-loader` not compatible with `css-loader@2` and requires the following in `package.json`
 
-> Trade-offs
+## Trade-offs
 
 - was scoping out of global css for atoms, components, ...
 - was helping prevent errors in compile time
 - faster feedback, better developer experience
 
-> Was
+## Was
 
 - `.react-static/node-api.js` webpack config
 
@@ -38,7 +38,7 @@ title: 'Styling: Typed CSS Modules'
 }
 ```
 
-> Read more
+## Read more
 
 - other options considered (all based in webpack loaders)
   - https://github.com/seek-oss/css-modules-typescript-loader

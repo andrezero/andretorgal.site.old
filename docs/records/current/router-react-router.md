@@ -2,19 +2,19 @@
 title: 'Router: React Router'
 ---
 
-> Details
+## Details
 
 - removed `reach-router`
 
-> Why
+## Why
 
 - [ ] `reach-router` div-itis is unacceptable
 
-> Trade-offs
+## Trade-offs
 
 - [ ] because now using `react-router` instead, need to implement accessible routing by hand
 
-> Read more
+## Read more
 
 - `@reach/router` issues
   - [ ] [provide a way to disable rendering `div` for Router](https://github.com/reach/router/issues/63)
