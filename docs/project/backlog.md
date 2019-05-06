@@ -13,11 +13,14 @@ title: 'Backlog'
   - [x] blog navigation
   - [x] fix page container
   - [ ] figure out when to use `'` when calling scss functions
+- [ ] simplify scss, cleanup css (drop support for IE 11 and opera mobile)
 
 ## next
 
-- [ ] migrate experiments
+- [ ] revise post/blog/feed semantics
+- [ ] auto link next/previous
 - [ ] auto link children
+- [ ] migrate experiments
 - [ ] breadcrumbs
 - [ ] env variables in markdown
 - [ ] suspense fallback loading

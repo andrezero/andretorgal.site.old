@@ -1,7 +1,5 @@
 @import '../lib/vars/vars-from-map';
-@import '../lib/vars/vars-get';
 @import '../lib/vars/vars-declare.mixin';
-@import '../lib/vars/vars-use.mixin';
 
 @import '../settings';
 
@@ -18,41 +16,41 @@ $root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('seco
 }
 
 @mixin scheme-base {
-  @include vars-use('color', $root-scheme-base, 'fg');
-  @include vars-use('background-color', $root-scheme-base, 'bg');
+  color: var(--root-scheme-base-fg);
+  background-color: var(--root-scheme-base-bg);
 
   a {
-    @include vars-use('color', $root-scheme-base, 'a');
+    color: var(--root-scheme-base-a);
     font-weight: var(--root-type-weights-bold, type-weight(medium));
   }
 }
 
 @mixin scheme-feature {
-  @include vars-use('color', $root-scheme-feature, 'fg');
-  @include vars-use('background-color', $root-scheme-feature, 'bg');
+  color: var(--root-scheme-feature-fg);
+  background-color: var(--root-scheme-feature-bg);
 
   a {
-    @include vars-use('color', $root-scheme-feature, 'a');
+    color: var(--root-scheme-feature-a);
     text-decoration: none;
   }
 }
 
 @mixin scheme-primary {
-  @include vars-use('color', $root-scheme-primary, 'fg');
-  @include vars-use('background-color', $root-scheme-primary, 'bg');
+  color: var(--root-scheme-primary-fg);
+  background-color: var(--root-scheme-primary-bg);
 
   a {
-    @include vars-use('color', $root-scheme-primary, 'a');
+    color: var(--root-scheme-primary-a);
     text-decoration: none;
   }
 }
 
 @mixin scheme-secondary {
-  @include vars-use('color', $root-scheme-secondary, 'fg');
-  @include vars-use('background-color', $root-scheme-secondary, 'bg');
+  color: var(--root-scheme-secondary-fg);
+  background-color: var(--root-scheme-secondary-bg);
 
   a {
-    @include vars-use('color', $root-scheme-secondary, 'a');
+    color: var(--root-scheme-secondary-a);
     text-decoration: none;
   }
 }

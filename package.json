@@ -95,7 +95,10 @@
     "react-static/css-loader": "1.0.1"
   },
   "browserslist": [
-    "cover 95%",
-    "not dead"
+    "last 2 years",
+    "> 1%",
+    "not ie 11",
+    "not ie_mob 11",
+    "not op_mini all"
   ]
 }

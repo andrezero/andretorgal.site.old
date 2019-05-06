@@ -1,7 +1,5 @@
 @import '../lib/vars/vars-from-map';
-@import '../lib/vars/vars-get';
 @import '../lib/vars/vars-declare.mixin';
-@import '../lib/vars/vars-use.mixin';
 
 @import '../settings';
 
@@ -38,32 +36,32 @@ $faces: settings('type-faces');
 }
 
 @mixin type-base {
-  @include vars-use('font-family', $root-type-families, 'base');
-  @include vars-use('font-weight', $root-type-weights, 'base');
-  @include vars-use('line-height', $root-type-heights, 'base');
+  font-family: var(--root-type-families-base);
+  font-weight: var(--root-type-weights-base);
+  line-height: var(--root-type-heights-base);
   font-size: calc(var(--root-type-sizes-base) + 0.5vw);
 }
 
 @mixin type-alt {
-  @include vars-use('font-family', $root-type-families, 'alt');
-  @include vars-use('line-height', $root-type-heights, 'small');
+  font-family: var(--root-type-families-alt);
+  line-height: var(--root-type-heights-small);
 }
 
 @mixin type-deco {
-  @include vars-use('font-family', $root-type-families, 'deco');
-  @include vars-use('font-weight', $root-type-weights, 'medium');
-  @include vars-use('line-height', $root-type-heights, 'small');
+  font-family: var(--root-type-families-deco);
+  font-weight: var(--root-type-weights-medium);
+  line-height: var(--root-type-heights-small);
 }
 
 @mixin type-brand {
-  @include vars-use('font-family', $root-type-families, 'brand');
-  @include vars-use('font-weight', $root-type-weights, 'heavy');
-  @include vars-use('line-height', $root-type-heights, 'small');
+  font-family: var(--root-type-families-brand);
+  font-weight: var(--root-type-weights-heavy);
+  line-height: var(--root-type-heights-small);
 }
 
 @mixin heading {
   @include type-alt;
-  @include vars-use('font-weight', $root-type-weights, 'light');
+  font-weight: var(--root-type-weights-light);
 }
 
 @mixin heading-1 {
@@ -85,12 +83,12 @@ $faces: settings('type-faces');
 
 @mixin heading-4 {
   @include heading;
-  @include vars-use('font-weight', $root-type-weights, 'light');
+  font-weight: var(--root-type-weights-light);
   font-size: calc(var(--root-type-sizes-h4) + 0.5vw);
 }
 
 @mixin type-small {
-  @include vars-use('font-size', $root-type-sizes, 'small');
+  font-size: var(--root-type-sizes-small);
 }
 
 @mixin copy {

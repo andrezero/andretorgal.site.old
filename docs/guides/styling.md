@@ -99,7 +99,7 @@ title: 'styling'
 - easily output var declaration with consistent defaults
 - represents each variable with a map containing:
   - `prop`: the full name for the custom property
-  - `value`: the fallback value, needed both when declaring AND consuming the custom property
+  - `value`: the fallback value
 
 ```scss
 $root-scheme-base-bg: (
@@ -138,61 +138,5 @@ results in
 .some-component {
   --some-component-speeds-fast: 300ms;
   --some-component-speeds-slow: 1200ms;
-}
-```
-
-### using variable maps
-
-#### `@function vars-get($vars, $key)`
-
-use a variable in a mixin or a rule
-
-```scss
-.some-component {
-  cursor: vars-get($some-component-speeds, 'slow');
-}
-```
-
-results in
-
-```css
-.some-component {
-  cursor: var(--some-component-speeds-slow, 300ms);
-}
-```
-
-#### `@mixin vars-use($cssProperty, $vars, $key)`
-
-use a variable in a mixin or a rule
-
-```scss
-.some-component {
-  @include vars-use('cursor', $some-component-speeds, 'fast');
-}
-```
-
-results in
-
-```css
-.some-component {
-  cursor: var(--some-component-speeds-fast, 300ms);
-}
-```
-
-### styling with custom properties
-
-declare a custom poperty and provide the fallback value
-
-```scss
-.some-component {
-  --some-component-speeds-fast: 300ms;
-}
-```
-
-provide the property, custom property and fallback
-
-```scss
-.some-component {
-  cursor: var(--some-component-speeds-fast, 300ms); */
 }
 ```
