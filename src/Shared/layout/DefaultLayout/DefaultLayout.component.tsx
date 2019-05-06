@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
 import { AcessibleRouting } from '../../behaviours/AcessibleRouting/AcessibleRouting.component';
 import { Anchor } from '../../elements/Anchor/Anchor.component';
 
@@ -21,7 +20,6 @@ export const DefaultLayout: React.StatelessComponent<Props> = ({ className, head
         {header}
         <main id="page-contents" className={`${className} layout-body`} role="main">
           {children}
-          <LinkToTop />
         </main>
         {footer}
       </div>

@@ -16,7 +16,9 @@ export const PostList: React.StatelessComponent<Props> = ({ posts }) => {
     <ul className="post-list">
       {posts.map((post: Post) => (
         <li key={post.path}>
-          <Link to={post.path}>{post.title}</Link>
+          <h3>
+            <Link to={post.path}>{post.title}</Link>
+          </h3>
           <MarkdownBasic>{post.abstract}</MarkdownBasic>
         </li>
       ))}

@@ -24,7 +24,10 @@ export const NotFoundTemplate: React.StatelessComponent<{}> = () => {
   return (
     <Layout className="error-not-found" header={header} footer={footer}>
       <Head title={props.page.title} />
-      <h1 className="page-title">{props.page.title}</h1>
+
+      <div className="container">
+        <h1 className="page-title">{props.page.title}</h1>
+      </div>
       {/* <h1 className="title-page">Latest Posts {posts.length}</h1> */}
     </Layout>
   );

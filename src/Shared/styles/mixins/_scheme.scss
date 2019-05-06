@@ -6,11 +6,13 @@
 @import '../settings';
 
 $root-scheme-base: vars-from-map('root-scheme-base', color-group('base'));
+$root-scheme-feature: vars-from-map('root-scheme-feature', color-group('feature'));
 $root-scheme-primary: vars-from-map('root-scheme-primary', color-group('primary'));
 $root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('secondary'));
 
 @mixin scheme-root {
   @include vars-declare($root-scheme-base);
+  @include vars-declare($root-scheme-feature);
   @include vars-declare($root-scheme-primary);
   @include vars-declare($root-scheme-secondary);
 }
@@ -21,6 +23,17 @@ $root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('seco
 
   a {
     @include vars-use('color', $root-scheme-base, 'a');
+    font-weight: var(--root-type-weights-bold, type-weight(medium));
+  }
+}
+
+@mixin scheme-feature {
+  @include vars-use('color', $root-scheme-feature, 'fg');
+  @include vars-use('background-color', $root-scheme-feature, 'bg');
+
+  a {
+    @include vars-use('color', $root-scheme-feature, 'a');
+    text-decoration: none;
   }
 }
 
@@ -30,6 +43,7 @@ $root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('seco
 
   a {
     @include vars-use('color', $root-scheme-primary, 'a');
+    text-decoration: none;
   }
 }
 
@@ -39,5 +53,6 @@ $root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('seco
 
   a {
     @include vars-use('color', $root-scheme-secondary, 'a');
+    text-decoration: none;
   }
 }

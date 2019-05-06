@@ -1,5 +1,12 @@
 @import '../../../Shared/styles/mixins/reset';
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/type';
 
 .post-list {
+  @include page;
   @include reset-list;
+
+  h3 {
+    @include heading-3;
+  }
 }

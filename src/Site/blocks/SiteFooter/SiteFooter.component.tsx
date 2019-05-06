@@ -18,14 +18,14 @@ export const SiteFooter: React.StatelessComponent<Props> = ({ children }) => {
       <hr />
       {children}
       <div className="container">
-        <SROnly>
-          <Link href="#page-contents">Go back to top of the page</Link>
-        </SROnly>
-        <SiteFooterNav />
-        <SiteFooterContacts />
+        <div className="navigation">
+          <SiteFooterNav />
+          <SiteFooterContacts />
+        </div>
+
         <p className="copyright">
           <span className="name">andretorgal.com</span> <span className="version">v.2.0.0</span>{' '}
-          <span className="year">Copyright © 2017</span> <Link href="/about">André Torgal</Link>
+          <span className="year">Copyright © 2019</span> <Link href="/about">André Torgal</Link>
         </p>
         <p className="license">
           All code and content for this site available on{' '}
@@ -33,6 +33,9 @@ export const SiteFooter: React.StatelessComponent<Props> = ({ children }) => {
           <Link href="https://raw.githubusercontent.com/andrezero/site/master/LICENSE-MIT">MIT LICENSE</Link> unless
           otherwise noted.
         </p>
+        <SROnly>
+          <Link href="#page-contents">Go back to top of the page</Link>
+        </SROnly>
       </div>
     </footer>
   );

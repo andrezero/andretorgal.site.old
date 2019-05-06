@@ -31,7 +31,7 @@ export const SiteHeader: React.StatelessComponent<Props> = ({ page, children }) 
         </div>
       </header>
       {children}
-      <hr />
+      <hr className="pedantic" />
     </>
   );
 };

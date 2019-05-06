@@ -1,5 +1,9 @@
 @import '../../../Shared/styles/mixins/layout';
 
 .pages-about {
-  @include container-compact;
+  @include page;
+
+  .container {
+    @include container-compact;
+  }
 }

@@ -46,7 +46,7 @@
 }
 
 @function type-height($name) {
-  $map: settings('type-height');
+  $map: settings('type-heights');
   @if not map-has-key($map, $name) {
     @error 'type-height(): unknown type height "#{$name}"';
   }
@@ -54,7 +54,7 @@
 }
 
 @function type-weight($name) {
-  $map: settings('type-weight');
+  $map: settings('type-weights');
   @if not map-has-key($map, $name) {
     @error 'type-weight(): unknown type weight "#{$name}"';
   }

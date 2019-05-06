@@ -6,8 +6,13 @@ title: 'Backlog'
 
 - [x] convert `>` to `##` in docs
 - [ ] migrate scss
+  - [x] CSS custom properties
   - [x] css global variables mixins
   - [x] move away from css modules
+  - [x] site footer
+  - [x] blog navigation
+  - [x] fix page container
+  - [ ] figure out when to use `'` when calling scss functions
 
 ## next
 
@@ -66,7 +71,8 @@ title: 'Backlog'
 
 ### Learn/Experiment
 
-- [ ] CSS Variables
+- [ ] [Micropub](https://indieweb.org/Micropub) + [micropub-express](https://github.com/voxpelli/node-micropub-express) + [Micropub](https://micropub.rocks/)
+- [ ] [Webmentions](https://webmention.io/)
 - [ ] React Portals - a first-class way to render children into a dom node
       that exists outside the dom hierarchy of the parent component.
 - [ ] React ErrorBoundary

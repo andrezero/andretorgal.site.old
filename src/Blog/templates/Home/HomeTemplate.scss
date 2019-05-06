@@ -1,5 +1,9 @@
 @import '../../../Shared/styles/mixins/layout';
 
 .blog-home {
-  @include container-compact;
+  @include page;
+
+  .container {
+    @include container-compact;
+  }
 }

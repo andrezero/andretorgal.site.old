@@ -6,6 +6,7 @@ import { ContentPage } from '../../../Shared/types/Page.model';
 
 import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component';
 import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
+import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
 
 import { PostList } from '../../blocks/PostList/PostList.component';
 import { Post } from '../../types/Post.model';
@@ -24,11 +25,15 @@ export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) =
     <Layout className="blog-home" header={header} footer={footer}>
       <Head title="Recent posts" meta={page.meta} />
 
-      <h1 className="page-title" aria-label={page.title}>
-        Latest Posts
-      </h1>
+      <div className="container">
+        <h1 className="page-title" aria-label={page.title}>
+          Latest Posts
+        </h1>
 
-      <PostList posts={posts} />
+        <PostList posts={posts} />
+
+        <LinkToTop />
+      </div>
     </Layout>
   );
 };

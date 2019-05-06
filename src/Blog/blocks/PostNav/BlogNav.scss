@@ -1,0 +1,13 @@
+@import '../../../Shared/styles/mixins/reset';
+@import '../../../Shared/styles/mixins/scheme';
+@import '../../../Shared/styles/mixins/layout';
+
+.blog-nav {
+  @include reset-list;
+  @include scheme-feature;
+  border-bottom: 1px solid var(--root-scheme-feature-alt);
+
+  .container {
+    @include container;
+  }
+}

@@ -1,5 +1,35 @@
-// @import '../../../Shared/styles/common';
+@import '../../../Shared/styles/mixins/type';
+@import '../../../Shared/styles/mixins/layout';
+
+@keyframes animation-spring {
+  0%,
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+
+  90% {
+    top: u(-1/2);
+    opacity: 0.5;
+  }
+}
 
 .link-to-top {
   display: block;
+  padding-top: gap('large');
+  text-align: center;
+  font-size: type-size(h3);
+  font-weight: type-weight(heavy);
+
+  .link {
+    display: inline-block;
+    position: relative;
+    width: gap(large);
+    height: gap(large);
+
+    &:hover,
+    &:active {
+      animation: animation-spring 1s infinite ease-in-out;
+    }
+  }
 }

@@ -1,5 +1,7 @@
-// @import '../../../Shared/styles/common';
+@import '../../../Shared/styles/mixins/reset';
 
 .site-footer-nav {
-  margin: 0 0 36px;
+  ul {
+    @include reset-list;
+  }
 }

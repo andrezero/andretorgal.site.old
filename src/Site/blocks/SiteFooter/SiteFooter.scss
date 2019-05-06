@@ -1,12 +1,40 @@
 @import '../../../Shared/styles/mixins/a11y';
 @import '../../../Shared/styles/mixins/layout';
 @import '../../../Shared/styles/mixins/scheme';
+@import '../../../Shared/styles/mixins/type';
+
+@import '../../../Shared/styles/settings';
 
 .site-footer {
   @include noselect;
   @include scheme-secondary;
+  @include type-small;
+  @include type-alt;
+  line-height: var(--root-type-heights-large, type-height('large'));
+  padding-top: gap('large', 1.5);
+  padding-bottom: gap('medium', 1.5);
+
+  hr {
+    display: none;
+  }
 
   .container {
     @include container;
+  }
+
+  .navigation {
+    display: flex;
+    margin-bottom: gap('large');
+    font-size: var(--root-type-sizes-large, type-size('large'));
+
+    nav {
+      margin-right: gap('large');
+    }
+  }
+
+  .copyright,
+  .license {
+    margin-top: 0;
+    margin-bottom: gap('small');
   }
 }

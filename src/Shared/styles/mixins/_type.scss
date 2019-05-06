@@ -89,6 +89,10 @@ $faces: settings('type-faces');
   font-size: calc(var(--root-type-sizes-h4) + 0.5vw);
 }
 
+@mixin type-small {
+  @include vars-use('font-size', $root-type-sizes, 'small');
+}
+
 @mixin copy {
   h1 {
     @include heading-1;
@@ -105,4 +109,11 @@ $faces: settings('type-faces');
   h4 {
     @include heading-4;
   }
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

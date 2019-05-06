@@ -1,13 +1,16 @@
 $color-primitives: (
-  primary: hsl(1, 72%, 43%),
-  primary-alt: hsl(46, 15%, 83%),
+  primary: hsl(1, 71%, 36%),
+  primary-fg: hsl(46, 15%, 83%),
   secondary: hsl(216, 18%, 45%),
   secondary-fg: hsl(210, 4%, 79%),
   secondary-bg: hsl(216, 18%, 20%),
+  feature-bg: hsl(205, 22%, 83%),
+  feature-alt: hsl(205, 22%, 59%),
   bright: hsl(216, 18%, 97%),
   dark: hsl(216, 11%, 14%),
   selected: hsl(95, 100%, 42%),
-  interactive: hsl(205, 68%, 42%),
+  interactive: hsl(205, 45%, 34%),
+  interactive-bright: hsl(205, 57%, 74%),
   interactive-on: hsl(209, 100%, 57%)
 );
 $c: $color-primitives;
@@ -19,16 +22,22 @@ $color-groups: (
     a: map-get($c, 'interactive'),
     alt: map-get($c, 'primary')
   ),
+  feature: (
+    bg: map-get($c, 'feature-bg'),
+    fg: map-get($c, 'dark'),
+    a: map-get($c, 'interactive'),
+    alt: map-get($c, 'feature-alt')
+  ),
   primary: (
     bg: map-get($c, 'primary'),
-    fg: map-get($c, 'primary-alt'),
-    a: map-get($c, 'primary-alt'),
+    fg: map-get($c, 'primary-fg'),
+    a: map-get($c, 'primary-fg'),
     alt: map-get($c, 'bright')
   ),
   secondary: (
     bg: map-get($c, 'secondary-bg'),
     fg: map-get($c, 'secondary-fg'),
-    a: map-get($c, 'interactive'),
-    alt: map-get($c, 'dark')
+    a: map-get($c, 'interactive-bright'),
+    alt: map-get($c, 'bright')
   )
 );
