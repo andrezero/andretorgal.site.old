@@ -1,7 +1,9 @@
 import * as React from 'react';
 
+import { FormattedDate } from '../../../Shared/elements/FormattedDate/FormattedDate.component';
 import { Link } from '../../../Shared/elements/Link/Link.component';
 import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
+import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
 
 import { Post } from '../../types/Post.models';
 
@@ -17,20 +19,20 @@ export const PostListItem: React.StatelessComponent<Props> = ({ post, level = 2 
   return (
     <article key={post.path} className="post-list-item">
       <header>
-        <time className="post-date">8 Apr, 2017</time>
+        <NodeDate date={post.created} />
         <Tag>
           <Link to={post.path}>{post.title}</Link>
         </Tag>
       </header>
       <MarkdownBasic>{post.abstract}</MarkdownBasic>
-      <Link href="/posts/2017-04-08/london-lean-kanban-days-2017" className="read-more">
+      <Link href={post.path} className="read-more">
         Read more
       </Link>
       <div className="post-meta">
         <p className="post-published">
           Published{' '}
-          <Link href="/posts/2017-04-08/london-lean-kanban-days-2017" className="post-permalink">
-            8 Apr, 2017
+          <Link href={post.path} className="post-permalink">
+            <FormattedDate date={post.created} />
           </Link>
           by{' '}
           <Link href="/about" className="author">

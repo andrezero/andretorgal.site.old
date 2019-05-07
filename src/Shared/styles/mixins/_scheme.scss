@@ -22,6 +22,14 @@ $root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('seco
   a {
     color: var(--root-scheme-base-a);
     font-weight: var(--root-type-weights-bold);
+
+    &:hover {
+      color: var(--root-scheme-base-active);
+    }
+  }
+
+  em {
+    color: var(--root-scheme-base-alt);
   }
 }
 
@@ -32,6 +40,10 @@ $root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('seco
   a {
     color: var(--root-scheme-feature-a);
     text-decoration: none;
+
+    &:hover {
+      color: var(--root-scheme-feature-active);
+    }
   }
 }
 
@@ -42,6 +54,10 @@ $root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('seco
   a {
     color: var(--root-scheme-primary-a);
     text-decoration: none;
+
+    &:hover {
+      color: var(--root-scheme-primary-active);
+    }
   }
 }
 
@@ -52,5 +68,9 @@ $root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('seco
   a {
     color: var(--root-scheme-secondary-a);
     text-decoration: none;
+
+    &:hover {
+      color: var(--root-scheme-secondary-active);
+    }
   }
 }
