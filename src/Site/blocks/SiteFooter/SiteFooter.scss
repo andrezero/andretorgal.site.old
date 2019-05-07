@@ -10,7 +10,7 @@
   @include scheme-secondary;
   @include type-small;
   @include type-alt;
-  line-height: var(--root-type-heights-large, type-height('large'));
+  line-height: var(--root-type-heights-large);
   padding-top: gap('large', 1.5);
   padding-bottom: gap('medium', 1.5);
 
@@ -25,7 +25,7 @@
   .navigation {
     display: flex;
     margin-bottom: gap('large');
-    font-size: var(--root-type-sizes-large, type-size('large'));
+    font-size: var(--root-type-sizes-large);
 
     nav {
       margin-right: gap('large');

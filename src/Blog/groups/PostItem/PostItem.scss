@@ -1,0 +1,5 @@
+@import '../../../Shared/groups/ArticleItem/ArticleItem.mixin';
+
+.post-item {
+  @include article-item;
+}

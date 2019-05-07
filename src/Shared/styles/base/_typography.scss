@@ -13,7 +13,3 @@ html {
 body {
   @include type-base;
 }
-
-.page-title {
-  @include heading-1;
-}

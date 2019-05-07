@@ -1,0 +1,9 @@
+@import '../../styles/mixins/reset';
+@import '../../styles/mixins/layout';
+@import '../../styles/mixins/type';
+
+@mixin article-list-item {
+  margin-bottom: gap('large');
+  padding-bottom: gap('medium');
+  border-bottom: 1px solid green;
+}

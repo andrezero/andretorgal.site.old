@@ -4,7 +4,10 @@ title: 'Backlog'
 
 ## Now
 
-- [x] convert `>` to `##` in docs
+- [x] breakdown blog components; introduce @mixin base-page
+- [ ] refactor model, node first, page, doc and post all extend that
+- [ ] show post dates
+
 - [ ] migrate scss
   - [x] CSS custom properties
   - [x] css global variables mixins
@@ -13,23 +16,28 @@ title: 'Backlog'
   - [x] blog navigation
   - [x] fix page container
   - [ ] figure out when to use `'` when calling scss functions
-- [ ] simplify scss, cleanup css (drop support for IE 11 and opera mobile)
+- [x] simplify scss, cleanup css (drop support for IE 11 and opera mobile)
+- [ ] read-more element
 
 ## next
 
-- [ ] revise post/blog/feed semantics
+- [ ] storybook: type, scheme, space [see here](https://medium.com/eightshapes-llc/typography-in-design-systems-6ed771432f1e) and [here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)
 - [ ] auto link next/previous
+- [x] models: page
+- [x] models: post
+- [ ] models: tags
 - [ ] auto link children
+- [ ] page tags
+- [ ] page tag
+- [ ] show tags in posts
+
 - [ ] migrate experiments
 - [ ] breadcrumbs
 - [ ] env variables in markdown
 - [ ] suspense fallback loading
 - [ ] router [transition](https://reach.tech/router/example/animation)
-- [x] models: page
-- [x] models: post
 - [ ] jest + enzyme
-- [ ] image sharp
-- [ ] models: tags
+- [ ] managing images, image sharp, other [image optimizations](https://medium.com/grailed-engineering/image-optimization-using-higher-order-components-f401e6b4e1b1)
 - [ ] husky + lint staged
 - [ ] spike: gitlab + pages
 - [ ] spike: gitlab + s3

@@ -1,0 +1,5 @@
+@import '../../../Shared/blocks/ArticleListItem/ArticleListItem.mixin';
+
+.post-list-item {
+  @include article-list-item;
+}

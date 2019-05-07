@@ -50,10 +50,6 @@ $container-medium: space-container('medium');
   }
 }
 
-@mixin page {
-  margin-bottom: gap('large');
-}
-
 @function gap($size, $scale: 1) {
   $gap: #{space-gap($size) * $scale}px;
   @return calc(var(--root-space-unit, #{$-unit}) * #{$gap});

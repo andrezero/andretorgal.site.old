@@ -23,15 +23,13 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ page }) => {
     <Layout className="docs-page" header={header} footer={footer}>
       <Head title={page.title} meta={page.meta} />
 
-      <div className="container">
-        <h1 className="page-title" aria-label={page.title}>
-          {page.title}
-        </h1>
+      <section className="container">
+        <h1 className="page-title">{page.title}</h1>
 
         <DocContents>{page.content}</DocContents>
 
         <LinkToTop />
-      </div>
+      </section>
     </Layout>
   );
 };

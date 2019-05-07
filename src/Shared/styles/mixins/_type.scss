@@ -88,7 +88,7 @@ $faces: settings('type-faces');
 }
 
 @mixin type-small {
-  font-size: var(--root-type-sizes-small);
+  font-size: calc(var(--root-type-sizes-small) + 0.5vw);
 }
 
 @mixin copy {

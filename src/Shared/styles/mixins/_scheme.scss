@@ -21,7 +21,7 @@ $root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('seco
 
   a {
     color: var(--root-scheme-base-a);
-    font-weight: var(--root-type-weights-bold, type-weight(medium));
+    font-weight: var(--root-type-weights-bold);
   }
 }
 

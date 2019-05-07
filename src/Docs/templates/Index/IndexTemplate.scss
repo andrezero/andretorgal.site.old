@@ -1,9 +1,5 @@
-@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/templates/BasePage.mixin';
 
 .docs-index {
-  @include page;
-
-  .container {
-    @include container-compact;
-  }
+  @include base-page;
 }

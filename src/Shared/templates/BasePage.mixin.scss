@@ -1,0 +1,17 @@
+@import '../styles/mixins/layout';
+@import '../styles/mixins/type';
+
+@mixin base-page {
+  section {
+    padding-top: gap('large');
+  }
+
+  .container {
+    @include container-compact;
+  }
+
+  .page-title {
+    @include heading-1;
+    margin-top: 0;
+  }
+}
