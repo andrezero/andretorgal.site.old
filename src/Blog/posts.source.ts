@@ -6,7 +6,7 @@ import { collect, flatten } from '../Shared/lib/files';
 import { makeMeta } from '../Shared/lib/meta';
 import { FileSysNode } from '../Shared/lib/types/File.types';
 
-import { Post } from './types/Post.model';
+import { Post } from './types/Post.models';
 
 const createPost = (file: FileSysNode): Post => {
   const { data, content, abstract } = parseFileContents(file.contents);
@@ -19,6 +19,7 @@ const createPost = (file: FileSysNode): Post => {
   const meta = makeMeta(data);
 
   return {
+    type: 'post',
     title: data.title,
     path,
     content: makeContent(content),

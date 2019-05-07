@@ -1,20 +1,10 @@
 import matter from 'gray-matter';
-import toString from 'mdast-util-to-string';
-import rehypeRaw from 'rehype-raw';
-import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
-import unified from 'unified';
 
-import { PageContent } from '../types/Page.model';
+import { NodeContent } from '../types/Node.models';
 
 import { FileContents } from './types/File.types';
 
 const ABSTRACT_DELIMITER = '<!-- abstract -->';
-
-const processor = unified()
-  .use(remarkParse)
-  .use(remarkRehype, { allowDangerousHTML: true })
-  .use(rehypeRaw);
 
 const removeAbstract = (contents: string): string => {
   // if enabled, get the excerpt defined after front-matter
@@ -33,8 +23,6 @@ export const parseFileContents = (contents: string): FileContents => {
   return { data, content, abstract };
 };
 
-export const makeContent = (source: string): PageContent => {
-  const tree = processor.parse(source);
-  const stripped = toString(tree);
-  return { source, stripped };
+export const makeContent = (source: string): NodeContent => {
+  return { source };
 };

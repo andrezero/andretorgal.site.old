@@ -1,6 +1,6 @@
 ---
 title: 'Me and my website'
-template: 'Pages/About'
+template: 'Site/About'
 description: 'About me'
 tags: ['personal', 'work']
 created: '2017-02-11'

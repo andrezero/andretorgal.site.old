@@ -5,9 +5,9 @@ import { makePath, makeTitle } from '../Shared/lib/data';
 import { collect, flatten } from '../Shared/lib/files';
 import { makeMeta } from '../Shared/lib/meta';
 import { FileSysNode } from '../Shared/lib/types/File.types';
-import { ContentPage } from '../Shared/types/Page.model';
+import { PageNode } from '../Shared/types/Page.models';
 
-const createDoc = (node: FileSysNode): ContentPage => {
+const createDoc = (node: FileSysNode): PageNode => {
   const { data, content, abstract } = parseFileContents(node.contents);
   data.title = makeTitle(data.title, node.name);
   data.created = dayjs(node.created);
@@ -17,6 +17,7 @@ const createDoc = (node: FileSysNode): ContentPage => {
   const meta = makeMeta(data);
 
   return {
+    type: 'page',
     title: data.title,
     path,
     content: makeContent(content),
@@ -29,7 +30,7 @@ const createDoc = (node: FileSysNode): ContentPage => {
   };
 };
 
-export const loadDocs = async (): Promise<ContentPage[]> => {
+export const loadDocs = async (): Promise<PageNode[]> => {
   const tree = await collect('./docs', true);
   const flattened = flatten(tree.children, 'all');
   flattened.unshift(tree);

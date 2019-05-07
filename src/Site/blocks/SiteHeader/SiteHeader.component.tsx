@@ -3,14 +3,14 @@ import { useSiteData } from 'react-static';
 
 import { Link } from '../../../Shared/elements/Link/Link.component';
 import { SROnly } from '../../../Shared/elements/SROnly/SROnly.component';
-import { ContentPage } from '../../../Shared/types/Page.model';
+import { Node } from '../../../Shared/types/Node.models';
 
 import { SiteNav } from '../SiteNav/SiteNav.component';
 
 import './SiteHeader.scss';
 
 interface Props {
-  page: ContentPage;
+  page: Node;
   children?: React.ReactNode;
 }
 

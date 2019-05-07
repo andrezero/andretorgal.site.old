@@ -2,9 +2,9 @@ import path from 'path';
 
 import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
 import { cssClass } from '../Shared/lib/strings';
-import { ContentPage, PageRoute, PageRouteData } from '../Shared/types/Page.model';
+import { PageNode, PageRoute, PageRouteData } from '../Shared/types/Page.models';
 
-const docRoute = (templates: TemplateLocator, doc: ContentPage): PageRoute => {
+const docRoute = (templates: TemplateLocator, doc: PageNode): PageRoute => {
   const template = doc.template || 'Docs/Page';
   const className = doc.className || cssClass(template);
   return {
@@ -18,7 +18,7 @@ const docRoute = (templates: TemplateLocator, doc: ContentPage): PageRoute => {
 };
 
 interface Data {
-  docs: ContentPage[];
+  docs: PageNode[];
 }
 
 export const buildRoutes = async (templates: TemplateLocator, data: Data): Promise<PageRoute[]> => {

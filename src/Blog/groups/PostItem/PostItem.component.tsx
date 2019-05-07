@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { PostAbstract } from '../../elements/PostAbstract/PostAbstract.component';
 import { PostContents } from '../../elements/PostContents/PostContents.component';
-import { Post } from '../../types/Post.model';
+import { Post } from '../../types/Post.models';
 
 import './PostItem.scss';
 

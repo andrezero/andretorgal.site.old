@@ -2,11 +2,11 @@ import { TemplateLocator } from './Shared/lib/classes/TemplateLocator';
 
 import { loadPosts } from './Blog/posts.source';
 import { loadDocs } from './Docs/docs.source';
-import { loadPages } from './Pages/pages.source';
+import { loadPages } from './Site/pages.source';
 
 import { buildRoutes as buildBlogRoutes } from './Blog/blog.routes';
 import { buildRoutes as buildDocsRoutes } from './Docs/docs.routes';
-import { buildRoutes as buildPagesRoutes } from './Pages/pages.routes';
+import { buildRoutes as buildPagesRoutes } from './Site/pages.routes';
 import { buildRoutes as buildSiteRoutes } from './Site/site.routes';
 
 export const routeBuilder = () => {

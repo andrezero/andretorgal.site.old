@@ -2,19 +2,19 @@ import * as React from 'react';
 import { Head } from 'react-static';
 
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
-import { ContentPage } from '../../../Shared/types/Page.model';
+import { PageNode } from '../../../Shared/types/Page.models';
 
 import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component';
 import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
 import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
 
 import { PostList } from '../../groups/PostList/PostList.component';
-import { Post } from '../../types/Post.model';
+import { Post } from '../../types/Post.models';
 
 import './HomeTemplate.scss';
 
 interface Props {
-  page: ContentPage;
+  page: PageNode;
   posts: Post[];
 }
 

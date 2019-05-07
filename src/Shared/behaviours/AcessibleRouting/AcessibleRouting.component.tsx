@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useRouteData } from 'react-static';
 
 import { withRouteData } from '../../RouteContext';
-import { RouteData } from '../../types/Route.model';
+import { RouteData } from '../../types/Route.models';
 
 // props: https://gist.github.com/swernerx/2c2ba4e611b4ec7921813a71517ddf5a
 

@@ -3,7 +3,7 @@ import rehypeReact from 'rehype-react';
 import unified from 'unified';
 import { VFileContents } from 'vfile';
 
-import { PageContent } from '../../types/Page.model';
+import { NodeContent } from '../../types/Node.models';
 import { anchoredHeading } from '../AnchoredHeading/AnchoredHeading.factory';
 import { Link } from '../Link/Link.component';
 import { SROnly } from '../SROnly/SROnly.component';
@@ -32,7 +32,7 @@ interface StaticProps {
 }
 
 export interface MarkdownComponentProps {
-  children: PageContent;
+  children: NodeContent;
   [key: string]: any;
 }
 

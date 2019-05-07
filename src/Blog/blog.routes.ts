@@ -1,9 +1,9 @@
 import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
 import { makeMeta } from '../Shared/lib/meta';
 import { cssClass } from '../Shared/lib/strings';
-import { ContentPage, PageRoute } from '../Shared/types/Page.model';
+import { PageNode, PageRoute } from '../Shared/types/Page.models';
 
-import { Post, PostListRouteData, PostRoute, PostRouteData } from './types/Post.model';
+import { Post, PostListRouteData, PostRoute, PostRouteData } from './types/Post.models';
 
 const postRoute = (templates: TemplateLocator, post: Post): PostRoute => {
   const template = post.template || 'Blog/Post';
@@ -18,8 +18,9 @@ const postRoute = (templates: TemplateLocator, post: Post): PostRoute => {
   };
 };
 
-const postListPage = (templates: TemplateLocator): ContentPage => {
+const postListPage = (templates: TemplateLocator): PageNode => {
   return {
+    type: 'page',
     title: 'Latest blog posts',
     path: '/posts',
     created: new Date(),

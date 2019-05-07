@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useRouteData } from 'react-static';
 
 import { bodyClassSwitch } from '../../../Shared/lib/dom';
-import { PostRouteData } from '../../types/Post.model';
+import { PostRouteData } from '../../types/Post.models';
 
 import { PostTemplate as Template } from '../../templates/Post/PostTemplate.component';
 

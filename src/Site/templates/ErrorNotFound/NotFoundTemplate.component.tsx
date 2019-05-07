@@ -16,6 +16,7 @@ import './NotFoundTemplate.scss';
 export const NotFoundTemplate: React.StatelessComponent<{}> = () => {
   const props = {
     page: {
+      type: 'page',
       title: '404 Not Found'
     }
   };

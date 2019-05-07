@@ -1,7 +1,7 @@
-import { PageMeta } from '../types/Page.model';
+import { NodeMeta } from '../types/Node.models';
 
 export const makeMeta = (data?: any) => {
-  const meta: PageMeta = [];
+  const meta: NodeMeta = [];
   meta.push({ name: 'description', value: data && data.abstract });
   meta.push({ name: 'created', value: data && data.created });
   meta.push({ name: 'author', value: data && data.author });

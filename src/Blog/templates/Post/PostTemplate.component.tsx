@@ -9,7 +9,7 @@ import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component'
 
 import { BlogNav } from '../../blocks/PostNav/BlogNav.component';
 import { PostItem } from '../../groups/PostItem/PostItem.component';
-import { Post } from '../../types/Post.model';
+import { Post } from '../../types/Post.models';
 
 import './PostTemplate.scss';
 interface Props {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { RouteData } from './types/Route.model';
+import { RouteData } from './types/Route.models';
 
 export const RouteContext = React.createContext({});
 

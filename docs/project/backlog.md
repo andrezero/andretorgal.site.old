@@ -5,7 +5,7 @@ title: 'Backlog'
 ## Now
 
 - [x] breakdown blog components; introduce @mixin base-page
-- [ ] refactor model, node first, page, doc and post all extend that
+- [x] refactor model: everything is a node (page, doc, post, ...)
 - [ ] show post dates
 
 - [ ] migrate scss

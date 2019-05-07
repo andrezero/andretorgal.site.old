@@ -42,7 +42,7 @@ src/Blog/components/TagLink/TagLink.component.tsx
 - component extensions:
   - `Link.component.tsx` - react component
   - `Link.module.scss` - css module
-  - `Link.global.scss` - global css (theming/variables)
+  - `Link.scss` - global css (theming/variables)
   - `Link.stories.txs` - styleguide
   - `Link.stories.scss` - supports styleguide if needed
 
@@ -102,27 +102,28 @@ Building blocks:
 
 - `blocks/` - think molecules
 
+  - compose other blocks and elements
   - typically `<header>`, `<footer>`, `<div>`, `<ul>`
   - e.g.: `Shared/blocks/CardHeader.component.tsx`
   - e.g.: `Blog/blocks/PostTags.component.tsx`
 
-- `items/` - think organisms
+- `groups/` - think organisms
 
   - compose blocks and elements
   - prefer `<article>`
-  - e.g.: `Shared/items/Card.component.tsx`
-  - e.g.: `Blog/items/PostCard.component.tsx`
+  - e.g.: `Shared/groups/Card.component.tsx`
+  - e.g.: `Blog/groups/PostCard.component.tsx`
 
-- `sections/` - think macro organisms
+<!-- - `sections/` - think macro organisms
 
-  - compose items, blocks and elements
+  - compose groups, blocks and elements
   - typically `<section>`
   - abstract local layouts (composing blocks and items via children)
   - e.g.: `Shared/sections/CardGrid.component.tsx`
   - or views, coupled with a model
   - e.g.: `Blog/sections/PostList.component.tsx`
   - or template level sections
-  - e.g.: `Site/sections/SiteHeader.component.tsx`
+  - e.g.: `Site/sections/SiteHeader.component.tsx` -->
 
 - `templates`
 

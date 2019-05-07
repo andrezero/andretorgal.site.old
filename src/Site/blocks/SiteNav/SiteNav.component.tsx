@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import { Link } from '../../../Shared/elements/Link/Link.component';
-import { ContentPage } from '../../../Shared/types/Page.model';
+import { Node } from '../../../Shared/types/Node.models';
 
 import './SiteNav.scss';
 
 interface Props {
-  page: ContentPage;
+  page: Node;
 }
 
 export const SiteNav: React.StatelessComponent<Props> = ({ page }) => {

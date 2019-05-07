@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Link } from '../../../Shared/elements/Link/Link.component';
 import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
 
-import { Post } from '../../types/Post.model';
+import { Post } from '../../types/Post.models';
 
 import './PostListItem.scss';
 

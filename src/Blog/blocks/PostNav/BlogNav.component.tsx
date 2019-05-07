@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Link } from '../../../Shared/elements/Link/Link.component';
 
-import { Post } from '../../types/Post.model';
+import { Post } from '../../types/Post.models';
 
 import './BlogNav.scss';
 

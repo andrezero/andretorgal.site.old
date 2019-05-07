@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Head } from 'react-static';
 
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
-import { ContentPage } from '../../../Shared/types/Page.model';
+import { PageNode } from '../../../Shared/types/Page.models';
 
 import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component';
 import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
@@ -13,7 +13,7 @@ import { DocContents } from '../../elements/DocContents/DocContents.component';
 import './IndexTemplate.scss';
 
 interface Props {
-  page: ContentPage;
+  page: PageNode;
 }
 
 export const IndexTemplate: React.StatelessComponent<Props> = ({ page }) => {
