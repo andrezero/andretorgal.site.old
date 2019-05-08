@@ -1,0 +1,12 @@
+@import '../../../Shared/styles/mixins/reset';
+@import '../../../Shared/styles/mixins/responsive';
+@import '../../../Shared/styles/mixins/type';
+
+.tag-list {
+  @include reset-list;
+  @include type-small;
+
+  li {
+    padding-right: gap(small);
+  }
+}

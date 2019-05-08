@@ -2,11 +2,34 @@
 title: 'Changelog'
 ---
 
+- [x] migrate scss
+
+  - [x] CSS custom properties
+  - [x] css global variables mixins
+  - [x] move away from css modules
+  - [x] site footer
+  - [x] blog navigation
+  - [x] fix page container
+
+- [x] simplify scss, cleanup css (drop support for IE 11 and opera mobile)
+
+- [x] rendering posts
+
+  - [x] read-more element
+  - [x] breakdown blog components; introduce @mixin base-page
+  - [x] refactor model: everything is a node (page, doc, post, ...)
+  - [x] show post dates
+  - [x] extract post meta, tag list, rename article > node
+
 - [x] convert `>` to `##` in docs
-- [x] accessible routing: set focus on page load, route change and anchor navigation
-- [x] accessible routing: scroll to anchor on page load and on route change
-- [x] accessible routing: scroll to top on page route change
-- [x] switch from `@reach/router` to `react-router`
+
+- [x] accessible routing:
+
+  - [x] set focus on page load, route change and anchor navigation
+  - [x] scroll to anchor on page load and on route change
+  - [x] scroll to top on page route change
+  - [x] switch from `@reach/router` to `react-router`
+
 - [x] markdown factory, and specialised markdown elements
 - [x] no default exports, except for containers and App
 - [x] integrate docs into content

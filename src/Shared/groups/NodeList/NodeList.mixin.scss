@@ -1,7 +1,7 @@
 @import '../../styles/mixins/reset';
 @import '../../styles/mixins/type';
 
-@mixin article-list {
+@mixin node-list {
   @include reset-list;
 
   h3 {

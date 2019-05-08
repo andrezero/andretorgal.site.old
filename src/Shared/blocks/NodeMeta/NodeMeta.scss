@@ -1,0 +1,17 @@
+@import '../../styles/mixins/type';
+
+.node-meta {
+  @include type-small;
+
+  .node-published {
+    display: inline;
+  }
+
+  .tag-list {
+    display: inline;
+
+    li {
+      display: inline;
+    }
+  }
+}

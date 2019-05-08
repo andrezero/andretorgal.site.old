@@ -7,7 +7,7 @@ interface Props {
 
 export const FormattedDate: React.StatelessComponent<Props> = ({ date, className = 'date' }) => {
   const dt = typeof date === 'string' ? new Date(date) : date;
-  const day = dt.getFullYear();
+  const day = dt.getDate();
   const month = dt.getMonth();
   const year = dt.getFullYear();
   const formatted = `${day} ${month}, ${year}`;

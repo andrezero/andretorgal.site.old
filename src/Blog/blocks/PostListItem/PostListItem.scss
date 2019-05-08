@@ -1,5 +1,5 @@
-@import '../../../Shared/blocks/ArticleListItem/ArticleListItem.mixin';
+@import '../../../Shared/blocks/NodeListItem/NodeListItem.mixin';
 
 .post-list-item {
-  @include article-list-item;
+  @include node-list-item;
 }

@@ -1,5 +1,5 @@
-@import '../../../Shared/groups/ArticleItem/ArticleItem.mixin';
+@import '../../../Shared/groups/NodeItem/Nodetem.mixin';
 
 .post-item {
-  @include article-item;
+  @include node-item;
 }

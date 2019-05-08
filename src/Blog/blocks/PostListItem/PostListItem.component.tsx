@@ -1,9 +1,10 @@
 import * as React from 'react';
 
-import { FormattedDate } from '../../../Shared/elements/FormattedDate/FormattedDate.component';
+import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
 import { Link } from '../../../Shared/elements/Link/Link.component';
 import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
 import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
+import { ReadMore } from '../../../Shared/elements/ReadMore/ReadMore.component';
 
 import { Post } from '../../types/Post.models';
 
@@ -25,36 +26,8 @@ export const PostListItem: React.StatelessComponent<Props> = ({ post, level = 2 
         </Tag>
       </header>
       <MarkdownBasic>{post.abstract}</MarkdownBasic>
-      <Link href={post.path} className="read-more">
-        Read more
-      </Link>
-      <div className="post-meta">
-        <p className="post-published">
-          Published{' '}
-          <Link href={post.path} className="post-permalink">
-            <FormattedDate date={post.created} />
-          </Link>
-          by{' '}
-          <Link href="/about" className="author">
-            André Torgal
-          </Link>
-          , under:
-        </p>
-        <ul className="tags">
-          <li className="tag">
-            <a href="/tag/agile">agile</a>,
-          </li>
-          <li className="tag">
-            <a href="/tag/lean">lean</a>,
-          </li>
-          <li className="tag">
-            <a href="/tag/kanban">kanban</a>,
-          </li>
-          <li className="tag">
-            <a href="/tag/conference">conference</a>,
-          </li>
-        </ul>
-      </div>
+      <ReadMore path={post.path} />
+      <NodeMeta node={post} />
     </article>
   );
 };

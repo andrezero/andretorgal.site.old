@@ -4,33 +4,19 @@ title: 'Backlog'
 
 ## Now
 
-- [x] breakdown blog components; introduce @mixin base-page
-- [x] refactor model: everything is a node (page, doc, post, ...)
-- [x] show post dates
-- [ ] extract post meta
-
-- [ ] migrate scss
-  - [x] CSS custom properties
-  - [x] css global variables mixins
-  - [x] move away from css modules
-  - [x] site footer
-  - [x] blog navigation
-  - [x] fix page container
-  - [ ] figure out when to use `'` when calling scss functions
-- [x] simplify scss, cleanup css (drop support for IE 11 and opera mobile)
-- [ ] read-more element
+- [ ] scss figure out when to use `'` when calling scss functions
 
 ## next
 
-- [ ] storybook: type, scheme, space [see here](https://medium.com/eightshapes-llc/typography-in-design-systems-6ed771432f1e) and [here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)
+- [ ] move blog/ route to site routes
 - [ ] auto link next/previous
-- [x] models: page
-- [x] models: post
 - [ ] models: tags
 - [ ] auto link children
 - [ ] page tags
 - [ ] page tag
 - [ ] show tags in posts
+
+- [ ] storybook: type, scheme, space [see here](https://medium.com/eightshapes-llc/typography-in-design-systems-6ed771432f1e) and [here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)
 
 - [ ] migrate experiments
 - [ ] breadcrumbs

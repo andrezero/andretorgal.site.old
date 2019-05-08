@@ -1,5 +1,5 @@
-@import '../../../Shared/groups/ArticleList/ArticleList.mixin.scss';
+@import '../../../Shared/groups/NodeList/NodeList.mixin.scss';
 
 .post-list {
-  @include article-list;
+  @include node-list;
 }
