@@ -6,7 +6,7 @@ title: 'Backlog'
 
 - [x] rename meta/ to meta
 - [x] improve header style
-- [ ] simplify link component, allow passing dom attributes link tabIndex
+- [x] simplify link component, allow passing dom attributes link tabIndex
 - [ ] move blog/ route to site routes
 - [ ] auto link children/parent
 

@@ -4,26 +4,33 @@ import { Link as RouterLink } from 'react-router-dom';
 const isExternal = (url: string): boolean => /^[a-z]+:/.test(url);
 const isFragment = (url: string): boolean => /^#.+/.test(url);
 
-interface Props {
+interface ComponentProps {
   href?: string;
-  to?: string;
-  id?: string;
-  className?: string;
   children?: React.ReactNode;
 }
 
-const external = (url: string, id: string, className: string, children?: React.ReactNode) => {
-  const props = { href: url, id, className };
-  return <a {...props}>{children}</a>;
+type Props = ComponentProps & React.HTMLProps<HTMLElement>;
+
+const external = (url: string, props: Props) => {
+  const { children, ...rest } = props;
+  return (
+    <a {...rest as React.ClassAttributes<HTMLAnchorElement>} href={url}>
+      {children}
+    </a>
+  );
 };
 
-const internal = (url: string, id: string, className: string, children?: React.ReactNode) => {
-  const props = { to: url, id, className };
-  return <RouterLink {...props}>{children}</RouterLink>;
+const internal = (url: string, props: Props) => {
+  const { children, ...rest } = props;
+  return (
+    <RouterLink {...rest as React.ClassAttributes<RouterLink>} to={url}>
+      {children}
+    </RouterLink>
+  );
 };
 
-export const Link: React.StatelessComponent<Props> = ({ href, to, id, className, children }) => {
-  const url = href || to || '/';
+export const Link: React.StatelessComponent<Props> = props => {
+  const { href = '/' } = props;
   const render = isExternal(href) || isFragment(href) ? external : internal;
-  return render(url, id, className, children);
+  return render(href, props);
 };

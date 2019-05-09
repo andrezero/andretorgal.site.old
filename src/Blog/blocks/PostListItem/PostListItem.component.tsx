@@ -22,7 +22,7 @@ export const PostListItem: React.StatelessComponent<Props> = ({ post, level = 2 
       <header>
         <NodeDate date={post.created} />
         <Tag>
-          <Link to={post.path}>{post.title}</Link>
+          <Link href={post.path}>{post.title}</Link>
         </Tag>
       </header>
       <MarkdownBasic>{post.abstract}</MarkdownBasic>

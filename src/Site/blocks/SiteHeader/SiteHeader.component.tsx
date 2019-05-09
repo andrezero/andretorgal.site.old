@@ -21,11 +21,13 @@ export const SiteHeader: React.StatelessComponent<Props> = ({ page, children }) 
       <header className="site-header" role="banner" aria-label="site header">
         <div className="container">
           <h1 className="site-title">
-            <Link to="/">{site.title}</Link>
+            <Link href="/">{site.title}</Link>
           </h1>
           <SROnly>
             <p>{`You are on page: ${page.title}.`}</p>
-            <Link href="#page-contents">skip to page contents</Link>
+            <Link tabIndex={-1} href="#page-contents">
+              skip to page contents
+            </Link>
           </SROnly>
           <SiteNav page={page} />
         </div>

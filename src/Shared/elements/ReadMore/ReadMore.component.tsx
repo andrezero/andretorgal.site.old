@@ -10,7 +10,7 @@ interface Props {
 
 export const ReadMore: React.StatelessComponent<Props> = ({ path }) => {
   return (
-    <Link to={path} className="read-more">
+    <Link href={path} className="read-more">
       Read more
     </Link>
   );

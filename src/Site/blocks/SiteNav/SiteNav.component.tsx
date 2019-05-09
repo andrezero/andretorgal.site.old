@@ -14,31 +14,31 @@ export const SiteNav: React.StatelessComponent<Props> = ({ page }) => {
     <nav className="site-nav" role="navigation" aria-label="Main sections of the site">
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link href="/">Home</Link>
         </li>
         <li>
-          <Link to="/posts/">Posts</Link>
+          <Link href="/posts/">Posts</Link>
         </li>
         {/* <li>
-          <Link to="/things/">Things</Link>
+          <Link href="/things/">Things</Link>
         </li>
         <li>
-          <Link to="/mentions/">Mentions</Link>
+          <Link href="/mentions/">Mentions</Link>
         </li>
         <li>
-          <Link to="/feed/">Feed</Link>
+          <Link href="/feed/">Feed</Link>
         </li>
         <li>
-          <Link to="/experiments/">Experiments</Link>
+          <Link href="/experiments/">Experiments</Link>
         </li> */}
         <li>
-          <Link to="/about/">About</Link>
+          <Link href="/about/">About</Link>
         </li>
         <li>
-          <Link to="/meta/">Meta</Link>
+          <Link href="/meta/">Meta</Link>
         </li>
         <li>
-          <Link to="/about/#contact">Contact</Link>
+          <Link href="/about/#contact">Contact</Link>
         </li>
       </ul>
     </nav>
