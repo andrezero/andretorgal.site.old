@@ -4,19 +4,23 @@ title: 'Backlog'
 
 ## Now
 
-- [ ] scss figure out when to use `'` when calling scss functions
+- [x] rename meta/ to meta
+- [x] improve header style
+- [ ] simplify link component, allow passing dom attributes link tabIndex
+- [ ] move blog/ route to site routes
+- [ ] auto link children/parent
 
 ## next
 
-- [ ] move blog/ route to site routes
 - [ ] auto link next/previous
 - [ ] models: tags
-- [ ] auto link children
 - [ ] page tags
 - [ ] page tag
 - [ ] show tags in posts
 
 - [ ] storybook: type, scheme, space [see here](https://medium.com/eightshapes-llc/typography-in-design-systems-6ed771432f1e) and [here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)
+
+- [ ] about page contact section custom focus higlight
 
 - [ ] migrate experiments
 - [ ] breadcrumbs
@@ -53,7 +57,7 @@ title: 'Backlog'
 
 ### Puzzles
 
-- [ ] `react-static` [docs](https://github.com/nozzle/react-static/blob/master/docs/api.md#reloadClientData) mentions `reloadCliendData()` should be used to re-render when data changes, but I only got it to work by using the undocumented api `rebuildRoutes()`
+- [ ] `react-static` [docs](https://github.com/nozzle/react-static/blob/master/meta/api.md#reloadClientData) mentions `reloadCliendData()` should be used to re-render when data changes, but I only got it to work by using the undocumented api `rebuildRoutes()`
 - [ ] `@reach/router` [anchor link support](https://github.com/reach/router/issues/235) and how to tame [focus and scroll on long content](https://github.com/reach/router/issues/62)
 
 ### Spikes

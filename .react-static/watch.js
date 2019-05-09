@@ -15,9 +15,10 @@ export const watch = options => {
   const routesOptions = { ...defaultOptions, awaitWriteFinish: { stabilityThreshold: 1000 } };
 
   const watchers = [];
-
   watchers.push(chokidar.watch(['content', 'docs'], contentOptions));
-  watchers.push(chokidar.watch(['src/**/*.(routes|source).tsx'], routesOptions));
+
+  // @todo react-static does not reload ./static.config.js file
+  // watchers.push(chokidar.watch(['src/**/*.(routes|source).ts'], routesOptions));
 
   watchers.forEach(watcher => watcher.on('all', rebuildRoutes));
 };

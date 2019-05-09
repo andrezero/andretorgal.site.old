@@ -1,10 +1,24 @@
 @import '../../../Shared/styles/mixins/reset';
+@import '../../../Shared/styles/mixins/layout';
 @import '../../../Shared/styles/mixins/type';
 
 .site-nav {
+  margin: 0 0 gap('small');
+  margin-left: gap('small', -1);
+
   ul {
     @include reset-list;
     @include type-alt;
     display: flex;
+  }
+
+  li {
+    margin-right: gap(small);
+
+    a {
+      display: inline-block;
+      white-space: nowrap;
+      padding: 0 gap(small);
+    }
   }
 }

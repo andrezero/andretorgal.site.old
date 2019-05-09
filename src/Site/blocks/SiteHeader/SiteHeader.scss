@@ -17,12 +17,18 @@
 
   .site-title {
     @include type-brand;
-    margin: 0 0 gap(small) gap(small, -1);
-    padding: 0 gap(base);
+    margin: 0 0 gap('small');
     font-size: type-size(huge);
     transform: scale(0.8);
     transition: transform 0.25s ease;
     transform-origin: top left;
+
+    a {
+      display: inline-block;
+      white-space: nowrap;
+      margin-left: gap('medium', -1);
+      padding: 0 gap(medium);
+    }
   }
 }
 

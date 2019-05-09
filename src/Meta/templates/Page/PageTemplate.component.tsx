@@ -8,7 +8,7 @@ import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component
 import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
 import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
 
-import { DocContents } from '../../elements/DocContents/DocContents.component';
+import { MetaContents } from '../../elements/MetaContents/MetaContents.component';
 
 import './PageTemplate.scss';
 
@@ -20,13 +20,13 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ page }) => {
   const header = <SiteHeader page={page} />;
   const footer = <SiteFooter />;
   return (
-    <Layout className="docs-page" header={header} footer={footer}>
+    <Layout className="meta-page" header={header} footer={footer}>
       <Head title={page.title} meta={page.meta} />
 
       <section className="container">
         <h1 className="page-title">{page.title}</h1>
 
-        <DocContents>{page.content}</DocContents>
+        <MetaContents>{page.content}</MetaContents>
 
         <LinkToTop />
       </section>
