@@ -6,6 +6,7 @@ import { collect, flatten } from '../Shared/lib/files';
 import { makeMeta } from '../Shared/lib/meta';
 import { FileSysNode } from '../Shared/lib/types/File.types';
 
+import { linkAdjacent } from '../Shared/lib/nodes';
 import { PostNode } from './types/Post.models';
 
 const createPost = (file: FileSysNode): PostNode => {
@@ -36,5 +37,7 @@ export const loadPosts = async (): Promise<PostNode[]> => {
   const tree = await collect('./content/blog', true);
   const flattened = flatten(tree.children);
   const sorted = flattened.sort((p1, p2) => p2.created.getTime() - p1.created.getTime());
-  return sorted.map(createPost);
+  const nodes = sorted.map(createPost);
+  linkAdjacent(nodes);
+  return nodes;
 };

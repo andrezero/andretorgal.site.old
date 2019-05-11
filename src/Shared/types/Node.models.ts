@@ -28,4 +28,17 @@ export interface Node {
   content?: NodeContent;
   abstract?: NodeContent;
   meta?: NodeMeta;
+  links?: {
+    children?: NodeLink[];
+    related?: NodeLink[];
+    parent?: NodeLink;
+    next?: NodeLink;
+    previous?: NodeLink;
+  };
+}
+
+export interface NodeLink {
+  type: string;
+  path: string;
+  title: string;
 }

@@ -12,18 +12,19 @@ interface Props {
 
 export const BlogNav: React.StatelessComponent<Props> = ({ post }) => {
   return (
-    // @todo extract to blocks/BlogNav
     <header className="blog-nav" role="navigation" aria-label="navigating blogs and posts">
       <nav className="container">
-        <Link id="aria-page-title" href="/posts/">
-          Blog Home
-        </Link>
-        <Link id="aria-page-title" href="/posts/">
-          Next Post
-        </Link>
-        <Link id="aria-page-title" href="/posts/">
-          Previous Post
-        </Link>
+        <Link href="/posts/">Blog Home</Link>
+        {post.links.previous && (
+          <Link href={post.links.previous.path} title={post.links.previous.title}>
+            Previous Post
+          </Link>
+        )}
+        {post.links.next && (
+          <Link href={post.links.next.path} title={post.links.next.title}>
+            Next Post
+          </Link>
+        )}
       </nav>
     </header>
   );

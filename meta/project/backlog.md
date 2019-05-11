@@ -4,24 +4,20 @@ title: 'Backlog'
 
 ## Now
 
-- [x] rename meta/ to meta
-- [x] improve header style
-- [x] simplify link component, allow passing dom attributes link tabIndex
-- [ ] recent nodes available under feed/ and in home page
-- [ ] auto link children/parent
-
 ## next
+
+- [ ] models: tags
+- [ ] page tags
+- [ ] page tag
+
+- [ ] blog navigation style
+- [ ] meta navigation breadcrumbs
 
 - [ ] emojis in timeline
 - [ ] noise in the transition to the footer
 
-- [ ] auto link next/previous
-- [ ] models: tags
-- [ ] page tags
-- [ ] page tag
-- [ ] show tags in posts
-
-- [ ] storybook: type, scheme, space [see here](https://medium.com/eightshapes-llc/typography-in-design-systems-6ed771432f1e) and [here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)
+- [ ] storybook: type, scheme, space [see here](https://medium.com/eightshapes-llc/
+      typography-in-design-systems-6ed771432f1e) and [here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)
 
 - [ ] about page contact section custom focus higlight
 

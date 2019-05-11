@@ -1,5 +1,5 @@
 ---
-title: 'styling'
+title: 'Styling'
 ---
 
 ## tl;dr

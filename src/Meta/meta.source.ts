@@ -4,6 +4,7 @@ import { makeContent, parseFileContents } from '../Shared/lib/content';
 import { makePath, makeTitle } from '../Shared/lib/data';
 import { collect, flatten } from '../Shared/lib/files';
 import { makeMeta } from '../Shared/lib/meta';
+import { linkHierarchy } from '../Shared/lib/nodes';
 import { FileSysNode } from '../Shared/lib/types/File.types';
 import { PageNode } from '../Shared/types/Page.models';
 
@@ -32,7 +33,8 @@ const createMeta = (node: FileSysNode): PageNode => {
 
 export const loadMetas = async (): Promise<PageNode[]> => {
   const tree = await collect('./meta', true);
-  const flattened = flatten(tree.children, 'all');
-  flattened.unshift(tree);
-  return flattened.map(createMeta);
+  const flattened = flatten(tree, 'all');
+  const nodes = flattened.map(createMeta);
+  linkHierarchy(nodes);
+  return nodes;
 };

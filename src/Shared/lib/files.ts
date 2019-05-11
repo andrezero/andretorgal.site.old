@@ -97,16 +97,7 @@ export const collect = async (root: string, recursive?: boolean): Promise<Direct
   const stat = fs.statSync(fullPath);
   const isDir = exists && stat.isDirectory();
   if (!exists || !isDir) {
-    return {
-      type: 'dir',
-      name: '',
-      filename: root,
-      path: '',
-      hasIndex: false,
-      contents: '',
-      created: new Date(),
-      children: []
-    };
+    throw new Error(`Shared:lib:files:collect() invalid root "${root}"`);
   }
   const options: Options = {
     root,
@@ -118,7 +109,13 @@ export const collect = async (root: string, recursive?: boolean): Promise<Direct
   return readDir(options, stat, root, '', '');
 };
 
-export const flatten = (nodes: FileSysNode[], includeDirs?: 'indexes' | 'all'): Array<FileNode | DirectoryNode> => {
+export const flatten = (
+  nodes: FileSysNode | FileSysNode[],
+  includeDirs?: 'indexes' | 'all'
+): Array<FileNode | DirectoryNode> => {
+  if (!Array.isArray(nodes)) {
+    nodes = [nodes];
+  }
   return nodes.reduce(
     (acc, node: FileSysNode) => {
       const n = { ...node };
@@ -136,15 +133,4 @@ export const flatten = (nodes: FileSysNode[], includeDirs?: 'indexes' | 'all'): 
     },
     [] as Array<FileNode | DirectoryNode>
   );
-};
-
-export const map = <T extends FileNode | DirectoryNode, R>(node: T, fn: (node: T) => R | void): R | void => {
-  if (node.type === 'dir') {
-    const dir = node as DirectoryNode;
-    const children = dir.children.map((child: T) => map<T, R>(child, fn));
-    const ret = { ...fn(node), children: children.filter(item => item) };
-    return ret as R;
-  } else {
-    return fn(node);
-  }
 };

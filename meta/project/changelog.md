@@ -2,6 +2,27 @@
 title: 'Changelog'
 ---
 
+- [x] link nodes: children/parent
+
+  - [x] show children component in meta/
+  - [x] link to parent in meta/
+
+- [x] link nodes: next/previous
+
+  - [x] show next/previous in posts/
+  - [x] show related nodes
+
+- [x] cleanup templates, add feed route, improve route paths
+
+  - [x] rename meta/ to meta
+  - [x] improve header style
+  - [x] simplify link component, allow passing dom attributes link tabIndex
+  - [x] show recent nodes under feed/ and home page
+  - [x] refactor routes containers and templates
+    - [x] move containers next to templates, using a simple wrapper fn
+    - [x] declare route interfaces in template units as well
+  - [x] show tags in posts
+
 - [x] migrate scss
 
   - [x] CSS custom properties

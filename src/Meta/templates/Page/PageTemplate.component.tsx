@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Head } from 'react-static';
 
+import { NodeChildren } from '../../../Shared/blocks/NodeChildren/NodeChildren.component';
+import { NodeParent } from '../../../Shared/blocks/NodeParent/NodeParent.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { PageNode } from '../../../Shared/types/Page.models';
@@ -26,7 +28,11 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ page }) => {
       <Head title={page.title} meta={page.meta} />
 
       <section className="container">
+        <NodeParent parent={page.links.parent} />
+
         <h1 className="page-title">{page.title}</h1>
+
+        <NodeChildren children={page.links.children} />
 
         <MetaContents>{page.content}</MetaContents>
 
