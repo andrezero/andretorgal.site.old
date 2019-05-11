@@ -1,7 +1,9 @@
-@import '../../../Shared/styles/mixins/layout';
-
 @import '../../../Shared/templates/BasePage.mixin';
 
-.blog-home {
+.site-home {
   @include base-page;
+
+  .hero {
+    @include container;
+  }
 }

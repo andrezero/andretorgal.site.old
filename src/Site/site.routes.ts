@@ -1,7 +1,10 @@
 import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
-import { ErrorPageNode, PageRoute } from '../Shared/types/Page.models';
+import { ErrorPageNode } from '../Shared/types/Page.models';
+import { Route } from '../Shared/types/Route.models';
 
-export const buildRoutes = async (templates: TemplateLocator): Promise<PageRoute[]> => {
+import { NotFoundTemplateRouteData } from './templates/NotFound/NotFoundTemplate.component';
+
+export const buildRoutes = async (templates: TemplateLocator): Promise<Route[]> => {
   const page: ErrorPageNode = {
     type: 'page',
     title: '404 - Not Found',
@@ -12,7 +15,7 @@ export const buildRoutes = async (templates: TemplateLocator): Promise<PageRoute
       is404: true,
       path: '404',
       template: templates.locate('Site/NotFound'),
-      getData: () => ({
+      getData: (): NotFoundTemplateRouteData => ({
         className: 'error',
         page
       })

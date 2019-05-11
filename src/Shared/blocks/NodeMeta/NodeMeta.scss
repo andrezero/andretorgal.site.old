@@ -3,13 +3,12 @@
 .node-meta {
   @include type-small;
 
-  .node-published {
+  .node-published,
+  .tag-list {
     display: inline;
   }
 
   .tag-list {
-    display: inline;
-
     li {
       display: inline;
     }

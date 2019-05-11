@@ -1,0 +1,14 @@
+@import '../../../Shared/styles/mixins/type';
+@import '../../../Shared/templates/BasePage.mixin';
+
+.feed-index {
+  @include base-page;
+
+  h2 {
+    @include heading-2;
+  }
+
+  .node-list h3 {
+    @include heading-2;
+  }
+}

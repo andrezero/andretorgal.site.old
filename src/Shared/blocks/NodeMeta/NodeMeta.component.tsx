@@ -24,8 +24,8 @@ export const NodeMeta: React.StatelessComponent<Props> = ({ node }) => {
         <Link href="/about" className="author">
           André Torgal
         </Link>
-        , under:{' '}
-      </p>
+        {node.tags && node.tags.length && <span>, under: </span>}
+      </p>{' '}
       <TagList tags={node.tags} />
     </div>
   );

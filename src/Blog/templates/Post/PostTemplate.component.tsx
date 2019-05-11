@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Head } from 'react-static';
 
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
+import { templateContainer } from '../../../Shared/TemplateContainer';
+import { RouteData } from '../../../Shared/types/Route.models';
 
 import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component';
 import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
@@ -9,11 +11,12 @@ import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component'
 
 import { BlogNav } from '../../blocks/PostNav/BlogNav.component';
 import { PostItem } from '../../groups/PostItem/PostItem.component';
-import { Post } from '../../types/Post.models';
+import { PostNode } from '../../types/Post.models';
 
 import './PostTemplate.scss';
-interface Props {
-  post: Post;
+
+export interface Props {
+  post: PostNode;
 }
 
 export const PostTemplate: React.StatelessComponent<Props> = ({ post }) => {
@@ -32,3 +35,9 @@ export const PostTemplate: React.StatelessComponent<Props> = ({ post }) => {
     </Layout>
   );
 };
+
+export interface PostTemplateRouteData extends RouteData, Props {}
+
+const Container = templateContainer<PostTemplateRouteData>(PostTemplate);
+
+export default Container;

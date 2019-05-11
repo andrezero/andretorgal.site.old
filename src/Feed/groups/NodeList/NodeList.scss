@@ -1,0 +1,5 @@
+@import '../../../Shared/groups/NodeList/NodeList.mixin.scss';
+
+.node-list {
+  @include node-list;
+}

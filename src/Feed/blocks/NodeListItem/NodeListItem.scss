@@ -1,0 +1,5 @@
+@import '../../../Shared/blocks/NodeListItem/NodeListItem.mixin';
+
+.node-list-item {
+  @include node-list-item;
+}

@@ -2,12 +2,12 @@ import * as React from 'react';
 
 import { Link } from '../../../Shared/elements/Link/Link.component';
 
-import { Post } from '../../types/Post.models';
+import { PostNode } from '../../types/Post.models';
 
 import './BlogNav.scss';
 
 interface Props {
-  post: Post;
+  post: PostNode;
 }
 
 export const BlogNav: React.StatelessComponent<Props> = ({ post }) => {

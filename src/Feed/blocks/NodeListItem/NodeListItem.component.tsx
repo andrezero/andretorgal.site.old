@@ -5,29 +5,29 @@ import { Link } from '../../../Shared/elements/Link/Link.component';
 import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
 import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
 import { ReadMore } from '../../../Shared/elements/ReadMore/ReadMore.component';
+import { Node } from '../../../Shared/types/Node.models';
 
-import { PostNode } from '../../types/Post.models';
-
-import './PostListItem.scss';
+import './NodeListItem.scss';
 
 interface Props {
-  post: PostNode;
+  node: Node;
   level?: number;
 }
 
-export const PostListItem: React.StatelessComponent<Props> = ({ post, level = 2 }) => {
+export const NodeListItem: React.StatelessComponent<Props> = ({ node, level = 2 }) => {
   const Tag = ('h' + level) as React.ElementType;
   return (
-    <article key={post.path} className="post-list-item">
+    <article key={node.path} className="node-list-item">
       <header>
-        <NodeDate date={post.created} />
+        <NodeDate date={node.created} />
         <Tag>
-          <Link href={post.path}>{post.title}</Link>
+          <Link href={node.path}>{node.title}</Link>
         </Tag>
       </header>
-      <MarkdownBasic>{post.abstract}</MarkdownBasic>
-      <ReadMore path={post.path} />
-      <NodeMeta node={post} />
+      {node.abstract.source}
+      <MarkdownBasic>{node.abstract}</MarkdownBasic>
+      <ReadMore path={node.path} />
+      <NodeMeta node={node} />
     </article>
   );
 };

@@ -3,7 +3,9 @@ import { Head } from 'react-static';
 
 import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
+import { templateContainer } from '../../../Shared/TemplateContainer';
 import { PageNode } from '../../../Shared/types/Page.models';
+import { RouteData } from '../../../Shared/types/Route.models';
 
 import { SiteFooter } from '../../blocks/SiteFooter/SiteFooter.component';
 import { SiteHeader } from '../../blocks/SiteHeader/SiteHeader.component';
@@ -32,3 +34,9 @@ export const AboutTemplate: React.StatelessComponent<Props> = ({ page }) => {
     </Layout>
   );
 };
+
+export interface AboutTemplateRouteData extends RouteData, Props {}
+
+const Container = templateContainer<AboutTemplateRouteData>(AboutTemplate);
+
+export default Container;

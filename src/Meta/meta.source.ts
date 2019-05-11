@@ -12,7 +12,7 @@ const createMeta = (node: FileSysNode): PageNode => {
   data.title = makeTitle(data.title, node.name);
   data.created = dayjs(node.created);
   data.updated = dayjs(node.created);
-  const path = makePath([], node.path);
+  const path = makePath('meta', node.path);
   const template = data.template;
   const meta = makeMeta(data);
 

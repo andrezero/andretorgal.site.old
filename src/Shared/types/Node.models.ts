@@ -29,12 +29,3 @@ export interface Node {
   abstract?: NodeContent;
   meta?: NodeMeta;
 }
-
-export interface NodeRouteData extends RouteData {
-  page: Node;
-}
-
-export interface NodeRoute extends Route {
-  children?: NodeRoute[];
-  getData(): NodeRouteData;
-}

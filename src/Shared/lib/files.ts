@@ -93,10 +93,10 @@ const readDir = async (
 
 export const collect = async (root: string, recursive?: boolean): Promise<DirectoryNode> => {
   const fullPath = path.resolve(root);
-  const hasIndex = fs.existsSync(fullPath);
+  const exists = fs.existsSync(fullPath);
   const stat = fs.statSync(fullPath);
-  const isDir = hasIndex && stat.isDirectory();
-  if (!hasIndex || !isDir) {
+  const isDir = exists && stat.isDirectory();
+  if (!exists || !isDir) {
     return {
       type: 'dir',
       name: '',
@@ -132,7 +132,7 @@ export const flatten = (nodes: FileSysNode[], includeDirs?: 'indexes' | 'all'): 
         delete directory.children;
         acc.push(directory);
       }
-      return acc.concat(flatten(children));
+      return acc.concat(flatten(children, includeDirs));
     },
     [] as Array<FileNode | DirectoryNode>
   );

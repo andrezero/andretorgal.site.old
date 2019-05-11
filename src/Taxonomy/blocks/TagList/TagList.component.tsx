@@ -10,6 +10,9 @@ interface Props {
 }
 
 export const TagList: React.StatelessComponent<Props> = ({ tags }) => {
+  if (!tags) {
+    return <></>;
+  }
   return (
     <ul className="tag-list">
       {tags.map((tag, index) => (

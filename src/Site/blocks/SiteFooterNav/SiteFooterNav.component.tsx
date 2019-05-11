@@ -12,13 +12,19 @@ export const SiteFooterNav: React.StatelessComponent<{}> = () => {
           <Link href="/">Home</Link>
         </li>
         <li>
+          <Link href="/feed/">Feed</Link>
+        </li>
+        <li>
           <Link href="/posts/">Posts</Link>
         </li>
         <li>
-          <Link href="/experiments/">Experiments</Link>
+          <Link href="/meta/">Meta</Link>
         </li>
         <li>
           <Link href="/about/">About</Link>
+        </li>
+        <li>
+          <Link href="/about/#contact">Contact</Link>
         </li>
       </ul>
     </nav>

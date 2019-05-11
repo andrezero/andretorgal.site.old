@@ -2,7 +2,8 @@ import * as React from 'react';
 import { Head } from 'react-static';
 
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
-// import { ContentPage } from '../../../Shared/types/Page.model';
+import { templateContainer } from '../../../Shared/TemplateContainer';
+import { RouteData } from '../../../Shared/types/Route.models';
 
 import { SiteFooter } from '../../blocks/SiteFooter/SiteFooter.component';
 import { SiteHeader } from '../../blocks/SiteHeader/SiteHeader.component';
@@ -32,3 +33,9 @@ export const NotFoundTemplate: React.StatelessComponent<{}> = () => {
     </Layout>
   );
 };
+
+export interface NotFoundTemplateRouteData extends RouteData {}
+
+const Container = templateContainer<NotFoundTemplateRouteData>(NotFoundTemplate);
+
+export default Container;

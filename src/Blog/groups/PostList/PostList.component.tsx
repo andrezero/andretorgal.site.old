@@ -1,19 +1,20 @@
 import * as React from 'react';
 
-import { Post } from '../../types/Post.models';
+import { PostNode } from '../../types/Post.models';
 
 import { PostListItem } from '../../blocks/PostListItem/PostListItem.component';
 import './PostList.scss';
 
 interface Props {
-  posts: Post[];
+  posts: PostNode[];
+  level?: number;
 }
 
-export const PostList: React.StatelessComponent<Props> = ({ posts }) => {
+export const PostList: React.StatelessComponent<Props> = ({ posts, level }) => {
   return (
     <div className="post-list">
-      {posts.map((post: Post) => (
-        <PostListItem key={post.path} post={post} />
+      {posts.map((post: PostNode) => (
+        <PostListItem key={post.path} post={post} level={level} />
       ))}
     </div>
   );

@@ -7,10 +7,13 @@ title: 'Backlog'
 - [x] rename meta/ to meta
 - [x] improve header style
 - [x] simplify link component, allow passing dom attributes link tabIndex
-- [ ] move blog/ route to site routes
+- [ ] recent nodes available under feed/ and in home page
 - [ ] auto link children/parent
 
 ## next
+
+- [ ] emojis in timeline
+- [ ] noise in the transition to the footer
 
 - [ ] auto link next/previous
 - [ ] models: tags

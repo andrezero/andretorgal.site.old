@@ -45,6 +45,9 @@ export const markdownFactory = (
   const render = renderer(processor, componentMap);
   return (props: StaticProps | MarkdownComponentProps) => {
     const { children } = props;
+    if (!children) {
+      return <></>;
+    }
     return (
       <div className={className || ''} {...staticProps} {...props}>
         {render(children.source)}

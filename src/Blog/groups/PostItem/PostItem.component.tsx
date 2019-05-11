@@ -5,12 +5,12 @@ import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
 import { PostAbstract } from '../../elements/PostAbstract/PostAbstract.component';
 import { PostContents } from '../../elements/PostContents/PostContents.component';
 
-import { Post } from '../../types/Post.models';
+import { PostNode } from '../../types/Post.models';
 
 import './PostItem.scss';
 
 interface Props {
-  post: Post;
+  post: PostNode;
 }
 
 export const PostItem: React.StatelessComponent<Props> = ({ post }) => {

@@ -24,11 +24,11 @@ export const SiteNav: React.StatelessComponent<Props> = ({ page }) => {
         </li>
         <li>
           <Link href="/mentions/">Mentions</Link>
-        </li>
+        </li> */}
         <li>
           <Link href="/feed/">Feed</Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="/experiments/">Experiments</Link>
         </li> */}
         <li>

@@ -1,6 +1,6 @@
 export class TemplateLocator {
   public locate(name: string): string {
-    const [module, container] = name.split('/');
-    return `src/${module}/containers/${container}/${container}Container.component`;
+    const [module, template] = name.split('/');
+    return `src/${module}/templates/${template}/${template}Template.component`;
   }
 }

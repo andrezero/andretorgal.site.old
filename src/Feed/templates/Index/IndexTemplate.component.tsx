@@ -3,6 +3,7 @@ import { Head } from 'react-static';
 
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
+import { Node } from '../../../Shared/types/Node.models';
 import { PageNode } from '../../../Shared/types/Page.models';
 import { RouteData } from '../../../Shared/types/Route.models';
 
@@ -10,27 +11,33 @@ import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component
 import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
 import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
 
-import { PostList } from '../../groups/PostList/PostList.component';
-import { PostNode } from '../../types/Post.models';
+import { NodeList } from '../../groups/NodeList/NodeList.component';
 
-import './HomeTemplate.scss';
+import './IndexTemplate.scss';
 
 interface Props {
   page: PageNode;
-  posts: PostNode[];
+  latest: Node[];
+  featured: Node[];
 }
 
-export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) => {
+export type IndexTemplateProps = Props;
+
+export const IndexTemplate: React.StatelessComponent<Props> = ({ page, latest, featured }) => {
   const header = <SiteHeader page={page} />;
   const footer = <SiteFooter />;
   return (
-    <Layout className="blog-home" header={header} footer={footer}>
-      <Head title="Recent posts" meta={page.meta} />
+    <Layout className="feed-index" header={header} footer={footer}>
+      <Head title={page.title} meta={page.meta} />
 
       <section className="container">
-        <h1 className="page-title">Latest Posts</h1>
+        <h1 className="page-title">{page.title}</h1>
 
-        <PostList posts={posts} />
+        <h2>Latest</h2>
+        <NodeList nodes={latest} level={3} />
+
+        <h2>Featured</h2>
+        <NodeList nodes={featured} level={3} />
 
         <LinkToTop />
       </section>
@@ -38,8 +45,8 @@ export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) =
   );
 };
 
-export interface HomeTemplateRouteData extends RouteData, Props {}
+export interface IndexTemplateRouteData extends RouteData, Props {}
 
-const Container = templateContainer<HomeTemplateRouteData>(HomeTemplate);
+const Container = templateContainer<IndexTemplateRouteData>(IndexTemplate);
 
 export default Container;
