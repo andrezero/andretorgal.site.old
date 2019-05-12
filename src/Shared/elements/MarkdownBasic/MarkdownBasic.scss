@@ -1,5 +1,5 @@
-@import '../../../Shared/styles/mixins/type';
+@import '../Markdown/Markdown.mixins';
 
 .markdown-basic {
-  @include copy;
+  @include markdown;
 }

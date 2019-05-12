@@ -4,14 +4,11 @@ title: 'Backlog'
 
 ## Now
 
-- [x] format dates are missing month names
-- [ ] remove bullets from task-list-item
-
-## next
-
 - [ ] models: tags
 - [ ] page tags
 - [ ] page tag
+
+## next
 
 - [ ] blog navigation style
 - [ ] meta navigation breadcrumbs

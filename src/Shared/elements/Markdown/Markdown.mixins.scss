@@ -1,0 +1,10 @@
+@import '../../../Shared/styles/mixins/type';
+@import '../../../Shared/styles/mixins/layout';
+
+@mixin markdown {
+  @include copy;
+
+  .task-list-item {
+    list-style-type: none;
+  }
+}

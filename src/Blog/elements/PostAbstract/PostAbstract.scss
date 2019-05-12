@@ -1,5 +1,5 @@
-@import '../../../Shared/styles/mixins/type';
+@import '../../../Shared/elements/Markdown/Markdown.mixins';
 
 .post-abstract {
-  @include copy;
+  @include markdown;
 }

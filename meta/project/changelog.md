@@ -2,6 +2,9 @@
 title: 'Changelog'
 ---
 
+- [x] format dates are missing month names
+- [x] format checkboxes in markdown
+
 - [x] link nodes: children/parent
 
   - [x] show children component in meta/

@@ -54,3 +54,8 @@ $container-medium: space-container('medium');
   $gap: #{space-gap($size) * $scale}px;
   @return calc(var(--root-space-unit, #{$-unit}) * #{$gap});
 }
+
+@function unit($size, $scale: 1) {
+  $gap: #{$size * $scale}px;
+  @return calc(var(--root-space-unit, #{$-unit}) * #{$gap});
+}

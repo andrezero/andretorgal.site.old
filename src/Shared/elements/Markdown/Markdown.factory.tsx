@@ -6,17 +6,42 @@ import { VFileContents } from 'vfile';
 import { NodeContent } from '../../types/Node.models';
 import { anchoredHeading } from '../AnchoredHeading/AnchoredHeading.factory';
 import { Link } from '../Link/Link.component';
+import { MdChekbox } from '../MdCheckbox/MdCheckbox.component';
 import { SROnly } from '../SROnly/SROnly.component';
 
 type ComponentType = string | React.ComponentType<any>;
 
-export interface MarkdownComponentMap {
-  [x: string]: ComponentType;
+export interface MarkdownComponentAttributeTestMap {
+  attr: string;
+  map: {
+    [x: string]: ComponentType;
+  };
 }
+
+export interface MarkdownComponentMap {
+  [x: string]: ComponentType | MarkdownComponentAttributeTestMap;
+}
+
+interface StaticProps {
+  [key: string]: any;
+}
+
+const map = (key: string, cMap: MarkdownComponentMap, props: StaticProps): React.ComponentType => {
+  const defaultTag = 'div';
+  const tag = (cMap && key && cMap[key]) || key || defaultTag;
+  if ((tag as React.ComponentType).displayName || typeof tag === 'string') {
+    return tag as React.ComponentType;
+  } else {
+    const attributeTestMap = tag as MarkdownComponentAttributeTestMap;
+    const value = props[attributeTestMap.attr];
+    const attrMap = attributeTestMap.map;
+    return ((attrMap && value && attrMap[value]) || key || defaultTag) as React.ComponentType;
+  }
+};
 
 const renderer = (processor: unified.Processor, componentMap: MarkdownComponentMap) => {
   const createElement = (component: string, props: any, children: any): JSX.Element => {
-    const Tag = (componentMap && component && componentMap[component]) || component || 'div';
+    const Tag = map(component, componentMap, props);
     return <Tag {...props}>{children}</Tag>;
   };
 
@@ -26,10 +51,6 @@ const renderer = (processor: unified.Processor, componentMap: MarkdownComponentM
     return processor().processSync(text).contents;
   };
 };
-
-interface StaticProps {
-  [key: string]: any;
-}
 
 export interface MarkdownComponentProps {
   children: NodeContent;
@@ -61,5 +82,11 @@ export const basicComponentMap: MarkdownComponentMap = {
   sronly: SROnly,
   h2: anchoredHeading('h2'),
   h3: anchoredHeading('h3'),
-  h4: anchoredHeading('h4')
+  h4: anchoredHeading('h4'),
+  input: {
+    attr: 'type',
+    map: {
+      checkbox: MdChekbox
+    }
+  }
 };

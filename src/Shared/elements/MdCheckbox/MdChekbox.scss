@@ -1,0 +1,34 @@
+@import '../../styles/mixins/layout';
+@import '../../styles/mixins/scheme';
+
+.md-checkbox {
+  position: relative;
+  content: ' ';
+  display: inline-block;
+  height: unit(1.8);
+  width: unit(1.8);
+  border: unit(0.1) solid color('base', 'fg');
+  box-shadow: inset 0px 0px color('base', 'fg');
+  border-radius: 2px;
+
+  input {
+    display: none;
+  }
+
+  &.is-checked {
+    &::before {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      left: unit(0.2, -1);
+      width: unit(0.9);
+      height: unit(1.3);
+      border: unit(0.2) solid color('base', 'fg');
+      border-top-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(40deg);
+      backface-visibility: hidden;
+      transform-origin: 100% 100%;
+    }
+  }
+}
