@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import * as React from 'react';
 
 interface Props {
@@ -6,14 +7,11 @@ interface Props {
 }
 
 export const FormattedDate: React.StatelessComponent<Props> = ({ date, className = 'date' }) => {
-  const dt = typeof date === 'string' ? new Date(date) : date;
-  const day = dt.getDate();
-  const month = dt.getMonth();
-  const year = dt.getFullYear();
-  const formatted = `${day} ${month}, ${year}`;
+  // const dt = typeof date === 'string' ? new Date(date) : date;
+  const dt = dayjs(date);
   return (
     <time className={className} dateTime={dt.toISOString()}>
-      {formatted}
+      {dt.format('MMM D, YYYY')}
     </time>
   );
 };

@@ -15,6 +15,7 @@ import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component'
 import { MetaContents } from '../../elements/MetaContents/MetaContents.component';
 
 import './PageTemplate.scss';
+import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
 
 interface Props {
   page: PageNode;
@@ -29,13 +30,10 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ page }) => {
 
       <section className="container">
         <NodeParent parent={page.links.parent} />
-
         <h1 className="page-title">{page.title}</h1>
-
+        Updated: <NodeDate date={page.updated} />
         <NodeChildren children={page.links.children} />
-
         <MetaContents>{page.content}</MetaContents>
-
         <LinkToTop />
       </section>
     </Layout>

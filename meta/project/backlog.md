@@ -4,6 +4,9 @@ title: 'Backlog'
 
 ## Now
 
+- [x] format dates are missing month names
+- [ ] remove bullets from task-list-item
+
 ## next
 
 - [ ] models: tags
@@ -22,7 +25,6 @@ title: 'Backlog'
 - [ ] about page contact section custom focus higlight
 
 - [ ] migrate experiments
-- [ ] breadcrumbs
 - [ ] env variables in markdown
 - [ ] suspense fallback loading
 - [ ] router [transition](https://reach.tech/router/example/animation)
@@ -34,6 +36,7 @@ title: 'Backlog'
 
 ## Later
 
+- [ ]
 - [ ] og image
 - [ ] refactor og generation
 - [ ] search
