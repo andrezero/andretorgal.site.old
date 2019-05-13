@@ -1,0 +1,55 @@
+@import '../../styles/mixins/reset';
+@import '../../styles/mixins/layout';
+@import '../../styles/mixins/type';
+
+@mixin base-list-item-all {
+  .node-contents {
+    display: block;
+  }
+
+  &.has-link {
+    .node-contents {
+      text-decoration: none;
+    }
+  }
+
+  margin-bottom: gap('huge');
+}
+
+@mixin base-list-item-spacing {
+  margin-left: gap('base', -1);
+  margin-right: gap('base', -1);
+  padding: gap('base');
+
+  @include breakpoint-small {
+    margin-left: gap('medium', -1);
+    margin-right: gap('medium', -1);
+    padding: gap('base', 1.5) gap('medium');
+  }
+
+  @include breakpoint-compact {
+    margin-left: 0;
+    margin-right: 0;
+    padding: gap('large');
+  }
+}
+
+@mixin base-list-item-style {
+  @include base-list-item-all;
+  @include base-list-item-spacing;
+  background: color('bright');
+
+  .node-date {
+    @include type-small;
+    display: block;
+  }
+
+  .node-title {
+    @include heading-2;
+    margin-top: 0;
+  }
+
+  .read-more {
+    margin-bottom: gap('small');
+  }
+}

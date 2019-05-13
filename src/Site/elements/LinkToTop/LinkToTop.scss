@@ -18,7 +18,7 @@
   display: block;
   padding-top: gap('large');
   text-align: center;
-  font-size: type-size(h3);
+  font-size: responsive-type-size(h3);
   font-weight: type-weight(heavy);
 
   .link {

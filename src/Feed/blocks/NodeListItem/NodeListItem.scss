@@ -1,5 +1,5 @@
-@import '../../../Shared/blocks/NodeListItem/NodeListItem.mixin';
+@import '../../../Shared/blocks/BaseListItem/BaseListItem.mixin';
 
 .node-list-item {
-  @include node-list-item;
+  @include base-list-item-style;
 }

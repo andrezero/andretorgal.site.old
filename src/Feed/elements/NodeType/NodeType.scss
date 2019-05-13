@@ -1,0 +1,16 @@
+@import '../../../Shared/styles/mixins/a11y';
+@import '../../../Shared/styles/mixins/type';
+@import '../../../Shared/styles/mixins/scheme';
+@import '../../../Shared/styles/mixins/layout';
+
+.node-type {
+  .badge {
+    @include scheme-base;
+    @include type-small;
+    @include type-alt;
+    @include noselect;
+    color: color('base', 'alt');
+    padding: gap('tiny') gap('base');
+    border-radius: gap('small');
+  }
+}

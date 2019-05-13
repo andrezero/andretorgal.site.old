@@ -12,7 +12,13 @@ hero:
   thumb: '{{data.urls.static}}/img/about/moon-t.jpg'
 ---
 
-My name is Andre Torgal and I was born in 1973 in Lisbon, Portugal.
+My name is André Torgal and I was born in 1973 in Lisbon, Portugal. This is my website. And you, my friend, are welcome.
+
+Learn more about me, my work, other stuff I have been up to.
+
+<!-- abstract -->
+
+My name is André Torgal and I was born in 1973 in Lisbon, Portugal.
 
 This is my website, a place where I can [blog](/posts) some thoughts and run a few [experiments](/experiments).
 

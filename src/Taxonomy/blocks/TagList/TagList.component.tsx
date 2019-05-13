@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Link } from '../../../Shared/elements/Link/Link.component';
-import { Tag } from '../../../Shared/types/Tag.models';
+import { Tag } from '../../../Shared/types/Node.models';
 
 import './TagList.scss';
 

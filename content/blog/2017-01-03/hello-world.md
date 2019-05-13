@@ -1,7 +1,7 @@
 ---
 title: 'Hello World'
-tags: ['internet', 'social web', 'social networks', 'blogging', 'personal', 'perspective', 'the-intent']
-created: '2017-03-11'
+tags: ['internet', 'social-web', 'social-networks', 'blogging', 'personal', 'perspective', 'the-intent']
+created: '2017-01-03'
 updated: '2017-03-12'
 hero:
   text: 'ten years without a website'

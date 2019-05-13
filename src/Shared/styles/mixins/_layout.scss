@@ -21,31 +21,31 @@ $container-medium: space-container('medium');
 }
 
 @mixin container {
-  margin: 0 map-get($container-base, 'gap') * 1rem;
+  margin: 0 map-get($container-base, 'gap') * $-unit * 1px;
 
   @include breakpoint-small {
-    margin: 0 map-get($container-small, 'gap') * 1rem;
+    margin: 0 map-get($container-small, 'gap') * $-unit * 1px;
   }
 
   @include breakpoint-medium {
-    margin: 0 map-get($container-medium, 'gap') * 1rem;
+    margin: 0 map-get($container-medium, 'gap') * $-unit * 1px;
   }
 
   @include breakpoint-large {
-    max-width: map-get($container-medium, 'width') * 1rem;
+    max-width: map-get($container-medium, 'width') * $-unit * 1px;
     margin: 0 auto;
   }
 }
 
 @mixin container-compact {
-  margin: 0 map-get($container-base, 'gap') * 1rem;
+  margin: 0 map-get($container-base, 'gap') * $-unit * 1px;
 
   @include breakpoint-small {
-    margin: 0 map-get($container-small, 'gap') * 1rem;
+    margin: 0 map-get($container-small, 'gap') * $-unit * 1px;
   }
 
   @include breakpoint-compact {
-    max-width: map-get($container-compact, 'width') * 1rem;
+    max-width: map-get($container-compact, 'width') * $-unit * 1px;
     margin: 0 auto;
   }
 }

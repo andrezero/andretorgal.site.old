@@ -1,5 +1,3 @@
-import { Route, RouteData } from './Route.models';
-
 export interface NodeContent {
   source: string;
 }
@@ -14,6 +12,8 @@ export interface NodeMetaOpenGraphItem {
   content: string;
 }
 
+export type Tag = string;
+
 export type NodeMeta = Array<NodeMetaItem | NodeMetaOpenGraphItem>;
 
 export interface Node {
@@ -24,7 +24,7 @@ export interface Node {
   template?: string;
   created?: Date;
   updated?: Date;
-  tags?: string[];
+  tags?: Tag[];
   content?: NodeContent;
   abstract?: NodeContent;
   meta?: NodeMeta;

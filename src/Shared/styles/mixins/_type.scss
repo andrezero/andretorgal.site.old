@@ -9,6 +9,14 @@ $root-type-weights: vars-from-map('root-type-weights', settings('type-weights'))
 $root-type-heights: vars-from-map('root-type-heights', settings('type-heights'));
 
 $faces: settings('type-faces');
+$sizes: settings('type-sizes');
+$scalars: settings('type-scalars');
+
+@function responsive-type-size($size) {
+  $scalar: map-get($scalars, $size);
+  @return calc(var(--root-type-sizes-#{$size}) + #{$scalar}vw);
+}
+
 @mixin font-faces {
   @each $key, $value in $faces {
     $family: map-get($value, 'family');

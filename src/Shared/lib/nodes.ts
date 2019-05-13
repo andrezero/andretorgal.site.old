@@ -1,7 +1,6 @@
 import { resolve } from 'path';
 
-import { Node, NodeLink } from '../types/Node.models';
-import { Tag } from '../types/Tag.models';
+import { Node, NodeLink, Tag } from '../types/Node.models';
 
 export const linkToNode = (node: Node): NodeLink => {
   const { type, path, title } = node;
@@ -15,7 +14,23 @@ export const filterNoRoot = (node: Node): boolean => node.path !== '/';
 export const filterHasTag = (tag: string) => (node: Node): boolean => hasTag(node, tag);
 
 export const sortCreated = (p1: Node, p2: Node): number => {
+  if (!p2.created) {
+    return 1;
+  }
+  if (!p1.created) {
+    return -1;
+  }
   return p2.created.getTime() - p1.created.getTime();
+};
+
+export const sortUpdated = (p1: Node, p2: Node): number => {
+  if (!p2.updated) {
+    return 1;
+  }
+  if (!p1.updated) {
+    return -1;
+  }
+  return p2.updated.getTime() - p1.updated.getTime();
 };
 
 export const linkHierarchy = <T extends Node>(nodes: T[]) => {

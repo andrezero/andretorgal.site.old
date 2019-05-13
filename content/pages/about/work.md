@@ -9,6 +9,12 @@ classes: 'about chrono'
 
 I am a _web developer and agile practitioner_ with a diverse background in engineering and management.
 
+I have been coding, leading, mentoring and facilitating for 20 years.
+
+<!-- abstract -->
+
+I am a _web developer and agile practitioner_ with a diverse background in engineering and management.
+
 I have been _coding, leading, mentoring and facilitating_ for 20 years.
 
 I am _originally from Lisbon, Portugal_, where I cut my teeth as an engineer and manager, acquiring experience for 15 years across a few industries and companies such as [SAPO](https://sapo.pt) and [Quodis](http://quodis.com/).

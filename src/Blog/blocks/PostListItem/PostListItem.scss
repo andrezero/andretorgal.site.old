@@ -1,5 +1,27 @@
-@import '../../../Shared/blocks/NodeListItem/NodeListItem.mixin';
+@import '../../../Shared/styles/mixins/layout';
+
+@import '../../../Shared/blocks/BaseListItem/BaseListItem.mixin';
 
 .post-list-item {
-  @include node-list-item;
+  @include base-list-item-all;
+
+  .node-contents {
+    @include base-list-item-spacing;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.2) 80%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+
+  .node-footer {
+    padding-top: gap('small');
+    border-top: 1px solid color('base', 'edge');
+  }
+
+  @include breakpoint-compact {
+    border-top-left-radius: gap('small');
+    border-top-right-radius: gap('small');
+  }
 }

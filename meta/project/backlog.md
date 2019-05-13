@@ -1,18 +1,29 @@
 ---
 title: 'Backlog'
+updated: '2019-05-13'
 ---
+
+Stuff to do on this website. The done stuff is on the [changelog](./changelog) page.
+
+<!-- abstract -->
 
 ## Now
 
-- [ ] models: tags
-- [ ] page tags
-- [ ] page tag
+- [ ] fix sronly not being rendered
+- [ ] fix blog post dates
+- [ ] blog navigation style
+- [ ] meta navigation breadcrumbs
+- [ ] page style
+- [ ] meta style
+- [ ] tag style
+- [ ] node type should also be a tag
+- [ ] contents/tag/personal.md
+- [ ] contents/meta abstracts (include in page)
+- [ ] contents/page abstracts (do not include in item)
 
 ## next
 
-- [ ] blog navigation style
-- [ ] meta navigation breadcrumbs
-
+- [ ] years in timelines
 - [ ] emojis in timeline
 - [ ] noise in the transition to the footer
 

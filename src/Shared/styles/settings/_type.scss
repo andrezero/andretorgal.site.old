@@ -8,14 +8,25 @@ $type-families: (
 );
 
 $type-sizes: (
-  huge: 5rem,
+  huge: 3.5rem,
   h1: 3.5rem,
   h2: 2.8rem,
   h3: 2.4rem,
   h4: 2rem,
   large: 1.8rem,
   base: 1.6rem,
-  small: 1.4rem
+  small: 1.3rem
+);
+
+$type-scalars: (
+  huge: 2,
+  h1: 0.5,
+  h2: 0.5,
+  h3: 0.5,
+  h4: 0.5,
+  large: 0.5,
+  base: 0.5,
+  small: 0.2
 );
 
 $type-weights: (
@@ -28,7 +39,8 @@ $type-weights: (
 $type-heights: (
   large: 2,
   base: 1.75,
-  small: 1.25
+  small: 1.25,
+  compact: 1
 );
 
 $type-faces: (

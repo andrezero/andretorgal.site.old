@@ -11,8 +11,8 @@
   @include type-small;
   @include type-alt;
   line-height: var(--root-type-heights-large);
-  padding-top: gap('large', 1.5);
-  padding-bottom: gap('medium', 1.5);
+  padding-top: gap('huge');
+  padding-bottom: gap('large');
 
   hr {
     display: none;

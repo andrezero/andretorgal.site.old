@@ -1,33 +1,50 @@
 import * as React from 'react';
 
-import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
+import { BaseListItem } from '../../../Shared/blocks/BaseListItem/BaseListItem.component';
 import { Link } from '../../../Shared/elements/Link/Link.component';
 import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
-import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
 import { ReadMore } from '../../../Shared/elements/ReadMore/ReadMore.component';
 import { Node } from '../../../Shared/types/Node.models';
+
+import { PostListItem } from '../../../Blog/blocks/PostListItem/PostListItem.component';
+import { MetaListItem } from '../../../Meta/blocks/MetaListItem/MetaListItem.component';
+import { PageListItem } from '../../../Site/blocks/PageListItem/PageListItem.component';
+import { TagListItem } from '../../../Taxonomy/blocks/TagListItem/TagListItem.component';
 
 import './NodeListItem.scss';
 
 interface Props {
   node: Node;
   level?: number;
+  footer?: React.ReactNode;
 }
 
-export const NodeListItem: React.StatelessComponent<Props> = ({ node, level = 2 }) => {
+const map = {
+  page: PageListItem,
+  post: PostListItem,
+  meta: MetaListItem,
+  tag: TagListItem
+};
+
+const DefaultListItem: React.StatelessComponent<Props> = ({ node, level = 2, footer }) => {
   const Tag = ('h' + level) as React.ElementType;
+  const header = (
+    <Tag className="node-title">
+      <Link href={node.path}>{node.title}</Link>
+    </Tag>
+  );
   return (
-    <article key={node.path} className="node-list-item">
-      <header>
-        <NodeDate date={node.created} />
-        <Tag>
-          <Link href={node.path}>{node.title}</Link>
-        </Tag>
-      </header>
-      {node.abstract.source}
+    <BaseListItem className="node-list-item" header={header} footer={footer}>
       <MarkdownBasic>{node.abstract}</MarkdownBasic>
       <ReadMore path={node.path} />
-      <NodeMeta node={node} />
-    </article>
+    </BaseListItem>
   );
+};
+
+export const NodeListItem: React.StatelessComponent<Props> = ({ node, level = 2, footer }) => {
+  const Component = map[node.type];
+  if (Component) {
+    return <Component node={node} level={level} footer={footer} />;
+  }
+  return <DefaultListItem node={node} level={level} footer={footer} />;
 };

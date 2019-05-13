@@ -1,5 +1,4 @@
 import { Node } from './Node.models';
-import { Route, RouteData } from './Route.models';
 
 export interface PageNode extends Node {
   type: 'page';

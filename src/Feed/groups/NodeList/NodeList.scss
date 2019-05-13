@@ -1,5 +1,47 @@
+@import '../../../Shared/styles/mixins/layout';
+
 @import '../../../Shared/groups/NodeList/NodeList.mixin.scss';
 
 .node-list {
   @include node-list;
+
+  > * {
+    position: relative;
+  }
+
+  .node-type {
+    position: absolute;
+    top: gap('base', -1.5);
+    right: gap('base');
+
+    .badge {
+      line-height: initial;
+    }
+
+    @include breakpoint-small {
+      right: gap('base', 2);
+    }
+
+    @include breakpoint-compact {
+      margin-left: 0;
+      margin-right: 0;
+      right: gap('medium');
+    }
+
+    @include breakpoint-large {
+      right: initial;
+      left: gap('medium', -1);
+      top: gap('medium');
+
+      .badge {
+        @include text-truncate;
+        position: absolute;
+        display: block;
+        right: 0;
+        top: 0;
+        max-width: 200px;
+        text-align: right;
+      }
+    }
+  }
 }

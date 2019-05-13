@@ -1,7 +1,16 @@
 @import '../../styles/mixins/type';
+@import '../../styles/mixins/scheme';
+@import '../../styles/mixins/layout';
 
 .node-meta {
   @include type-small;
+
+  em {
+    @include type-alt;
+    font-style: initial;
+    font-weight: bold;
+    color: color('primary', 'bg');
+  }
 
   .node-published,
   .tag-list {

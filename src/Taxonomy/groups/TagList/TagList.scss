@@ -1,0 +1,5 @@
+@import '../../../Shared/groups/NodeList/NodeList.mixin.scss';
+
+.tag-list {
+  @include node-list;
+}

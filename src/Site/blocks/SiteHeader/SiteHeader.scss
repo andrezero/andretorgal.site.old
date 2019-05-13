@@ -18,7 +18,7 @@
   .site-title {
     @include type-brand;
     margin: 0 0 gap('small');
-    font-size: type-size(huge);
+    font-size: responsive-type-size(huge);
     transform: scale(0.8);
     transition: transform 0.25s ease;
     transform-origin: top left;

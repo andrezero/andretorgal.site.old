@@ -16,7 +16,7 @@ export const NodeMeta: React.StatelessComponent<Props> = ({ node }) => {
   return (
     <div className="node-meta">
       <p className="node-published">
-        Published{' '}
+        This <em>{node.type}</em> was published{' '}
         <Link href={node.path} className="node-permalink">
           <FormattedDate date={node.created} />
         </Link>{' '}

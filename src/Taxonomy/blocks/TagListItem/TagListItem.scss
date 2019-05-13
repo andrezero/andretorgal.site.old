@@ -1,0 +1,36 @@
+@import '../../../Shared/styles/mixins/reset';
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/scheme';
+@import '../../../Shared/styles/mixins/type';
+
+@import '../../../Shared/blocks/BaseListItem/BaseListItem.mixin';
+
+.tag-list-item {
+  @include base-list-item-all;
+
+  .node-contents {
+    @include scheme-primary;
+    @include base-list-item-spacing;
+    padding: gap('medium');
+  }
+
+  .node-title {
+    @include text-truncate;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: responsive-type-size('h1');
+  }
+
+  .count {
+    @include scheme-base;
+    min-width: gap('large');
+    height: gap('large');
+    margin-right: gap('medium');
+    padding: 0 gap('small');
+    line-height: gap('large');
+    font-size: responsive-type-size('h3');
+    text-align: center;
+    border-radius: gap('tiny');
+  }
+}

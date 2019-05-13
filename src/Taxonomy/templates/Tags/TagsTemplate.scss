@@ -1,0 +1,7 @@
+@import '../../../Shared/styles/mixins/layout';
+
+@import '../../../Shared/templates/BasePage.mixin';
+
+.taxonomy-tags {
+  @include base-page;
+}

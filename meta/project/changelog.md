@@ -1,6 +1,15 @@
 ---
 title: 'Changelog'
+updated: '2019-05-13'
 ---
+
+Tasks from the [backlog](./backlog) that eventually got done or archived.
+
+<!-- abstract -->
+
+- [x] models: tags
+- [x] page tags
+- [x] page tag
 
 - [x] format dates are missing month names
 - [x] format checkboxes in markdown
