@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
+import './Link.scss';
+
 const isExternal = (url: string): boolean => /^[a-z]+:/.test(url);
 const isFragment = (url: string): boolean => /^#.+/.test(url);
 
@@ -14,8 +16,8 @@ type Props = ComponentProps & React.HTMLProps<HTMLElement>;
 const external = (url: string, props: Props) => {
   const { children, ...rest } = props;
   return (
-    <a {...rest as React.ClassAttributes<HTMLAnchorElement>} href={url}>
-      {children}
+    <a className="external-link" {...rest as React.ClassAttributes<HTMLAnchorElement>} href={url}>
+      <span>{children}</span>
     </a>
   );
 };

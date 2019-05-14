@@ -8,19 +8,20 @@ updated: '2018-02-11'
 classes: 'about chrono'
 hero:
   text: 'oi'
-  image: '{{data.urls.static}}/img/about/moon.jpg'
-  thumb: '{{data.urls.static}}/img/about/moon-t.jpg'
+  img: '/assets/imgs/about-hero.jpg'
 ---
-
-My name is André Torgal and I was born in 1973 in Lisbon, Portugal. This is my website. And you, my friend, are welcome.
-
-Learn more about me, my work, other stuff I have been up to.
-
-<!-- abstract -->
 
 My name is André Torgal and I was born in 1973 in Lisbon, Portugal.
 
+---
+
 This is my website, a place where I can [blog](/posts) some thoughts and run a few [experiments](/experiments).
+
+---
+
+Learn more about me, my work, and other stuff I have been up to.
+
+<!-- abstract -->
 
 ## House rules
 
@@ -53,7 +54,7 @@ Got great plans for this website. I'm tired of dumping stuff in social media. Mo
 
 ## See you around
 
-<div tabindex="0" id="contact" class="banner banner-contact" role="navigation" arial-label="contacts">
+<div tabindex="-1" class="banner banner-contact" role="navigation" arial-label="contacts">
   <sronly>Here are some ways of contacting me:</sronly>
   <ul class="nav-extenral">
     <li><a class="email" href="mailto:info@andretorgal.com">Email</a></li>

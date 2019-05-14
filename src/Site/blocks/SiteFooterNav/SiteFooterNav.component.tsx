@@ -12,10 +12,10 @@ export const SiteFooterNav: React.StatelessComponent<{}> = () => {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/feed/">Feed</Link>
+          <Link href="/posts/">Blog</Link>
         </li>
         <li>
-          <Link href="/posts/">Posts</Link>
+          <Link href="/feed/">Feed</Link>
         </li>
         <li>
           <Link href="/meta/">Meta</Link>
@@ -24,7 +24,7 @@ export const SiteFooterNav: React.StatelessComponent<{}> = () => {
           <Link href="/about/">About</Link>
         </li>
         <li>
-          <Link href="/about/#contact">Contact</Link>
+          <Link href="/about/#see-you-around">Contact</Link>
         </li>
       </ul>
     </nav>

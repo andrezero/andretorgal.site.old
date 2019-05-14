@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { Head } from 'react-static';
 
+import { Hero } from '../../../Shared/blocks/Hero/Hero.component';
 import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { PageNode } from '../../../Shared/types/Page.models';
 import { RouteData } from '../../../Shared/types/Route.models';
 
-import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component';
-import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
-import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
+import { SiteFooter } from '../../blocks/SiteFooter/SiteFooter.component';
+import { SiteHeader } from '../../blocks/SiteHeader/SiteHeader.component';
+import { LinkToTop } from '../../elements/LinkToTop/LinkToTop.component';
 
 import { PostList } from '../../../Blog/groups/PostList/PostList.component';
 import { PostNode } from '../../../Blog/types/Post.models';
@@ -22,16 +23,18 @@ interface Props {
 }
 
 export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) => {
-  const header = <SiteHeader page={page} />;
+  const header = <SiteHeader node={page} />;
   const footer = <SiteFooter />;
+  const img = { '1024px': '/assets/imgs/home-hero-sm.jpg', '2048px': '/assets/imgs/home-hero.jpg' };
   return (
     <Layout className="site-home" header={header} footer={footer}>
       <Head title="Recent posts" meta={page.meta} />
-      <section className="hero">
-        <h1 className="page-title">{page.title}</h1>
-
+      <Hero img={img}>
+        <header className="hero-header">
+          <h1 className="page-title">Welcome friend</h1>
+        </header>
         <MarkdownBasic>{page.content}</MarkdownBasic>
-      </section>
+      </Hero>
 
       <section className="container">
         <h2 className="page-title">Latest Posts</h2>

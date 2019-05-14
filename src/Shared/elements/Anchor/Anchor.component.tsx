@@ -7,5 +7,5 @@ interface Props {
 }
 
 export const Anchor: React.StatelessComponent<Props> = ({ id }) => {
-  return <a className="anchor" id={id} aria-hidden={true} />;
+  return <span className="anchor" id={id} aria-hidden={true} tabIndex={-1} />;
 };

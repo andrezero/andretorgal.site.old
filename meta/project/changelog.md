@@ -7,6 +7,14 @@ Tasks from the [backlog](./backlog) that eventually got done or archived.
 
 <!-- abstract -->
 
+- [x] page style
+- [x] meta style
+- [x] tag style
+- [x] hero component
+- [x] fix sronly not being rendered
+- [x] fix headings
+- [x] differentiate external links
+
 - [x] models: tags
 - [x] page tags
 - [x] page tag

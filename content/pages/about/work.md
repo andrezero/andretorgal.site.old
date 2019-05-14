@@ -152,4 +152,4 @@ You can learn a bit more about my work in my [Linkedin profile](https://linkedin
 
 Or more about my [projects](/experiments/) and [back story](/about/story) right here on this site.
 
-And always feel free to [get in touch](/about#contact).
+And always feel free to [get in touch](/about#see-you-around).

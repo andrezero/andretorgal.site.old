@@ -21,7 +21,7 @@ interface Props {
 }
 
 export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) => {
-  const header = <SiteHeader page={page} />;
+  const header = <SiteHeader node={page} />;
   const footer = <SiteFooter />;
   return (
     <Layout className="blog-home" header={header} footer={footer}>

@@ -20,7 +20,6 @@ export const PageListItem: React.StatelessComponent<Props> = ({ node: post, leve
   const Tag = ('h' + level) as React.ElementType;
   const header = (
     <>
-      <NodeDate date={post.created} />
       <Tag className="node-title">
         <Link href={post.path}>{post.title}</Link>
       </Tag>

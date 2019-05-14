@@ -2,8 +2,4 @@
 
 .site-home {
   @include base-page;
-
-  .hero {
-    @include container;
-  }
 }

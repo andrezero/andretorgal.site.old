@@ -1,9 +1,9 @@
+@import '../../../Shared/styles/mixins/reset';
 @import '../../../Shared/styles/mixins/layout';
-
-@import '../../../Shared/groups/NodeList/NodeList.mixin.scss';
+@import '../../../Shared/styles/mixins/type';
 
 .node-list {
-  @include node-list;
+  @include reset-list;
 
   > * {
     position: relative;

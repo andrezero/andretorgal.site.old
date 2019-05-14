@@ -9,14 +9,13 @@ Stuff to do on this website. The done stuff is on the [changelog](./changelog) p
 
 ## Now
 
-- [ ] fix sronly not being rendered
-- [ ] fix blog post dates
+- [ ] about navigation
 - [ ] blog navigation style
 - [ ] meta navigation breadcrumbs
-- [ ] page style
-- [ ] meta style
-- [ ] tag style
+
+- [ ] fix blog post dates
 - [ ] node type should also be a tag
+
 - [ ] contents/tag/personal.md
 - [ ] contents/meta abstracts (include in page)
 - [ ] contents/page abstracts (do not include in item)
@@ -25,6 +24,7 @@ Stuff to do on this website. The done stuff is on the [changelog](./changelog) p
 
 - [ ] years in timelines
 - [ ] emojis in timeline
+- [ ] use icons in footer external links
 - [ ] noise in the transition to the footer
 
 - [ ] storybook: type, scheme, space [see here](https://medium.com/eightshapes-llc/
@@ -44,7 +44,6 @@ Stuff to do on this website. The done stuff is on the [changelog](./changelog) p
 
 ## Later
 
-- [ ]
 - [ ] og image
 - [ ] refactor og generation
 - [ ] search

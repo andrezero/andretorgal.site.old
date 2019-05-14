@@ -20,10 +20,12 @@ export const MetaListItem: React.StatelessComponent<Props> = ({ node: meta, leve
   const Tag = ('h' + level) as React.ElementType;
   const header = (
     <>
-      Last updated: <NodeDate date={meta.updated} />
       <Tag className="node-title">
         <Link href={meta.path}>{meta.title}</Link>
       </Tag>
+      <p className="last-updated">
+        Last updated <NodeDate date={meta.updated} />
+      </p>
     </>
   );
   return (

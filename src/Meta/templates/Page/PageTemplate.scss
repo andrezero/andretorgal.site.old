@@ -2,4 +2,5 @@
 
 .meta-page {
   @include base-page;
+  background-color: color('bright', 0);
 }

@@ -3,21 +3,16 @@
 @import '../../../Shared/blocks/BaseListItem/BaseListItem.mixin';
 
 .post-list-item {
-  @include base-list-item-all;
+  @include base-list-item;
 
   .node-contents {
-    @include base-list-item-spacing;
+    @include base-list-item-style;
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 1) 0%,
       rgba(255, 255, 255, 0.2) 80%,
       rgba(255, 255, 255, 1) 100%
     );
-  }
-
-  .node-footer {
-    padding-top: gap('small');
-    border-top: 1px solid color('base', 'edge');
   }
 
   @include breakpoint-compact {

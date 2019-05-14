@@ -11,7 +11,7 @@
   width: 100%;
 
   .container {
-    @include container;
+    @include container-wide;
     padding-top: gap(base);
   }
 
@@ -30,8 +30,8 @@
       padding: 0 gap(medium);
     }
   }
-}
 
-.pedantic {
-  display: none;
+  hr {
+    display: none;
+  }
 }

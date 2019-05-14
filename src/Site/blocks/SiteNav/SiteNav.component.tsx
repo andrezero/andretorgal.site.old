@@ -17,7 +17,7 @@ export const SiteNav: React.StatelessComponent<Props> = ({ page }) => {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/posts/">Posts</Link>
+          <Link href="/posts/">Blog</Link>
         </li>
         {/* <li>
           <Link href="/things/">Things</Link>
@@ -38,7 +38,7 @@ export const SiteNav: React.StatelessComponent<Props> = ({ page }) => {
           <Link href="/meta/">Meta</Link>
         </li>
         <li>
-          <Link href="/about/#contact">Contact</Link>
+          <Link href="/about/#see-you-around">Contact</Link>
         </li>
       </ul>
     </nav>

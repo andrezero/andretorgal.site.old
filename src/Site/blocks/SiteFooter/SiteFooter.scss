@@ -19,16 +19,28 @@
   }
 
   .container {
-    @include container;
+    @include container-wide;
   }
 
   .navigation {
     display: flex;
     margin-bottom: gap('large');
-    font-size: var(--root-type-sizes-large);
+    font-size: responsive-type-size('large');
 
     nav {
       margin-right: gap('large');
+    }
+
+    @include breakpoint-medium {
+      nav {
+        margin-right: gap('huge');
+      }
+    }
+
+    @include breakpoint-medium {
+      nav {
+        margin-right: gap('huge', 2);
+      }
     }
   }
 

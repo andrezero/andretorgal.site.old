@@ -22,7 +22,7 @@ interface Props {
 }
 
 export const PageTemplate: React.StatelessComponent<Props> = ({ meta }) => {
-  const header = <SiteHeader page={meta} />;
+  const header = <SiteHeader node={meta} />;
   const footer = <SiteFooter />;
   return (
     <Layout className="meta-page" header={header} footer={footer}>

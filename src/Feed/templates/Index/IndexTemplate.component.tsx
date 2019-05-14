@@ -25,7 +25,7 @@ interface Props {
 export type IndexTemplateProps = Props;
 
 export const IndexTemplate: React.StatelessComponent<Props> = ({ page, latest, featured, updated }) => {
-  const header = <SiteHeader page={page} />;
+  const header = <SiteHeader node={page} />;
   const footer = <SiteFooter />;
   return (
     <Layout className="feed-index" header={header} footer={footer}>

@@ -47,7 +47,7 @@ $scalars: settings('type-scalars');
   font-family: var(--root-type-families-base);
   font-weight: var(--root-type-weights-base);
   line-height: var(--root-type-heights-base);
-  font-size: calc(var(--root-type-sizes-base) + 0.5vw);
+  font-size: responsive-type-size('base');
 }
 
 @mixin type-alt {
@@ -76,27 +76,31 @@ $scalars: settings('type-scalars');
   @include heading;
   margin-top: calc(var(--root-space-unit) * 3.5px);
   margin-bottom: calc(var(--root-space-unit) * 2px);
-  font-size: calc(var(--root-type-sizes-h1) + 0.5vw);
+  font-size: responsive-type-size('h1');
 }
 
 @mixin heading-2 {
   @include heading;
-  font-size: calc(var(--root-type-sizes-h2) + 0.5vw);
+  font-size: responsive-type-size('h2');
 }
 
 @mixin heading-3 {
   @include heading;
-  font-size: calc(var(--root-type-sizes-h3) + 0.5vw);
+  font-size: responsive-type-size('h3');
 }
 
 @mixin heading-4 {
   @include heading;
   font-weight: var(--root-type-weights-light);
-  font-size: calc(var(--root-type-sizes-h4) + 0.5vw);
+  font-size: responsive-type-size('h4');
+}
+
+@mixin type-strong {
+  font-weight: var(--root-type-weights-medium);
 }
 
 @mixin type-small {
-  font-size: calc(var(--root-type-sizes-small) + 0.5vw);
+  font-size: responsive-type-size('small');
 }
 
 @mixin copy {

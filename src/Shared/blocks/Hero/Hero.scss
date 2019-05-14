@@ -1,0 +1,53 @@
+@import '../../../Shared/styles/mixins/type';
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/scheme';
+
+.hero {
+  @include scheme-secondary;
+  position: relative;
+  overflow: hidden;
+  min-height: 40vh;
+
+  .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-content {
+    @include container;
+    padding-top: 5vh;
+    position: relative;
+    z-index: 1;
+
+    .page-title {
+      @include type-brand;
+    }
+
+    > * {
+      max-width: 800px;
+    }
+  }
+
+  .hero-header {
+    margin-bottom: gap('medium');
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    display: inline;
+    @include scheme-secondary;
+  }
+
+  hr {
+    opacity: 0;
+    margin: 0 0 gap('small');
+  }
+}

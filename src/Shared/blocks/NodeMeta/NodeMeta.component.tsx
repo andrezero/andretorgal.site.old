@@ -16,15 +16,14 @@ export const NodeMeta: React.StatelessComponent<Props> = ({ node }) => {
   return (
     <div className="node-meta">
       <p className="node-published">
-        This <em>{node.type}</em> was published{' '}
+        <span className="verbose">
+          this <em>{node.type}</em> was{' '}
+        </span>
+        published{' '}
         <Link href={node.path} className="node-permalink">
           <FormattedDate date={node.created} />
-        </Link>{' '}
-        by{' '}
-        <Link href="/about" className="author">
-          André Torgal
         </Link>
-        {node.tags && node.tags.length && <span>, under: </span>}
+        {node.tags && node.tags.length && <span> under: </span>}
       </p>{' '}
       <TagList tags={node.tags} />
     </div>

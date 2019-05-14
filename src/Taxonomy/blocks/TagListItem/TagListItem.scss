@@ -6,12 +6,10 @@
 @import '../../../Shared/blocks/BaseListItem/BaseListItem.mixin';
 
 .tag-list-item {
-  @include base-list-item-all;
+  @include base-list-item;
 
   .node-contents {
     @include scheme-primary;
-    @include base-list-item-spacing;
-    padding: gap('medium');
   }
 
   .node-title {

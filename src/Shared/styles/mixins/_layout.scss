@@ -13,6 +13,7 @@ $container-base: space-container('base');
 $container-compact: space-container('compact');
 $container-small: space-container('small');
 $container-medium: space-container('medium');
+$container-large: space-container('large');
 
 @mixin space-root {
   --root-space-unit: #{$-unit};
@@ -37,6 +38,22 @@ $container-medium: space-container('medium');
   }
 }
 
+@mixin container-wide {
+  margin: 0 map-get($container-base, 'gap') * $-unit * 1px;
+
+  @include breakpoint-small {
+    margin: 0 map-get($container-small, 'gap') * $-unit * 1px;
+  }
+
+  @include breakpoint-medium {
+    margin: 0 map-get($container-medium, 'gap') * $-unit * 1px;
+  }
+
+  @include breakpoint-large {
+    margin: 0 map-get($container-large, 'gap') * $-unit * 1px;
+  }
+}
+
 @mixin container-compact {
   margin: 0 map-get($container-base, 'gap') * $-unit * 1px;
 
@@ -47,6 +64,66 @@ $container-medium: space-container('medium');
   @include breakpoint-compact {
     max-width: map-get($container-compact, 'width') * $-unit * 1px;
     margin: 0 auto;
+  }
+}
+
+@mixin rhythm-v {
+  margin-bottom: gap('large');
+
+  @include breakpoint-small {
+    margin-bottom: gap('huge');
+  }
+
+  @include breakpoint-compact {
+    margin-bottom: gap('huge', 1.5);
+  }
+}
+
+@mixin rhythm-v-compact {
+  margin-bottom: gap('small');
+
+  @include breakpoint-small {
+    margin-bottom: gap('base');
+  }
+
+  @include breakpoint-compact {
+    margin-bottom: gap('medium');
+  }
+}
+
+@mixin spacing-h {
+  margin-left: gap('base', -1);
+  margin-right: gap('base', -1);
+  padding-left: gap('base');
+  padding-right: gap('base');
+
+  @include breakpoint-small {
+    margin-left: gap('medium', -1);
+    margin-right: gap('medium', -1);
+    padding-left: gap('medium');
+    padding-right: gap('medium');
+  }
+
+  @include breakpoint-compact {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: gap('large');
+    padding-right: gap('large');
+  }
+}
+
+@mixin spacing-v {
+  padding-top: gap('base');
+  padding-bottom: gap('base');
+
+  @include breakpoint-small {
+    padding-top: gap('medium');
+    padding-bottom: gap('base', 1.5);
+  }
+
+  @include breakpoint-compact {
+    padding-top: gap('large');
+    padding-bottom: gap('large');
   }
 }
 

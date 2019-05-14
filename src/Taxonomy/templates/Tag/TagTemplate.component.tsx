@@ -23,7 +23,7 @@ export interface Props {
 }
 
 export const TagTemplate: React.StatelessComponent<Props> = ({ tag, nodes }) => {
-  const header = <SiteHeader page={tag} />;
+  const header = <SiteHeader node={tag} />;
   const footer = <SiteFooter />;
   return (
     <Layout className="taxonomy-tag" header={header} footer={footer}>

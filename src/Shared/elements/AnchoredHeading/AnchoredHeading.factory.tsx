@@ -32,7 +32,7 @@ export const anchoredHeading = (tag: React.ElementType): React.StatelessComponen
     const id = idOf(children);
     return (
       <Tag className="has-anchor">
-        <a className="handle" aria-hidden={true} href={`#${id}`} id={id} />
+        <a tabIndex={-1} className="handle" aria-hidden={true} href={`#${id}`} id={id} />
         {children}
       </Tag>
     );

@@ -10,13 +10,15 @@ $space-gaps: (
 );
 
 $-container-base: 37;
-$-container-compact: 68;
+$-container-compact: 72;
 $-container-small: 80;
 $-container-medium: 120;
+$-container-large: 180;
 
 $-gap-base: map-get($space-gaps, 'base');
 $-gap-small: map-get($space-gaps, 'medium');
 $-gap-medium: map-get($space-gaps, 'large');
+$-gap-large: map-get($space-gaps, 'huge');
 
 $space-containers: (
   base: (
@@ -34,6 +36,10 @@ $space-containers: (
   medium: (
     width: $-container-medium,
     gap: $-gap-medium
+  ),
+  large: (
+    width: $-container-large,
+    gap: $-gap-large
   )
 );
 

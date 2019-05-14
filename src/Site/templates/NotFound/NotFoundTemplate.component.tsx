@@ -21,7 +21,7 @@ export const NotFoundTemplate: React.StatelessComponent<{}> = () => {
       title: '404 Not Found'
     }
   };
-  const header = <SiteHeader page={props.page} />;
+  const header = <SiteHeader node={props.page} />;
   const footer = <SiteFooter />;
   return (
     <Layout className="error-not-found" header={header} footer={footer}>

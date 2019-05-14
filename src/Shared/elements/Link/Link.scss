@@ -1,0 +1,19 @@
+@import '../../styles/mixins/layout';
+@import '../../styles/mixins/scheme';
+
+a.external-link {
+  position: relative;
+  text-decoration: none;
+
+  span {
+    text-decoration: underline;
+  }
+
+  &::after {
+    content: '\21AA';
+    position: relative;
+    top: gap('tiny');
+    padding-left: gap('tiny');
+    font-size: 75%;
+  }
+}

@@ -3,16 +3,19 @@
 @import '../../../Shared/blocks/BaseListItem/BaseListItem.mixin';
 
 .page-list-item {
-  @include base-list-item-style;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%);
+  @include base-list-item;
 
-  .node-footer {
-    padding-top: gap('small');
-    border-top: 1px solid color('base', 'edge');
+  .node-contents {
+    @include base-list-item-style;
+    border: 1px solid color('base', 'edge');
+    border-left-color: transparent;
+    border-right-color: transparent;
   }
 
   @include breakpoint-compact {
-    border-top-left-radius: gap('small');
-    border-top-right-radius: gap('small');
+    .node-contents {
+      border-left-color: color('base', 'edge');
+      border-right-color: color('base', 'edge');
+    }
   }
 }

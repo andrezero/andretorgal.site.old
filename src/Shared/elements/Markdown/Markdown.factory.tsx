@@ -4,6 +4,7 @@ import unified from 'unified';
 import { VFileContents } from 'vfile';
 
 import { NodeContent } from '../../types/Node.models';
+import { Anchor } from '../Anchor/Anchor.component';
 import { anchoredHeading } from '../AnchoredHeading/AnchoredHeading.factory';
 import { Link } from '../Link/Link.component';
 import { MdChekbox } from '../MdCheckbox/MdCheckbox.component';
@@ -29,7 +30,7 @@ interface StaticProps {
 const map = (key: string, cMap: MarkdownComponentMap, props: StaticProps): React.ComponentType => {
   const defaultTag = 'div';
   const tag = (cMap && key && cMap[key]) || key || defaultTag;
-  if ((tag as React.ComponentType).displayName || typeof tag === 'string') {
+  if (typeof tag === 'function' || typeof tag === 'string') {
     return tag as React.ComponentType;
   } else {
     const attributeTestMap = tag as MarkdownComponentAttributeTestMap;
@@ -79,6 +80,7 @@ export const markdownFactory = (
 
 export const basicComponentMap: MarkdownComponentMap = {
   a: Link,
+  anchor: Anchor,
   sronly: SROnly,
   h2: anchoredHeading('h2'),
   h3: anchoredHeading('h3'),

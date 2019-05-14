@@ -15,8 +15,7 @@ interface Props {
 export const DefaultLayout: React.StatelessComponent<Props> = ({ className, header, children, footer }) => {
   return (
     <AcessibleRouting focus="top">
-      <div className={`layout default-layout`}>
-        <Anchor id="top" />
+      <div className={`layout default-layout`} id="top">
         {header}
         <main id="page-contents" className={`${className} layout-body`} role="main">
           {children}

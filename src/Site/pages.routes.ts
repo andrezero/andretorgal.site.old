@@ -1,5 +1,4 @@
 import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
-import { makeMeta } from '../Shared/lib/meta';
 import { findRoute, replaceRoute } from '../Shared/lib/routes';
 import { cssClass } from '../Shared/lib/strings';
 import { PageNode } from '../Shared/types/Page.models';

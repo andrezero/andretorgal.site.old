@@ -1,7 +1,5 @@
-@import '../../../Shared/styles/mixins/layout';
-
-@import '../../../Shared/groups/NodeList/NodeList.mixin.scss';
+@import '../../../Shared/styles/mixins/reset';
 
 .post-list {
-  @include node-list;
+  @include reset-list;
 }
