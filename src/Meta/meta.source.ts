@@ -12,7 +12,7 @@ const createMeta = (file: FileSysNode): MetaNode => {
   data.title = makeTitle(data.title, file.name);
   const path = makePath('meta', file.path);
   const template = data.template;
-  const meta = makeMeta(data);
+  const meta = makeMeta(data, abstract, content);
 
   return {
     type: 'meta',

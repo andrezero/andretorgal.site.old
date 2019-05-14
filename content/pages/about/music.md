@@ -1,13 +1,13 @@
 ---
 title: 'My music'
 template: 'Site/About'
-description: 'My name is Andre Torgal. I was born in Lisbon, Portugal in 1973.'
 tags: ['personal']
 created: '2017-02-11'
-classes: 'about chrono'
 ---
 
 This page is about my music.
+
+<!-- abstract -->
 
 ## Espírito da Paz
 

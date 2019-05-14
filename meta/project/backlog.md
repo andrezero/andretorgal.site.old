@@ -9,18 +9,30 @@ Stuff to do on this website. The done stuff is on the [changelog](./changelog) p
 
 ## Now
 
+- [ ] update dependencies
+
+- [ ] images: extract, manipulate, responsive print and upload
+
+  - [ ] populate node.assets
+  - [ ] og image
+  - [ ] generate resolutions during dev build
+    - [ ] managing images, image sharp, other [image optimizations](https://medium.com/grailed-engineering/image-optimization-using-higher-order-components-f401e6b4e1b1)
+  - [ ] responsive print
+  - [ ] webpack dev-server
+  - [ ] s3 sync in dev time
+
+## next
+
 - [ ] about navigation
-- [ ] blog navigation style
+- [ ] blog navigation
 - [ ] meta navigation breadcrumbs
 
 - [ ] fix blog post dates
 - [ ] node type should also be a tag
 
 - [ ] contents/tag/personal.md
-- [ ] contents/meta abstracts (include in page)
-- [ ] contents/page abstracts (do not include in item)
-
-## next
+- [ ] contents/meta abstracts (include in page body)
+- [x] contents/page abstracts (include in hero if hero is on)
 
 - [ ] years in timelines
 - [ ] emojis in timeline
@@ -37,15 +49,13 @@ Stuff to do on this website. The done stuff is on the [changelog](./changelog) p
 - [ ] suspense fallback loading
 - [ ] router [transition](https://reach.tech/router/example/animation)
 - [ ] jest + enzyme
-- [ ] managing images, image sharp, other [image optimizations](https://medium.com/grailed-engineering/image-optimization-using-higher-order-components-f401e6b4e1b1)
 - [ ] husky + lint staged
 - [ ] spike: gitlab + pages
 - [ ] spike: gitlab + s3
 
 ## Later
 
-- [ ] og image
-- [ ] refactor og generation
+- [ ] meta description defaults;
 - [ ] search
 - [ ] make data available to the 404 page
   - [ ] fix/workaround issue of `getRouteData()` being useless here

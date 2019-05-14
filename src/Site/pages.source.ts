@@ -11,7 +11,7 @@ const createPage = (file: FileSysNode): PageNode => {
   data.title = makeTitle(data.title, file.name);
   const path = makePath([], file.path);
   const template = data.template;
-  const meta = makeMeta(data);
+  const meta = makeMeta(data, abstract, content);
 
   return {
     type: 'page',

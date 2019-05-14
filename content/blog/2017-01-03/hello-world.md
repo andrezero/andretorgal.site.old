@@ -3,10 +3,6 @@ title: 'Hello World'
 tags: ['internet', 'social-web', 'social-networks', 'blogging', 'personal', 'perspective', 'the-intent']
 created: '2017-01-03'
 updated: '2017-03-12'
-hero:
-  text: 'ten years without a website'
-  image: '{{data.urls.static}}/img/about/moon.jpg'
-  thumb: '{{data.urls.static}}/img/about/moon-t.jpg'
 ---
 
 My first website was hosted in [tripod](https://en.wikipedia.org/wiki/Tripod.com), back in 1995. For the next 13 years I had a constant, tireless, and experimental presence on the web. In 2008 I took my last site down. To this day, under [andretorgal.com](http://andretorgal.com), you could only find a placeholder, a 404 or a mysterious timeout. _It's time to change this sad state of affairs._

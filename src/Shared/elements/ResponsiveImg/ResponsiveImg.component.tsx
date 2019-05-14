@@ -1,23 +1,26 @@
 import * as React from 'react';
 
-export interface SrcSet {
-  [key: number]: string;
+export type SrcSetItem = [string, string];
+
+export type SrcSet = SrcSetItem[];
+
+export interface ResponsiveSrc {
+  set: SrcSet;
+  sizes: string[];
 }
 
 interface Props {
   className?: string;
-  src?: string | SrcSet;
+  src: ResponsiveSrc;
 }
 
 export const ResponsiveImg: React.StatelessComponent<Props> = ({ className, src }) => {
-  let srcSet = '';
-  let imgSrc = '';
-  if (typeof src === 'string') {
-    imgSrc = src;
-  } else {
-    const keys = Object.keys(src);
-    imgSrc = src[keys[0]];
-    srcSet = keys.map(key => `${src[key]} ${key}`).join(', ');
-  }
-  return <img className={className} sizes="100vw" srcSet={srcSet} data-object-fit="cover" src={imgSrc} />;
+  const defaultSrc = src.set[src.set.length - 1][1];
+  const srcSet = src.set.map(item => `${item[1]} ${item[0]}`).join(', ');
+  const sizes = src.sizes.join(', ');
+  return (
+    <picture className={className}>
+      <img sizes={sizes} srcSet={srcSet} src={defaultSrc} />
+    </picture>
+  );
 };

@@ -15,6 +15,7 @@ import { LinkToTop } from '../../elements/LinkToTop/LinkToTop.component';
 import { PostList } from '../../../Blog/groups/PostList/PostList.component';
 import { PostNode } from '../../../Blog/types/Post.models';
 
+import { ResponsiveSrc, SrcSetItem } from '../../../Shared/elements/ResponsiveImg/ResponsiveImg.component';
 import './HomeTemplate.scss';
 
 interface Props {
@@ -25,7 +26,11 @@ interface Props {
 export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) => {
   const header = <SiteHeader node={page} />;
   const footer = <SiteFooter />;
-  const img = { '1024px': '/assets/imgs/home-hero-sm.jpg', '2048px': '/assets/imgs/home-hero.jpg' };
+
+  const img: ResponsiveSrc = {
+    set: [['1024w', '/assets/imgs/home-hero-sm.jpg'], ['2048w', '/assets/imgs/home-hero.jpg']],
+    sizes: ['100vw']
+  };
   return (
     <Layout className="site-home" header={header} footer={footer}>
       <Head title="Recent posts" meta={page.meta} />
@@ -33,7 +38,7 @@ export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) =
         <header className="hero-header">
           <h1 className="page-title">Welcome friend</h1>
         </header>
-        <MarkdownBasic>{page.content}</MarkdownBasic>
+        <MarkdownBasic>{page.abstract}</MarkdownBasic>
       </Hero>
 
       <section className="container">

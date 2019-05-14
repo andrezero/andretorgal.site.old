@@ -13,7 +13,7 @@ const createPost = (file: FileSysNode): PostNode => {
   const date = data.created.format('YYYY-MMM').toLowerCase();
   const path = makePath(['posts', date], data.path, data.title);
   const template = data.template;
-  const meta = makeMeta(data);
+  const meta = makeMeta(data, abstract, content);
 
   return {
     type: 'post',

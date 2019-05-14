@@ -4,9 +4,8 @@ import { Node } from './Node.models';
 export interface PageNode extends Node {
   type: 'page';
   hero?: {
-    img?: string | SrcSet;
+    img?: string;
     title?: string;
-    text?: string;
   };
 }
 

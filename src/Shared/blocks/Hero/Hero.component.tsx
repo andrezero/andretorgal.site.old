@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import { ResponsiveImg, SrcSet } from '../../elements/ResponsiveImg/ResponsiveImg.component';
+import { ResponsiveImg, ResponsiveSrc } from '../../elements/ResponsiveImg/ResponsiveImg.component';
 
 import './Hero.scss';
 
 interface Props {
   children?: React.ReactNode;
-  img?: string | SrcSet;
+  img: ResponsiveSrc;
   className?: string;
 }
 

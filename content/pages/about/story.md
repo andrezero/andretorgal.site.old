@@ -1,15 +1,17 @@
 ---
 title: 'My story'
 template: 'Site/About'
-description: 'My name is Andre Torgal. I was born in Lisbon, Portugal in 1973.'
 tags: ['personal']
 created: '2017-02-11'
-classes: 'about chrono'
 ---
 
 This is my personal story.
 
-I don't expect you to read this. :-) This is mostly a writing exercise and a reflection about how I arrived here. It helps me better understand where I'm going, so if you do read it, drop me a line, I'd love to hear what you make of it. ;-)
+I don't expect you to read this. :-) This is mostly a writing exercise, a reflection about how I arrived here, and I hope it helps me better understand where I'm going.
+
+So if you do read it, drop me a line, I'd love to hear what you make of it. ;-)
+
+<!-- abstract -->
 
 ## 8 inch floppy disks
 

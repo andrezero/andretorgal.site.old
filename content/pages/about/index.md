@@ -1,13 +1,11 @@
 ---
 title: 'Me and my website'
 template: 'Site/About'
-description: 'About me'
 tags: ['personal', 'work']
 created: '2017-02-11'
 updated: '2018-02-11'
-classes: 'about chrono'
 hero:
-  text: 'oi'
+  text: 'hum?'
   img: '/assets/imgs/about-hero.jpg'
 ---
 
