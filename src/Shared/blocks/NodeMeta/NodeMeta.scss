@@ -8,7 +8,7 @@
   em {
     @include type-alt;
     font-style: initial;
-    font-weight: bold;
+    font-weight: type-weight('heavy');
     color: color('primary', 'bg');
   }
 

@@ -18,8 +18,8 @@
   display: block;
   padding-top: gap('large');
   text-align: center;
-  font-size: responsive-type-size(h3);
-  font-weight: type-weight(heavy);
+  font-size: responsive-type-size('h3');
+  font-weight: type-weight('heavy');
 
   .link {
     display: inline-block;

@@ -12,10 +12,10 @@ import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component
 import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
 
 import { TagList } from '../../groups/TagList/TagList.component';
+import { TagListCompact } from '../../groups/TagListCompact/TagListCompact.component';
 import { TagNode } from '../../types/Tag.models';
 
 import './TagsTemplate.scss';
-import { TagListCompact } from '../../groups/TagListCompact/TagListCompact.component';
 
 interface Props {
   page: PageNode;

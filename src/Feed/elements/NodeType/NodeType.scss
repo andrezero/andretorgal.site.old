@@ -9,6 +9,7 @@
     @include type-small;
     @include type-alt;
     @include noselect;
+
     color: color('base', 'alt');
     padding: gap('tiny') gap('base');
     border-radius: gap('small');

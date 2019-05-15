@@ -2,7 +2,6 @@
 @import '../../../Shared/styles/mixins/layout';
 @import '../../../Shared/styles/mixins/scheme';
 @import '../../../Shared/styles/mixins/type';
-
 @import '../../../Shared/blocks/BaseListItem/BaseListItem.mixin';
 
 .tag-list-item {
@@ -10,6 +9,7 @@
 
   .node-contents {
     @include scheme-secondary;
+
     padding-top: gap('tiny');
     padding-bottom: gap('tiny');
     padding-left: gap('medium');
@@ -17,6 +17,7 @@
 
   .node-title {
     @include text-truncate;
+
     display: flex;
     align-items: center;
     margin: 0;
@@ -30,6 +31,7 @@
 
   .tag-count {
     @include scheme-base;
+
     font-size: responsive-type-size('h3');
     color: color('secondary', 'bg');
   }

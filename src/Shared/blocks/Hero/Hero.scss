@@ -4,6 +4,7 @@
 
 .hero {
   @include scheme-secondary;
+
   position: relative;
   overflow: hidden;
   min-height: 40vh;
@@ -25,6 +26,7 @@
 
   .hero-content {
     @include container;
+
     padding-top: 5vh;
     position: relative;
     z-index: 1;
@@ -48,6 +50,7 @@
   h4,
   p {
     display: inline;
+
     @include scheme-secondary;
   }
 

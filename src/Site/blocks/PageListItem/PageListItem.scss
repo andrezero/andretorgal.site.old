@@ -1,5 +1,4 @@
 @import '../../../Shared/styles/mixins/layout';
-
 @import '../../../Shared/blocks/BaseListItem/BaseListItem.mixin';
 
 .page-list-item {
@@ -7,6 +6,7 @@
 
   .node-contents {
     @include base-list-item-style;
+
     border: 1px solid color('base', 'edge');
     border-left-color: transparent;
     border-right-color: transparent;

@@ -1,6 +1,5 @@
 @import '../../../Shared/styles/mixins/layout';
 @import '../../../Shared/styles/mixins/type';
-
 @import '../../../Shared/templates/BasePage.mixin';
 
 .blog-post {
@@ -10,6 +9,7 @@
     @include rhythm-v;
     @include spacing-h;
     @include spacing-v;
+
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 1) 0%,
@@ -26,7 +26,8 @@
     border-left: 3px solid color('base', 'edge');
   }
 
-  .post-contents p:first-child:first-letter {
+  /* stylelint-disable-line selector-max-compound-selectors */
+  .post-contents p:first-child::first-letter {
     float: left;
     padding-top: 2px;
     padding-right: gap('small', 1.5);

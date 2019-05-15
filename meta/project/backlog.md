@@ -11,7 +11,8 @@ The done stuff is on the [changelog](./changelog) page.
 
 ## Now
 
-- [ ] update dependencies
+- [x] update dependencies
+- [x] configure lintstyle, eslint, tslint
 
 - [ ] images: extract, manipulate, responsive print and upload
 
@@ -32,6 +33,7 @@ The done stuff is on the [changelog](./changelog) page.
 - [ ] blog navigation
 - [ ] meta navigation breadcrumbs
 
+- [ ] a11y tooling: linting with [tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib) and run time analysis with [react-axe](https://github.com/dequelabs/react-axe)
 - [ ] fix markdown is rendering an extra div (messing first/last-child margin resets and dropcaps style)
 - [ ] fix crate/update dates
 - [ ] node type should also be a tag
@@ -70,18 +72,23 @@ The done stuff is on the [changelog](./changelog) page.
   - [ ] fix/workaround issue of `getRouteData()` being useless here
   - [ ] refactor routes code, decouple routes from sources so that data from one source can be used in different routers
 
-### Issues
+## Issues
+
+### a11y
 
 - [ ] acessible routing: scroll to top when clicking on link to current page (and no anchor in link)
-- [ ] because now using `react-static-plugin-react-router` instead, need to implement accessible routing by hand
-- [ ] `react-static` ssg time vs client time hydration of css module classes breaks down
-      / using [typings-for-css-modules-loader](https://github.com/Jimdo/typings-for-css-modules-loader)
-      / following [issue here](https://github.com/nozzle/react-static/issues/984)
-      / see [loggbook](./logbook-accepted.md)
-- [ ] `react-static` tries to build pages for sass typings `404.scss.d.ts`
+
+### React Static
+
+- [ ] `7.0.10` errors when builing for production: `Error: React-Hot-Loader: Hot Module Replacement is not enabled`
+- [ ] `7.0.9` noise when building for production
+- [ ] `7.0.9` error with webpack-dev-server - `Uncaught SyntaxError: The URL 'http:/[http//localhost]:3000' is invalid` - patched with `"resolutions": { "react-static/webpack-dev-server": "3.2.1" }` in `package.json`
+- [ ] maximum call stack error when using helmet with children, following [issue here](https://github.com/nozzle/react-static/issues/1119)
+- [ ] 404 has no access to `getRouteData()` because it looks up the failed route instead of the `404` path
+
+### Typescript
+
 - [ ] Types for `rehype-raw` `rehype-react` `remark-parse` and `remark-rehype` added manually, waiting for [this PR](https://github.com/remarkjs/remark/pull/383) to be merged, posted on [unified community](https://spectrum.chat/unified/type-definitions/missing-typings-across-plugin-community~49ee93c0-23bf-49f3-9706-2468b0760564)
-- [ ] `react-static` maximum call stack error when using helmet with children, following [issue here](https://github.com/nozzle/react-static/issues/1119)
-- [ ] `react-static` 404 has no access to `getRouteData()` because it looks up the failed route instead of the `404` path
 
 ### Puzzles
 

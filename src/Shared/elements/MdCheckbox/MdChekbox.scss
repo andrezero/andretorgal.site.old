@@ -8,7 +8,7 @@
   height: unit(1.8);
   width: unit(1.8);
   border: unit(0.1) solid color('base', 'fg');
-  box-shadow: inset 0px 0px color('base', 'fg');
+  box-shadow: inset 0 0 color('base', 'fg');
   border-radius: 2px;
 
   input {

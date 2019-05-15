@@ -1,6 +1,5 @@
 @import '../lib/vars/vars-from-map';
 @import '../lib/vars/vars-declare.mixin';
-
 @import '../settings';
 
 $root-type-families: vars-from-map('root-type-families', settings('type-families'));
@@ -14,6 +13,7 @@ $scalars: settings('type-scalars');
 
 @function responsive-type-size($size) {
   $scalar: map-get($scalars, $size);
+
   @return calc(var(--root-type-sizes-#{$size}) + #{$scalar}vw);
 }
 
@@ -23,6 +23,7 @@ $scalars: settings('type-scalars');
     $style: map-get($value, 'style');
     $weight: map-get($value, 'weight');
     $url: map-get($value, 'url');
+
     @font-face {
       font-family: '#{$family}';
       font-style: '#{$style}';
@@ -69,11 +70,13 @@ $scalars: settings('type-scalars');
 
 @mixin heading {
   @include type-alt;
+
   font-weight: var(--root-type-weights-light);
 }
 
 @mixin heading-1 {
   @include heading;
+
   margin-top: calc(var(--root-space-unit) * 3.5px);
   margin-bottom: calc(var(--root-space-unit) * 2px);
   font-size: responsive-type-size('h1');
@@ -81,16 +84,19 @@ $scalars: settings('type-scalars');
 
 @mixin heading-2 {
   @include heading;
+
   font-size: responsive-type-size('h2');
 }
 
 @mixin heading-3 {
   @include heading;
+
   font-size: responsive-type-size('h3');
 }
 
 @mixin heading-4 {
   @include heading;
+
   font-weight: var(--root-type-weights-light);
   font-size: responsive-type-size('h4');
 }

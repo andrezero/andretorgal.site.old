@@ -1,6 +1,5 @@
 @import '../lib/vars/vars-from-map';
 @import '../lib/vars/vars-declare.mixin';
-
 @import '../settings';
 
 $root-scheme-base: vars-from-map('root-scheme-base', color-group('base'));

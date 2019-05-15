@@ -1,5 +1,4 @@
 @import '../../../Shared/styles/mixins/layout';
-
 @import '../../../Shared/blocks/BaseListItem/BaseListItem.mixin';
 
 .meta-list-item {
@@ -7,6 +6,7 @@
 
   .node-contents {
     @include base-list-item-style;
+
     background-color: color('bright', 0);
     border-left-color: transparent;
     border-right-color: transparent;
@@ -14,6 +14,7 @@
 
   .last-updated {
     @include type-small;
+
     margin: 0;
   }
 

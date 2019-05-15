@@ -2,7 +2,7 @@ import chokidar from 'chokidar';
 import { rebuildRoutes } from 'react-static/node';
 
 export const watch = options => {
-  const { stage } = options;
+  // const { stage } = options;
 
   const defaultOptions = {
     persistent: true,
@@ -11,13 +11,13 @@ export const watch = options => {
     awaitWriteFinish: { stabilityThreshold: 100 }
   };
 
-  const contentOptions = { ...defaultOptions };
-  const routesOptions = { ...defaultOptions, awaitWriteFinish: { stabilityThreshold: 1000 } };
-
   const watchers = [];
+
+  const contentOptions = { ...defaultOptions };
   watchers.push(chokidar.watch(['content', 'meta'], contentOptions));
 
   // @todo react-static does not reload ./static.config.js file
+  // const routesOptions = { ...defaultOptions, awaitWriteFinish: { stabilityThreshold: 1000 } };
   // watchers.push(chokidar.watch(['src/**/*.(routes|source).ts'], routesOptions));
 
   watchers.forEach(watcher => watcher.on('all', rebuildRoutes));

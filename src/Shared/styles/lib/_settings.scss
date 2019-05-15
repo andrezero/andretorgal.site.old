@@ -2,70 +2,87 @@
   @if not map-has-key($settings, $name) {
     @error 'setting(): unknown setting "#{$name}"';
   }
+
   @return map-get($settings, $name);
 }
 
 @function space-gap($name) {
   $map: settings('space-gaps');
+
   @if not map-has-key($map, $name) {
     @error 'space-gap(): unknown space gap "#{$name}"';
   }
+
   @return map-get($map, $name);
 }
 
 @function space-breakpoint($name) {
   $map: settings('space-breakpoints');
+
   @if not map-has-key($map, $name) {
     @error 'space-breakpoint(): unknown space breakpoint "#{$name}"';
   }
+
   @return map-get($map, $name);
 }
 
 @function space-container($name) {
   $map: settings('space-containers');
+
   @if not map-has-key($map, $name) {
     @error 'space-container(): unknown space container "#{$name}"';
   }
+
   @return map-get($map, $name);
 }
 
 @function type-family($name) {
   $map: settings('type-families');
+
   @if not map-has-key($map, $name) {
     @error 'type-family(): unknown type family "#{$name}"';
   }
+
   @return map-get($map, $name);
 }
 
 @function type-size($name) {
   $map: settings('type-sizes');
+
   @if not map-has-key($map, $name) {
     @error 'type-size(): unknown type size "#{$name}"';
   }
+
   @return map-get($map, $name);
 }
 
 @function type-height($name) {
   $map: settings('type-heights');
+
   @if not map-has-key($map, $name) {
     @error 'type-height(): unknown type height "#{$name}"';
   }
+
   @return map-get($map, $name);
 }
 
 @function type-weight($name) {
   $map: settings('type-weights');
+
   @if not map-has-key($map, $name) {
     @error 'type-weight(): unknown type weight "#{$name}"';
   }
+
   @return map-get($map, $name);
 }
 
 @function color-group($name) {
   $map: settings('color-groups');
+
   @if not map-has-key($map, $name) {
     @error 'color-group(): unknown color group "#{$name}"';
   }
+
   @return map-get($map, $name);
 }
 
@@ -73,6 +90,7 @@
   @if $color == null {
     @return _simple-color($colorOrGroup);
   }
+
   @return _color-from-group(color-group($colorOrGroup), $color);
 }
 
@@ -80,9 +98,11 @@
 
 @function _simple-color($color) {
   $map: settings('color-primitives');
+
   @if not map-has-key($map, $color) {
     @error 'color(): unknown color "#{$color}"';
   }
+
   @return map-get($map, $color);
 }
 
@@ -90,5 +110,6 @@
   @if not map-has-key($map, $color) {
     @error 'color(): unknown group color "#{$color}"';
   }
+
   @return map-get($map, $color);
 }

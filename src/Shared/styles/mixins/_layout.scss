@@ -1,8 +1,6 @@
 @import '../lib/vars/vars-from-map';
 @import '../lib/vars/vars-declare.mixin';
-
 @import '../mixins/responsive';
-
 @import '../settings';
 
 $-unit: settings('space-unit');
@@ -17,6 +15,7 @@ $container-large: space-container('large');
 
 @mixin space-root {
   --root-space-unit: #{$-unit};
+
   @include vars-declare($root-space-gaps);
   @include vars-declare($root-space-breakpoints);
 }
@@ -129,10 +128,12 @@ $container-large: space-container('large');
 
 @function gap($size, $scale: 1) {
   $gap: #{space-gap($size) * $scale}px;
+
   @return calc(var(--root-space-unit, #{$-unit}) * #{$gap});
 }
 
 @function unit($size, $scale: 1) {
   $gap: #{$size * $scale}px;
+
   @return calc(var(--root-space-unit, #{$-unit}) * #{$gap});
 }

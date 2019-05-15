@@ -118,3 +118,12 @@ Tasks from [my website](/about)'s [backlog](./backlog), eventually done (or arch
   - [x] env vars
   - [ ] markdown pages
   - [ ] markdown blog posts
+
+## Abandoned
+
+- not using `css-modules` for now
+  - [ ] `react-static` ssg time vs client time hydration of css module classes breaks down
+        / using [typings-for-css-modules-loader](https://github.com/Jimdo/typings-for-css-modules-loader)
+        / following [issue here](https://github.com/nozzle/react-static/issues/984)
+        / see [loggbook](./logbook-accepted.md)
+  - [ ] `react-static` tries to build pages for sass typings `404.scss.d.ts`
