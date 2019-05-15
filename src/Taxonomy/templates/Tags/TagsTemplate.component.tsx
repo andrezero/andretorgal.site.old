@@ -15,26 +15,32 @@ import { TagList } from '../../groups/TagList/TagList.component';
 import { TagNode } from '../../types/Tag.models';
 
 import './TagsTemplate.scss';
+import { TagListCompact } from '../../groups/TagListCompact/TagListCompact.component';
 
 interface Props {
   page: PageNode;
-  tags: TagNode[];
+  topTags: TagNode[];
+  otherTags: TagNode[];
 }
 
-export const TagsTemplate: React.StatelessComponent<Props> = ({ page, tags }) => {
+export const TagsTemplate: React.StatelessComponent<Props> = ({ page, topTags, otherTags }) => {
   const header = <SiteHeader node={page} />;
   const footer = <SiteFooter />;
   return (
     <Layout className="taxonomy-tags" header={header} footer={footer}>
-      <Head title={page.title} meta={page.meta} />
+      <Head title={page.title} meta={page.meta.doc} />
 
-      <section className="container">
-        <h1 className="page-title">{page.title}</h1>
-
-        <TagList tags={tags} />
-
-        <LinkToTop />
+      <section className="container top-tags">
+        <h1 className="page-title">Top tags</h1>
+        <TagList tags={topTags} />
       </section>
+
+      <section className="container other-tags">
+        <h2>Other tags</h2>
+        <TagListCompact tags={otherTags} />
+      </section>
+
+      <LinkToTop />
     </Layout>
   );
 };

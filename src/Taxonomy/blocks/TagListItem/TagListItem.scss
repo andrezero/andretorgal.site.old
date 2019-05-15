@@ -9,7 +9,10 @@
   @include base-list-item;
 
   .node-contents {
-    @include scheme-primary;
+    @include scheme-secondary;
+    padding-top: gap('tiny');
+    padding-bottom: gap('tiny');
+    padding-left: gap('medium');
   }
 
   .node-title {
@@ -17,18 +20,17 @@
     display: flex;
     align-items: center;
     margin: 0;
-    font-size: responsive-type-size('h1');
+    font-size: responsive-type-size('h2');
   }
 
-  .count {
+  .markdown-basic {
+    margin-bottom: gap('small');
+    padding-top: gap('small');
+  }
+
+  .tag-count {
     @include scheme-base;
-    min-width: gap('large');
-    height: gap('large');
-    margin-right: gap('medium');
-    padding: 0 gap('small');
-    line-height: gap('large');
     font-size: responsive-type-size('h3');
-    text-align: center;
-    border-radius: gap('tiny');
+    color: color('secondary', 'bg');
   }
 }

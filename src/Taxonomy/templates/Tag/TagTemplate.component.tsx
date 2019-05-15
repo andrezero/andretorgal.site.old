@@ -27,7 +27,7 @@ export const TagTemplate: React.StatelessComponent<Props> = ({ tag, nodes }) => 
   const footer = <SiteFooter />;
   return (
     <Layout className="taxonomy-tag" header={header} footer={footer}>
-      <Head title={`#${tag.title}`} meta={tag.meta} />
+      <Head title={`#${tag.title}`} meta={tag.meta.doc} />
 
       <section className="container">
         <TagItem tag={tag} />

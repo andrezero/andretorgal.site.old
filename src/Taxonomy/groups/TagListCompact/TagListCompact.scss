@@ -1,0 +1,19 @@
+@import '../../../Shared/styles/mixins/reset';
+@import '../../../Shared/styles/mixins/type';
+@import '../../../Shared/styles/mixins/scheme';
+@import '../../../Shared/styles/mixins/layout';
+
+.tag-list-compact {
+  @include reset-list;
+
+  li {
+    display: inline-block;
+    padding-right: gap('medium');
+  }
+
+  .tag-count {
+    display: inline-block;
+    margin-right: gap('small');
+    font-size: responsive-type-size('small');
+  }
+}

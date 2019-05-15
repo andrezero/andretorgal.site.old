@@ -1,2 +1,25 @@
+@import '../../../Shared/styles/mixins/scheme';
+@import '../../../Shared/styles/mixins/type';
+@import '../../../Shared/styles/mixins/layout';
+
 .tag-item {
+  @include rhythm-v;
+
+  .tag-contents {
+    @include rhythm-v-compact;
+
+    header {
+      display: flex;
+      align-items: center;
+      margin-bottom: gap('medium');
+    }
+
+    .page-title {
+      margin: 0;
+    }
+  }
+
+  .tag-count {
+    font-size: responsive-type-size('h2');
+  }
 }

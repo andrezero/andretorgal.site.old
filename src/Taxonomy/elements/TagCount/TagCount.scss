@@ -1,0 +1,17 @@
+@import '../../../Shared/styles/mixins/type';
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/scheme';
+
+.tag-count {
+  @include scheme-secondary;
+  @include type-deco;
+  min-width: 1.2em;
+  height: 1.15em;
+  margin-right: gap('medium');
+  padding: 0 gap('small');
+  line-height: 1.15em;
+  text-align: center;
+  font-weight: type-weight('heavy');
+  color: color('secondary', 'alt');
+  border-radius: gap('tiny');
+}

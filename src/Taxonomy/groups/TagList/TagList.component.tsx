@@ -1,8 +1,8 @@
 import * as React from 'react';
 
+import { TagListItem } from '../../blocks/TagListItem/TagListItem.component';
 import { TagNode } from '../../types/Tag.models';
 
-import { TagListItem } from '../../blocks/TagListItem/TagListItem.component';
 import './TagList.scss';
 
 interface Props {

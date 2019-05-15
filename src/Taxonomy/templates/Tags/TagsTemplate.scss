@@ -4,4 +4,16 @@
 
 .taxonomy-tags {
   @include base-page;
+
+  .tag-list-item {
+    margin-bottom: gap('small');
+
+    @include breakpoint-small {
+      margin-bottom: gap('medium');
+    }
+  }
+
+  h2 {
+    @include heading-2;
+  }
 }

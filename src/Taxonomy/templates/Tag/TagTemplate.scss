@@ -1,5 +1,11 @@
+@import '../../../Shared/styles/mixins/type';
+
 @import '../../../Shared/templates/BasePage.mixin';
 
 .taxonomy-tag {
   @include base-page;
+
+  h2 {
+    @include heading-2;
+  }
 }
