@@ -1,5 +1,5 @@
 ---
-title: 'Work'
+title: 'About My Work'
 template: 'Site/About'
 tags: ['personal', 'work', 'featured']
 created: '2017-02-11'
@@ -15,7 +15,7 @@ I am _originally from Lisbon, Portugal_, where I cut my teeth as an engineer and
 
 I moved to _London in 2011_ worked 4 years at [EF Education First](http://ef.com) and, most recently, as the Head of Frontend at [Property Partner](http://propertypartner.co) and as Agile Delivery Coach at [Nexmo](https://nexmo.com).
 
-I arrived in _Barcelona in 2017_ and I'm currently working as a Lead Teacher for [Ironhack](https://ironhack.com).
+I arrived in _Barcelona in 2017_ and I am currently working as a Lead Teacher for [Ironhack](https://ironhack.com).
 
 ### Mission
 
@@ -61,7 +61,7 @@ Want to do more of this, and better!
 
 At [Ironhack](https://ironhack.com) as the Lead Teacher for the Webdev bootcamp in Barcelona, _teaching full-stack web development_ - concepts, hacks and best practices - and sharing the love for Agile values and practices.
 
-Feeling super accomplished and rewarded. Meeting new people, from all around, literally every day. People with the most incredible stories, from whom I'm _learning new and unexpected things_ and whose paths I'm intersecting in an extraordinary moment of their lifes. :-)
+Feeling super accomplished and rewarded. Meeting new people, from all around, literally every day. People with the most incredible stories, from whom I am _learning new and unexpected things_ and whose paths I am intersecting in an extraordinary moment of their lifes. :-)
 
 ### Engineering Experience
 

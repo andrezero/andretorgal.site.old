@@ -1,11 +1,14 @@
 ---
 title: 'Project structure'
+tags: ['react', 'react-static', 'atomic-design']
 ---
+
+## General Principles
 
 - code grouped by module
 - using atomic-ish semantics (but translated back to html speak)
 
-## Modules
+## Group by modules
 
 - `Shared/`
   - abstract models like `Route` and `Page`

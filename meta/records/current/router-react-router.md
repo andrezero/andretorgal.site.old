@@ -1,5 +1,6 @@
 ---
 title: 'Router: React Router'
+tags: ['react-router', 'reach-router']
 ---
 
 ## Details

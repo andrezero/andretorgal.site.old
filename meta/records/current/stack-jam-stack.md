@@ -1,5 +1,6 @@
 ---
 title: 'Stack: Jam Stack'
+tags: ['jam-stack']
 ---
 
 ## Details

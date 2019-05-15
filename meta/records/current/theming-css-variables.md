@@ -1,5 +1,6 @@
 ---
 title: 'Theming: css variables, globals & locals'
+tags: ['css']
 ---
 
 ## Details

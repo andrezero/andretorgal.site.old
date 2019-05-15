@@ -1,18 +1,14 @@
 ---
-title: 'Principles: separation of concerns'
+title: 'Styling: SASS + Post CSS'
+tags: ['atomic-design', 'sass', 'post-css']
 ---
 
 ## Principles
 
-- max separation of concerns (non negotiable)
-  - no abstract classes leaking to markup
-- careful of leaky abstractions
-  - no styling across component boundaries
-- components first
-  - minimal global css (variables and base)
-  - component is the entry point for everything else
 - atomic aproach
 - abstraction and composition
+- max separation of concerns, no abstract classes leaking to markup (non negotiable)
+- accept "leaky abstractions" in presentation layer (but caution)
 
 ## Details
 
@@ -22,6 +18,9 @@ title: 'Principles: separation of concerns'
   - abstract, presentation only, components (`Shared/<component>/*.mixin.scss`)
 - composition:
   - atomic hierarchy (elements, blocks, groups, templates)
+- components first
+  - minimal global css (variables and base)
+  - component is the entry point for everything else
 - tools:
   - post css to opt-in for (better than pre-css because it gets out of the way)
 

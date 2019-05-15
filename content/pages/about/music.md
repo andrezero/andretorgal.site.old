@@ -1,7 +1,7 @@
 ---
-title: 'My music'
+title: 'My Music'
 template: 'Site/About'
-tags: ['personal']
+tags: ['personal', 'music']
 created: '2017-02-11'
 ---
 
@@ -21,4 +21,4 @@ These two tracks, in particular, I was quite happy with the result.
 
 ## Soon
 
-Bare with me while I collect my old stuff. I'm trying to get in touch with old band mates and find out what they managed to keep and port to digital.
+Bare with me while I collect my old stuff. I am trying to get in touch with old band mates and find out what they managed to keep and port to digital.

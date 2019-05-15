@@ -1,13 +1,13 @@
 ---
 title: 'My story'
 template: 'Site/About'
-tags: ['personal']
+tags: ['personal', 'music', 'web-development']
 created: '2017-02-11'
 ---
 
 This is my personal story.
 
-I don't expect you to read this. :-) This is mostly a writing exercise, a reflection about how I arrived here, and I hope it helps me better understand where I'm going.
+I don't expect you to read this. :-) This is mostly a writing exercise, a reflection about how I arrived here, and I hope it helps me better understand where I am going.
 
 So if you do read it, drop me a line, I'd love to hear what you make of it. ;-)
 
@@ -23,9 +23,9 @@ My parents were both academics, physicists involved in the early stages of compu
 
 I remember that first, monochrome green, home computer. As long as I carefully parked the hard drive before shutting it down, I was even allowed to play with it.
 
-Can't remember exactly what computer this was. But I'm guessing a [5150](https://en.wikipedia.org/wiki/IBM_Personal_Computer). I have a vague memory of hearing words like Unix, Lisp and Fortran very early on in my life. But what I do remember with insane precision is the BASF, Maxell and Dysan logos.
+Can't remember exactly what computer this was. But I am guessing a [5150](https://en.wikipedia.org/wiki/IBM_Personal_Computer). I have a vague memory of hearing words like Unix, Lisp and Fortran very early on in my life. But what I do remember with insane precision is the BASF, Maxell and Dysan logos.
 
-Today, a toddler can tap and swipe away on a tablet before they learn to speak. But I'm pretty sure that, for a 70s child, I grew up in an exceptional environment.
+Today, a toddler can tap and swipe away on a tablet before they learn to speak. But I am pretty sure that, for a 70s child, I grew up in an exceptional environment.
 
 ## ZX Spectrum 48K
 
@@ -139,4 +139,4 @@ My next website was my online CV, entirely built in Javascript and uploaded to a
 
 I have been working with web things and engineering teams since then. This story continues in a page [about my work](/about/work), where I cover 1999 to present day.
 
-I'll soon write a continuation for the personal track as well. I'm enjoying the exercise.
+I'll soon write a continuation for the personal track as well. I am enjoying the exercise.

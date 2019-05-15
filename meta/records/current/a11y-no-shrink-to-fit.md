@@ -1,5 +1,6 @@
 ---
 title: 'A11y: shrink to fit'
+tags: ['a11y']
 ---
 
 ## Details

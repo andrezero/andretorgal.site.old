@@ -32,7 +32,8 @@ The done stuff is on the [changelog](./changelog) page.
 - [ ] blog navigation
 - [ ] meta navigation breadcrumbs
 
-- [ ] fix blog post dates
+- [ ] fix markdown is rendering an extra div (messing first/last-child margin resets and dropcaps style)
+- [ ] fix crate/update dates
 - [ ] node type should also be a tag
 
 - [ ] contents/tag/personal.md

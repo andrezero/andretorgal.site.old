@@ -1,5 +1,6 @@
 ---
 title: 'Browser Support: progressive'
+tags: ['browserslist', 'progressive-enhancement']
 ---
 
 ## Details:

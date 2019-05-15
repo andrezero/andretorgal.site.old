@@ -9,7 +9,7 @@ My first website was hosted in [tripod](https://en.wikipedia.org/wiki/Tripod.com
 
 <!-- abstract -->
 
-I'm working on a few thoughts about why I'm coming back to my own space on the Internet.
+I am working on a few thoughts about why I am coming back to my own space on the Internet.
 
 First things first: I always had the choice to keep going.
 

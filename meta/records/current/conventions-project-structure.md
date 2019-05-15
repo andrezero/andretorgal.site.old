@@ -1,5 +1,6 @@
 ---
 title: 'Coding Conventions: Group code by module / atomic-ish semantics'
+tags: ['atomic-design']
 ---
 
 ## Details

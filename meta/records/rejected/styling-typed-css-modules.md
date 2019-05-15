@@ -1,5 +1,6 @@
 ---
 title: 'Styling: Typed CSS Modules'
+tags: ['typescript', 'css-modules']
 ---
 
 ## Why

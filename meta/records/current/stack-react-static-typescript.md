@@ -1,5 +1,6 @@
 ---
-title: 'Framework: React Static'
+title: 'Stack: React Static + Typescript'
+tags: ['jam-stack', 'static-websites', 'react-static', 'typescript']
 ---
 
 ## Why

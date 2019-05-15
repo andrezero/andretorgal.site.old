@@ -1,14 +1,9 @@
 ---
-title: 'Framework: Gatsby + Typescript + CSS Modules + SCSS'
+title: 'Stack: Gatsby + Typescript + SASS'
+css: ['jam-stack', 'static-websites', 'gatsby', 'typescript', 'graphql']
 ---
 
 ## Why
-
-- static site, html burner
-- react + typescript (tsx) sass
-- plugin galore (images, attachments, meta, seo, ...)
-
-## Tradeoffs
 
 - all data sources need a graphql layer
 - data models in components, boilerplate
@@ -16,12 +11,17 @@ title: 'Framework: Gatsby + Typescript + CSS Modules + SCSS'
 - typescript not compiled strict (not using tsconfig.json?) at develop/build time
 - brittle, multiple compilation issues so far
 
-## Issues
+### Issues
 
-- typed css modules painful
-- integration with storyook painful
 - typed graphql queries
   - https://www.isaacbroyles.com/2018/08/19/gatsbyjs-typescript.html
+- integration with storybook painful
+
+## Was
+
+- static site, html burner
+- react + typescript (tsx) sass
+- plugin galore (images, attachments, meta, seo, ...)
 
 ## Read more
 

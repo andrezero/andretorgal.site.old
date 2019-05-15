@@ -1,5 +1,6 @@
 ---
 title: 'Styling'
+tags: ['sass']
 ---
 
 ## tl;dr

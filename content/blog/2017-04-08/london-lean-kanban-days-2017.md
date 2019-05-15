@@ -10,7 +10,7 @@ Last week, I had the immense privilege of participating in [London Lean Kanban D
 
 ## Highlights and insights
 
-[Andy Charmichael's session](http://lanyrd.com/2017/llkd17/sfqrwh/) deconstructed some common business practices, highlighting how _deadlines create turbulence in flow_ and result in less forecastability and how some financial policies, such as capitalisation of work in progress and no recognition of cost of delay, inhibit business agility. His advice is to _"manage to real changes in cost of delay, not iteration boundaries"_. He introduced the "first rule of Kanban Club" ;-) making the case for _undercover change_.
+Let's start with [Andy Charmichael's session](http://lanyrd.com/2017/llkd17/sfqrwh/): focused on how _deadlines create turbulence in flow_ and result in less forecastability and how some financial policies, such as capitalisation of work in progress and no recognition of cost of delay, inhibit business agility. His advice is to _"manage to real changes in cost of delay, not iteration boundaries"_. He introduced the "first rule of Kanban Club" ;-) making the case for _undercover change_.
 
 A deep concern for humanity and the evolution of our organisations was, not surprisingly, a constant throughout the event. [Mike Borrow](https://twitter.com/asplake) dreams of a world where people can work consistently at their best. [Eben Halford](https://twitter.com/Ebstar) points out that as humans we are conditioned from early years, namely through school, to expect success to be rewarded and failure to be punished. [Gitte Klitgaard](https://twitter.com/NativeWired) questions if (@NativeWired) being professional and being yourself are mutually exclusive. The common idea is that _we need to make it safe to fail._
 
@@ -49,13 +49,13 @@ My question: when will the community recognise that poets, artists, philosophers
 
 ## My retrospective
 
-I'm kind of late to this party. Having spent the last 10 years in scrum-la-la-land, I was totally missing out on what was happening just around corner.
+I am kind of late to this party. Having spent the last 10 years in scrum-la-la-land, I was totally missing out on what was happening just around corner.
 
 Had previously met a few coaches with more Lean than Agile in them. I had read quite a bit, even experimented with a few concepts, but ... my brain just wasn't ready to take on 3 days of first hand, unfiltered, high energy and low impedance access to this [hivemind](https://twitter.com/judyrees/status/849304310374694912) and its combined knowledge and experience.
 
 A week later, my brain is finally cooling down, the confusion is dissipating and a good feeling is settling in: my values are reinforced, new trains of thought are developing. I have discovered new principles, practices and tools.
 
-I look forward to experiment. I'm hungry to learn and to keep evolving.
+I look forward to experiment. I am hungry to learn and to keep evolving.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Visualize all the things. Such a craft. <a href="https://twitter.com/IanCarrollUK">@IanCarrollUK</a> shows you the craftsmanship <a href="https://twitter.com/hashtag/llkd17?src=hash">#llkd17</a>. <a href="https://t.co/jUaTfOq4Yu">pic.twitter.com/jUaTfOq4Yu</a></p>&mdash; Andre Torgal (@andrezero) <a href="https://twitter.com/andrezero/status/848893786839240704">April 3, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
