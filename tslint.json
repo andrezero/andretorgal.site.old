@@ -6,7 +6,6 @@
   "rules": {
     "interface-name": [false, "never-prefix"],
     "object-literal-sort-keys": false,
-    "no-any": false,
-    "no-empty-interface": false
+    "no-empty-interface": [false]
   }
 }

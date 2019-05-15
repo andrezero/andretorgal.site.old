@@ -22,7 +22,7 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ page }) => {
   const footer = <SiteFooter />;
   return (
     <Layout className="site-page" header={header} footer={footer}>
-      <Head title={page.title} meta={page.meta} />
+      <Head title={page.title} meta={page.meta.doc} />
 
       <section className="container">
         <h1 className="page-title">{page.title}</h1>

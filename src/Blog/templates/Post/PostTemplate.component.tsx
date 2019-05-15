@@ -27,7 +27,7 @@ export const PostTemplate: React.StatelessComponent<Props> = ({ post }) => {
   const footer = <SiteFooter />;
   return (
     <Layout className="blog-post" header={header} footer={footer}>
-      <Head title={post.title} meta={post.meta} />
+      <Head title={post.title} meta={post.meta.doc} />
 
       <section className="container">
         <article className="post-item">

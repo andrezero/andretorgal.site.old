@@ -3,7 +3,7 @@ title: 'Changelog'
 updated: '2019-05-13'
 ---
 
-Tasks from the [backlog](./backlog) that eventually got done or archived.
+Tasks from [my website](/about)'s [backlog](./backlog), eventually done (or archived).
 
 <!-- abstract -->
 

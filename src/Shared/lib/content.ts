@@ -1,9 +1,6 @@
-import dayjs from 'dayjs';
 import matter from 'gray-matter';
 
-import { NodeContent } from '../types/Node.models';
-
-import { FileContents, FileSysNode } from './types/File.types';
+import { FileSysNode, ParsedFile } from './types/File.types';
 
 const ABSTRACT_DELIMITER = '<!-- abstract -->';
 
@@ -16,16 +13,14 @@ const removeAbstract = (contents: string): string => {
   return contents;
 };
 
-export const parseFileContents = (file: FileSysNode): FileContents => {
-  const { data, content: fullContents, excerpt: abstract } = matter(file.contents, {
+export const parseFileContents = (file: FileSysNode): ParsedFile => {
+  const { path, name, created } = file;
+
+  const { data, content: fullContents, excerpt } = matter(file.contents, {
     excerpt_separator: ABSTRACT_DELIMITER
   });
-  data.created = dayjs(data.created || file.created);
-  data.updated = dayjs(data.updated || file.created);
-  const content = removeAbstract(fullContents);
-  return { data, content, abstract };
-};
+  const abstract = excerpt.trim();
+  const content = removeAbstract(fullContents).trim();
 
-export const makeContent = (source: string): NodeContent => {
-  return { source };
+  return { name, path, data, abstract, content, created };
 };

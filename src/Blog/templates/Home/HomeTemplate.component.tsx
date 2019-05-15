@@ -25,7 +25,7 @@ export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) =
   const footer = <SiteFooter />;
   return (
     <Layout className="blog-home" header={header} footer={footer}>
-      <Head title="Recent posts" meta={page.meta} />
+      <Head title="Recent posts" meta={page.meta.doc} />
 
       <section className="container">
         <h1 className="page-title">Latest Posts</h1>

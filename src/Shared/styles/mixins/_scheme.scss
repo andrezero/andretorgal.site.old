@@ -57,6 +57,7 @@ $root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('seco
 
     &:hover {
       color: var(--root-scheme-primary-active);
+      text-decoration: underline;
     }
   }
 }
@@ -71,6 +72,7 @@ $root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('seco
 
     &:hover {
       color: var(--root-scheme-secondary-active);
+      text-decoration: underline;
     }
   }
 }

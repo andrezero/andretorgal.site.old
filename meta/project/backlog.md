@@ -3,7 +3,9 @@ title: 'Backlog'
 updated: '2019-05-13'
 ---
 
-Stuff to do on this website. The done stuff is on the [changelog](./changelog) page.
+Stuff to do on [my website](/about).
+
+The done stuff is on the [changelog](./changelog) page.
 
 <!-- abstract -->
 
@@ -14,6 +16,8 @@ Stuff to do on this website. The done stuff is on the [changelog](./changelog) p
 - [ ] images: extract, manipulate, responsive print and upload
 
   - [ ] populate node.assets
+    - [x] refactor: move links to node.meta
+    - [x] refactor: DRY node/route creation
   - [ ] og image
   - [ ] generate resolutions during dev build
     - [ ] managing images, image sharp, other [image optimizations](https://medium.com/grailed-engineering/image-optimization-using-higher-order-components-f401e6b4e1b1)
@@ -21,8 +25,9 @@ Stuff to do on this website. The done stuff is on the [changelog](./changelog) p
   - [ ] webpack dev-server
   - [ ] s3 sync in dev time
 
-## next
+## Next
 
+- [ ] minimalistic header
 - [ ] about navigation
 - [ ] blog navigation
 - [ ] meta navigation breadcrumbs
@@ -38,6 +43,9 @@ Stuff to do on this website. The done stuff is on the [changelog](./changelog) p
 - [ ] emojis in timeline
 - [ ] use icons in footer external links
 - [ ] noise in the transition to the footer
+
+- [ ] add links to the source files on github
+- [ ] add a `<!-- notes -->` section to articles that gets discarded
 
 - [ ] storybook: type, scheme, space [see here](https://medium.com/eightshapes-llc/
       typography-in-design-systems-6ed771432f1e) and [here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)

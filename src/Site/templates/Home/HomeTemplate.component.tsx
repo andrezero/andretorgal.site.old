@@ -33,7 +33,7 @@ export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) =
   };
   return (
     <Layout className="site-home" header={header} footer={footer}>
-      <Head title="Recent posts" meta={page.meta} />
+      <Head title="Recent posts" meta={page.meta.doc} />
       <Hero img={img}>
         <header className="hero-header">
           <h1 className="page-title">Welcome friend</h1>

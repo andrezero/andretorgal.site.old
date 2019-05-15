@@ -29,7 +29,7 @@ export const IndexTemplate: React.StatelessComponent<Props> = ({ page, latest, f
   const footer = <SiteFooter />;
   return (
     <Layout className="feed-index" header={header} footer={footer}>
-      <Head title={page.title} meta={page.meta} />
+      <Head title={page.title} meta={page.meta.doc} />
 
       <section className="container">
         <h1 className="page-title">{page.title}</h1>

@@ -1,3 +1,6 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/type';
+
 @import '../../../Shared/templates/BasePage.mixin';
 
 .blog-post {
@@ -13,5 +16,22 @@
       rgba(255, 255, 255, 0.2) 80%,
       rgba(255, 255, 255, 1) 100%
     );
+  }
+
+  .post-abstract {
+    margin-bottom: gap('large');
+    padding-left: gap('medium');
+    color: color('base', 'muted');
+    font-size: responsive-type-size('small');
+    border-left: 3px solid color('base', 'edge');
+  }
+
+  .post-contents p:first-child:first-letter {
+    float: left;
+    padding-top: 2px;
+    padding-right: gap('small', 1.5);
+    font-size: 320%;
+    line-height: 1;
+    color: color('base', 'muted');
   }
 }

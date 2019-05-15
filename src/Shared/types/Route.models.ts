@@ -7,6 +7,5 @@ export interface Route {
 }
 
 export interface RouteData {
-  className: string;
   [key: string]: any;
 }

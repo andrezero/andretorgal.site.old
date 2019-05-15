@@ -22,7 +22,7 @@ export const SiteHeader: React.StatelessComponent<Props> = ({ node }) => {
           <Link href="/">{site.title}</Link>
         </h1>
         <SROnly>
-          <p>{`You are on page: ${node.title}.`}</p>
+          {`You are on page: ${node.title}.`}
           <Link tabIndex={-1} href="#page-contents">
             skip to page contents
           </Link>

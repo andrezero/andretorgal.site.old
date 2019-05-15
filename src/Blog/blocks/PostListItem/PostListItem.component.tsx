@@ -2,11 +2,12 @@ import * as React from 'react';
 
 import { BaseListItem } from '../../../Shared/blocks/BaseListItem/BaseListItem.component';
 import { Link } from '../../../Shared/elements/Link/Link.component';
-import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
 import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
 import { ReadMore } from '../../../Shared/elements/ReadMore/ReadMore.component';
 
 import { PostNode } from '../../types/Post.models';
+
+import { PostAbstract } from '../../elements/PostAbstract/PostAbstract.component';
 
 import './PostListItem.scss';
 
@@ -28,7 +29,7 @@ export const PostListItem: React.StatelessComponent<Props> = ({ node: post, leve
   );
   return (
     <BaseListItem className="post-list-item" header={header} footer={footer}>
-      <MarkdownBasic>{post.abstract}</MarkdownBasic>
+      <PostAbstract strip={true}>{post.abstract}</PostAbstract>
       <ReadMore path={post.path} />
     </BaseListItem>
   );

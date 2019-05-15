@@ -1,11 +1,10 @@
-import { SrcSet } from '../elements/ResponsiveImg/ResponsiveImg.component';
+import { HeroFeature } from './Features.models';
 import { Node } from './Node.models';
 
 export interface PageNode extends Node {
   type: 'page';
-  hero?: {
-    img?: string;
-    title?: string;
+  features: {
+    hero?: HeroFeature;
   };
 }
 

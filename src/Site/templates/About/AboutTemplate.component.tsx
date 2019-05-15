@@ -18,16 +18,17 @@ import { PageTemplateProps as Props, PageTemplateRouteData } from '../Page/PageT
 import './AboutTemplate.scss';
 
 const renderHero = (page: PageNode) => {
+  const { hero } = page.features;
   const img: ResponsiveSrc = {
-    set: [['1024w', page.hero.img], ['2048w', page.hero.img]],
+    set: [['1024w', hero.img], ['2048w', hero.img]],
     sizes: ['100vw']
   };
 
   return (
     <Hero img={img}>
       <header className="hero-header">
-        <NodeParent parent={page.links.parent} />
-        <h1 className="page-title">{page.hero.title || page.title}</h1>
+        <NodeParent parent={page.meta.links.parent} />
+        <h1 className="page-title">{hero.title || page.title}</h1>
       </header>
       {page.abstract && <MarkdownBasic>{page.abstract}</MarkdownBasic>}
     </Hero>
@@ -37,7 +38,7 @@ const renderHero = (page: PageNode) => {
 const renderHeader = (page: PageNode) => {
   return (
     <>
-      <NodeParent parent={page.links.parent} />
+      <NodeParent parent={page.meta.links.parent} />
       <h1 className="page-title">{page.title}</h1>
     </>
   );
@@ -46,14 +47,15 @@ const renderHeader = (page: PageNode) => {
 export const AboutTemplate: React.StatelessComponent<Props> = ({ page }) => {
   const header = <SiteHeader node={page} />;
   const footer = <SiteFooter />;
+  const { hero } = page.features;
   return (
     <Layout className="site-about" header={header} footer={footer}>
-      <Head title={page.title} meta={page.meta} />
+      <Head title={page.title} meta={page.meta.doc} />
 
-      {page.hero && renderHero(page)}
+      {hero && renderHero(page)}
 
       <section className="container">
-        {!page.hero && renderHeader(page)}
+        {!hero && renderHeader(page)}
 
         <MarkdownBasic>{page.content}</MarkdownBasic>
 

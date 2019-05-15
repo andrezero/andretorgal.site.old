@@ -1,38 +1,21 @@
 import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
-import { findRoute, replaceRoute } from '../Shared/lib/routes';
-import { cssClass } from '../Shared/lib/strings';
-import { PageNode } from '../Shared/types/Page.models';
+import { findRoute, newRoute, replaceRoute } from '../Shared/lib/routes';
 import { Route } from '../Shared/types/Route.models';
 
 import { PostNode } from '../Blog/types/Post.models';
+import { PageNode } from '../Shared/types/Page.models';
 
 import { HomeTemplateRouteData } from './templates/Home/HomeTemplate.component';
 import { PageTemplateRouteData } from './templates/Page/PageTemplate.component';
 
-const pageRoute = (templates: TemplateLocator, page: PageNode): Route => {
-  const template = page.template || 'Site/Page';
-  const className = page.className || cssClass(template);
-  return {
-    path: page.path,
-    template: templates.locate(template),
-    getData: (): PageTemplateRouteData => ({
-      className,
-      page
-    })
-  };
-};
-
 const homePageRoute = (templates: TemplateLocator, originalHome: Route, posts: PostNode[]): Route => {
-  const page = originalHome.getData().page;
-  return {
-    path: page.path,
-    template: templates.locate('Site/Home'),
-    getData: (): HomeTemplateRouteData => ({
-      className: 'site-home',
-      posts,
-      page
-    })
-  };
+  const page = originalHome.getData().page as PageNode;
+  page.meta.template = 'Site/Home';
+
+  return newRoute<HomeTemplateRouteData>(templates, page, {
+    page,
+    posts
+  });
 };
 
 interface Data {
@@ -41,7 +24,11 @@ interface Data {
 }
 
 export const buildRoutes = async (templates: TemplateLocator, data: Data): Promise<Route[]> => {
-  let pagesRoutes = data.pages.map(page => pageRoute(templates, page));
+  let pagesRoutes: Route[] = data.pages.map(page => {
+    return newRoute<PageTemplateRouteData>(templates, page, {
+      page
+    });
+  });
 
   const originalHome = findRoute(pagesRoutes, '/');
   const homeRoute = homePageRoute(templates, originalHome, data.posts);

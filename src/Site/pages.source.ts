@@ -1,37 +1,29 @@
-import { makeContent, parseFileContents } from '../Shared/lib/content';
-import { makePath, makeTitle } from '../Shared/lib/data';
+import { parseFileContents } from '../Shared/lib/content';
 import { collect, flatten } from '../Shared/lib/files';
-import { makeMeta } from '../Shared/lib/meta';
-import { linkHierarchy } from '../Shared/lib/nodes';
+import { linkHierarchy, newNodeFromFile } from '../Shared/lib/nodes';
 import { FileSysNode } from '../Shared/lib/types/File.types';
+
 import { PageNode } from '../Shared/types/Page.models';
 
-const createPage = (file: FileSysNode): PageNode => {
-  const { data, content, abstract } = parseFileContents(file);
-  data.title = makeTitle(data.title, file.name);
-  const path = makePath([], file.path);
-  const template = data.template;
-  const meta = makeMeta(data, abstract, content);
+const nodeDefaults = {
+  template: 'Site/Page',
+  path: '{path}'
+};
 
-  return {
-    type: 'page',
-    title: data.title,
-    path,
-    content: makeContent(content),
-    abstract: makeContent(abstract),
-    template,
-    created: data.created.toDate(),
-    updated: data.updated.toDate(),
-    tags: data.tags,
-    meta,
-    hero: data.hero
-  };
+const newPageFromFile = (file: FileSysNode): PageNode => {
+  const fileContents = parseFileContents(file);
+  const { node, data } = newNodeFromFile('page', fileContents, nodeDefaults);
+
+  const page = node as PageNode;
+  page.features.hero = data.hero;
+
+  return page;
 };
 
 export const loadPages = async (): Promise<PageNode[]> => {
   const tree = await collect('./content/pages', true);
   const flattened = flatten(tree, 'indexes');
-  const nodes = flattened.map(createPage);
+  const nodes = flattened.map(newPageFromFile);
   linkHierarchy(nodes);
   return nodes;
 };

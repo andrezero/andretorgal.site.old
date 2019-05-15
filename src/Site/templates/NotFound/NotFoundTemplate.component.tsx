@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Head } from 'react-static';
 
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
+import { newNode } from '../../../Shared/lib/nodes';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { RouteData } from '../../../Shared/types/Route.models';
 
@@ -16,10 +17,7 @@ import './NotFoundTemplate.scss';
 
 export const NotFoundTemplate: React.StatelessComponent<{}> = () => {
   const props = {
-    page: {
-      type: 'page',
-      title: '404 Not Found'
-    }
+    page: newNode('page', '404 - Not Found', { template: 'Site/NotFound' })
   };
   const header = <SiteHeader node={props.page} />;
   const footer = <SiteFooter />;

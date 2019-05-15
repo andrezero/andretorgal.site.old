@@ -17,28 +17,28 @@ export const SiteNav: React.StatelessComponent<Props> = ({ page }) => {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/posts/">Blog</Link>
+          <Link href="/posts">Blog</Link>
         </li>
         {/* <li>
-          <Link href="/things/">Things</Link>
+          <Link href="/things">Things</Link>
         </li>
         <li>
-          <Link href="/mentions/">Mentions</Link>
+          <Link href="/mentions">Mentions</Link>
         </li> */}
         <li>
-          <Link href="/feed/">Feed</Link>
+          <Link href="/feed">Feed</Link>
+        </li>
+        <li>
+          <Link href="/tags">Tags</Link>
         </li>
         {/* <li>
-          <Link href="/experiments/">Experiments</Link>
+          <Link href="/experiments">Experiments</Link>
         </li> */}
         <li>
-          <Link href="/about/">About</Link>
+          <Link href="/about">About</Link>
         </li>
         <li>
-          <Link href="/meta/">Meta</Link>
-        </li>
-        <li>
-          <Link href="/about/#see-you-around">Contact</Link>
+          <Link href="/meta">Meta</Link>
         </li>
       </ul>
     </nav>

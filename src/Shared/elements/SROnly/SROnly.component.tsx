@@ -8,5 +8,5 @@ interface Props {
 
 // @todo rename to <ReaderOnly>
 export const SROnly: React.StatelessComponent<Props> = ({ children }) => {
-  return <div className="reader-only">{children}</div>;
+  return <p className="reader-only">{children}</p>;
 };

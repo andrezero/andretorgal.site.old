@@ -3,7 +3,6 @@ import rehypeReact from 'rehype-react';
 import unified from 'unified';
 import { VFileContents } from 'vfile';
 
-import { NodeContent } from '../../types/Node.models';
 import { Anchor } from '../Anchor/Anchor.component';
 import { anchoredHeading } from '../AnchoredHeading/AnchoredHeading.factory';
 import { Link } from '../Link/Link.component';
@@ -54,7 +53,7 @@ const renderer = (processor: unified.Processor, componentMap: MarkdownComponentM
 };
 
 export interface MarkdownComponentProps {
-  children: NodeContent;
+  children: string;
   [key: string]: any;
 }
 
@@ -72,7 +71,7 @@ export const markdownFactory = (
     }
     return (
       <div className={className || ''} {...staticProps} {...props}>
-        {render(children.source)}
+        {render(children)}
       </div>
     );
   };

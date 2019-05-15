@@ -1,9 +1,10 @@
 import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
-import { makeMeta } from '../Shared/lib/meta';
-import { filterHasTag, filterNoRoot, sortCreated, sortUpdated } from '../Shared/lib/nodes';
+import { filterHasTag, filterNoRoot, newNode, sortCreated, sortUpdated } from '../Shared/lib/nodes';
+import { newRoute } from '../Shared/lib/routes';
+import { Route } from '../Shared/types/Route.models';
+
 import { Node } from '../Shared/types/Node.models';
 import { PageNode } from '../Shared/types/Page.models';
-import { Route } from '../Shared/types/Route.models';
 
 import { IndexTemplateRouteData } from './templates/Index/IndexTemplate.component';
 
@@ -29,30 +30,19 @@ const updatedNodes = (nodes: Node[]): Node[] => {
     .splice(0, 20);
 };
 
-const feedPage = (templates: TemplateLocator): PageNode => {
-  return {
-    type: 'page',
-    title: 'A Bit of Everything',
-    path: '/feed',
-    created: new Date(),
-    updated: new Date(),
-    meta: makeMeta()
-  };
-};
-
 const feedPageRoute = (templates: TemplateLocator, nodes: Node[]): Route => {
-  const page = feedPage(templates);
-  return {
-    path: page.path,
-    template: templates.locate('Feed/Index'),
-    getData: (): IndexTemplateRouteData => ({
-      className: 'feed',
-      page,
-      featured: featuredNodes(nodes),
-      latest: latestNodes(nodes),
-      updated: updatedNodes(nodes)
-    })
+  const newLocal = {
+    path: 'feed',
+    template: 'Feed/Index'
   };
+  const page = newNode('page', 'A Bit of Everything', newLocal) as PageNode;
+
+  return newRoute<IndexTemplateRouteData>(templates, page, {
+    page,
+    featured: featuredNodes(nodes),
+    latest: latestNodes(nodes),
+    updated: updatedNodes(nodes)
+  });
 };
 
 interface Data {

@@ -1,44 +1,54 @@
-export interface NodeContent {
-  source: string;
-}
+import { Asset } from './Asset.models';
 
-export interface NodeMetaItem {
+export type Tag = string;
+
+export type NodeFeature = any;
+
+export interface DocMeta {
   name: string;
   value: string;
 }
 
-export interface NodeMetaOpenGraphItem {
+export interface OpenGraphMeta {
   property: string;
   content: string;
 }
 
-export type Tag = string;
-
-export type NodeMeta = Array<NodeMetaItem | NodeMetaOpenGraphItem>;
-
-export interface Node {
-  type: string;
-  title: string;
-  path?: string;
-  className?: string;
-  template?: string;
-  created?: Date;
-  updated?: Date;
-  tags?: Tag[];
-  content?: NodeContent;
-  abstract?: NodeContent;
-  meta?: NodeMeta;
-  links?: {
-    children?: NodeLink[];
-    related?: NodeLink[];
-    parent?: NodeLink;
-    next?: NodeLink;
-    previous?: NodeLink;
-  };
+export interface NodeMeta {
+  source: string;
+  template: string;
+  classes: string;
+  doc: DocMeta[];
+  og: OpenGraphMeta[];
+  links: NodeLinks;
+  assets: Asset[];
 }
 
 export interface NodeLink {
   type: string;
   path: string;
   title: string;
+}
+
+export interface NodeLinks {
+  children?: NodeLink[];
+  related?: NodeLink[];
+  parent?: NodeLink;
+  next?: NodeLink;
+  previous?: NodeLink;
+}
+
+export interface Node {
+  type: string;
+  path: string;
+  title: string;
+  abstract: string;
+  content: string;
+  tags: Tag[];
+  features: {
+    [key: string]: NodeFeature;
+  };
+  meta: NodeMeta;
+  created: Date;
+  updated: Date;
 }

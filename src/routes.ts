@@ -1,40 +1,49 @@
 import { TemplateLocator } from './Shared/lib/classes/TemplateLocator';
 import { Node } from './Shared/types/Node.models';
 import { Route } from './Shared/types/Route.models';
+import { loadSources } from './sources';
 
-import { loadPosts } from './Blog/posts.source';
-import { loadMetas } from './Meta/meta.source';
-import { loadPages } from './Site/pages.source';
-import { generateTags, loadTags } from './Taxonomy/tags.source';
-
-import { buildRoutes as buildBlogRoutes } from './Blog/blog.routes';
+import { buildRoutes as buildBlogRoutes } from './Blog/posts.routes';
 import { buildRoutes as buildFeedRoutes } from './Feed/feed.routes';
-import { buildRoutes as buildMetasRoutes } from './Meta/meta.routes';
+import { buildRoutes as buildMetasRoutes } from './Meta/metas.routes';
 import { buildRoutes as buildPagesRoutes } from './Site/pages.routes';
 import { buildRoutes as buildSiteRoutes } from './Site/site.routes';
 import { buildRoutes as buildTaxonomyRoutes } from './Taxonomy/tags.routes';
+
+const debug = (routes: Route[]) => {
+  // tslint:disable
+  console.log(`----- loaded ${routes.length} routes`);
+  routes.forEach(route => {
+    const data = route.getData();
+    console.log(route.path, route.template);
+    if (process.env.DEBUG_ROUTES === route.path) console.log(data);
+  });
+  // tslint:enable
+};
 
 export const routeBuilder = () => {
   const templates = new TemplateLocator();
 
   const getRoutes = async () => {
-    const [pages, posts, metas, loadedTags] = await Promise.all([loadPages(), loadPosts(), loadMetas(), loadTags()]);
+    const sources = await loadSources();
+    const { nodes, pages, posts, metas, tags } = sources;
 
-    const allNodes: Node[] = [...pages, ...posts, ...metas];
-
-    const allTags = generateTags(loadedTags, [...allNodes, ...loadedTags]);
-    allNodes.push(...allTags);
-
-    return await Promise.all([
+    const groups = await Promise.all([
       buildSiteRoutes(templates),
       buildPagesRoutes(templates, { pages, posts }),
       buildBlogRoutes(templates, { posts }),
       buildMetasRoutes(templates, { metas }),
-      buildFeedRoutes(templates, { nodes: allNodes }),
-      buildTaxonomyRoutes(templates, { tags: allTags, nodes: allNodes })
-    ]).then(groups => {
-      return groups.reduce((all, group) => all.concat(group), [] as Route[]);
-    });
+      buildFeedRoutes(templates, { nodes }),
+      buildTaxonomyRoutes(templates, { tags, nodes })
+    ]);
+
+    const routes = groups.reduce((all, group) => all.concat(group), [] as Route[]);
+
+    if (process.env.DEBUG_ROUTES) {
+      debug(routes);
+    }
+
+    return routes;
   };
 
   return { getRoutes };

@@ -17,8 +17,15 @@ export interface DirectoryNode extends FileSysNode {
   children: FileSysNode[];
 }
 
-export interface FileContents {
-  data: any;
+export interface FileData {
+  [key: string]: any;
+}
+
+export interface ParsedFile {
+  name: string;
+  path: string;
+  data: FileData;
   abstract: string;
   content: string;
+  created: Date;
 }
