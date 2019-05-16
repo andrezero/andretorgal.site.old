@@ -5,6 +5,8 @@ import remarkRehype from 'remark-rehype';
 import remarkUnlink from 'remark-unlink';
 import unified from 'unified';
 
+export const parser = (): unified.Processor => unified().use(remarkParse);
+
 export const basic = (): unified.Processor =>
   unified()
     .use(remarkParse)

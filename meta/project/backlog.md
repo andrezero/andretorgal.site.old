@@ -16,9 +16,12 @@ The done stuff is on the [changelog](./changelog) page.
 
 - [ ] images: extract, manipulate, responsive print and upload
 
-  - [ ] populate node.assets
+  - [x] collect assets and generate asset nodes
     - [x] refactor: move links to node.meta
     - [x] refactor: DRY node/route creation
+    - [x] refactor: move link functions from `lib/node.ts` to `lib/link.ts`
+  - [ ] create asset template
+  - [ ] define asset profile
   - [ ] og image
   - [ ] generate resolutions during dev build
     - [ ] managing images, image sharp, other [image optimizations](https://medium.com/grailed-engineering/image-optimization-using-higher-order-components-f401e6b4e1b1)

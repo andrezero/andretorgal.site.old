@@ -2,7 +2,8 @@ import dayjs = require('dayjs');
 
 import { parseFileContents } from '../Shared/lib/content';
 import { collect, flatten } from '../Shared/lib/files';
-import { linkAdjacent, makePath, newNodeFromFile } from '../Shared/lib/nodes';
+import { linkAdjacent } from '../Shared/lib/links';
+import { makePath, newNodeFromFile } from '../Shared/lib/nodes';
 import { FileSysNode } from '../Shared/lib/types/File.types';
 
 import { PostNode } from './types/Post.models';

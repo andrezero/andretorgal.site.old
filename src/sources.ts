@@ -10,6 +10,7 @@ import { PostNode } from './Blog/types/Post.models';
 import { loadMetas } from './Meta/metas.source';
 import { MetaNode } from './Meta/types/Meta.models';
 
+import { collectAssets, newAssetNode } from './Shared/lib/assets';
 import { generateTags, loadTags } from './Taxonomy/tags.source';
 import { TagNode } from './Taxonomy/types/Tag.models';
 
@@ -39,6 +40,13 @@ export const loadSources = async (): Promise<Sources> => {
 
   const allTags = generateTags(loadedTags, [...allNodes, ...loadedTags]);
   allNodes.push(...allTags);
+
+  const assets = collectAssets(allNodes);
+
+  // add assets to node.meta.assets
+
+  const assetNodes = assets.map(newAssetNode);
+  allNodes.push(...assetNodes);
 
   if (process.env.DEBUG_SOURCES) {
     debug(allNodes);

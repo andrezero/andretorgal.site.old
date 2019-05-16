@@ -7,7 +7,7 @@
     "lint": "npm run lint-style && npm run lint-es && npm run lint-ts",
     "lint-style": "stylelint 'src/**/*.scss' --syntax scss --cache --cache-location ./tmp/stylelint.cache",
     "lint-es": "eslint --ext .js .react-static/ .webpack/ *.js --cache --cache-location ./tmp/eslint.cache",
-    "lint-ts": "tslint -p tsconfig.json",
+    "lint-ts": "tsc --noEmit && tslint -p tsconfig.json --exclude '**/*.d.ts'",
     "lint-fix": "npm run lint-style -- --fix && npm run lint-es -- --fix && npm run lint-ts -- --fix ",
     "stage": "export BUILD_STAGE=stage && node -r ts-node/register node_modules/.bin/react-static build --staging",
     "build": "export BUILD_STAGE=prod && node -r ts-node/register node_modules/.bin/react-static build",
@@ -37,6 +37,7 @@
     "react-static-plugin-typescript": "^7.0.9",
     "rehype-autolink-headings": "^2.0.4",
     "rehype-highlight": "^2.2.1",
+    "rehype-parse": "^6.0.0",
     "rehype-raw": "^4.0.0",
     "rehype-react": "^3.1.0",
     "rehype-slug": "^2.0.2",
@@ -45,6 +46,7 @@
     "remark-html": "^9.0.0",
     "remark-parse": "^6.0.3",
     "remark-rehype": "^4.0.0",
+    "remark-strip-html": "^1.0.1",
     "remark-toc": "^5.1.1",
     "remark-unlink": "^2.1.1",
     "sass-loader": "^7.1.0",
@@ -52,7 +54,9 @@
     "strip-markdown": "^3.0.3",
     "ts-node": "^8.1.0",
     "typescript": "^3.4.3",
-    "unified": "^7.1.0"
+    "unified": "^7.1.0",
+    "unist-util-filter": "^1.0.0",
+    "unist-util-visit": "^1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",

@@ -51,6 +51,18 @@ $scalars: settings('type-scalars');
   font-size: responsive-type-size('base');
 }
 
+@mixin type-small {
+  font-size: responsive-type-size('small');
+}
+
+@mixin type-medium {
+  font-size: responsive-type-size('medium');
+}
+
+@mixin type-huge {
+  font-size: responsive-type-size('huge');
+}
+
 @mixin type-alt {
   font-family: var(--root-type-families-alt);
   line-height: var(--root-type-heights-small);
@@ -103,10 +115,6 @@ $scalars: settings('type-scalars');
 
 @mixin type-strong {
   font-weight: var(--root-type-weights-medium);
-}
-
-@mixin type-small {
-  font-size: responsive-type-size('small');
 }
 
 @mixin copy {

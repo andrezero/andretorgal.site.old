@@ -34,6 +34,7 @@ export interface NodeLinks {
   children?: NodeLink[];
   related?: NodeLink[];
   parent?: NodeLink;
+  parents?: NodeLink[];
   next?: NodeLink;
   previous?: NodeLink;
 }

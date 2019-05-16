@@ -12,8 +12,7 @@ export const buildRoutes = async (templates: TemplateLocator): Promise<Route[]> 
     template: 'Site/NotFound',
     path: '/404'
   };
-  const node = newNode('page', '404 - Not Found', defaults);
-  const page = node as ErrorPageNode;
+  const page = newNode('page', '404 - Not Found', defaults) as ErrorPageNode;
   page.error = 'not-found';
 
   const route = newRoute<NotFoundTemplateRouteData>(templates, page, { page });

@@ -16,6 +16,14 @@ Here, you can learn more about me, [my work](/about/work), and other stuff I hav
 
 ## House rules
 
+![inline](/assets/imgs/about-hero.jpg#p1+p2)
+
+<img alt="an inline image" href="/assets/imgs/about-hero.jpg#inline" title="the inline">
+
+<div class="a-container">
+  <img alt="a nested image" href="/assets/imgs/about-hero.jpg#nested" title="the nested">
+</div>
+
 Just to be clear: this is my space - I own the content, the opinions are my own, and it does not represent the company I work for at the moment.
 
 If you find something that resonates with you, or otherwise object to, feel free to drop me a line via twitter [@andrezero](https://twitter.com/andrezero) or email [info@andretorgal.com](mailto:info@andretorgal.com).

@@ -1,6 +1,7 @@
 import { parseFileContents } from '../Shared/lib/content';
 import { collect, flatten } from '../Shared/lib/files';
-import { linkHierarchy, newNodeFromFile } from '../Shared/lib/nodes';
+import { linkHierarchy } from '../Shared/lib/links';
+import { newNodeFromFile } from '../Shared/lib/nodes';
 import { FileSysNode } from '../Shared/lib/types/File.types';
 
 import { MetaNode } from './types/Meta.models';
