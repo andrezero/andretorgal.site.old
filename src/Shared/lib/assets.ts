@@ -9,17 +9,14 @@ import visit from 'unist-util-visit';
 import { parser as htmlParser } from './html';
 import { dedupeLinks, linkToNode } from './links';
 import { parser as markdownParser } from './markdown';
-import { newNode } from './nodes';
-import { slug } from './strings';
 
-import { Asset, AssetNode } from '../types/Asset.models';
-import { Node } from '../types/Node.models';
+import { Asset, Node } from '../types/Node.models';
 
 type ParsedUrl = ReturnType<typeof parseUrl>;
 
 const extractProfiles = (url: ParsedUrl): string[] => {
   if (!url.hash) {
-    return;
+    return [];
   }
   return url.hash.substring(1).split('+');
 };
@@ -106,6 +103,7 @@ const findAssetsInNode = (node: Node): Asset[] => {
       title: asset.title,
       alt: asset.alt,
       url: url.path,
+      originalUrl: asset.url,
       profiles,
       src: {}
     };
@@ -137,14 +135,4 @@ export const collectAssets = (nodes: Node[]): Asset[] => {
     .reduce((acc, node) => acc.concat(findAssetsInNode(node)), [] as Asset[])
     .filter(dedupAssets)
     .map(dedupeProfilesAndSources);
-};
-
-export const newAssetNode = (asset: Asset): AssetNode => {
-  const defaults = {
-    template: `Asset/${asset.type}`
-  };
-  const assetNode = newNode('asset', asset.title || slug(asset.url), defaults) as AssetNode;
-  assetNode.abstract = asset.alt;
-
-  return assetNode;
 };

@@ -13,6 +13,7 @@ The done stuff is on the [changelog](./changelog) page.
 
 - [x] update dependencies
 - [x] configure lintstyle, eslint, tslint
+- [ ] debug on/off script
 
 - [ ] images: extract, manipulate, responsive print and upload
 
@@ -20,8 +21,9 @@ The done stuff is on the [changelog](./changelog) page.
     - [x] refactor: move links to node.meta
     - [x] refactor: DRY node/route creation
     - [x] refactor: move link functions from `lib/node.ts` to `lib/link.ts`
-  - [ ] create asset template
-  - [ ] define asset profile
+  - [x] create media nodes and routes
+  - [ ] define asset profiles
+  - [ ] collect assets from hero too
   - [ ] og image
   - [ ] generate resolutions during dev build
     - [ ] managing images, image sharp, other [image optimizations](https://medium.com/grailed-engineering/image-optimization-using-higher-order-components-f401e6b4e1b1)

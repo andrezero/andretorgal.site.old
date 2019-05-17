@@ -39,36 +39,36 @@ interface TagIndex {
   [name: string]: TagNode;
 }
 
-const indexTagNodes = (tags: TagNode[]): TagIndex => {
-  const index: TagIndex = {};
-  tags.forEach(tag => {
-    index[tag.title] = tag;
-  });
-  return index;
-};
-
-function indexNewTag(tagIndex: TagIndex, tag: string, node: Node): TagNode {
+const indexNewTag = (tagIndex: TagIndex, tag: string, node: Node): TagNode => {
   const tagNode = newTag(tag);
   tagNode.created = node.created;
   tagNode.updated = node.updated;
   tagNode.count = 1;
   tagIndex[tagNode.title] = tagNode;
   return tagNode;
-}
+};
 
-function indexExistingTag(tagIndex: TagIndex, tag: string, node: Node) {
+const indexExistingTag = (tagIndex: TagIndex, tag: string, node: Node) => {
   tagIndex[tag].created = node.created;
   tagIndex[tag].updated = node.updated;
   tagIndex[tag].count++;
-}
+};
 
-const indexTag = (tagIndex: TagIndex, node: Node, tag: string, ret: TagNode[]) => {
+const indexTag = (tagIndex: TagIndex, node: Node, tag: string, nodes: TagNode[]) => {
   if (!tagIndex[tag]) {
     const tagNode = indexNewTag(tagIndex, tag, node);
-    ret.push(tagNode);
+    nodes.push(tagNode);
   } else {
     indexExistingTag(tagIndex, tag, node);
   }
+};
+
+const indexTagNodes = (tags: TagNode[]): TagIndex => {
+  const index: TagIndex = {};
+  tags.forEach(tag => {
+    index[tag.title] = tag;
+  });
+  return index;
 };
 
 export const generateTags = (tagNodes: TagNode[], nodes: Node[]): TagNode[] => {

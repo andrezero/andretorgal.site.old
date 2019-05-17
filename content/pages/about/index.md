@@ -18,11 +18,7 @@ Here, you can learn more about me, [my work](/about/work), and other stuff I hav
 
 ![inline](/assets/imgs/about-hero.jpg#p1+p2)
 
-<img alt="an inline image" href="/assets/imgs/about-hero.jpg#inline" title="the inline">
-
-<div class="a-container">
-  <img alt="a nested image" href="/assets/imgs/about-hero.jpg#nested" title="the nested">
-</div>
+<img alt="a nested image" href="/assets/imgs/about-hero.jpg#nested" title="the nested">
 
 Just to be clear: this is my space - I own the content, the opinions are my own, and it does not represent the company I work for at the moment.
 
@@ -39,6 +35,8 @@ A seasoned web developer and agile practitioner with a diverse background in eng
 ### Personal
 
 A curious and passionate person. My story includes computers, bicycles and skateboards. Guitars, drums, theater and photography. Economics, management, more computers. Software, methodologies, frameworks. [Read more](/about/story).
+
+![hello](https://farm4.static.flickr.com/3225/2750941632_85e3d31748_b.jpg)
 
 ### Music
 

@@ -1,10 +1,10 @@
 import { TemplateLocator } from './Shared/lib/classes/TemplateLocator';
-import { Node } from './Shared/types/Node.models';
 import { Route } from './Shared/types/Route.models';
 import { loadSources } from './sources';
 
 import { buildRoutes as buildBlogRoutes } from './Blog/posts.routes';
 import { buildRoutes as buildFeedRoutes } from './Feed/feed.routes';
+import { buildRoutes as buildMediaRoutes } from './Media/medias.routes';
 import { buildRoutes as buildMetasRoutes } from './Meta/metas.routes';
 import { buildRoutes as buildPagesRoutes } from './Site/pages.routes';
 import { buildRoutes as buildSiteRoutes } from './Site/site.routes';
@@ -26,7 +26,7 @@ export const routeBuilder = () => {
 
   const getRoutes = async () => {
     const sources = await loadSources();
-    const { nodes, pages, posts, metas, tags } = sources;
+    const { nodes, pages, posts, metas, tags, medias } = sources;
 
     const groups = await Promise.all([
       buildSiteRoutes(templates),
@@ -34,7 +34,8 @@ export const routeBuilder = () => {
       buildBlogRoutes(templates, { posts }),
       buildMetasRoutes(templates, { metas }),
       buildFeedRoutes(templates, { nodes }),
-      buildTaxonomyRoutes(templates, { tags, nodes })
+      buildTaxonomyRoutes(templates, { tags, nodes }),
+      buildMediaRoutes(templates, { medias })
     ]);
 
     const routes = groups.reduce((all, group) => all.concat(group), [] as Route[]);

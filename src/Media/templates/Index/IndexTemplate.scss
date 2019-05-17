@@ -1,0 +1,6 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/templates/BasePage.mixin';
+
+.media-index {
+  @include base-page;
+}

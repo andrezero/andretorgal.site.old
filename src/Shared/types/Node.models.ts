@@ -1,5 +1,3 @@
-import { Asset } from './Asset.models';
-
 export type Tag = string;
 
 export type NodeFeature = any;
@@ -12,16 +10,6 @@ export interface DocMeta {
 export interface OpenGraphMeta {
   property: string;
   content: string;
-}
-
-export interface NodeMeta {
-  source: string;
-  template: string;
-  classes: string;
-  doc: DocMeta[];
-  og: OpenGraphMeta[];
-  links: NodeLinks;
-  assets: Asset[];
 }
 
 export interface NodeLink {
@@ -37,6 +25,29 @@ export interface NodeLinks {
   parents?: NodeLink[];
   next?: NodeLink;
   previous?: NodeLink;
+}
+
+export interface Asset {
+  sources: NodeLink[];
+  type: string;
+  title?: string;
+  alt?: string;
+  url: string;
+  originalUrl: string;
+  profiles: string[];
+  src: {
+    [profile: string]: any;
+  };
+}
+
+export interface NodeMeta {
+  source: string;
+  template: string;
+  classes: string;
+  doc: DocMeta[];
+  og: OpenGraphMeta[];
+  links: NodeLinks;
+  assets: Asset[];
 }
 
 export interface Node {
