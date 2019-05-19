@@ -14,7 +14,7 @@ const removeAbstract = (contents: string): string => {
 };
 
 export const parseFileContents = (file: FileSysNode): ParsedFile => {
-  const { path, name, created } = file;
+  const { filename, path, name, created } = file;
 
   const { data, content: fullContents, excerpt } = matter(file.contents, {
     excerpt_separator: ABSTRACT_DELIMITER
@@ -22,5 +22,5 @@ export const parseFileContents = (file: FileSysNode): ParsedFile => {
   const abstract = excerpt.trim();
   const content = removeAbstract(fullContents).trim();
 
-  return { name, path, data, abstract, content, created };
+  return { filename, name, path, data, abstract, content, created };
 };

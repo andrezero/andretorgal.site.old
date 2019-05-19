@@ -1,3 +1,4 @@
+import { AssetPreset, AssetLocator } from './Shared/types/Asset.models';
 import { Node } from './Shared/types/Node.models';
 
 import { PageNode } from './Shared/types/Page.models';
@@ -12,9 +13,10 @@ import { MetaNode } from './Meta/types/Meta.models';
 import { generateTags, loadTags } from './Taxonomy/tags.source';
 import { TagNode } from './Taxonomy/types/Tag.models';
 
+import { loadAssets, processAssets } from './Assets/assets.source';
+
 import { generateMedias, loadMedias } from './Media/medias.source';
 import { MediaNode } from './Media/types/Media.models';
-import { collectAssets } from './Shared/lib/assets';
 
 const debug = (nodes: Node[]) => {
   // tslint:disable
@@ -35,33 +37,32 @@ export interface Sources {
   medias: MediaNode[];
 }
 
-export const loadSources = async (): Promise<Sources> => {
+export const loadSources = async (assetLocator: AssetLocator, assetPresets: AssetPreset[]): Promise<Sources> => {
   const results = await Promise.all([loadPages(), loadPosts(), loadMetas(), loadTags(), loadMedias()]);
   const [pages, posts, metas, loadedTags, loadedMedias] = results;
 
-  const allNodes: Node[] = [...pages, ...posts, ...metas, ...loadedMedias];
+  const nodesWithTags: Node[] = [...pages, ...posts, ...metas, ...loadedTags, ...loadedMedias];
+  const tags = generateTags(loadedTags, nodesWithTags);
 
-  const tags = generateTags(loadedTags, [...allNodes, ...loadedTags]);
-  allNodes.push(...tags);
+  const nodesWithAssets: Node[] = [...pages, ...posts, ...metas, ...loadedMedias, ...tags];
+  const assets = loadAssets(nodesWithAssets);
 
-  const assets = collectAssets(allNodes);
-
-  // process assets
-  // add assets to node.meta.assets
+  await processAssets(assets, assetLocator, assetPresets);
 
   const medias = generateMedias(loadedMedias, assets);
-  allNodes.push(...medias);
 
-  if (process.env.DEBUG_NODES) {
-    debug(allNodes);
-  }
-
-  return {
-    nodes: allNodes,
+  const sources: Sources = {
+    nodes: [...pages, ...posts, ...metas, ...medias, ...tags],
     pages,
     posts,
     metas,
     tags,
     medias
   };
+
+  if (process.env.DEBUG_NODES) {
+    debug(sources.nodes);
+  }
+
+  return sources;
 };

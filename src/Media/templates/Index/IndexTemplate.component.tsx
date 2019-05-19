@@ -11,7 +11,7 @@ import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component
 import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
 
 import { PageNode } from '../../../Shared/types/Page.models';
-import { MediaNode } from '../../types/Media.models';
+import { ImageAssetSrc, MediaNode } from '../../types/Media.models';
 
 import './IndexTemplate.scss';
 
@@ -36,7 +36,19 @@ export const IndexTemplate: React.StatelessComponent<Props> = ({ page, medias })
               <Link href={media.path}>
                 {media.meta.asset.type}: {media.title}
               </Link>
-              <p>{media.url}</p>
+              <p>URL: {media.url}</p>
+              <p>PROFILES: {Object.keys(media.meta.asset.profiles).join(', ')}</p>
+
+              {Object.values(media.meta.asset.profiles).map((profile: ImageAssetSrc) => {
+                const { href, width, height } = profile;
+                return (
+                  <p key={href}>
+                    {href}:
+                    <img src={href} width={width} height={height} />
+                  </p>
+                );
+              })}
+
               <p>{media.meta.asset.url}</p>
               <p>{media.meta.asset.originalUrl}</p>
               <p>{media.meta.asset.alt}</p>

@@ -13,22 +13,21 @@ The done stuff is on the [changelog](./changelog) page.
 
 - [x] update dependencies
 - [x] configure lintstyle, eslint, tslint
-- [ ] debug on/off script
 
-- [ ] images: extract, manipulate, responsive print and upload
+- [x] images: extract, manipulate, responsive print and upload
 
   - [x] collect assets and generate asset nodes
     - [x] refactor: move links to node.meta
     - [x] refactor: DRY node/route creation
     - [x] refactor: move link functions from `lib/node.ts` to `lib/link.ts`
   - [x] create media nodes and routes
-  - [ ] define asset profiles
+  - [x] define asset preset/profiles
   - [ ] collect assets from hero too
   - [ ] og image
-  - [ ] generate resolutions during dev build
-    - [ ] managing images, image sharp, other [image optimizations](https://medium.com/grailed-engineering/image-optimization-using-higher-order-components-f401e6b4e1b1)
+  - [x] generate resolutions during dev build
+    - [x] managing images, image sharp, other [image optimizations](https://medium.com/grailed-engineering/image-optimization-using-higher-order-components-f401e6b4e1b1)
   - [ ] responsive print
-  - [ ] webpack dev-server
+  - [x] webpack dev-server
   - [ ] s3 sync in dev time
 
 ## Next
@@ -36,6 +35,7 @@ The done stuff is on the [changelog](./changelog) page.
 - [ ] minimalistic header
 - [ ] about navigation
 - [ ] blog navigation
+- [ ] media navigation
 - [ ] meta navigation breadcrumbs
 
 - [ ] a11y tooling: linting with [tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib) and run time analysis with [react-axe](https://github.com/dequelabs/react-axe)
@@ -78,6 +78,8 @@ The done stuff is on the [changelog](./changelog) page.
   - [ ] refactor routes code, decouple routes from sources so that data from one source can be used in different routers
 
 ## Issues
+
+- [ ] `react-dom.development.js:522 Warning: Encountered two children with the same key, /tags/social-web` in `/tags`
 
 ### a11y
 

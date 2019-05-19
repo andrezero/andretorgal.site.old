@@ -22,6 +22,7 @@ export interface FileData {
 }
 
 export interface ParsedFile {
+  filename: string;
   name: string;
   path: string;
   data: FileData;

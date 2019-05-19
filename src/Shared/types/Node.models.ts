@@ -1,3 +1,5 @@
+import { Asset } from './Asset.models';
+
 export type Tag = string;
 
 export type NodeFeature = any;
@@ -27,21 +29,8 @@ export interface NodeLinks {
   previous?: NodeLink;
 }
 
-export interface Asset {
-  sources: NodeLink[];
-  type: string;
-  title?: string;
-  alt?: string;
-  url: string;
-  originalUrl: string;
-  profiles: string[];
-  src: {
-    [profile: string]: any;
-  };
-}
-
 export interface NodeMeta {
-  source: string;
+  origin: string;
   template: string;
   classes: string;
   doc: DocMeta[];

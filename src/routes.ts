@@ -1,4 +1,5 @@
 import { TemplateLocator } from './Shared/lib/classes/TemplateLocator';
+import { AssetPreset, AssetLocator } from './Shared/types/Asset.models';
 import { Route } from './Shared/types/Route.models';
 import { loadSources } from './sources';
 
@@ -21,11 +22,11 @@ const debug = (routes: Route[]) => {
   // tslint:enable
 };
 
-export const routeBuilder = () => {
+export const routeBuilder = (assetLocator: AssetLocator, assetPresets: AssetPreset[]) => {
   const templates = new TemplateLocator();
 
   const getRoutes = async () => {
-    const sources = await loadSources();
+    const sources = await loadSources(assetLocator, assetPresets);
     const { nodes, pages, posts, metas, tags, medias } = sources;
 
     const groups = await Promise.all([

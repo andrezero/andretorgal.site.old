@@ -16,9 +16,7 @@ Here, you can learn more about me, [my work](/about/work), and other stuff I hav
 
 ## House rules
 
-![inline](/assets/imgs/about-hero.jpg#p1+p2)
-
-<img alt="a nested image" href="/assets/imgs/about-hero.jpg#nested" title="the nested">
+![inline](./imgs/international-sloth-day.jpg#image:default)
 
 Just to be clear: this is my space - I own the content, the opinions are my own, and it does not represent the company I work for at the moment.
 

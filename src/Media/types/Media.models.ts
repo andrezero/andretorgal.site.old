@@ -1,7 +1,9 @@
-import { Asset, Node, NodeMeta } from '../../Shared/types/Node.models';
+import { Asset, AssetSrc } from '../../Shared/types/Asset.models';
+import { Node, NodeMeta } from '../../Shared/types/Node.models';
 
-export interface ImageAsset extends Asset {
-  res: { w: number; h: number };
+export interface ImageAssetSrc extends AssetSrc {
+  width: number;
+  height: number;
 }
 
 export interface MediaNode extends Node {

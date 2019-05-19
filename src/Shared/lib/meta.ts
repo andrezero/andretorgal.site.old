@@ -3,7 +3,7 @@ import { strip } from './markdown';
 import { DocMeta, NodeMeta, OpenGraphMeta } from '../types/Node.models';
 
 export const baseMeta = (
-  source: string,
+  origin: string,
   template: string,
   classes: string,
   title: string,
@@ -23,7 +23,7 @@ export const baseMeta = (
   }
 
   return {
-    source,
+    origin,
     template,
     classes,
     doc,

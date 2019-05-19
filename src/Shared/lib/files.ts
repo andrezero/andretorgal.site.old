@@ -83,7 +83,7 @@ const readDir = async (
     type: 'dir',
     name: filename || '',
     path: dirPath === '.' ? '/' : dirPath,
-    filename: fullPath,
+    filename: index ? index.filename : path.resolve(fullPath),
     contents: index ? index.contents : '',
     created: new Date(util.inspect(stat.birthtime)),
     hasIndex: !!index,

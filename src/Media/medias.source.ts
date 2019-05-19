@@ -2,7 +2,7 @@ import { parseFileContents } from '../Shared/lib/content';
 import { collect, flatten } from '../Shared/lib/files';
 import { newNode, newNodeFromFile } from '../Shared/lib/nodes';
 import { FileSysNode } from '../Shared/lib/types/File.types';
-import { Asset } from '../Shared/types/Node.models';
+import { Asset } from '../Shared/types/Asset.models';
 
 import { slug } from '../Shared/lib/strings';
 import { MediaNode } from './types/Media.models';
@@ -10,12 +10,6 @@ import { MediaNode } from './types/Media.models';
 const nodeDefaults = {
   template: 'Taxonomy/Tag',
   prefix: 'tags'
-};
-
-const newMedia = (name: string): MediaNode => {
-  const media = newNode('media', name, nodeDefaults) as MediaNode;
-
-  return media;
 };
 
 const newMediaFromFile = (file: FileSysNode): MediaNode => {

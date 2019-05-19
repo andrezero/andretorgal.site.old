@@ -95,7 +95,7 @@ export const newNodeFromFile = (type: string, file: ParsedFile, defaults: NewNod
 
   const template = data.template || defaults.template;
   const classes = makeClasses(template, data.classes);
-  const meta = baseMeta(file.name, template, classes, title, created, updated);
+  const meta = baseMeta(file.filename, template, classes, title, created, updated);
 
   const node: Node = {
     type,

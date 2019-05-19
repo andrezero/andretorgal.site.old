@@ -3,11 +3,9 @@ title: 'Static Site Generators: A Brief History'
 tags: ['draft', 'static-websites']
 ---
 
-Hype is building up around [static site generators](https://medium.com/codingthesmartway-com-blog/top-static-site-generators-for-2019-26a4c8afcc05) and it all sounds - to me - like history repeating itself.
+Hype is building up around [static site generators](https://medium.com/codingthesmartway-com-blog/top-static-site-generators-for-2019-26a4c8afcc05). To me, it all sounds like history repeating itself.
 
-In reality, static site generators have been around for much longer than [most people think](https://jonpersson.co/static-sites/). Our collective memory is very short. And silver bullets usually live an even shorter life.
-
-Let me see if I can help with a little perspective here.
+Static site generators have been around for much longer than [most people think](https://jonpersson.co/static-sites/). Our industry's collective memory is very short. Let me see if I can help with a little perspective here.
 
 <!-- abstract -->
 
