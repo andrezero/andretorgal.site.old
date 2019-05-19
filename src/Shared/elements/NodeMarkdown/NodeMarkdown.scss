@@ -1,0 +1,11 @@
+@import '../../../Shared/elements/Markdown/Markdown.mixins';
+@import '../../../Shared/elements/MarkdownBase/MarkdownBase';
+
+@mixin node-markdown {
+  @include markdown;
+  @include markdown-base;
+}
+
+.node-markdown {
+  @include node-markdown;
+}

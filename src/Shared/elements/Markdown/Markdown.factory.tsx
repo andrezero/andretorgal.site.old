@@ -3,7 +3,6 @@ import rehypeReact from 'rehype-react';
 import unified from 'unified';
 import { VFileContents } from 'vfile';
 
-import { AssetImg } from '../../../Assets/elements/AssetImg/AssetImg.component';
 import { Anchor } from '../Anchor/Anchor.component';
 import { anchoredHeading } from '../AnchoredHeading/AnchoredHeading.factory';
 import { Link } from '../Link/Link.component';
@@ -20,7 +19,7 @@ export interface MarkdownComponentAttributeTestMap {
 }
 
 export interface MarkdownComponentMap {
-  [x: string]: ComponentType | MarkdownComponentAttributeTestMap;
+  [tag: string]: ComponentType | MarkdownComponentAttributeTestMap;
 }
 
 interface StaticProps {
@@ -55,24 +54,24 @@ const renderer = (processor: unified.Processor, componentMap: MarkdownComponentM
 
 export interface MarkdownComponentProps {
   children: string;
+  className?: string;
   [key: string]: any;
 }
 
 export const markdownFactory = (
   processor: unified.Processor,
   componentMap: MarkdownComponentMap,
-  className?: string,
   staticProps?: StaticProps
 ): React.StatelessComponent<MarkdownComponentProps> => {
   const render = renderer(processor, componentMap);
   return (props: StaticProps | MarkdownComponentProps) => {
-    const { children } = props;
+    const { children, className } = props;
     if (!children) {
       return <></>;
     }
     return (
       <div className={className || ''} {...staticProps} {...props}>
-        <div className="here">{render(children)}</div>
+        {render(children)}
       </div>
     );
   };

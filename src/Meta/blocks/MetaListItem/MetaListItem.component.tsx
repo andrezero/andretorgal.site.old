@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { BaseListItem } from '../../../Shared/blocks/BaseListItem/BaseListItem.component';
 import { Link } from '../../../Shared/elements/Link/Link.component';
-import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
+import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
 import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
 import { ReadMore } from '../../../Shared/elements/ReadMore/ReadMore.component';
 
@@ -30,7 +30,7 @@ export const MetaListItem: React.StatelessComponent<Props> = ({ node: meta, leve
   );
   return (
     <BaseListItem className="meta-list-item" header={header} footer={footer}>
-      <MarkdownBasic>{meta.abstract}</MarkdownBasic>
+      <MarkdownBase>{meta.abstract}</MarkdownBase>
       <ReadMore path={meta.path} />
     </BaseListItem>
   );

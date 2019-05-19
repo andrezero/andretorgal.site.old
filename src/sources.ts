@@ -1,4 +1,4 @@
-import { AssetPreset, AssetLocator } from './Shared/types/Asset.models';
+import { AssetLocator, AssetPreset } from './Shared/types/Asset.models';
 import { Node } from './Shared/types/Node.models';
 
 import { PageNode } from './Shared/types/Page.models';
@@ -13,7 +13,7 @@ import { MetaNode } from './Meta/types/Meta.models';
 import { generateTags, loadTags } from './Taxonomy/tags.source';
 import { TagNode } from './Taxonomy/types/Tag.models';
 
-import { loadAssets, processAssets } from './Assets/assets.source';
+import { attachAssets, loadAssets, processAssets } from './Assets/assets.source';
 
 import { generateMedias, loadMedias } from './Media/medias.source';
 import { MediaNode } from './Media/types/Media.models';
@@ -59,6 +59,8 @@ export const loadSources = async (assetLocator: AssetLocator, assetPresets: Asse
     tags,
     medias
   };
+
+  attachAssets(assets, sources.nodes);
 
   if (process.env.DEBUG_NODES) {
     debug(sources.nodes);

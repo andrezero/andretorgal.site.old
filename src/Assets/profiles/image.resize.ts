@@ -1,7 +1,9 @@
 import sharp = require('sharp');
 
+import { pipelineFor } from '../lib/pipelines';
+
+import { ImageAssetSrc } from '../../Media/types/Media.models';
 import { Asset, AssetLocator, AssetPipelines, AssetProcessor, AssetSrc } from '../../Shared/types/Asset.models';
-import { pipelineFor } from './pipelines';
 
 interface ImageResizeOptions {
   width: number;
@@ -19,11 +21,11 @@ export const imageResize = (options: ImageResizeOptions): AssetProcessor => {
 
     try {
       const info = await pipeline.toFile(destination);
-      const src = {
+      const src: ImageAssetSrc = {
         href,
         width: info.width,
         height: info.height,
-        aspectRatio: info.width / info.height
+        ratio: info.width / info.height
       };
       return src;
     } catch (err) {

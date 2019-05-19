@@ -1,5 +1,5 @@
 import { TemplateLocator } from './Shared/lib/classes/TemplateLocator';
-import { AssetPreset, AssetLocator } from './Shared/types/Asset.models';
+import { AssetLocator, AssetPreset } from './Shared/types/Asset.models';
 import { Route } from './Shared/types/Route.models';
 import { loadSources } from './sources';
 

@@ -1,4 +1,4 @@
-import { strip } from './markdown';
+import { stripAll } from './markdown';
 
 import { DocMeta, NodeMeta, OpenGraphMeta } from '../types/Node.models';
 

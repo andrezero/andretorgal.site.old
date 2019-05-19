@@ -1,28 +1,38 @@
 import * as React from 'react';
 
-export type SrcSetItem = [string, string];
-
-export type SrcSet = SrcSetItem[];
-
-export interface ResponsiveSrc {
-  set: SrcSet;
-  sizes: string[];
-}
+import { ImageAssetSrc } from '../../../Media/types/Media.models';
+import { ResponsiveImg, ResponsiveSrc } from '../../../Shared/elements/ResponsiveImg/ResponsiveImg.component';
+import { Node } from '../../../Shared/types/Node.models';
 
 interface Props {
+  node: Node;
   src: string;
 }
 
-export const AssetImg: React.StatelessComponent<Props> = props => {
-  console.log(props);
-  return <img src="src" />;
-  // const defaultSrc = src.set[src.set.length - 1][1];
-  // const srcSet = src.set.map(item => `${item[1]} ${item[0]}`).join(', ');
-  // const sizes = src.sizes.join(', ');
-  // const className = 'asset-image';
-  // return (
-  //   <picture className={className}>
-  //     <img sizes={sizes} srcSet={srcSet} src={defaultSrc} />
-  //   </picture>
-  // );
+const findAssetProfile = (node: Node, url: string, profile: string) => {
+  const asset = node.meta.assets.find(a => a.originalUrl === url);
+  return asset.profiles[profile];
+};
+
+export const AssetImg: React.StatelessComponent<Props> = ({ node, src }) => {
+  if (src.startsWith('.')) {
+    const background = findAssetProfile(node, src, 'image.blurup').href;
+    const small = findAssetProfile(node, src, 'image.small') as ImageAssetSrc;
+    const medium = findAssetProfile(node, src, 'image.medium') as ImageAssetSrc;
+    const large = findAssetProfile(node, src, 'image.large') as ImageAssetSrc;
+
+    const img: ResponsiveSrc = {
+      set: [[`${small.width}w`, small.href], [`${medium.width}w`, medium.href], [`${large.width}w`, large.href]],
+      sizes: ['100vw']
+    };
+
+    return <ResponsiveImg className="asset-image" src={img} bg={background} ratio={small.ratio} />;
+  } else {
+    const img: ResponsiveSrc = {
+      set: [[null, src]],
+      sizes: ['100vw']
+    };
+
+    return <ResponsiveImg className="asset-image" src={img} />;
+  }
 };

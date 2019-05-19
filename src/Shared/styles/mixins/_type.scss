@@ -82,13 +82,11 @@ $scalars: settings('type-scalars');
 
 @mixin heading {
   @include type-alt;
-
   font-weight: var(--root-type-weights-light);
 }
 
 @mixin heading-1 {
   @include heading;
-
   margin-top: calc(var(--root-space-unit) * 3.5px);
   margin-bottom: calc(var(--root-space-unit) * 2px);
   font-size: responsive-type-size('h1');
@@ -96,19 +94,16 @@ $scalars: settings('type-scalars');
 
 @mixin heading-2 {
   @include heading;
-
   font-size: responsive-type-size('h2');
 }
 
 @mixin heading-3 {
   @include heading;
-
   font-size: responsive-type-size('h3');
 }
 
 @mixin heading-4 {
   @include heading;
-
   font-weight: var(--root-type-weights-light);
   font-size: responsive-type-size('h4');
 }

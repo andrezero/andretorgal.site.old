@@ -7,7 +7,7 @@ import { ReadMore } from '../../../Shared/elements/ReadMore/ReadMore.component';
 
 import { PostNode } from '../../types/Post.models';
 
-import { PostAbstract } from '../../elements/PostAbstract/PostAbstract.component';
+import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
 
 import './PostListItem.scss';
 
@@ -29,7 +29,9 @@ export const PostListItem: React.StatelessComponent<Props> = ({ node: post, leve
   );
   return (
     <BaseListItem className="post-list-item" header={header} footer={footer}>
-      <PostAbstract strip={true}>{post.abstract}</PostAbstract>
+      <NodeMarkdown node={post} strip={true}>
+        {post.abstract}
+      </NodeMarkdown>
       <ReadMore path={post.path} />
     </BaseListItem>
   );

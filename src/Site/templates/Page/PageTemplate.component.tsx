@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Head } from 'react-static';
 
-import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
+import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { PageNode } from '../../../Shared/types/Page.models';
@@ -27,7 +27,7 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ page }) => {
       <section className="container">
         <h1 className="page-title">{page.title}</h1>
 
-        <MarkdownBasic>{page.content}</MarkdownBasic>
+        <MarkdownBase>{page.content}</MarkdownBase>
 
         <LinkToTop />
       </section>

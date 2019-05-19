@@ -13,7 +13,7 @@ export const basic = (): unified.Processor =>
     .use(remarkRehype, { allowDangerousHTML: true })
     .use(rehypeRaw);
 
-export const strippedLinks = (): unified.Processor =>
+export const stripLinks = (): unified.Processor =>
   unified()
     .use(remarkParse)
     .use(remarkUnlink)
@@ -25,7 +25,7 @@ const stripper: unified.Processor = unified()
   .use(remarkRehype, { allowDangerousHTML: true })
   .use(rehypeRaw);
 
-export const strip = (source: string): string => {
+export const stripAll = (source: string): string => {
   const tree = stripper.parse(source);
   return toString(tree);
 };

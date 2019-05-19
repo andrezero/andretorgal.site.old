@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
-import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
+import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
 
 import { TagCount } from '../../elements/TagCount/TagCount.component';
 import { TagNode } from '../../types/Tag.models';
@@ -20,8 +20,8 @@ export const TagItem: React.StatelessComponent<Props> = ({ tag }) => {
           <TagCount count={tag.count} />
           <h1 className="page-title">{`#${tag.title}`}</h1>
         </header>
-        <MarkdownBasic>{tag.abstract}</MarkdownBasic>
-        <MarkdownBasic>{tag.content}</MarkdownBasic>
+        <NodeMarkdown node={tag}>{tag.abstract}</NodeMarkdown>
+        <NodeMarkdown node={tag}>{tag.content}</NodeMarkdown>
       </div>
       <footer>
         <NodeMeta node={tag} />

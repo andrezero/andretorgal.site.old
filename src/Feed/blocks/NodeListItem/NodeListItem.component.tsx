@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { BaseListItem } from '../../../Shared/blocks/BaseListItem/BaseListItem.component';
 import { Link } from '../../../Shared/elements/Link/Link.component';
-import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
+import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
 import { ReadMore } from '../../../Shared/elements/ReadMore/ReadMore.component';
 import { Node } from '../../../Shared/types/Node.models';
 
@@ -35,7 +35,7 @@ const DefaultListItem: React.StatelessComponent<Props> = ({ node, level = 2, foo
   );
   return (
     <BaseListItem className="node-list-item" header={header} footer={footer}>
-      <MarkdownBasic>{node.abstract}</MarkdownBasic>
+      <MarkdownBase>{node.abstract}</MarkdownBase>
       <ReadMore path={node.path} />
     </BaseListItem>
   );

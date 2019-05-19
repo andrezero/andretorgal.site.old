@@ -4,6 +4,7 @@ import { Head } from 'react-static';
 import { NodeChildren } from '../../../Shared/blocks/NodeChildren/NodeChildren.component';
 import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
 import { NodeParent } from '../../../Shared/blocks/NodeParent/NodeParent.component';
+import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { RouteData } from '../../../Shared/types/Route.models';
@@ -13,7 +14,6 @@ import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component
 import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
 
 import { MetaNode } from '../..//types/Meta.models';
-import { MetaContents } from '../../elements/MetaContents/MetaContents.component';
 
 import './PageTemplate.scss';
 
@@ -32,9 +32,9 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ meta }) => {
         <NodeParent parent={meta.meta.links.parent} />
         <h1 className="page-title">{meta.title}</h1>
         <NodeMeta node={meta} showUpdated={true} />
-        <MetaContents>{meta.abstract}</MetaContents>
+        <NodeMarkdown node={meta}>{meta.abstract}</NodeMarkdown>
         <NodeChildren children={meta.meta.links.children} />
-        <MetaContents>{meta.content}</MetaContents>
+        <NodeMarkdown node={meta}>{meta.content}</NodeMarkdown>
         <LinkToTop />
       </section>
     </Layout>

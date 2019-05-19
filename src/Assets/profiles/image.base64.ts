@@ -1,7 +1,9 @@
 import sharp = require('sharp');
 
-import { Asset, AssetLocator, AssetPipelines, AssetProcessor } from '../../Shared/types/Asset.models';
-import { pipelineFor } from './pipelines';
+import { pipelineFor } from '../lib/pipelines';
+
+import { ImageAssetSrc } from '../../Media/types/Media.models';
+import { Asset, AssetPipelines, AssetProcessor } from '../../Shared/types/Asset.models';
 
 interface ImageBase64Options {
   width: number;
@@ -18,11 +20,11 @@ export const imageBase64 = (options: ImageBase64Options): AssetProcessor => {
       const { data: buffer, info } = await pipeline.toBuffer({
         resolveWithObject: true
       });
-      const src = {
+      const src: ImageAssetSrc = {
         href: `data:image/${info.format};base64,${buffer.toString(`base64`)}`,
         width: info.width,
         height: info.height,
-        aspectRatio: info.width / info.height
+        ratio: info.width / info.height
       };
       return src;
     } catch (err) {

@@ -14,3 +14,21 @@ export const loadAssets = (nodes: Node[]): Asset[] => {
 export const processAssets = async (assets: Asset[], locator: AssetLocator, presets: AssetPreset[]): Promise<void> => {
   await transform(assets, locator, presets);
 };
+
+interface NodeIndex {
+  [path: string]: Node;
+}
+
+export const attachAssets = (assets: Asset[], nodes: Node[]) => {
+  const nodeIndex: NodeIndex = {};
+
+  nodes.forEach(node => {
+    nodeIndex[node.path] = node;
+  });
+
+  assets.forEach(asset => {
+    asset.sources.forEach(source => {
+      nodeIndex[source.node.path].meta.assets.push(asset);
+    });
+  });
+};

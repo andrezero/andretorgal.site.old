@@ -14,7 +14,7 @@ The done stuff is on the [changelog](./changelog) page.
 - [x] update dependencies
 - [x] configure lintstyle, eslint, tslint
 
-- [x] images: extract, manipulate, responsive print and upload
+- [x] assets: extract, manipulate, responsive print images and upload
 
   - [x] collect assets and generate asset nodes
     - [x] refactor: move links to node.meta
@@ -22,13 +22,16 @@ The done stuff is on the [changelog](./changelog) page.
     - [x] refactor: move link functions from `lib/node.ts` to `lib/link.ts`
   - [x] create media nodes and routes
   - [x] define asset preset/profiles
+  - [x] locate and copy during dev build
   - [ ] collect assets from hero too
   - [ ] og image
   - [x] generate resolutions during dev build
-    - [x] managing images, image sharp, other [image optimizations](https://medium.com/grailed-engineering/image-optimization-using-higher-order-components-f401e6b4e1b1)
+    - [x] managing images, image sharp, other
+    - [x] refactor markdown, kill variants
   - [ ] responsive print
-  - [x] webpack dev-server
+  - [x] serve locally via `npm server` using `concurrently`
   - [ ] s3 sync in dev time
+    - [ ] purge assets not in use before sync
 
 ## Next
 

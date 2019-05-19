@@ -3,7 +3,8 @@ import { Head } from 'react-static';
 
 import { Hero } from '../../../Shared/blocks/Hero/Hero.component';
 import { NodeParent } from '../../../Shared/blocks/NodeParent/NodeParent.component';
-import { MarkdownBasic } from '../../../Shared/elements/MarkdownBasic/MarkdownBasic.component';
+import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
+import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
 import { ResponsiveSrc } from '../../../Shared/elements/ResponsiveImg/ResponsiveImg.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
@@ -30,7 +31,7 @@ const renderHero = (page: PageNode) => {
         <NodeParent parent={page.meta.links.parent} />
         <h1 className="page-title">{hero.title || page.title}</h1>
       </header>
-      {page.abstract && <MarkdownBasic>{page.abstract}</MarkdownBasic>}
+      {page.abstract && <MarkdownBase>{page.abstract}</MarkdownBase>}
     </Hero>
   );
 };
@@ -57,7 +58,7 @@ export const AboutTemplate: React.StatelessComponent<Props> = ({ page }) => {
       <section className="container">
         {!hero && renderHeader(page)}
 
-        <MarkdownBasic>{page.content}</MarkdownBasic>
+        <NodeMarkdown node={page}>{page.content}</NodeMarkdown>
 
         <LinkToTop />
       </section>
