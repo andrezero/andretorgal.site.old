@@ -53,3 +53,7 @@ export interface Node {
   created: Date;
   updated: Date;
 }
+
+export interface NodeIndex {
+  [path: string]: Node;
+}

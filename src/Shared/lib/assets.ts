@@ -1,14 +1,7 @@
 import { format as formatUrl, parse as parseUrl } from 'url';
 
-import strip from 'remark-strip-html';
-import { Attacher, Transformer } from 'unified';
-import unified from 'unified';
-import * as Unist from 'unist';
-import visit from 'unist-util-visit';
-
-import { parser as htmlParser } from './html';
 import { linkToNode } from './links';
-import { parser as markdownParser } from './markdown';
+import { findImages } from './markdown';
 
 import { Asset, AssetLocator, AssetPipelines, AssetPreset, AssetProfile, AssetSource } from '../types/Asset.models';
 import { Node } from '../types/Node.models';
@@ -22,79 +15,8 @@ const extractPresets = (url: ParsedUrl): string[] => {
   return url.hash.substring(1).split('+');
 };
 
-const processHtmlTree: Attacher = () => {
-  const transformer: Transformer = (tree: Unist.Node): Unist.Node => {
-    const images: any[] = [];
-
-    visit(tree, 'element', (node: any) => {
-      const { href, alt, title } = node.properties;
-      if (node.tagName !== 'img' || !href) {
-        return;
-      }
-      const image = {
-        type: 'image',
-        url: href,
-        alt,
-        title
-      };
-      images.push(image);
-    });
-
-    const children = tree.children as any[];
-    children.splice(0);
-    children.push(...images);
-
-    return tree;
-  };
-  return transformer;
-};
-
-const findInHtml = (html: string): Unist.Node[] => {
-  const tree = htmlParser()
-    .use(strip)
-    .parse(html);
-
-  const processor = unified().use(processHtmlTree);
-  const result = processor.runSync(tree).children;
-
-  return result as Unist.Node[];
-};
-
-const processMarkdownTree: Attacher = () => {
-  const transformer: Transformer = (tree: Unist.Node): Unist.Node => {
-    const images: any[] = [];
-
-    visit(tree, 'html', (node: any) => {
-      const nodes = findInHtml(node.value);
-      images.push(...nodes);
-    });
-
-    visit(tree, 'image', (node: any) => {
-      images.push(node);
-    });
-
-    const children = tree.children as any[];
-    children.splice(0);
-    children.push(...images);
-
-    return tree;
-  };
-  return transformer;
-};
-
-const findInMarkdown = (markdown: string): Unist.Node[] => {
-  const tree = markdownParser()
-    .use(strip)
-    .parse(markdown);
-
-  const processor = unified().use(processMarkdownTree);
-  const result = processor.runSync(tree).children;
-
-  return result as Unist.Node[];
-};
-
 const findAssetsInNode = (node: Node, presets: string[] = []): Asset[] => {
-  const assets = findInMarkdown(node.content);
+  const assets = findImages(node.content);
   return assets.map((asset: any) => {
     const url = parseUrl(asset.url);
     const urlPresets = extractPresets(url);
