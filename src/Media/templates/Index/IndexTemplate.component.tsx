@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { Head } from 'react-static';
 
-import { Link } from '../../../Shared/elements/Link/Link.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
+import { PageNode } from '../../../Shared/types/Page.models';
 import { RouteData } from '../../../Shared/types/Route.models';
 
 import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component';
 import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
 import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
 
-import { PageNode } from '../../../Shared/types/Page.models';
-import { ImageAssetSrc, MediaNode } from '../../types/Media.models';
+import { MediaListItem } from '../../blocks/MediaListItem/MediaListItem.component';
+import { MediaNode } from '../../types/Media.models';
 
 import './IndexTemplate.scss';
 
@@ -30,29 +30,9 @@ export const IndexTemplate: React.StatelessComponent<Props> = ({ page, medias })
       <section className="container">
         <h1 className="page-title">{page.title}</h1>
 
-        <ul>
+        <ul className="media-list">
           {medias.map(media => (
-            <li key={media.path}>
-              <Link href={media.path}>
-                {media.meta.asset.type}: {media.title}
-              </Link>
-              <p>URL: {media.url}</p>
-              <p>PROFILES: {Object.keys(media.meta.asset.profiles).join(', ')}</p>
-
-              {Object.values(media.meta.asset.profiles).map((profile: ImageAssetSrc) => {
-                const { href, width, height } = profile;
-                return (
-                  <p key={href}>
-                    {href}:
-                    <img src={href} width={width} height={height} />
-                  </p>
-                );
-              })}
-
-              <p>{media.meta.asset.url}</p>
-              <p>{media.meta.asset.originalUrl}</p>
-              <p>{media.meta.asset.alt}</p>
-            </li>
+            <MediaListItem key={media.path} media={media} />
           ))}
         </ul>
 

@@ -22,10 +22,12 @@ const debug = (routes: Route[]) => {
   // tslint:enable
 };
 
-export const routeBuilder = (assetLocator: AssetLocator, assetPresets: AssetPreset[]) => {
+export type RouteBuilder = () => Promise<Route[]>;
+
+export const createRouteBuilder = (assetLocator: AssetLocator, assetPresets: AssetPreset[]): RouteBuilder => {
   const templates = new TemplateLocator();
 
-  const getRoutes = async () => {
+  const routeBuilder: RouteBuilder = async () => {
     const sources = await loadSources(assetLocator, assetPresets);
     const { nodes, pages, posts, metas, tags, medias } = sources;
 
@@ -48,5 +50,5 @@ export const routeBuilder = (assetLocator: AssetLocator, assetPresets: AssetPres
     return routes;
   };
 
-  return { getRoutes };
+  return routeBuilder;
 };

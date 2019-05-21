@@ -5,7 +5,7 @@ tags: ['personal']
 created: '2017-02-11'
 updated: '2018-02-11'
 hero:
-  img: './assets/imgs/about-hero.jpg'
+  img: './assets/heros/about-hero.jpg'
 ---
 
 My name is André Torgal and this is my website, a place where I [blog](/posts) some thoughts and run a few [experiments](/experiments).
@@ -15,8 +15,6 @@ Here, you can learn more about me, [my work](/about/work), and other stuff I hav
 <!-- abstract -->
 
 ## House rules
-
-![inline](./imgs/international-sloth-day.jpg#image:default)
 
 Just to be clear: this is my space - I own the content, the opinions are my own, and it does not represent the company I work for at the moment.
 
@@ -33,8 +31,6 @@ A seasoned web developer and agile practitioner with a diverse background in eng
 ### Personal
 
 A curious and passionate person. My story includes computers, bicycles and skateboards. Guitars, drums, theater and photography. Economics, management, more computers. Software, methodologies, frameworks. [Read more](/about/story).
-
-![hello](https://farm4.static.flickr.com/3225/2750941632_85e3d31748_b.jpg)
 
 ### Music
 

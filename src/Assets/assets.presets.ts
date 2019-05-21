@@ -10,7 +10,7 @@ interface ProfileIndex {
 
 const profileBuilder = (): ProfileIndex => {
   const profiles = [
-    newProfile('image.blurup', imageBase64({ width: 20, height: 20 })),
+    newProfile('image.blurup', imageBase64({ width: 20 })),
     newProfile('image.small', imageResize({ width: 400 })),
     newProfile('image.medium', imageResize({ width: 850 })),
     newProfile('image.large', imageResize({ width: 1400 })),
@@ -34,7 +34,7 @@ const localImages: AssetFilter = (asset: Asset) => {
   return asset.type === 'image' && asset.url.startsWith('.');
 };
 
-export const presetBuilder = (): AssetPreset[] => {
+export const createAssetPresets = (): AssetPreset[] => {
   const profiles = profileBuilder();
 
   const imageDefault = assetPreset('image:default', localImages, [

@@ -1,4 +1,4 @@
-import { Node, NodeLink } from './Node.models';
+import { Node, NodeLink, NodeSource } from './Node.models';
 
 export interface AssetPipelines {
   [name: string]: any;
@@ -35,8 +35,15 @@ export interface AssetPreset {
 }
 
 export interface AssetSource {
-  node: NodeLink;
-  filename: string;
+  type: string;
+}
+
+export interface AssetSourceNode extends AssetSource {
+  type: 'node';
+  node: {
+    link: NodeLink;
+    source: NodeSource;
+  };
 }
 
 export interface Asset {

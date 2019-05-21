@@ -1,5 +1,12 @@
 import { collect, dedupe, transform } from '../Shared/lib/assets';
-import { Asset, AssetExtractor, AssetLocator, AssetPreset, ExtractedAsset } from '../Shared/types/Asset.models';
+import {
+  Asset,
+  AssetExtractor,
+  AssetLocator,
+  AssetPreset,
+  AssetSourceNode,
+  ExtractedAsset
+} from '../Shared/types/Asset.models';
 import { Node, NodeIndex } from '../Shared/types/Node.models';
 
 const assetExtractor: AssetExtractor = (node: Node): ExtractedAsset[] => {
@@ -34,6 +41,11 @@ export const attachAssets = (assets: Asset[], nodes: Node[]) => {
   nodes.forEach(node => (nodeIndex[node.path] = node));
 
   assets.forEach(asset => {
-    asset.sources.forEach(source => nodeIndex[source.node.path].meta.assets.push(asset));
+    asset.sources.forEach(source => {
+      if (source.type === 'node') {
+        const path = (source as AssetSourceNode).node.link.path;
+        nodeIndex[path].meta.assets.push(asset);
+      }
+    });
   });
 };

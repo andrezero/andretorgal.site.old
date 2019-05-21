@@ -3,19 +3,19 @@ import { dirname, join as pathJoin, parse as pathParse, resolve as pathResolve }
 import { format as formatUrl, parse as parseUrl } from 'url';
 
 import { slug } from '../Shared/lib/strings';
-import { Asset, AssetLocator } from '../Shared/types/Asset.models';
+import { Asset, AssetLocator, AssetSourceNode } from '../Shared/types/Asset.models';
 
-const makePrefix = (str: string): string => {
+const shardPrefix = (str: string, sharding: number): string => {
   const crypto = require('crypto');
   return crypto
     .createHash('md5')
     .update(str)
     .digest('hex')
-    .substr(0, 6);
+    .substr(0, sharding);
 };
 
-const publicName = (filename: string, profile?: string, ext?: string): string => {
-  const prefix = makePrefix(filename);
+const publicName = (filename: string, sharding: number, profile?: string, ext?: string): string => {
+  const prefix = sharding ? shardPrefix(filename, sharding) : '';
   const parts = pathParse(filename);
   const sufix = profile ? `-${profile}` : '';
   const extension = ext ? `.${ext}` : parts.ext;
@@ -24,11 +24,11 @@ const publicName = (filename: string, profile?: string, ext?: string): string =>
     .filter(part => part !== '.')
     .map(slug)
     .join('/');
-  return pathJoin(prefix, dirs, `${parts.name}${sufix}${extension}`);
+  return pathJoin(dirs, prefix, `${parts.name}${sufix}${extension}`);
 };
 
-const moveIfExists = async (asset: Asset, fromDir: string, toDir: string): Promise<string | void> => {
-  const name = publicName(asset.url);
+const moveIfExists = async (asset: Asset, fromDir: string, toDir: string, sharding: number): Promise<string | void> => {
+  const name = publicName(asset.url, sharding);
   const destination = pathResolve(pathJoin(toDir, name));
   const destinationExists = await existsAsync(destination);
   if (destinationExists) {
@@ -48,58 +48,68 @@ const isLocal = (url: string): boolean => {
   return isRelative && !isIllegal;
 };
 
-const moveFromAssetsDir = async (asset: Asset, assetsDir: string, staticsDir: string): Promise<boolean> => {
-  if (!isLocal(asset.url)) {
-    return;
-  }
-  const destination = await moveIfExists(asset, assetsDir, staticsDir);
+const scanDir = async (asset: Asset, dir: string, staticsDir: string, sharding: number): Promise<boolean> => {
+  const destination = await moveIfExists(asset, dir, staticsDir, sharding);
   if (typeof destination === 'string') {
     asset.filename = destination;
     return true;
   }
 };
 
-const moveFromSourceDir = async (asset: Asset, staticsDir: string): Promise<boolean> => {
-  if (!isLocal(asset.url)) {
-    return;
+const scanDirs = async (asset: Asset, dirs: string[], staticsDir: string, sharding: number): Promise<boolean> => {
+  let found;
+  let ix = dirs.length;
+  while (!found && ix--) {
+    const directory = dirs[ix];
+    found = await scanDir(asset, directory, staticsDir, sharding);
   }
-  const sourceDir = dirname(asset.sources[0].filename);
-  const destination = await moveIfExists(asset, sourceDir, staticsDir);
-  if (typeof destination === 'string') {
-    asset.filename = destination;
-    return true;
+  return found;
+};
+
+const scanSources = async (asset: Asset, staticsDir: string, sharding: number): Promise<boolean> => {
+  const { sources } = asset;
+  let found;
+  let ix = sources.length;
+  while (!found && ix--) {
+    const source = sources[ix];
+    if (source.type === 'node') {
+      const node = (source as AssetSourceNode).node;
+      if (node.source.type === 'file') {
+        const directory = dirname(node.source.id);
+        found = await scanDir(asset, directory, staticsDir, sharding);
+      }
+    }
   }
+  return found;
 };
 
 export interface LocatorConfig {
   scan: string[];
   statics: {
+    shard: number;
     dir: string;
     url: string;
   };
 }
 
-export const locatorBuilder = (config: LocatorConfig): AssetLocator => {
+export const createAssetLocator = (config: LocatorConfig): AssetLocator => {
+  const sharding = config.statics.shard;
   const locate = async (asset: Asset) => {
-    let found;
-    found = await moveFromSourceDir(asset, config.statics.dir);
-    let ix = config.scan.length;
-    while (!found && ix--) {
-      found = await moveFromAssetsDir(asset, config.scan[ix], config.statics.dir);
-    }
+    let found: boolean;
+    found = await scanSources(asset, config.statics.dir, sharding);
+    found = found || (await scanDirs(asset, config.scan, config.statics.dir, sharding));
     if (!found) {
-      const scanned = [dirname(asset.sources[0].filename), ...config.scan];
-      throw new Error(`Asset not found "${asset.url}", scanned "${scanned.join(', ')}"`);
+      throw new Error(`Asset not found "${asset.url}", scanned "${config.scan.join(', ')}"`);
     }
   };
 
   const destination = (asset: Asset, profile: string, ext?: string) => {
-    return pathJoin(config.statics.dir, publicName(asset.url, profile, ext));
+    return pathJoin(config.statics.dir, publicName(asset.url, sharding, profile, ext));
   };
 
   const url = (asset: Asset, profile: string, ext?: string) => {
     const parts = parseUrl(config.statics.url);
-    const pathname = publicName(asset.url, profile, ext);
+    const pathname = publicName(asset.url, sharding, profile, ext);
     return formatUrl({ ...parts, pathname });
   };
 

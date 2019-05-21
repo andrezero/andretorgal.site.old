@@ -2,8 +2,9 @@ import { stripAll } from './markdown';
 
 import { DocMeta, NodeMeta, OpenGraphMeta } from '../types/Node.models';
 
-export const baseMeta = (
-  origin: string,
+export const newMeta = (
+  sourceType: string,
+  sourceId: string,
   template: string,
   classes: string,
   title: string,
@@ -23,7 +24,10 @@ export const baseMeta = (
   }
 
   return {
-    origin,
+    source: {
+      type: sourceType,
+      id: sourceId
+    },
     template,
     classes,
     doc,

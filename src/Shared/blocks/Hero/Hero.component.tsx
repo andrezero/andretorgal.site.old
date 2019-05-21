@@ -22,7 +22,7 @@ export const Hero: React.StatelessComponent<Props> = ({ img, node, className, ch
   return (
     <section className={classNames.join(' ')}>
       <div className="banner">
-        <NodeImg node={node} src={img} profiles={profiles} pad={false} className="cover" />
+        <NodeImg node={node} src={img} profiles={profiles} pad={false} blurup={false} className="cover" />
       </div>
       <div className="content">{children}</div>;
     </section>

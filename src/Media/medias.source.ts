@@ -36,6 +36,7 @@ const newMediaFromAsset = (asset: Asset): MediaNode => {
   const mediaNode = newNode('asset', asset.title || slug(asset.url), defaults) as MediaNode;
   mediaNode.abstract = asset.alt;
   mediaNode.meta.asset = asset;
+  mediaNode.meta.assets.push(asset);
 
   return mediaNode;
 };
@@ -52,6 +53,7 @@ const indexNewMedia = (mediaIndex: MediaIndex, asset: Asset): MediaNode => {
 
 const indexExistingMedia = (mediaIndex: MediaIndex, asset: Asset) => {
   mediaIndex[asset.url].meta.asset = asset;
+  mediaIndex[asset.url].meta.assets.push(asset);
 };
 
 const indexAsset = (mediaIndex: MediaIndex, asset: Asset, nodes: MediaNode[]) => {

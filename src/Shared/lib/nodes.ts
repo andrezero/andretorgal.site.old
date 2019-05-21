@@ -1,6 +1,6 @@
 import { join as pathJoin, resolve as pathResolve } from 'path';
 
-import { baseMeta } from './meta';
+import { newMeta } from './meta';
 import { humanise, slug } from './strings';
 import { cssClass } from './strings';
 
@@ -46,6 +46,18 @@ const makeClasses = (template: string, classes?: string) => {
   return classess.join(' ');
 };
 
+function customPath(file: ParsedFile, data: FileData, defaultPath?: string): string {
+  if (typeof defaultPath === 'undefined') {
+    return data.path;
+  } else if (defaultPath === '{path}') {
+    return file.path;
+  } else if (defaultPath === '{name}') {
+    return file.name;
+  } else {
+    return defaultPath;
+  }
+}
+
 export const newNode = (type: string, title: string, defaults: NewNodeDefaults): Node => {
   const path = makePath(defaults.prefix || '', defaults.path, title);
 
@@ -54,7 +66,7 @@ export const newNode = (type: string, title: string, defaults: NewNodeDefaults):
 
   const template = defaults.template;
   const classes = makeClasses(template);
-  const meta = baseMeta(`${type}:${path}`, template, classes, title, created, updated);
+  const meta = newMeta('data', `${type}:${path}`, template, classes, title, created, updated);
 
   const node: Node = {
     type,
@@ -72,18 +84,6 @@ export const newNode = (type: string, title: string, defaults: NewNodeDefaults):
   return node;
 };
 
-function customPath(file: ParsedFile, data: FileData, defaultPath?: string): string {
-  if (typeof defaultPath === 'undefined') {
-    return data.path;
-  } else if (defaultPath === '{path}') {
-    return file.path;
-  } else if (defaultPath === '{name}') {
-    return file.name;
-  } else {
-    return defaultPath;
-  }
-}
-
 export const newNodeFromFile = (type: string, file: ParsedFile, defaults: NewNodeDefaults): NewNode => {
   const { data, abstract, content } = file;
 
@@ -95,7 +95,7 @@ export const newNodeFromFile = (type: string, file: ParsedFile, defaults: NewNod
 
   const template = data.template || defaults.template;
   const classes = makeClasses(template, data.classes);
-  const meta = baseMeta(file.filename, template, classes, title, created, updated);
+  const meta = newMeta('file', file.filename, template, classes, title, created, updated);
 
   const node: Node = {
     type,

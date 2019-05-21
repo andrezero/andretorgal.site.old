@@ -29,8 +29,13 @@ export interface NodeLinks {
   previous?: NodeLink;
 }
 
+export interface NodeSource {
+  type: string;
+  id: string;
+}
+
 export interface NodeMeta {
-  origin: string;
+  source: NodeSource;
   template: string;
   classes: string;
   doc: DocMeta[];
