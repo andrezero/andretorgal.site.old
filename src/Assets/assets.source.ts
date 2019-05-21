@@ -1,11 +1,24 @@
 import { collect, dedupe, transform } from '../Shared/lib/assets';
-import { Asset, AssetLocator, AssetPreset } from '../Shared/types/Asset.models';
+import { Asset, AssetExtractor, AssetLocator, AssetPreset, ExtractedAsset } from '../Shared/types/Asset.models';
 import { Node, NodeIndex } from '../Shared/types/Node.models';
+
+const assetExtractor: AssetExtractor = (node: Node): ExtractedAsset[] => {
+  const assets: ExtractedAsset[] = [];
+  const { hero } = node.features;
+  if (hero) {
+    assets.push({
+      type: 'image',
+      title: `${node.title} banner image`,
+      url: `${hero.img}#image:hero`
+    });
+  }
+  return assets;
+};
 
 export const loadAssets = (nodes: Node[]): Asset[] => {
   const commonProfiles = ['image:default'];
 
-  const rawAssets = collect(nodes, commonProfiles);
+  const rawAssets = collect(nodes, commonProfiles, assetExtractor);
   const assets = dedupe(rawAssets);
 
   return assets;

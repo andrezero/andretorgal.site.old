@@ -10,7 +10,7 @@ export interface ResponsiveSrc {
 }
 
 interface Props {
-  src: ResponsiveSrc;
+  src: ResponsiveSrc | string;
   bg?: string;
   ratio?: number;
   className?: string;
@@ -19,26 +19,48 @@ interface Props {
 
 import './ResponsiveImg.scss';
 
-export const ResponsiveImg: React.StatelessComponent<Props> = ({ src, ratio, bg, className, children }) => {
-  const defaultSrc = src.set[src.set.length - 1][1];
-  const srcSet = src.set.map(item => `${item[1]} ${item[0]}`).join(', ');
-  const sizes = src.sizes.join(', ');
+const makeSrc = (src: ResponsiveSrc | string): { defaultSrc: string; srcSet?: string; sizes?: string } => {
+  if (typeof src !== 'string') {
+    return {
+      defaultSrc: src.set[src.set.length - 1][1],
+      srcSet: src.set.map(item => `${item[1]} ${item[0]}`).join(', '),
+      sizes: src.sizes.join(', ')
+    };
+  }
+  return {
+    defaultSrc: src
+  };
+};
+
+const makePictureStyle = (bg: string): React.CSSProperties => {
   const style: React.CSSProperties = {};
-  const imgStyle: React.CSSProperties = {};
   if (bg) {
     style.backgroundImage = `url('${bg}')`;
     style.backgroundSize = `cover`;
   }
+  return style;
+};
+
+const makeImageStyle = (ratio: number, style: React.CSSProperties) => {
+  const imgStyle: React.CSSProperties = {};
   if (ratio) {
     style.paddingBottom = Math.round((1 / ratio) * 100) + '%';
     style.position = 'relative';
     imgStyle.position = 'absolute';
   }
+  return imgStyle;
+};
+
+export const ResponsiveImg: React.StatelessComponent<Props> = ({ src, ratio, bg, className, children }) => {
+  const { defaultSrc, srcSet, sizes } = makeSrc(src);
+  const style: React.CSSProperties = makePictureStyle(bg);
+  const imgStyle: React.CSSProperties = makeImageStyle(ratio, style);
   const handleImageLoaded = () => {
     // console.log('loaded'!);
   };
   return (
     <picture className={`fluid ${className}`} style={style}>
+      {children}
       <img sizes={sizes} srcSet={srcSet} src={defaultSrc} style={imgStyle} onLoad={handleImageLoaded} />
     </picture>
   );

@@ -5,7 +5,7 @@ tags: ['personal']
 created: '2017-02-11'
 updated: '2018-02-11'
 hero:
-  img: '/assets/imgs/about-hero.jpg'
+  img: './assets/imgs/about-hero.jpg'
 ---
 
 My name is André Torgal and this is my website, a place where I [blog](/posts) some thoughts and run a few [experiments](/experiments).

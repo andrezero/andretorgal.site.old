@@ -1,4 +1,4 @@
-import { NodeLink } from './Node.models';
+import { Node, NodeLink } from './Node.models';
 
 export interface AssetPipelines {
   [name: string]: any;
@@ -52,3 +52,12 @@ export interface Asset {
     [profile: string]: AssetSrc;
   };
 }
+
+export interface ExtractedAsset {
+  type: string;
+  title?: string;
+  alt?: string;
+  url: string;
+}
+
+export type AssetExtractor = (node: Node) => ExtractedAsset[];

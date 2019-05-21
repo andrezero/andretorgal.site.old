@@ -3,7 +3,6 @@ import { Head } from 'react-static';
 
 import { Hero } from '../../../Shared/blocks/Hero/Hero.component';
 import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
-import { ResponsiveSrc } from '../../../Shared/elements/ResponsiveImg/ResponsiveImg.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { PageNode } from '../../../Shared/types/Page.models';
@@ -23,24 +22,28 @@ interface Props {
   posts: PostNode[];
 }
 
+const renderHero = (page: PageNode) => {
+  const { hero } = page.features;
+
+  return (
+    <Hero node={page} img={hero.img}>
+      <header className="hero-header">
+        <h1 className="page-title">{page.title}</h1>
+      </header>
+      <NodeMarkdown node={page}>{page.abstract}</NodeMarkdown>
+    </Hero>
+  );
+};
+
 export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) => {
   const header = <SiteHeader node={page} />;
   const footer = <SiteFooter />;
 
-  const img: ResponsiveSrc = {
-    set: [['1024w', '/assets/imgs/home-hero-sm.jpg'], ['2048w', '/assets/imgs/home-hero.jpg']],
-    sizes: ['100vw']
-  };
-
   return (
     <Layout className="site-home" header={header} footer={footer}>
       <Head title="Recent posts" meta={page.meta.doc} />
-      <Hero img={img}>
-        <header className="hero-header">
-          <h1 className="page-title">Welcome friend</h1>
-        </header>
-        <NodeMarkdown node={page}>{page.abstract}</NodeMarkdown>
-      </Hero>
+
+      {renderHero(page)}
 
       <section className="container">
         <h2 className="page-title">Latest Posts</h2>

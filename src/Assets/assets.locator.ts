@@ -5,8 +5,6 @@ import { format as formatUrl, parse as parseUrl } from 'url';
 import { slug } from '../Shared/lib/strings';
 import { Asset, AssetLocator } from '../Shared/types/Asset.models';
 
-const ASSETS_PREFIX = './assets/';
-
 const makePrefix = (str: string): string => {
   const crypto = require('crypto');
   return crypto
@@ -85,12 +83,13 @@ export const locatorBuilder = (config: LocatorConfig): AssetLocator => {
   const locate = async (asset: Asset) => {
     let found;
     found = await moveFromSourceDir(asset, config.statics.dir);
-    if (!found) {
-      found = await moveFromAssetsDir(asset, config.scan[0], config.statics.dir);
+    let ix = config.scan.length;
+    while (!found && ix--) {
+      found = await moveFromAssetsDir(asset, config.scan[ix], config.statics.dir);
     }
-
     if (!found) {
-      throw new Error(`Asset not found ${asset.url}`);
+      const scanned = [dirname(asset.sources[0].filename), ...config.scan];
+      throw new Error(`Asset not found "${asset.url}", scanned "${scanned.join(', ')}"`);
     }
   };
 

@@ -1,8 +1,8 @@
 import { Asset, AssetFilter, AssetPreset, AssetProfile } from '../Shared/types/Asset.models';
 
-import { newProfile } from './lib/profiles';
-import { imageBase64 } from './profiles/image.base64';
-import { imageResize } from './profiles/image.resize';
+import { newProfile } from '../Shared/lib/assets/profiles';
+import { imageBase64 } from '../Shared/lib/assets/profiles/image.base64';
+import { imageResize } from '../Shared/lib/assets/profiles/image.resize';
 
 interface ProfileIndex {
   [name: string]: AssetProfile;
@@ -12,8 +12,9 @@ const profileBuilder = (): ProfileIndex => {
   const profiles = [
     newProfile('image.blurup', imageBase64({ width: 20, height: 20 })),
     newProfile('image.small', imageResize({ width: 400 })),
-    newProfile('image.medium', imageResize({ width: 900 })),
-    newProfile('image.large', imageResize({ width: 1400 }))
+    newProfile('image.medium', imageResize({ width: 850 })),
+    newProfile('image.large', imageResize({ width: 1400 })),
+    newProfile('image.huge', imageResize({ width: 2600 }))
   ];
 
   const index: ProfileIndex = {};
@@ -43,7 +44,14 @@ export const presetBuilder = (): AssetPreset[] => {
     profiles['image.large']
   ]);
 
+  const imageHero = assetPreset('image:hero', localImages, [
+    profiles['image.blurup'],
+    profiles['image.medium'],
+    profiles['image.large'],
+    profiles['image.huge']
+  ]);
+
   const imagePhoto = assetPreset('image:photo', localImages, [profiles.original]);
 
-  return [imageDefault, imagePhoto];
+  return [imageDefault, imageHero, imagePhoto];
 };

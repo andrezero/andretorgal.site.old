@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import * as markdown from '../../lib/markdown';
 
-import { AssetImg } from '../../../Assets/elements/AssetImg/AssetImg.component';
 import { Node } from '../../types/Node.models';
+import { NodeImg } from '../NodeImg/NodeImg.component';
 
 import { basicComponentMap, MarkdownComponentProps, markdownFactory } from '../Markdown/Markdown.factory';
 
@@ -16,8 +16,11 @@ interface NodeMarkdownProps {
 
 type Props = MarkdownComponentProps & NodeMarkdownProps;
 
-const withNode = (WrappedComponent: React.ComponentType, node: Node): React.ComponentType => (props: any) => {
-  return <WrappedComponent node={node} {...props} />;
+const withNodeAndProfiles = (WrappedComponent: React.ComponentType, node: Node): React.ComponentType => (
+  props: any
+) => {
+  const profiles = ['image.small', 'image.medium', 'image.large'];
+  return <WrappedComponent node={node} profiles={profiles} {...props} />;
 };
 
 export const NodeMarkdown: React.StatelessComponent<Props> = ({
@@ -27,7 +30,7 @@ export const NodeMarkdown: React.StatelessComponent<Props> = ({
   className = 'node-markdown',
   ...rest
 }: Props) => {
-  const assetImgWithNode = withNode(AssetImg, node);
+  const assetImgWithNode = withNodeAndProfiles(NodeImg, node);
   const componentMap = { ...basicComponentMap, img: assetImgWithNode };
   const MarkdownStripped = markdownFactory(markdown.stripLinks(), basicComponentMap);
   const MarkdownFull = markdownFactory(markdown.basic(), componentMap);

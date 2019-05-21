@@ -1,24 +1,30 @@
 import * as React from 'react';
 
-import { ResponsiveImg, ResponsiveSrc } from '../../elements/ResponsiveImg/ResponsiveImg.component';
+import { Node } from '../../types/Node.models';
+
+import { NodeImg } from '../../elements/NodeImg/NodeImg.component';
 
 import './Hero.scss';
 
 interface Props {
-  children?: React.ReactNode;
-  img: ResponsiveSrc;
+  node: Node;
+  img: string;
   className?: string;
+  children?: React.ReactNode;
 }
 
-export const Hero: React.StatelessComponent<Props> = ({ children, img, className }) => {
+export const Hero: React.StatelessComponent<Props> = ({ img, node, className, children }) => {
   const classNames = ['hero'];
   if (className) {
     classNames.push(className);
   }
+  const profiles = ['image.medium', 'image.large', 'image.huge'];
   return (
     <section className={classNames.join(' ')}>
-      {img && <ResponsiveImg src={img} className="cover" />}
-      <div className="hero-content">{children}</div>;
+      <div className="banner">
+        <NodeImg node={node} src={img} profiles={profiles} pad={false} className="cover" />
+      </div>
+      <div className="content">{children}</div>;
     </section>
   );
 };

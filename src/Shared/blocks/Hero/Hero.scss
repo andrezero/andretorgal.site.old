@@ -8,7 +8,7 @@
   overflow: hidden;
   min-height: 40vh;
 
-  .cover {
+  .banner {
     position: absolute;
     top: 0;
     left: 0;
@@ -23,7 +23,7 @@
     }
   }
 
-  .hero-content {
+  .content {
     @include container;
     @include type-medium;
     padding-top: 5vh;

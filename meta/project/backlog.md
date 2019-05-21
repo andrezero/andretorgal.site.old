@@ -23,12 +23,13 @@ The done stuff is on the [changelog](./changelog) page.
   - [x] create media nodes and routes
   - [x] define asset preset/profiles
   - [x] locate and copy during dev build
-  - [ ] collect assets from hero too
+  - [x] collect assets from hero too
   - [ ] og image
   - [x] generate resolutions during dev build
     - [x] managing images, image sharp, other
     - [x] refactor markdown, kill variants
-  - [ ] responsive print
+  - [x] responsive print
+    - [ ] handleImageLoaded
   - [x] serve locally via `npm server` using `concurrently`
   - [ ] s3 sync in dev time
     - [ ] purge assets not in use before sync

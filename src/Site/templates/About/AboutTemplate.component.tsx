@@ -5,7 +5,6 @@ import { Hero } from '../../../Shared/blocks/Hero/Hero.component';
 import { NodeParent } from '../../../Shared/blocks/NodeParent/NodeParent.component';
 import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
 import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
-import { ResponsiveSrc } from '../../../Shared/elements/ResponsiveImg/ResponsiveImg.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { PageNode } from '../../../Shared/types/Page.models';
@@ -20,13 +19,9 @@ import './AboutTemplate.scss';
 
 const renderHero = (page: PageNode) => {
   const { hero } = page.features;
-  const img: ResponsiveSrc = {
-    set: [['1024w', hero.img], ['2048w', hero.img]],
-    sizes: ['100vw']
-  };
 
   return (
-    <Hero img={img}>
+    <Hero node={page} img={hero.img}>
       <header className="hero-header">
         <NodeParent parent={page.meta.links.parent} />
         <h1 className="page-title">{hero.title || page.title}</h1>
