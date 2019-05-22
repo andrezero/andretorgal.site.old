@@ -1,9 +1,11 @@
+@import '../../../Shared/styles/mixins/a11y';
 @import '../../../Shared/styles/mixins/type';
 @import '../../../Shared/styles/mixins/layout';
 @import '../../../Shared/styles/mixins/scheme';
 
 .hero {
   @include scheme-secondary;
+  @include noselect;
   position: relative;
   overflow: hidden;
   min-height: 40vh;

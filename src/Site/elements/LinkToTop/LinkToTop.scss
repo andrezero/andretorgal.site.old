@@ -1,3 +1,5 @@
+@import '../../../Shared/styles/mixins/a11y';
+@import '../../../Shared/styles/mixins/type';
 @import '../../../Shared/styles/mixins/type';
 @import '../../../Shared/styles/mixins/layout';
 
@@ -15,6 +17,7 @@
 }
 
 .link-to-top {
+  @include noselect;
   display: block;
   padding-top: gap('large');
   text-align: center;
