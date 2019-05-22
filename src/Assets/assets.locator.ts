@@ -75,7 +75,7 @@ const scanSources = async (asset: Asset, staticsDir: string, sharding: number): 
     if (source.type === 'node') {
       const node = (source as AssetSourceNode).node;
       if (node.source.type === 'file') {
-        const directory = dirname(node.source.id);
+        const directory = dirname(node.source.ref);
         found = await scanDir(asset, directory, staticsDir, sharding);
       }
     }

@@ -11,45 +11,33 @@ The done stuff is on the [changelog](./changelog) page.
 
 ## Now
 
-- [x] update dependencies
-- [x] configure lintstyle, eslint, tslint
-
-- [x] assets: extract, manipulate, responsive print images and upload
-
-  - [x] collect assets and generate asset nodes
-    - [x] refactor: move links to node.meta
-    - [x] refactor: DRY node/route creation
-    - [x] refactor: move link functions from `lib/node.ts` to `lib/link.ts`
-  - [x] create media nodes and routes
-  - [x] define asset preset/profiles
-  - [x] locate and copy during dev build
-  - [x] collect assets from hero too
-  - [ ] og image
-  - [x] generate resolutions during dev build
-    - [x] managing images, image sharp, other
-    - [x] refactor markdown, kill variants
-  - [x] responsive print
-    - [ ] handleImageLoaded
-  - [x] serve locally via `npm server` using `concurrently`
-  - [ ] s3 sync in dev time
-    - [ ] purge assets not in use before sync
+- [ ] s3 sync in dev time
+  - [ ] purge assets not in use before sync
 
 ## Next
+
+- [ ] `ResponsiveImg` handle image loaded transition
+- [ ] `ResponsiveImg` load on scroll into view
+- [ ] re-check class switching
 
 - [ ] minimalistic header
 - [ ] about navigation
 - [ ] blog navigation
 - [ ] media navigation
 - [ ] meta navigation breadcrumbs
+- [ ] fix create/update dates
 
 - [ ] a11y tooling: linting with [tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib) and run time analysis with [react-axe](https://github.com/dequelabs/react-axe)
 - [ ] fix markdown is rendering an extra div (messing first/last-child margin resets and dropcaps style)
-- [ ] fix crate/update dates
 - [ ] node type should also be a tag
 
+- [ ] suspense fallback loading
+- [ ] router [transition](https://reach.tech/router/example/animation)
+
 - [ ] contents/tag/personal.md
-- [ ] contents/meta abstracts (include in page body)
+- [x] contents/meta abstracts (include in page body)
 - [x] contents/page abstracts (include in hero if hero is on)
+- [ ] migrate experiments
 
 - [ ] years in timelines
 - [ ] emojis in timeline
@@ -57,17 +45,10 @@ The done stuff is on the [changelog](./changelog) page.
 - [ ] noise in the transition to the footer
 
 - [ ] add links to the source files on github
-- [ ] add a `<!-- notes -->` section to articles that gets discarded
+- [ ] add a `<!-- notes -->` section to articles (stripped out)
 
 - [ ] storybook: type, scheme, space [see here](https://medium.com/eightshapes-llc/
       typography-in-design-systems-6ed771432f1e) and [here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)
-
-- [ ] about page contact section custom focus higlight
-
-- [ ] migrate experiments
-- [ ] env variables in markdown
-- [ ] suspense fallback loading
-- [ ] router [transition](https://reach.tech/router/example/animation)
 - [ ] jest + enzyme
 - [ ] husky + lint staged
 - [ ] spike: gitlab + pages
@@ -75,7 +56,6 @@ The done stuff is on the [changelog](./changelog) page.
 
 ## Later
 
-- [ ] meta description defaults;
 - [ ] search
 - [ ] make data available to the 404 page
   - [ ] fix/workaround issue of `getRouteData()` being useless here

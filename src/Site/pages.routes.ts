@@ -1,4 +1,6 @@
 import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
+import { metaKeywords } from '../Shared/lib/meta';
+import { dedupeTags } from '../Shared/lib/nodes';
 import { findRoute, newRoute, replaceRoute } from '../Shared/lib/routes';
 import { Route } from '../Shared/types/Route.models';
 
@@ -11,6 +13,8 @@ import { PageTemplateRouteData } from './templates/Page/PageTemplate.component';
 const homePageRoute = (templates: TemplateLocator, originalHome: Route, posts: PostNode[]): Route => {
   const page = originalHome.getData().page as PageNode;
   page.meta.template = 'Site/Home';
+  page.tags = dedupeTags(posts.reduce((t, post) => t.concat(post.tags), []));
+  metaKeywords(page);
 
   return newRoute<HomeTemplateRouteData>(templates, page, {
     page,

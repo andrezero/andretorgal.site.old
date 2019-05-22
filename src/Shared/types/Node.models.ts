@@ -6,7 +6,7 @@ export type NodeFeature = any;
 
 export interface DocMeta {
   name: string;
-  value: string;
+  content: string;
 }
 
 export interface OpenGraphMeta {
@@ -31,11 +31,16 @@ export interface NodeLinks {
 
 export interface NodeSource {
   type: string;
-  id: string;
+  ref: string;
+}
+
+export interface NodeData {
+  [key: string]: any;
 }
 
 export interface NodeMeta {
   source: NodeSource;
+  data: NodeData;
   template: string;
   classes: string;
   doc: DocMeta[];
@@ -57,6 +62,14 @@ export interface Node {
   meta: NodeMeta;
   created: Date;
   updated: Date;
+}
+
+export interface NodeMetaDefaults {
+  description: string;
+  author: string;
+  image: string;
+  assetsUrl: string;
+  baseUrl: string;
 }
 
 export interface NodeIndex {

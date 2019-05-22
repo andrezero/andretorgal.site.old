@@ -7,6 +7,29 @@ Tasks from [my website](/about)'s [backlog](./backlog), eventually done (or arch
 
 <!-- abstract -->
 
+- [x] update dependencies
+- [x] configure lintstyle, eslint, tslint
+
+- [x] assets: extract, manipulate, responsive print images and upload
+
+  - [x] collect assets and generate asset nodes
+    - [x] refactor: move links to node.meta
+    - [x] refactor: DRY node/route creation
+    - [x] refactor: move link functions from `lib/node.ts` to `lib/link.ts`
+  - [x] create media nodes and routes
+  - [x] define asset preset/profiles
+  - [x] locate and copy during dev build
+  - [x] collect assets from hero too
+  - [x] og image
+    - [x] complete meta headers
+    - [x] replace `ReactStatic.Head` with custom `<Head page={node} title={...} meta={[...]}>`
+    - [x] meta description defaults;
+  - [x] generate resolutions during dev build
+    - [x] managing images, image sharp, other
+    - [x] refactor markdown, kill variants
+  - [x] responsive print
+  - [x] serve locally via `npm server` using `concurrently`
+
 - [x] page style
 - [x] meta style
 - [x] tag style

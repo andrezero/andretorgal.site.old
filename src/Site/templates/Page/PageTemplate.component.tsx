@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Head } from 'react-static';
 
+import { Head } from '../../../Shared/elements/Head/Head.component';
 import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
@@ -22,7 +22,7 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ page }) => {
   const footer = <SiteFooter />;
   return (
     <Layout className="site-page" header={header} footer={footer}>
-      <Head title={page.title} meta={page.meta.doc} />
+      <Head node={page} />
 
       <section className="container">
         <h1 className="page-title">{page.title}</h1>

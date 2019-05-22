@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Head } from 'react-static';
 
 import { Hero } from '../../../Shared/blocks/Hero/Hero.component';
+import { Head } from '../../../Shared/elements/Head/Head.component';
 import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
@@ -41,12 +41,12 @@ export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) =
 
   return (
     <Layout className="site-home" header={header} footer={footer}>
-      <Head title="Recent posts" meta={page.meta.doc} />
+      <Head node={page} />
 
       {renderHero(page)}
 
       <section className="container">
-        <h2 className="page-title">Latest Posts</h2>
+        <h2 className="page-title">{page.title}</h2>
 
         <PostList posts={posts} level={3} />
 

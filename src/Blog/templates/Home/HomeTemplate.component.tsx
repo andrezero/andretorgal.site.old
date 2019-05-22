@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Head } from 'react-static';
 
+import { Head } from '../../../Shared/elements/Head/Head.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { PageNode } from '../../../Shared/types/Page.models';
@@ -25,10 +25,10 @@ export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) =
   const footer = <SiteFooter />;
   return (
     <Layout className="blog-home" header={header} footer={footer}>
-      <Head title="Recent posts" meta={page.meta.doc} />
+      <Head node={page} />
 
       <section className="container">
-        <h1 className="page-title">Latest Posts</h1>
+        <h1 className="page-title">{page.title}</h1>
 
         <PostList posts={posts} />
 

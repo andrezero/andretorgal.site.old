@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Head } from 'react-static';
 
+import { Head } from '../../../Shared/elements/Head/Head.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { RouteData } from '../../../Shared/types/Route.models';
@@ -23,8 +23,10 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ media }) => {
   const footer = <SiteFooter />;
   return (
     <Layout className="media-page" header={header} footer={footer}>
-      <Head title={media.title} meta={media.meta.doc} />
+      <Head node={media} />
+
       <MediaItem media={media} />
+
       <LinkToTop />
     </Layout>
   );

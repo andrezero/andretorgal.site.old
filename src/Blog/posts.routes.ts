@@ -1,4 +1,6 @@
 import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
+import { metaKeywords } from '../Shared/lib/meta';
+import { dedupeTags } from '../Shared/lib/nodes';
 import { newNode } from '../Shared/lib/nodes';
 import { newRoute } from '../Shared/lib/routes';
 import { Route } from '../Shared/types/Route.models';
@@ -15,6 +17,8 @@ const postListPageRoute = (templates: TemplateLocator, posts: PostNode[]): Route
     template: 'Blog/Home'
   };
   const page = newNode('page', 'Latest Blog Posts', defaults) as PageNode;
+  page.tags = dedupeTags(posts.reduce((t, post) => t.concat(post.tags), []));
+  metaKeywords(page);
 
   return newRoute<HomeTemplateRouteData>(templates, page, {
     posts,

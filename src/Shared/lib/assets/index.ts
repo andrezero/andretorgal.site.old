@@ -72,7 +72,7 @@ const dedupeAssetSources = (sources: AssetSource[]) => {
   return sources.filter(source => {
     let id;
     if (source.type === 'node') {
-      id = (source as AssetSourceNode).node.source.id;
+      id = (source as AssetSourceNode).node.source.ref;
     }
     if (id) {
       return index.hasOwnProperty(id) ? false : (index[id] = true);

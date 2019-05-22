@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Head } from 'react-static';
 
 import { Hero } from '../../../Shared/blocks/Hero/Hero.component';
 import { NodeParent } from '../../../Shared/blocks/NodeParent/NodeParent.component';
+import { Head } from '../../../Shared/elements/Head/Head.component';
 import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
 import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
@@ -46,7 +46,7 @@ export const AboutTemplate: React.StatelessComponent<Props> = ({ page }) => {
   const { hero } = page.features;
   return (
     <Layout className="site-about" header={header} footer={footer}>
-      <Head title={page.title} meta={page.meta.doc} />
+      <Head node={page} />
 
       {hero && renderHero(page)}
 

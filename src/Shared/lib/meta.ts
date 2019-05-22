@@ -1,15 +1,19 @@
+import { resolve as urlResolve } from 'url';
+
 import { stripAll } from './markdown';
 
-import { DocMeta, NodeMeta, OpenGraphMeta } from '../types/Node.models';
+import { AssetLocator } from '../types/Asset.models';
+import { DocMeta, Node, NodeData, NodeMeta, OpenGraphMeta } from '../types/Node.models';
 
 export const newMeta = (
   sourceType: string,
-  sourceId: string,
+  sourceRef: string,
   template: string,
   classes: string,
   title: string,
   created: Date,
-  updated: Date
+  updated: Date,
+  data?: NodeData
 ): NodeMeta => {
   const doc: DocMeta[] = [];
   const og: OpenGraphMeta[] = [];
@@ -18,16 +22,19 @@ export const newMeta = (
   const updatedStr = updated.toISOString();
 
   og.push({ property: 'og:title', content: title });
-  doc.push({ name: 'created', value: createdStr });
+  doc.push({ name: 'twitter:title', content: title });
+
+  doc.push({ name: 'created', content: createdStr });
   if (createdStr !== updatedStr) {
-    doc.push({ name: 'updated', value: updatedStr });
+    doc.push({ name: 'updated', content: updatedStr });
   }
 
   return {
     source: {
       type: sourceType,
-      id: sourceId
+      ref: sourceRef
     },
+    data: data || {},
     template,
     classes,
     doc,
@@ -37,27 +44,73 @@ export const newMeta = (
   };
 };
 
-// og.push({ property: 'og:type', content: (data && data.type) || 'article' });
+export const metaType = (node: Node, def: string) => {
+  const { meta } = node;
+  const { data, og } = meta;
 
-// let author = 'André Torgal';
-// if (data && data.author) {
-//   author = data.author;
-// }
+  const type = data.type || def;
 
-// let description =
-//   'My name is André Torgal and I was born in 1973 in Lisbon, Portugal. This is my website, a place where I can blog some thoughts and run a few experiments. Learn more about me, my work, and other stuff I have been up to.';
-// if (data && data.description) {
-//   description = data.description;
-// } else if (abstract) {
-//   description = strip(abstract); // @todo truncate
-// } else if (content) {
-//   description = strip(content); // @todo truncate
-// }
+  og.push({ property: 'og:type', content: type });
+};
 
-// doc.push({ name: 'description', value: description });
-// doc.push({ name: 'author', value: author });
+export const metaDescription = (node: Node, defaultDescription: string) => {
+  const { abstract, content, meta } = node;
+  const { data, doc, og } = meta;
 
-// og.push({ property: 'og:url', content: data && data.url }); // @todo prefix
+  let description = defaultDescription;
 
-// og.push({ property: 'og:description', content: description });
-// og.push({ property: 'og:image', content: data && data.image }); // @todo extract
+  if (data.description) {
+    description = data.description;
+  } else if (abstract) {
+    description = stripAll(abstract); // @todo truncate
+  } else if (content) {
+    description = stripAll(content); // @todo truncate
+  }
+
+  doc.push({ name: 'description', content: description });
+  doc.push({ name: 'twitter:description', content: description });
+  og.push({ property: 'og:description', content: description });
+};
+
+export const metaAuthor = (node: Node, defaultAuthor: string) => {
+  const { meta } = node;
+  const { data, doc } = meta;
+
+  const author = data.author || defaultAuthor;
+
+  doc.push({ name: 'author', content: author });
+};
+
+export const metaUrl = (node: Node, baseUrl: string) => {
+  const { meta } = node;
+  const { og } = meta;
+
+  const url = urlResolve(baseUrl, node.path);
+
+  og.push({ property: 'og:url', content: url });
+};
+
+export const metaKeywords = (node: Node) => {
+  const { meta } = node;
+  const { doc } = meta;
+
+  if (node.tags) {
+    doc.push({ name: 'keywords', content: node.tags.join(', ') });
+  }
+};
+
+export const metaImage = (node: Node, locator: AssetLocator, defaultImage: string) => {
+  const { meta } = node;
+  const { assets, data, doc, og } = meta;
+
+  let image = defaultImage;
+
+  if (data.image) {
+    image = data.image;
+  } else if (assets.length) {
+    image = locator.url(assets[0], 'image.medium');
+  }
+
+  og.push({ property: 'og:image', content: image });
+  doc.push({ name: 'twitter:image:src', content: image });
+};

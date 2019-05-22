@@ -1,5 +1,5 @@
 import { AssetLocator, AssetPreset } from './Shared/types/Asset.models';
-import { Node } from './Shared/types/Node.models';
+import { Node, NodeMetaDefaults } from './Shared/types/Node.models';
 
 import { PageNode } from './Shared/types/Page.models';
 import { loadPages } from './Site/pages.source';
@@ -17,6 +17,7 @@ import { attachAssets, loadAssets, processAssets } from './Assets/assets.source'
 
 import { generateMedias, loadMedias } from './Media/medias.source';
 import { MediaNode } from './Media/types/Media.models';
+import { metaAuthor, metaDescription, metaImage, metaKeywords, metaType, metaUrl } from './Shared/lib/meta';
 
 const debug = (nodes: Node[]) => {
   // tslint:disable
@@ -37,7 +38,11 @@ export interface Sources {
   medias: MediaNode[];
 }
 
-export const loadSources = async (assetLocator: AssetLocator, assetPresets: AssetPreset[]): Promise<Sources> => {
+export const loadSources = async (
+  assetLocator: AssetLocator,
+  assetPresets: AssetPreset[],
+  metaDefaults: NodeMetaDefaults
+): Promise<Sources> => {
   const results = await Promise.all([loadPages(), loadPosts(), loadMetas(), loadTags(), loadMedias()]);
   const [pages, posts, metas, loadedTags, loadedMedias] = results;
 
@@ -61,6 +66,15 @@ export const loadSources = async (assetLocator: AssetLocator, assetPresets: Asse
   };
 
   attachAssets(assets, sources.nodes);
+
+  sources.nodes.forEach(node => {
+    metaType(node, 'article');
+    metaAuthor(node, metaDefaults.author);
+    metaDescription(node, metaDefaults.description);
+    metaUrl(node, metaDefaults.baseUrl);
+    metaKeywords(node);
+    metaImage(node, assetLocator, metaDefaults.image);
+  });
 
   if (process.env.DEBUG_NODES) {
     debug(sources.nodes);

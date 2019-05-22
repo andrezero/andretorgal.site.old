@@ -1,5 +1,6 @@
 import { TemplateLocator } from './Shared/lib/classes/TemplateLocator';
 import { AssetLocator, AssetPreset } from './Shared/types/Asset.models';
+import { NodeMetaDefaults } from './Shared/types/Node.models';
 import { Route } from './Shared/types/Route.models';
 import { loadSources } from './sources';
 
@@ -24,11 +25,15 @@ const debug = (routes: Route[]) => {
 
 export type RouteBuilder = () => Promise<Route[]>;
 
-export const createRouteBuilder = (assetLocator: AssetLocator, assetPresets: AssetPreset[]): RouteBuilder => {
+export const createRouteBuilder = (
+  assetLocator: AssetLocator,
+  assetPresets: AssetPreset[],
+  metaDefaults: NodeMetaDefaults
+): RouteBuilder => {
   const templates = new TemplateLocator();
 
   const routeBuilder: RouteBuilder = async () => {
-    const sources = await loadSources(assetLocator, assetPresets);
+    const sources = await loadSources(assetLocator, assetPresets, metaDefaults);
     const { nodes, pages, posts, metas, tags, medias } = sources;
 
     const groups = await Promise.all([

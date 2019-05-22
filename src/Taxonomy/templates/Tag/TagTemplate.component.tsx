@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Head } from 'react-static';
 
+import { Head } from '../../../Shared/elements/Head/Head.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { Node } from '../../../Shared/types/Node.models';
@@ -25,13 +25,14 @@ export interface Props {
 export const TagTemplate: React.StatelessComponent<Props> = ({ tag, nodes }) => {
   const header = <SiteHeader node={tag} />;
   const footer = <SiteFooter />;
+  const title = `#${tag.title}`;
   return (
     <Layout className="taxonomy-tag" header={header} footer={footer}>
-      <Head title={`#${tag.title}`} meta={tag.meta.doc} />
+      <Head node={tag} title={title} />
 
       <section className="container">
         <TagItem tag={tag} />
-        <h2>All items under #{tag.title}</h2>
+        <h2>All items under {title}</h2>
         <NodeList nodes={nodes} level={3} />
       </section>
 

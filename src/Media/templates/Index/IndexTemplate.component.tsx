@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Head } from 'react-static';
 
+import { Head } from '../../../Shared/elements/Head/Head.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { PageNode } from '../../../Shared/types/Page.models';
@@ -25,7 +25,7 @@ export const IndexTemplate: React.StatelessComponent<Props> = ({ page, medias })
   const footer = <SiteFooter />;
   return (
     <Layout className="media-index" header={header} footer={footer}>
-      <Head title={page.title} meta={page.meta.doc} />
+      <Head node={page} />
 
       <section className="container">
         <h1 className="page-title">{page.title}</h1>

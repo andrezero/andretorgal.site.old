@@ -38,12 +38,14 @@ export interface NewNodeDefaults {
   updated?: Date;
 }
 
-const makeClasses = (template: string, classes?: string) => {
-  const classess = [cssClass(template)];
-  if (classes) {
-    classess.push(classes);
+const makeClasses = (template: string, classes?: string | string[]) => {
+  const classList = [cssClass(template)];
+  if (typeof classes === 'string') {
+    classList.push(classes);
+  } else if (Array.isArray(classes)) {
+    classList.push(...classes);
   }
-  return classess.join(' ');
+  return classList.join(' ');
 };
 
 function customPath(file: ParsedFile, data: FileData, defaultPath?: string): string {
@@ -118,6 +120,8 @@ export const hasTag = (node: Node, tag: Tag): boolean => node.tags && node.tags.
 export const filterNoRoot = (node: Node): boolean => node.path !== '/';
 
 export const filterHasTag = (tag: string) => (node: Node): boolean => hasTag(node, tag);
+
+export const dedupeTags = (tags: string[]): string[] => tags.filter((item, pos) => tags.indexOf(item) === pos);
 
 export const sortCreated = (p1: Node, p2: Node): number => {
   if (!p2.created) {

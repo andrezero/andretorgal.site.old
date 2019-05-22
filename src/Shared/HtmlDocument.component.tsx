@@ -28,6 +28,11 @@ export const htmlDocument = (context: Context) => {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index,follow" />
+        <meta name="application-name" content="andretorgal.com" />
+        <meta name="generator" content="react-static" />
+        <meta name="copyright" content="Copyright 2019 André Torgal" />
+        <meta name="twitter:site" content="@andrezero" />
       </Head>
       <Body className={`root-${className}`}>{children}</Body>
     </Html>

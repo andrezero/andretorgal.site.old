@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Head } from 'react-static';
 
+import { Head } from '../../../Shared/elements/Head/Head.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
-import { Node } from '../../../Shared/types/Node.models';
 import { PageNode } from '../../../Shared/types/Page.models';
 import { RouteData } from '../../../Shared/types/Route.models';
 
@@ -28,7 +27,7 @@ export const TagsTemplate: React.StatelessComponent<Props> = ({ page, topTags, o
   const footer = <SiteFooter />;
   return (
     <Layout className="taxonomy-tags" header={header} footer={footer}>
-      <Head title={page.title} meta={page.meta.doc} />
+      <Head node={page} />
 
       <section className="container top-tags">
         <h1 className="page-title">Top tags</h1>

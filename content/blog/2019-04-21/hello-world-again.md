@@ -1,6 +1,6 @@
 ---
 title: 'Hello World (Again)'
-tags: ['internet', 'social web', 'social networks', 'blogging', 'jam-stack', 'react', 'css']
+tags: ['internet', 'social-web', 'social-networks', 'blogging', 'jam-stack', 'react', 'css']
 created: '2019-05-13'
 ---
 

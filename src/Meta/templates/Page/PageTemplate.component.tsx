@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Head } from 'react-static';
 
 import { NodeChildren } from '../../../Shared/blocks/NodeChildren/NodeChildren.component';
 import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
 import { NodeParent } from '../../../Shared/blocks/NodeParent/NodeParent.component';
+import { Head } from '../../../Shared/elements/Head/Head.component';
 import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
@@ -26,7 +26,7 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ meta }) => {
   const footer = <SiteFooter />;
   return (
     <Layout className="meta-page" header={header} footer={footer}>
-      <Head title={meta.title} meta={meta.meta.doc} />
+      <Head node={meta} />
 
       <section className="container">
         <NodeParent parent={meta.meta.links.parent} />

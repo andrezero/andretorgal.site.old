@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Head } from 'react-static';
 
+import { Head } from '../../../Shared/elements/Head/Head.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { newNode } from '../../../Shared/lib/nodes';
 import { templateContainer } from '../../../Shared/TemplateContainer';
@@ -23,7 +23,7 @@ export const NotFoundTemplate: React.StatelessComponent<{}> = () => {
   const footer = <SiteFooter />;
   return (
     <Layout className="error-not-found" header={header} footer={footer}>
-      <Head title={props.page.title} />
+      <Head node={props.page} />
 
       <section className="container">
         <h1 className="page-title">{props.page.title}</h1>

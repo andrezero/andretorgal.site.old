@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Head } from 'react-static';
 
 import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
+import { Head } from '../../../Shared/elements/Head/Head.component';
 import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
 import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
@@ -25,7 +25,7 @@ export const PostTemplate: React.StatelessComponent<Props> = ({ post }) => {
   const footer = <SiteFooter />;
   return (
     <Layout className="blog-post" header={header} footer={footer}>
-      <Head title={post.title} meta={post.meta.doc} />
+      <Head node={post} />
 
       <section className="container">
         <article className="post-item">

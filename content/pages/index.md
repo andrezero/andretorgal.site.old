@@ -1,6 +1,7 @@
 ---
 path: '/'
 title: 'Home'
+type: 'website'
 hero:
   img: './assets/heros/home-hero.jpg'
 ---
