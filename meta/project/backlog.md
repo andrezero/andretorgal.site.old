@@ -1,6 +1,7 @@
 ---
 title: 'Backlog'
 updated: '2019-05-13'
+tags: ['andretorgal-com']
 ---
 
 Stuff to do on [my website](/about).
@@ -11,27 +12,72 @@ The done stuff is on the [changelog](./changelog) page.
 
 ## Now
 
-- [ ] s3 sync in dev time
-  - [ ] purge assets not in use before sync
+- [ ] deploy to prod
+  - [x] setup staging buckets, cloudfront, cname
+  - [x] s3 sync in dev time
+    - [ ] purge assets not in use before sync
+  - [ ] staging build: strip notes
+  - [ ] production build: filter drafts
 
 ## Next
 
-- [ ] `ResponsiveImg` handle image loaded transition
-- [ ] `ResponsiveImg` load on scroll into view
-- [ ] re-check class switching
+- [ ] how to enable [gzip in Cloudfront?]([https://medium.com/faun/this-is-how-i-reduced-my-cloudfront-bills-by-80-a7b0dfb24128])
 
-- [ ] minimalistic header
-- [ ] about navigation
-- [ ] blog navigation
-- [ ] media navigation
-- [ ] meta navigation breadcrumbs
-- [ ] fix create/update dates
+- [ ] [sitemap](https://support.google.com/webmasters/answer/156184)
+
+- [ ] fix! a couple of 404 in feed
+- [ ] suspense fallback loading component
+
+- [ ] fix missing dropcaps style
+- [ ] fix markdown is rendering an extra div (definitely messing with first/last-child margin resets)
+- [ ] fix media list item in feed not rendering image
+- [ ] fix media list item shown as "asset"
+
+- [ ] continuous deployment
+
+- [ ] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
+- [ ] `ResponsiveImg` load on scroll into view
+- [ ] add crono to changelog and to my story
+
+- [ ] poc: header color switch (re-check class switching)
+- [ ] poc: minimalistic header
+
+- [ ] blog roll
+
+- [ ] internal navigation
+
+  - [ ] feed page
+    - [ ] recently updated, just the titles;
+    - [ ] top tags + see all tags
+  - [ ] tag page: related tags + see all tags
+  - [ ] about
+    - [ ] navigation
+  - [ ] home
+    - [ ] only a single (latest) blog post + see more
+    - [ ] top tags + see all tags
+    - [ ] about module
+  - [ ] posts page
+    - [ ] top tags + see all tags
+    - [ ] about module
+  - [ ] post page
+    - [ ] navigation (next, previous)
+    - [ ] related posts
+    - [ ] see all posts
+  - [ ] media page
+    - [ ] navigation (next, previous)
+    - [ ] see all media
+  - [ ] meta page
+    - [ ] navigation (breadcrumbs)
+
+- [ ] fix create/update dates (assets are getting the latest date)
+- [ ] ui: responsively reposition dates along with node type, as well as meta and tags
 
 - [ ] a11y tooling: linting with [tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib) and run time analysis with [react-axe](https://github.com/dequelabs/react-axe)
-- [ ] fix markdown is rendering an extra div (messing first/last-child margin resets and dropcaps style)
+
 - [ ] node type should also be a tag
 
-- [ ] suspense fallback loading
+- [ ] footnotes
+
 - [ ] router [transition](https://reach.tech/router/example/animation)
 
 - [ ] contents/tag/personal.md
@@ -39,7 +85,6 @@ The done stuff is on the [changelog](./changelog) page.
 - [x] contents/page abstracts (include in hero if hero is on)
 - [ ] migrate experiments
 
-- [ ] years in timelines
 - [ ] emojis in timeline
 - [ ] use icons in footer external links
 - [ ] noise in the transition to the footer
@@ -47,8 +92,8 @@ The done stuff is on the [changelog](./changelog) page.
 - [ ] add links to the source files on github
 - [ ] add a `<!-- notes -->` section to articles (stripped out)
 
-- [ ] storybook: type, scheme, space [see here](https://medium.com/eightshapes-llc/
-      typography-in-design-systems-6ed771432f1e) and [here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62)
+- [ ] storybook: type, scheme, space [see typography here](https://medium.com/eightshapes-llc/
+      typography-in-design-systems-6ed771432f1e) and [space here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62), and [some inspiration](https://zeit.co/design) too
 - [ ] jest + enzyme
 - [ ] husky + lint staged
 - [ ] spike: gitlab + pages
@@ -85,6 +130,7 @@ The done stuff is on the [changelog](./changelog) page.
 
 - [ ] `react-static` [docs](https://github.com/nozzle/react-static/blob/master/meta/api.md#reloadClientData) mentions `reloadCliendData()` should be used to re-render when data changes, but I only got it to work by using the undocumented api `rebuildRoutes()`
 - [ ] `@reach/router` [anchor link support](https://github.com/reach/router/issues/235) and how to tame [focus and scroll on long content](https://github.com/reach/router/issues/62)
+- [ ] [Lighthouse](https://developers.google.com/web/tools/lighthouse/) seems to report time to first interaction thinking that the page is waiting for react to render (when in fact is just hydrating)
 
 ### Spikes
 
@@ -99,9 +145,11 @@ The done stuff is on the [changelog](./changelog) page.
 
 ### Learn/Experiment
 
+- [ ] Ayy1: [On demand annoucements](https://github.com/Heydon/on-demand-live-region)
+- [ ] Microformats
 - [ ] [Micropub](https://indieweb.org/Micropub) + [micropub-express](https://github.com/voxpelli/node-micropub-express) + [Micropub](https://micropub.rocks/)
 - [ ] [Webmentions](https://webmention.io/)
 - [ ] React Portals - a first-class way to render children into a dom node
       that exists outside the dom hierarchy of the parent component.
 - [ ] React ErrorBoundary
-- [ ] [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [ ] [Image optimisation with HOC](https://medium.com/grailed-engineering/image-optimization-using-higher-order-components-f401e6b4e1b1)

@@ -146,11 +146,6 @@ Building blocks:
   - always name as `SomeLayout`
   - e.g.: `Blog/layouts/PostLayout.component.tsx` exports `PostLayout`
 
-- `containers`
-
-  - always name as `SomeContainer`
-  - e.g.: `Blog/container/PostContainer.component.tsx` exports `PostContainer`
-
 - `behaviours/`
 
   - no html rendered, or semantics irrelevant

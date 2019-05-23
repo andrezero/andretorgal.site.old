@@ -5,7 +5,8 @@ tags: ['atomic-design']
 
 ## Details
 
-- see [coding-convetions.md](./coding-convetions.md)
+- elements, blocks, groups, templates and behaviours (instead of atoms, molecules, ...)
+- see [docs/project-structure](./meta/docs/project-structure#atomic-ish-semantics-translated-to)
 
 ## Why
 

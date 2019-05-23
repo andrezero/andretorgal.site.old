@@ -17,11 +17,12 @@ tags: ['atomic-design', 'sass', 'post-css']
   - utility and abstract mixins (`Shared/styles`)
   - abstract, presentation only, components (`Shared/<component>/*.mixin.scss`)
 - composition:
-  - atomic hierarchy (elements, blocks, groups, templates)
+  - [atomic hierarchy] (elements, blocks, groups, templates, layouts, behaviours)
 - components first
-  - minimal global css (variables and base)
+  - minimal global css (custom properties and base)
   - component is the entry point for everything else
 - tools:
+  - sass variables and mixins to manage [design tokens](https://css-tricks.com/what-are-design-tokens/?utm_campaign=Sass%2BNews&utm_medium=web&utm_source=Sass_News_9)
   - post css to opt-in for (better than pre-css because it gets out of the way)
 
 ## Why

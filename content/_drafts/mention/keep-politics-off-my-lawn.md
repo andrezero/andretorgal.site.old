@@ -1,0 +1,2 @@
+- https://thefutureislikepie.com/please-keep-politics-out-of-your-talk/
+-

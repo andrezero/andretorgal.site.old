@@ -1,14 +1,12 @@
 ---
 title: 'Changelog'
 updated: '2019-05-13'
+tags: ['andretorgal-com']
 ---
 
 Tasks from [my website](/about)'s [backlog](./backlog), eventually done (or archived).
 
 <!-- abstract -->
-
-- [x] update dependencies
-- [x] configure lintstyle, eslint, tslint
 
 - [x] assets: extract, manipulate, responsive print images and upload
 
@@ -29,6 +27,9 @@ Tasks from [my website](/about)'s [backlog](./backlog), eventually done (or arch
     - [x] refactor markdown, kill variants
   - [x] responsive print
   - [x] serve locally via `npm server` using `concurrently`
+
+- [x] update dependencies
+- [x] configure lintstyle, eslint, tslint
 
 - [x] page style
 - [x] meta style
