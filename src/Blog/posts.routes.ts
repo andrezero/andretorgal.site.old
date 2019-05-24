@@ -30,7 +30,7 @@ interface Data {
   posts: PostNode[];
 }
 
-export const buildRoutes = async (templates: TemplateLocator, data: Data): Promise<Route[]> => {
+export const buildRoutes = async (stage: string, templates: TemplateLocator, data: Data): Promise<Route[]> => {
   const postRoutes = data.posts.map(post => {
     return newRoute<PostTemplateRouteData>(templates, post, {
       post

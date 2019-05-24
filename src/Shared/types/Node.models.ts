@@ -42,6 +42,7 @@ export interface NodeMeta {
   source: NodeSource;
   data: NodeData;
   template: string;
+  notes: string;
   classes: string;
   doc: DocMeta[];
   og: OpenGraphMeta[];

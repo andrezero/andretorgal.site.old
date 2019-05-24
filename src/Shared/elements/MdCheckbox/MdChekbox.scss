@@ -5,11 +5,11 @@
   position: relative;
   content: ' ';
   display: inline-block;
-  height: unit(1.8);
-  width: unit(1.8);
-  border: unit(0.1) solid color('base', 'fg');
+  height: 1em;
+  width: 1em;
+  border: 0.05em solid color('base', 'fg');
   box-shadow: inset 0 0 color('base', 'fg');
-  border-radius: 2px;
+  border-radius: 0.15em;
 
   input {
     display: none;
@@ -20,10 +20,10 @@
       content: ' ';
       position: absolute;
       top: 0;
-      left: unit(0.2, -1);
-      width: unit(0.9);
-      height: unit(1.3);
-      border: unit(0.2) solid color('base', 'fg');
+      left: -0.08em;
+      width: 0.5em;
+      height: 0.75em;
+      border: 0.1em solid color('base', 'fg');
       border-top-color: transparent;
       border-left-color: transparent;
       transform: rotate(40deg);

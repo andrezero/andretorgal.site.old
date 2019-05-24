@@ -41,7 +41,7 @@ interface Data {
   nodes: Node[];
 }
 
-export const buildRoutes = async (templates: TemplateLocator, data: Data): Promise<Route[]> => {
+export const buildRoutes = async (stage: string, templates: TemplateLocator, data: Data): Promise<Route[]> => {
   const tagRoutes = data.tags.map(tag => {
     const taggedNodes = data.nodes.filter(filterHasTag(tag.title));
     return tagRoute(templates, tag, taggedNodes);

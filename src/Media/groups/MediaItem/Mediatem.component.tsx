@@ -1,16 +1,12 @@
 import * as React from 'react';
 
-import { Link } from '../../../Shared/elements/Link/Link.component';
-import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
-import { ReadMore } from '../../../Shared/elements/ReadMore/ReadMore.component';
-
-import { ImageItem } from '../ImageItem/ImageItem.component';
-
-import { MediaNode } from '../../types/Media.models';
-
 import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
 import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
 import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
+import { NodeNotes } from '../../../Shared/elements/NodeNotes/NodeNotes.component';
+
+import { MediaNode } from '../../types/Media.models';
+import { ImageItem } from '../ImageItem/ImageItem.component';
 
 import './MediaItem.scss';
 
@@ -34,6 +30,7 @@ const DefaultItem: React.StatelessComponent<Props> = ({ media }) => {
         <NodeMarkdown node={media}>{media.content}</NodeMarkdown>
       </article>
       <footer>
+        {media.meta.notes && <NodeNotes node={media} />}
         <NodeMeta node={media} />
       </footer>
     </section>

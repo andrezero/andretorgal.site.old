@@ -29,7 +29,7 @@ export const MetaListItem: React.StatelessComponent<Props> = ({ node: meta, leve
     </>
   );
   return (
-    <BaseListItem className="meta-list-item" header={header} footer={footer}>
+    <BaseListItem className="meta-list-item" node={meta} header={header} footer={footer}>
       <MarkdownBase>{meta.abstract}</MarkdownBase>
       <ReadMore path={meta.path} />
     </BaseListItem>

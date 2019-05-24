@@ -25,7 +25,7 @@ export const PageListItem: React.StatelessComponent<Props> = ({ node: post, leve
     </>
   );
   return (
-    <BaseListItem className="page-list-item" header={header} footer={footer}>
+    <BaseListItem className="page-list-item" node={post} header={header} footer={footer}>
       <MarkdownBase>{post.abstract}</MarkdownBase>
       <ReadMore path={post.path} />
     </BaseListItem>

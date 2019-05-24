@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
 import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
+import { NodeNotes } from '../../../Shared/elements/NodeNotes/NodeNotes.component';
 
 import { TagCount } from '../../elements/TagCount/TagCount.component';
 import { TagNode } from '../../types/Tag.models';
@@ -24,6 +25,7 @@ export const TagItem: React.StatelessComponent<Props> = ({ tag }) => {
         <NodeMarkdown node={tag}>{tag.content}</NodeMarkdown>
       </div>
       <footer>
+        {tag.meta.notes && <NodeNotes node={tag} />}
         <NodeMeta node={tag} />
       </footer>
     </article>

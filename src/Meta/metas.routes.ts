@@ -10,7 +10,7 @@ interface Data {
   metas: MetaNode[];
 }
 
-export const buildRoutes = async (templates: TemplateLocator, data: Data): Promise<Route[]> => {
+export const buildRoutes = async (stage: string, templates: TemplateLocator, data: Data): Promise<Route[]> => {
   const routes = data.metas.map(meta => {
     return newRoute<PageTemplateRouteData>(templates, meta, {
       meta

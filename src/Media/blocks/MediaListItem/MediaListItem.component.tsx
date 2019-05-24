@@ -29,7 +29,7 @@ const DefaultListItem: React.StatelessComponent<Props> = ({ media, level = 2, fo
     </Tag>
   );
   return (
-    <BaseListItem className="media-list-item" header={header} footer={footer}>
+    <BaseListItem className="media-list-item" node={media} header={header} footer={footer}>
       <MarkdownBase>{media.abstract}</MarkdownBase>
     </BaseListItem>
   );

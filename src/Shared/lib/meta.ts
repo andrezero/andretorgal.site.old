@@ -11,6 +11,7 @@ export const newMeta = (
   template: string,
   classes: string,
   title: string,
+  notes: string,
   created: Date,
   updated: Date,
   data?: NodeData
@@ -36,6 +37,7 @@ export const newMeta = (
     },
     data: data || {},
     template,
+    notes,
     classes,
     doc,
     og,

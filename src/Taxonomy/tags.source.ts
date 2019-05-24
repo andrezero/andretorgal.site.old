@@ -1,6 +1,6 @@
 import { parseFileContents } from '../Shared/lib/content';
 import { collect, flatten } from '../Shared/lib/files';
-import { newNode, newNodeFromFile, sortCreated } from '../Shared/lib/nodes';
+import { filterHasNotTag, newNode, newNodeFromFile, sortCreated } from '../Shared/lib/nodes';
 import { FileSysNode } from '../Shared/lib/types/File.types';
 
 import { Node } from '../Shared/types/Node.models';
@@ -18,8 +18,8 @@ const newTag = (name: string): TagNode => {
   return tag;
 };
 
-const newTagFromFile = (file: FileSysNode): TagNode => {
-  const fileContents = parseFileContents(file);
+const newTagFromFile = (stage: string, file: FileSysNode): TagNode => {
+  const fileContents = parseFileContents(stage, file);
   const defaults = { ...nodeDefaults, path: '{name}', title: '{name}' };
   const { node } = newNodeFromFile('tag', fileContents, defaults);
 
@@ -29,10 +29,12 @@ const newTagFromFile = (file: FileSysNode): TagNode => {
   return tag;
 };
 
-export const loadTags = async (): Promise<TagNode[]> => {
+export const loadTags = async (stage: string): Promise<TagNode[]> => {
   const tree = await collect('./content/tags', true);
   const flattened = flatten(tree.children);
-  return flattened.map(newTagFromFile);
+  const nodes = flattened.map(file => newTagFromFile(stage, file));
+  const filtered = stage === 'prod' ? nodes.filter(filterHasNotTag('draft')) : nodes;
+  return filtered;
 };
 
 interface TagIndex {
@@ -71,13 +73,13 @@ const indexTagNodes = (tags: TagNode[]): TagIndex => {
   return index;
 };
 
-export const generateTags = (tagNodes: TagNode[], nodes: Node[]): TagNode[] => {
+export const generateTags = (stage: string, tagNodes: TagNode[], nodes: Node[]): TagNode[] => {
   const tagIndex = indexTagNodes(tagNodes);
   const ret = [...tagNodes];
   const sortedNodes = [...nodes].sort(sortCreated);
   sortedNodes.forEach(node => {
     (node.tags || []).forEach(tag => indexTag(tagIndex, node, tag, ret));
   });
-  const filtered = ret.filter(tag => tag.count);
+  const filtered = ret.filter(tag => tag.count && (stage !== 'prod' || tag.title !== 'draft'));
   return filtered.sort((t1, t2) => t2.count - t1.count);
 };

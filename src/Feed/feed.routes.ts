@@ -57,7 +57,7 @@ interface Data {
   nodes: Node[];
 }
 
-export const buildRoutes = async (templates: TemplateLocator, data: Data): Promise<Route[]> => {
+export const buildRoutes = async (stage: string, templates: TemplateLocator, data: Data): Promise<Route[]> => {
   const feedRoute = feedPageRoute(templates, data.nodes);
   return [feedRoute];
 };

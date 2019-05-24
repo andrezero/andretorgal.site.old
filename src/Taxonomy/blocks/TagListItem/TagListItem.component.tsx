@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { BaseListItem as ListItemBase } from '../../../Shared/blocks/BaseListItem/BaseListItem.component';
+import { BaseListItem } from '../../../Shared/blocks/BaseListItem/BaseListItem.component';
 import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
 
 import { TagCount } from '../../elements/TagCount/TagCount.component';
@@ -23,8 +23,8 @@ export const TagListItem: React.StatelessComponent<Props> = ({ node: tag, level 
     </Tag>
   );
   return (
-    <ListItemBase className="tag-list-item" header={header} footer={footer} href={tag.path}>
+    <BaseListItem className="tag-list-item" node={tag} header={header} footer={footer} href={tag.path}>
       <MarkdownBase>{tag.abstract}</MarkdownBase>
-    </ListItemBase>
+    </BaseListItem>
   );
 };

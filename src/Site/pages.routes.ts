@@ -27,7 +27,7 @@ interface Data {
   posts: PostNode[];
 }
 
-export const buildRoutes = async (templates: TemplateLocator, data: Data): Promise<Route[]> => {
+export const buildRoutes = async (stage: string, templates: TemplateLocator, data: Data): Promise<Route[]> => {
   let pagesRoutes: Route[] = data.pages.map(page => {
     return newRoute<PageTemplateRouteData>(templates, page, {
       page

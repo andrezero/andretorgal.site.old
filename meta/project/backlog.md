@@ -15,9 +15,8 @@ The done stuff is on the [changelog](./changelog) page.
 - [ ] deploy to prod
   - [x] setup staging buckets, cloudfront, cname
   - [x] s3 sync in dev time
-    - [ ] purge assets not in use before sync
-  - [ ] staging build: strip notes
-  - [ ] production build: filter drafts
+  - [x] add a `!-- notes --` section to articles (stripped out in prod)
+  - [x] production build: strip notes & filter drafts
 
 ## Next
 
@@ -34,6 +33,8 @@ The done stuff is on the [changelog](./changelog) page.
 - [ ] fix media list item shown as "asset"
 
 - [ ] continuous deployment
+
+  - [ ] purge assets not in use before sync
 
 - [ ] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
 - [ ] `ResponsiveImg` load on scroll into view
@@ -90,7 +91,6 @@ The done stuff is on the [changelog](./changelog) page.
 - [ ] noise in the transition to the footer
 
 - [ ] add links to the source files on github
-- [ ] add a `<!-- notes -->` section to articles (stripped out)
 
 - [ ] storybook: type, scheme, space [see typography here](https://medium.com/eightshapes-llc/
       typography-in-design-systems-6ed771432f1e) and [space here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62), and [some inspiration](https://zeit.co/design) too

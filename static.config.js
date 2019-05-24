@@ -6,6 +6,8 @@ import { watch } from './.react-static/watch.js';
 import { createRouteBuilder } from './src/routes';
 import { createAssetPresets } from './src/Assets/assets.presets';
 import { createAssetLocator } from './src/Assets/assets.locator';
+import { loadSources } from './src/sources';
+import { TemplateLocator } from './src/Shared/lib/classes/TemplateLocator';
 
 const stage = process.env.BUILD_STAGE || 'dev';
 
@@ -31,9 +33,11 @@ const metaDefaults = {
   baseUrl
 };
 
+const templateLocator = new TemplateLocator();
+const sourceLoader = async () => loadSources(stage, assetLocator, assetPresets, metaDefaults);
 const reactStaticConfig = configure({
   stage,
-  getRoutes: createRouteBuilder(assetLocator, assetPresets, metaDefaults)
+  getRoutes: createRouteBuilder(stage, sourceLoader, templateLocator)
 });
 
 if (stage === 'dev') {

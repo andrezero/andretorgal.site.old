@@ -68,7 +68,7 @@ export const newNode = (type: string, title: string, defaults: NewNodeDefaults):
 
   const template = defaults.template;
   const classes = makeClasses(template);
-  const meta = newMeta('data', `${type}:${path}`, template, classes, title, created, updated);
+  const meta = newMeta('data', `${type}:${path}`, template, classes, title, '', created, updated);
 
   const node: Node = {
     type,
@@ -97,7 +97,7 @@ export const newNodeFromFile = (type: string, file: ParsedFile, defaults: NewNod
 
   const template = data.template || defaults.template;
   const classes = makeClasses(template, data.classes);
-  const meta = newMeta('file', file.filename, template, classes, title, created, updated);
+  const meta = newMeta('file', file.filename, template, classes, title, file.notes, created, updated);
 
   const node: Node = {
     type,
@@ -120,6 +120,8 @@ export const hasTag = (node: Node, tag: Tag): boolean => node.tags && node.tags.
 export const filterNoRoot = (node: Node): boolean => node.path !== '/';
 
 export const filterHasTag = (tag: string) => (node: Node): boolean => hasTag(node, tag);
+
+export const filterHasNotTag = (tag: string) => (node: Node): boolean => !hasTag(node, tag);
 
 export const dedupeTags = (tags: string[]): string[] => tags.filter((item, pos) => tags.indexOf(item) === pos);
 

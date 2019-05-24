@@ -61,8 +61,6 @@ Meanwhile, keep an eye on the [source code](https://github.com/andrezero/andreto
 
 <!-- notes -->
 
-## Notes
-
 - [ ] images
 - [ ] links
 - [x] narrative

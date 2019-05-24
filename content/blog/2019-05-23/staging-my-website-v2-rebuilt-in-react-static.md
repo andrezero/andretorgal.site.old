@@ -30,8 +30,6 @@ And a lot more content.
 
 <!-- notes -->
 
-## Notes
-
 - [ ] images
 - [ ] links
 - [ ] narrative

@@ -1,0 +1,18 @@
+@import '../../../Shared/styles/mixins/scheme';
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/type';
+
+.node-notes {
+  @include rhythm-v-compact;
+  background-color: color('bright', 0);
+  padding: gap('small');
+  font-size: responsive-type-size('small');
+  line-height: var(--root-type-heights-small);
+
+  h3 {
+    @include type-alt;
+    @include type-alt;
+    margin: 0;
+    font-size: responsive-type-size('medium');
+  }
+}

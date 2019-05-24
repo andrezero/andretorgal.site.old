@@ -7,7 +7,7 @@ import { ErrorPageNode } from '../Shared/types/Page.models';
 
 import { NotFoundTemplateRouteData } from './templates/NotFound/NotFoundTemplate.component';
 
-export const buildRoutes = async (templates: TemplateLocator): Promise<Route[]> => {
+export const buildRoutes = async (stage: string, templates: TemplateLocator): Promise<Route[]> => {
   const defaults = {
     template: 'Site/NotFound',
     path: '/404'

@@ -39,22 +39,29 @@ export interface Sources {
 }
 
 export const loadSources = async (
+  stage: string,
   assetLocator: AssetLocator,
   assetPresets: AssetPreset[],
   metaDefaults: NodeMetaDefaults
 ): Promise<Sources> => {
-  const results = await Promise.all([loadPages(), loadPosts(), loadMetas(), loadTags(), loadMedias()]);
+  const results = await Promise.all([
+    loadPages(stage),
+    loadPosts(stage),
+    loadMetas(stage),
+    loadTags(stage),
+    loadMedias(stage)
+  ]);
   const [pages, posts, metas, loadedTags, loadedMedias] = results;
 
   const nodesWithTags: Node[] = [...pages, ...posts, ...metas, ...loadedTags, ...loadedMedias];
-  const tags = generateTags(loadedTags, nodesWithTags);
+  const tags = generateTags(stage, loadedTags, nodesWithTags);
 
   const nodesWithAssets: Node[] = [...pages, ...posts, ...metas, ...loadedMedias, ...tags];
-  const assets = loadAssets(nodesWithAssets);
+  const assets = loadAssets(stage, nodesWithAssets);
 
-  await processAssets(assets, assetLocator, assetPresets);
+  await processAssets(stage, assets, assetLocator, assetPresets);
 
-  const medias = generateMedias(loadedMedias, assets);
+  const medias = generateMedias(stage, loadedMedias, assets);
 
   const sources: Sources = {
     nodes: [...pages, ...posts, ...metas, ...medias, ...tags],
@@ -65,7 +72,7 @@ export const loadSources = async (
     medias
   };
 
-  attachAssets(assets, sources.nodes);
+  attachAssets(stage, assets, sources.nodes);
 
   sources.nodes.forEach(node => {
     metaType(node, 'article');

@@ -28,7 +28,7 @@ export const PostListItem: React.StatelessComponent<Props> = ({ node: post, leve
     </>
   );
   return (
-    <BaseListItem className="post-list-item" header={header} footer={footer}>
+    <BaseListItem className="post-list-item" node={post} header={header} footer={footer}>
       <NodeMarkdown node={post} strip={true}>
         {post.abstract}
       </NodeMarkdown>

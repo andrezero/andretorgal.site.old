@@ -1,8 +1,6 @@
 import { TemplateLocator } from './Shared/lib/classes/TemplateLocator';
-import { AssetLocator, AssetPreset } from './Shared/types/Asset.models';
-import { NodeMetaDefaults } from './Shared/types/Node.models';
 import { Route } from './Shared/types/Route.models';
-import { loadSources } from './sources';
+import { Sources } from './sources';
 
 import { buildRoutes as buildBlogRoutes } from './Blog/posts.routes';
 import { buildRoutes as buildFeedRoutes } from './Feed/feed.routes';
@@ -23,27 +21,26 @@ const debug = (routes: Route[]) => {
   // tslint:enable
 };
 
+export type SourceLoader = () => Promise<Sources>;
 export type RouteBuilder = () => Promise<Route[]>;
 
 export const createRouteBuilder = (
-  assetLocator: AssetLocator,
-  assetPresets: AssetPreset[],
-  metaDefaults: NodeMetaDefaults
+  stage: string,
+  sourceLoader: SourceLoader,
+  templateLocator: TemplateLocator
 ): RouteBuilder => {
-  const templates = new TemplateLocator();
-
   const routeBuilder: RouteBuilder = async () => {
-    const sources = await loadSources(assetLocator, assetPresets, metaDefaults);
+    const sources = await sourceLoader();
     const { nodes, pages, posts, metas, tags, medias } = sources;
 
     const groups = await Promise.all([
-      buildSiteRoutes(templates),
-      buildPagesRoutes(templates, { pages, posts }),
-      buildBlogRoutes(templates, { posts }),
-      buildMetasRoutes(templates, { metas }),
-      buildFeedRoutes(templates, { nodes }),
-      buildTaxonomyRoutes(templates, { tags, nodes }),
-      buildMediaRoutes(templates, { medias })
+      buildSiteRoutes(stage, templateLocator),
+      buildPagesRoutes(stage, templateLocator, { pages, posts }),
+      buildBlogRoutes(stage, templateLocator, { posts }),
+      buildMetasRoutes(stage, templateLocator, { metas }),
+      buildFeedRoutes(stage, templateLocator, { nodes }),
+      buildTaxonomyRoutes(stage, templateLocator, { tags, nodes }),
+      buildMediaRoutes(stage, templateLocator, { medias })
     ]);
 
     const routes = groups.reduce((all, group) => all.concat(group), [] as Route[]);

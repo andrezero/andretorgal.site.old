@@ -1,6 +1,6 @@
 import { parseFileContents } from '../Shared/lib/content';
 import { collect, flatten } from '../Shared/lib/files';
-import { newNode, newNodeFromFile } from '../Shared/lib/nodes';
+import { filterHasNotTag, newNode, newNodeFromFile } from '../Shared/lib/nodes';
 import { FileSysNode } from '../Shared/lib/types/File.types';
 import { Asset } from '../Shared/types/Asset.models';
 
@@ -12,20 +12,14 @@ const nodeDefaults = {
   prefix: 'tags'
 };
 
-const newMediaFromFile = (file: FileSysNode): MediaNode => {
-  const fileContents = parseFileContents(file);
+const newMediaFromFile = (stage: string, file: FileSysNode): MediaNode => {
+  const fileContents = parseFileContents(stage, file);
   const defaults = { ...nodeDefaults, path: '{name}', title: '{name}' };
   const { node } = newNodeFromFile('media', fileContents, defaults);
 
   const media = node as MediaNode;
 
   return media;
-};
-
-export const loadMedias = async (): Promise<MediaNode[]> => {
-  const tree = await collect('./content/media', true);
-  const flattened = flatten(tree.children);
-  return flattened.map(newMediaFromFile);
 };
 
 const newMediaFromAsset = (asset: Asset): MediaNode => {
@@ -73,7 +67,15 @@ const indexMediaNodes = (medias: MediaNode[]): MediaIndex => {
   return index;
 };
 
-export const generateMedias = (mediaNodes: MediaNode[], assets: Asset[]): MediaNode[] => {
+export const loadMedias = async (stage: string): Promise<MediaNode[]> => {
+  const tree = await collect('./content/media', true);
+  const flattened = flatten(tree.children);
+  const nodes = flattened.map(file => newMediaFromFile(stage, file));
+  const filtered = stage === 'prod' ? nodes.filter(filterHasNotTag('draft')) : nodes;
+  return filtered;
+};
+
+export const generateMedias = (stage: string, mediaNodes: MediaNode[], assets: Asset[]): MediaNode[] => {
   const mediaIndex = indexMediaNodes(mediaNodes);
   const ret = [...mediaNodes];
   assets.forEach(asset => {

@@ -22,7 +22,7 @@ const assetExtractor: AssetExtractor = (node: Node): ExtractedAsset[] => {
   return assets;
 };
 
-export const loadAssets = (nodes: Node[]): Asset[] => {
+export const loadAssets = (stage: string, nodes: Node[]): Asset[] => {
   const commonProfiles = ['image:default'];
 
   const rawAssets = collect(nodes, commonProfiles, assetExtractor);
@@ -31,11 +31,16 @@ export const loadAssets = (nodes: Node[]): Asset[] => {
   return assets;
 };
 
-export const processAssets = async (assets: Asset[], locator: AssetLocator, presets: AssetPreset[]): Promise<void> => {
+export const processAssets = async (
+  stage: string,
+  assets: Asset[],
+  locator: AssetLocator,
+  presets: AssetPreset[]
+): Promise<void> => {
   await transform(assets, locator, presets);
 };
 
-export const attachAssets = (assets: Asset[], nodes: Node[]) => {
+export const attachAssets = (stage: string, assets: Asset[], nodes: Node[]) => {
   const nodeIndex: NodeIndex = {};
 
   nodes.forEach(node => (nodeIndex[node.path] = node));

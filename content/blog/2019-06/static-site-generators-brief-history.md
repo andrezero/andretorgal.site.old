@@ -22,7 +22,7 @@ With the rise of these scripting languages @todo and the free relational databas
 
 Now MVC was everywhere, OO was the craft, and with it, a hundred ColdFusion, PHP, Ruby, Python, Java, and .Net frameworks. And soon enough, the scene matured into CMSs of all sizes and flavors, typically of the monolithic kind.
 
-## That actually the dark age of MVC
+## Actually, the dark age of MVC
 
 When I joined SAPO in 2008 I had totally jumped on the MVC framework bandwagon and I didn't really know better. One code base for front (html, rss, atom) and back office (a CMS). A nice object oriented approach. It all looked good, no smell.
 
@@ -30,7 +30,7 @@ Unfortunately, these "database driven websites" were scaling terribly. Don't get
 
 But I was so by blinded by magical light, that the feeling was these were just optimization problems. Caching partials and responses, using reverse proxies, abusing cache farms, replicating the DB, optimizing code, ... There would always be a technical solution for that.
 
-## Rendering like a rebels.
+## Rendering like rebels.
 
 Meanwhile, back to SAPO, the older crew there, thought differently.
 
@@ -85,8 +85,6 @@ And it's never been easier to mix and match these technologies in secure, reliab
 We all - developers, teams, companies - just need to take a step back sometimes, and appreciate the options. Learn a bit about the techniques we understand the least and start choosing the right tool for each job.
 
 <!-- notes -->
-
-## Notes
 
 - [ ] images
 - [ ] links

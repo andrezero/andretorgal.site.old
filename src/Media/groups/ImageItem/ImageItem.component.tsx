@@ -4,6 +4,7 @@ import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
 import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
 import { NodeImg } from '../../../Shared/elements/NodeImg/NodeImg.component';
 import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
+import { NodeNotes } from '../../../Shared/elements/NodeNotes/NodeNotes.component';
 
 import { MediaNode } from '../../types/Media.models';
 
@@ -29,6 +30,7 @@ export const ImageItem: React.StatelessComponent<Props> = ({ media, level = 2, f
         <NodeMarkdown node={media}>{media.content}</NodeMarkdown>
       </article>
       <footer>
+        {media.meta.notes && <NodeNotes node={media} />}
         <NodeMeta node={media} />
       </footer>
     </section>

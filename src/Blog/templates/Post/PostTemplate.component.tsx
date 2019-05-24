@@ -4,6 +4,7 @@ import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
 import { Head } from '../../../Shared/elements/Head/Head.component';
 import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
 import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
+import { NodeNotes } from '../../../Shared/elements/NodeNotes/NodeNotes.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { RouteData } from '../../../Shared/types/Route.models';
@@ -38,6 +39,7 @@ export const PostTemplate: React.StatelessComponent<Props> = ({ post }) => {
         </article>
 
         <footer>
+          {post.meta.notes && <NodeNotes node={post} />}
           <NodeMeta node={post} />
         </footer>
       </section>

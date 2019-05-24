@@ -7,14 +7,27 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "start",
+      "name": "dev",
       "args": ["-r", "ts-node/register", "${workspaceFolder}/node_modules/react-static/bin/react-static", "start"],
       "internalConsoleOptions": "openOnSessionStart"
     },
     {
       "type": "node",
       "request": "launch",
+      "name": "stage",
+      "env": {
+        "BUILD_STAGE": "stage"
+      },
+      "args": ["-r", "ts-node/register", "${workspaceFolder}/node_modules/react-static/bin/react-static", "build"],
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "build",
+      "env": {
+        "BUILD_STAGE": "prod"
+      },
       "args": ["-r", "ts-node/register", "${workspaceFolder}/node_modules/react-static/bin/react-static", "build"],
       "internalConsoleOptions": "openOnSessionStart"
     }

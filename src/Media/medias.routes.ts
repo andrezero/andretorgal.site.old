@@ -32,7 +32,7 @@ interface Data {
   medias: MediaNode[];
 }
 
-export const buildRoutes = async (templates: TemplateLocator, data: Data): Promise<Route[]> => {
+export const buildRoutes = async (stage: string, templates: TemplateLocator, data: Data): Promise<Route[]> => {
   const mediasRoutes = data.medias.map(media => {
     return mediaRoute(templates, media);
   });

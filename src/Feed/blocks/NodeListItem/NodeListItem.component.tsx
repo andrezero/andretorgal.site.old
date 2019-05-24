@@ -34,7 +34,7 @@ const DefaultListItem: React.StatelessComponent<Props> = ({ node, level = 2, foo
     </Tag>
   );
   return (
-    <BaseListItem className="node-list-item" header={header} footer={footer}>
+    <BaseListItem className="node-list-item" node={node} header={header} footer={footer}>
       <MarkdownBase>{node.abstract}</MarkdownBase>
       <ReadMore path={node.path} />
     </BaseListItem>

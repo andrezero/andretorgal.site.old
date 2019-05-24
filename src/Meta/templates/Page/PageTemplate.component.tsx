@@ -5,6 +5,7 @@ import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
 import { NodeParent } from '../../../Shared/blocks/NodeParent/NodeParent.component';
 import { Head } from '../../../Shared/elements/Head/Head.component';
 import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
+import { NodeNotes } from '../../../Shared/elements/NodeNotes/NodeNotes.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { RouteData } from '../../../Shared/types/Route.models';
@@ -29,13 +30,20 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ meta }) => {
       <Head node={meta} />
 
       <section className="container">
-        <NodeParent parent={meta.meta.links.parent} />
-        <h1 className="page-title">{meta.title}</h1>
-        <NodeMeta node={meta} showUpdated={true} />
-        <NodeMarkdown node={meta}>{meta.abstract}</NodeMarkdown>
-        <NodeChildren children={meta.meta.links.children} />
-        <NodeMarkdown node={meta}>{meta.content}</NodeMarkdown>
-        <LinkToTop />
+        <article className="media-item">
+          <header>
+            <NodeParent parent={meta.meta.links.parent} />
+          </header>
+          <h1 className="page-title">{meta.title}</h1>
+          <NodeMarkdown node={meta}>{meta.abstract}</NodeMarkdown>
+          <NodeChildren children={meta.meta.links.children} />
+          <NodeMarkdown node={meta}>{meta.content}</NodeMarkdown>
+          <LinkToTop />
+        </article>
+        <footer>
+          {meta.meta.notes && <NodeNotes node={meta} />}
+          <NodeMeta node={meta} showUpdated={true} />
+        </footer>
       </section>
     </Layout>
   );

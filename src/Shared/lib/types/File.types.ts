@@ -28,5 +28,6 @@ export interface ParsedFile {
   data: FileData;
   abstract: string;
   content: string;
+  notes: string;
   created: Date;
 }
