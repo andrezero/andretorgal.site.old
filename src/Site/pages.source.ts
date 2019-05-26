@@ -4,7 +4,6 @@ import { linkHierarchy } from '../Shared/lib/links';
 import { filterHasNotTag, newNodeFromFile } from '../Shared/lib/nodes';
 import { FileSysNode } from '../Shared/lib/types/File.types';
 
-import { filter } from 'bluebird';
 import { PageNode } from '../Shared/types/Page.models';
 
 const nodeDefaults = {

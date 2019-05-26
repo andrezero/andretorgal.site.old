@@ -1,6 +1,6 @@
 import { resolveNodeMeta } from '../Shared/lib/meta';
 import { dedupeTags } from '../Shared/lib/nodes';
-import { filterHasTag, filterNoRoot, newNode, sortCreated, sortUpdated } from '../Shared/lib/nodes';
+import { filterHasTag, filterNotPaths, newNode, sortCreated } from '../Shared/lib/nodes';
 import { newRoute } from '../Shared/lib/routes';
 import { Route, RouteContext } from '../Shared/types/Route.models';
 
@@ -9,9 +9,11 @@ import { PageNode } from '../Shared/types/Page.models';
 
 import { IndexTemplateRouteData } from './templates/Index/IndexTemplate.component';
 
+const EXCLUDE_PATHS = ['/', '/tags', '/medias', '/feed'];
+
 const featuredNodes = (nodes: Node[]): Node[] => {
   return nodes
-    .filter(filterNoRoot)
+    .filter(filterNotPaths(EXCLUDE_PATHS))
     .filter(filterHasTag('featured'))
     .sort(sortCreated)
     .splice(0, 20);
@@ -19,7 +21,7 @@ const featuredNodes = (nodes: Node[]): Node[] => {
 
 const latestNodes = (nodes: Node[]): Node[] => {
   return nodes
-    .filter(filterNoRoot)
+    .filter(filterNotPaths(EXCLUDE_PATHS))
     .sort(sortCreated)
     .splice(0, 20);
 };
@@ -27,7 +29,7 @@ const latestNodes = (nodes: Node[]): Node[] => {
 const updatedNodes = (nodes: Node[]): Node[] => {
   return [];
   // return nodes
-  //   .filter(filterNoRoot)
+  //   .filter(filterNotPaths(EXCLUDE_PATHS))
   //   .sort(sortUpdated)
   //   .splice(0, 20);
 };
@@ -42,7 +44,7 @@ const feedPageRoute = (context: RouteContext, nodes: Node[]): Route => {
     template: 'Feed/Index'
   };
   const page = newNode('page', 'A Bit of Everything', newLocal) as PageNode;
-  page.tags = dedupeTags([...featured, ...latest, ...updated].reduce((t, node) => t.concat(node.tags), []));
+  page.tags = dedupeTags([...featured, ...latest, ...updated].reduce((tags, node) => tags.concat(node.tags), []));
 
   resolveNodeMeta(page, 'website', context.assetLocator, context.metaDefaults);
 

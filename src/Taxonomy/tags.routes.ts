@@ -1,4 +1,4 @@
-import { filterHasTag, newNode } from '../Shared/lib/nodes';
+import { dedupeTags, filterHasTag, newNode } from '../Shared/lib/nodes';
 import { newRoute } from '../Shared/lib/routes';
 import { Node } from '../Shared/types/Node.models';
 import { PageNode } from '../Shared/types/Page.models';
@@ -25,6 +25,7 @@ const tagListPageRoute = (context: RouteContext, tags: TagNode[]): Route => {
     template: 'Taxonomy/Tags'
   };
   const page = newNode('page', 'All Tags', defaults) as PageNode;
+  page.tags = dedupeTags(tags.reduce((t, media) => t.concat(media.tags), []));
 
   resolveNodeMeta(page, 'website', context.assetLocator, context.metaDefaults);
 

@@ -12,7 +12,7 @@ import { PageTemplateRouteData } from './templates/Page/PageTemplate.component';
 const homePageRoute = (context: RouteContext, originalHome: Route, posts: PostNode[]): Route => {
   const page = originalHome.getData().page as PageNode;
   page.meta.template = 'Site/Home';
-  page.tags = dedupeTags(posts.reduce((t, post) => t.concat(post.tags), []));
+  page.tags = dedupeTags(posts.reduce((tags, post) => tags.concat(post.tags), []));
 
   resolveNodeMeta(page, 'website', context.assetLocator, context.metaDefaults);
 

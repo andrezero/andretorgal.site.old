@@ -1,5 +1,5 @@
 import { resolveNodeMeta } from '../Shared/lib/meta';
-import { newNode } from '../Shared/lib/nodes';
+import { dedupeTags, newNode } from '../Shared/lib/nodes';
 import { newRoute } from '../Shared/lib/routes';
 import { Route, RouteContext } from '../Shared/types/Route.models';
 
@@ -21,6 +21,7 @@ const mediaListPageRoute = (context: RouteContext, medias: MediaNode[]): Route =
     template: 'Media/Index'
   };
   const page = newNode('page', 'All Media', defaults) as PageNode;
+  page.tags = dedupeTags(medias.reduce((tags, media) => tags.concat(media.tags), []));
 
   resolveNodeMeta(page, 'website', context.assetLocator, context.metaDefaults);
 
