@@ -8,6 +8,8 @@ Tasks from [my website](/about)'s [backlog](/meta/project/backlog), eventually d
 
 <!-- abstract -->
 
+<!-- spellcheck-off -->
+
 - [x] deploy to prod
 
   - [x] setup staging buckets, cloudfront, cname
@@ -115,7 +117,7 @@ Tasks from [my website](/about)'s [backlog](/meta/project/backlog), eventually d
 * [x] re-organise docs
 * [x] split records into individual files
 * [x] spike: storybook + typescript + scssd
-* [x] cleanup: react static config, watcher, routes, extraneuos 404 page
+* [x] cleanup: react static config, watcher, routes, extraneous 404 page
 * [x] typed scss modules (ide support + compile time)
 * [x] css ie11 support via postcss and prefixer
 * [x] scss lint
@@ -163,5 +165,5 @@ Tasks from [my website](/about)'s [backlog](/meta/project/backlog), eventually d
   - [ ] `react-static` ssg time vs client time hydration of css module classes breaks down
         / using [typings-for-css-modules-loader](https://github.com/Jimdo/typings-for-css-modules-loader)
         / following [issue here](https://github.com/nozzle/react-static/issues/984)
-        / see [loggbook](/meta/records/logbook-accepted.md)
+        / see [logbook](/meta/records/logbook-accepted.md)
   - [ ] `react-static` tries to build pages for sass typings `404.scss.d.ts`

@@ -51,11 +51,11 @@ My question: when will the community recognise that poets, artists, philosophers
 
 I am kind of late to this party. Having spent the last 10 years in scrum-la-la-land, I was totally missing out on what was happening just around corner.
 
-Had previously met a few coaches with more Lean than Agile in them. I had read quite a bit, even experimented with a few concepts, but ... my brain just wasn't ready to take on 3 days of first hand, unfiltered, high energy and low impedance access to this [hivemind](https://twitter.com/judyrees/status/849304310374694912) and its combined knowledge and experience.
+Had previously met a few coaches with more Lean than Agile in them. I had read quite a bit, even experimented with a few concepts, but ... my brain just wasn't ready to take on 3 days of first hand, unfiltered, high energy and low impedance access to this [hive-mind](https://twitter.com/judyrees/status/849304310374694912) and its combined knowledge and experience.
 
 A week later, my brain is finally cooling down, the confusion is dissipating and a good feeling is settling in: my values are reinforced, new trains of thought are developing. I have discovered new principles, practices and tools.
 
 I look forward to experiment. I am hungry to learn and to keep evolving.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Visualize all the things. Such a craft. <a href="https://twitter.com/IanCarrollUK">@IanCarrollUK</a> shows you the craftsmanship <a href="https://twitter.com/hashtag/llkd17?src=hash">#llkd17</a>. <a href="https://t.co/jUaTfOq4Yu">pic.twitter.com/jUaTfOq4Yu</a></p>&mdash; Andre Torgal (@andrezero) <a href="https://twitter.com/andrezero/status/848893786839240704">April 3, 2017</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Visualise all the things. Such a craft. <a href="https://twitter.com/IanCarrollUK">@IanCarrollUK</a> shows you the craftsmanship <a href="https://twitter.com/hashtag/llkd17?src=hash">#llkd17</a>. <a href="https://t.co/jUaTfOq4Yu">pic.twitter.com/jUaTfOq4Yu</a></p>&mdash; Andre Torgal (@andrezero) <a href="https://twitter.com/andrezero/status/848893786839240704">April 3, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

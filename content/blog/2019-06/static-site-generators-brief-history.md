@@ -28,7 +28,7 @@ Unfortunately, these "database driven websites" were scaling terribly. Don't get
 
 Run-time, though, writes and reads were competing for stretched out DB servers. Operational costs were spiking to maintain latency acceptable and availability decent.
 
-But I was so by blinded by magical light, that the feeling was these were just optimization problems. Caching partials and responses, using reverse proxies, abusing cache farms, replicating the DB, optimizing code, ... There would always be a technical solution for that.
+But I was so by blinded by magical light, that the feeling was these were just optimisation problems. Caching partials and responses, using reverse proxies, abusing cache farms, replicating the DB, optimising code, ... There would always be a technical solution for that.
 
 ## Rendering like rebels.
 
@@ -46,7 +46,7 @@ And important one. Because pre-rendering, or pre-burning, "queimar" in Portugues
 
 ## When the only tool you have is a hammer...
 
-... every thing looks like a nail.
+... everything looks like a nail.
 
 Meanwhile, the web-standards movement was striking win after win. The browser became a believable idea. Together with NodeJS, NoSQL @todo
 
@@ -62,7 +62,7 @@ Gatsby, React Static, Next are @todo. And there is now a Medium [explaining SSG]
 
 But to be fair to prior art, in the early 2010s, projects like [Jekyll]() then [Hugo]() were already having a lot of traction in some circles and paved the way for [so many SSG options we have now](https://www.staticgen.com/).
 
-> Jekyll is a simple, blog-aware, static site generator perfect for personal, project, or organization sites. Think of it like a file-based CMS, without all the complexity.
+> Jekyll is a simple, blog-aware, static site generator perfect for personal, project, or organisation sites. Think of it like a file-based CMS, without all the complexity.
 
 To be even more fair, If you do a quick search for "static site generation" pre 2000s you can find gems like this paper on [Tools and Approaches for Developing Data-Intensive Web Applications: a Survey](http://webml.deib.polimi.it/upload/ent5/1/CompSurvey.pdf), all the way back in 1998.
 

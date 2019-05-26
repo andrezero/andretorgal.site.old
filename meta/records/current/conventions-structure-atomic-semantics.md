@@ -5,7 +5,7 @@ tags: ['atomic-design']
 
 ## Details
 
-- elements, blocks, groups, templates and behaviors (instead of atoms, molecules, ...)
+- elements, blocks, groups, templates and behaviours (instead of atoms, molecules, ...)
 - see [docs/project-structure](/meta/docs/project-structure#atomic-ish-semantics-translated-to)
 
 ## Why

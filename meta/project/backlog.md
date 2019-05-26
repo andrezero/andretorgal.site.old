@@ -4,11 +4,13 @@ updated: '2019-05-13'
 tags: ['andretorgal-com']
 ---
 
-Stuff to do on [my website](/about).
+Stuff I want to do/experiment on [my website](/meta).
 
 The done stuff is on the [changelog](/meta/project/changelog) page.
 
 <!-- abstract -->
+
+<!-- spellcheck-off -->
 
 ## Now
 
@@ -16,7 +18,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 - [x] fix nested `<a>` in `tags/` page, improve tag list style
 - [x] fix blog post abstract style missing
 - [x] fix markdown is rendering an extra div (definitely messing with first/last-child margin resets)
-- [ ] fix missing dropcaps style
+- [x] fix missing dropcaps style
 - [ ] fix media list item in feed not rendering image
 - [ ] fix media list item shown as "asset"
 - [ ] fix empty tag list rendering empty `<ul>` is annoying for screen reading
@@ -36,7 +38,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 - [ ] `ResponsiveImg` load on scroll into view
 - [ ] add crono to changelog and to my story
 
-- [ ] poc: header color switch (re-check class switching)
+- [ ] poc: header colour switch (re-check class switching)
 - [ ] poc: minimalistic header
 
 - [ ] blog roll

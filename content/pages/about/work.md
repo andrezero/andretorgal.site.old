@@ -13,9 +13,9 @@ I have been coding, leading, mentoring and facilitating for 20 years.
 
 I am _originally from Lisbon, Portugal_, where I cut my teeth as an engineer and manager, acquiring experience for 15 years across a few industries and companies such as [SAPO](https://sapo.pt) and [Quodis](http://quodis.com/).
 
-I moved to _London in 2011_ worked 4 years at [EF Education First](http://ef.com) and, most recently, as the Head of Frontend at [Property Partner](http://propertypartner.co) and as Agile Delivery Coach at [Nexmo](https://nexmo.com).
+I moved to _London in 2011_, worked 4 years at [EF Education First](http://ef.com), then as the Head of Frontend at [Property Partner](http://propertypartner.co), and as Agile Delivery Manager at [Nexmo](https://nexmo.com).
 
-I arrived in _Barcelona in 2017_ and I am currently working as a Lead Teacher for [Ironhack](https://ironhack.com).
+I arrived in _Barcelona in 2017_, where I taught Web Development at [Ironhack](https://ironhack.com), having had 93 students in roughly a year - intense - and later consulted for [Thoughtworks](https://www.thoughtworks.com/).
 
 ### Mission
 
@@ -27,47 +27,11 @@ Love, Freedom and Imagination.
 
 Courage, Integrity and Loyalty.
 
-### Agile Practitioner
-
-<p class="year">2003</p>
-
-(Re)discovering Agile since I first came across a certain _manifesto_, while leading a team of young and brave developers, working on an innovative product.
-
-Picked up elements of _XP_ and _Agile Modelling_ and started designing together, writing tests, pairing and reviewing. Working as a _team_.
-
-<p class="year">2008</p>
-
-So excited about Scrum, after running a few [ScrumBut](https://www.scrum.org/resources/what-scrumbut) explorations, that I got a [CSP](https://www.scrumalliance.org/community/profile/atorgal) certification the next year.
-
-Since then, regardless of my role as a Developer, Team Lead or Tech Lead, I have been _half Scrum Master_ in most of the teams I have worked with, integrating valuable lessons about _commitment, mindfulness, courage, respect and vulnerability_.
-
-<p class="year">2015</p>
-
-At [PP](https://propertypartner.co) in a complex role with responsibilities in engineering, management and process. A constant challenge to balance _coding, leading, mentoring and facilitating_.
-
-Guided the team towards a more mature Scrum, gradually introducing new activities, tools and artefacts, and facilitating _meaningful retrospectives and actionable insights_.
-
-Together, we grew to _deliver at a constant and sustainable pace_, releasing code to production every other day.
-
-<p class="year">2017</p>
-
-At [Nexmo](https://nexmo.com) as an Agile Delivery Manager, coaching a few teams through their discovery of Agile principles and values. Focused on _individuals and interactions first_: collaboration, face to face communication, courage, respect and vulnerability, explicit policies, pairing and mobbing.
-
-Then, collaboratively exploring _Lean, Kanban, Kaizen_ and others, experimenting with practices and tools, evolving towards _flow, purpose and predictability_, reducing waste, defects, inventory and technical debt along the way.
-
-Want to do more of this, and better!
-
-<p class="year">Now</p>
-
-At [Ironhack](https://ironhack.com) as the Lead Teacher for the Webdev bootcamp in Barcelona, _teaching full-stack web development_ - concepts, hacks and best practices - and sharing the love for Agile values and practices.
-
-Feeling super accomplished and rewarded. Meeting new people, from all around, literally every day. People with the most incredible stories, from whom I am _learning new and unexpected things_ and whose paths I am intersecting in an extraordinary moment of their lifes. :-)
-
-### Engineering Experience
+### Experience
 
 <p class="year">1995</p>
 
-My story with computers [goes way back](/about/story). Forward to 1995, when I created my first _personal website_. The browsers at the time? [Navigator](https://en.wikipedia.org/wiki/Netscape#Early_years) and [IE2](https://en.wikipedia.org/wiki/Internet_Explorer_2). And dial-up bandwidth, on a good day, 30 kbps.
+My story with computers [goes way back](/about/story). Forward to 1995, when I created my first _personal website_. The browsers at the time? [Navigator](https://en.wikipedia.org/wiki/Netscape#Early_years) and [IE2](https://en.wikipedia.org/wiki/Internet_Explorer_2). And dial-up bandwidth. On a good day, 30 kbps.
 
 <p class="year">1999</p>
 
@@ -77,11 +41,13 @@ Unfortunately, the dot-com bubble was bursting. We were kind of late to this par
 
 <p class="year">2002</p>
 
-Leading a small team of brave developers, designing and creating an innovative product, a first of the kind in the _automation industry_.
-
-Mostly using _web technologies_ for UI, but also going full hands-on with _industrial hardware_ - networks, card readers, gadgets and sensors of every kind.
+Leading a small team of brave developers, designing and creating an innovative product, a first of the kind in the _automation industry_. Mostly using _web technologies_ for UI, but also going full hands-on with _industrial hardware_ - networks, card readers, gadgets and sensors of every kind.
 
 Quite a reception from the market. Around mid 2006, there were 20 instances operating across the country, and plans to go much further.
+
+<p class="year">2003</p>
+
+(Re)discovering Agile since I first came across a certain manifesto. In the early 2000s, I was mostly learning _XP_ and _Agile Modeling_, and how to design and develop in collaboration, writing tests, pairing and reviewing.
 
 <p class="year">2005</p>
 
@@ -97,53 +63,77 @@ Superb opportunity to play with caches, buses, brokers, document databases, the 
 
 While working there, built an entire new version of [SAPO Cinema](https://cinema.sapo.pt) and related web services. This popular online movies guide, scaled 4x its audience after launching the new version and peaked around a million monthly unique users.
 
+<p class="year">2009</p>
+
+So excited about Scrum, after running a few [ScrumBut](https://www.scrum.org/resources/what-scrumbut) explorations, that I got a [CSP](https://www.scrumalliance.org/community/profile/atorgal) certification the next year.
+
+Since then, regardless of my role as a Developer, Team Lead or Tech Lead, I have been at least _half Scrum Master_ in most of the teams I have worked with, integrating valuable lessons about _commitment, mindfulness, courage, respect and vulnerability_.
+
 <p class="year">2010</p>
 
 My last year in Portugal was spent _working with friends_ at [Quodis](http://quodis.com/), a company of five, including some of the best UX / designers out there.
 
 We were pumping complex websites, _engaging campaigns and beautiful visualisations_ at an incredible pace.
 
-And we still found time to organize _meetups and events_.
+And we still found time to organise _meet-ups and events_.
 
 Great team, wonderful times :-)
 
 <p class="year">2011</p>
 
-Moved to London in 2011 as the first backend developer of a greenfield project within [EF](https://ef.com). The prototypes evolved into field tests and into a mature platform. The role evolved into _Architect_, then _Tech Lead_.
+Moved to London in 2011 as the first backend developer of a greenfield project within [EF](https://ef.com). The prototypes evolved into field tests, and the tests evolved into a mature platform. And the role evolved into _Tech Lead_.
 
 The platform runs at a _global scale_, around the clock, delivering [free tests](https://www.efset.org/) to millions of users, assisting teachers in dozens of schools, supporting some of the research behind the [world's largest ranking of countries by English skills](http://www.ef.co.uk/epi/).
 
-Also proud to have helped building [EF Class](http://class.ef.com/), an innovative _EdTech_ product that helps teachers run engaging, interactive, and motivational lessons.
+Also super proud to have helped building [EF Class](http://class.ef.com/), an innovative _EdTech_ product that helps teachers run engaging, interactive, and motivational lessons.
 
 <p class="year">2015</p>
 
-Next, as the Head of Frontend at [Property Partner](http://propertypartner.co), a promising _FinTech_ startup, introduced TDD, pairing, code reviews, gitflow, an _automated styleguide_ and CI practices.
+At [Property Partner](https://propertypartner.co) in a complex role with responsibilities in engineering, management and process. A constant challenge to balance _coding, leading, mentoring and facilitating_.
+
+Guided the team towards a more mature Scrum, gradually introducing TDD, pairing, code reviews, gitflow, an _automated styleguide_ and CI practices, and facilitating _meaningful retrospectives and actionable insights_. Together, we grew to _deliver at a constant and sustainable pace_, releasing code to production every other day.
 
 Great opportunity to explore _growth tools_. UX research, analytics, A/B testing, referrals, customer support, CRM, every trick in the book.
 
-<p class="year">Now, next</p>
+<p class="year">2017</p>
 
-Working on a _Node.js DDD/Hexagonal architecture_ approach for (micro)services.
+At [Nexmo](https://nexmo.com) as an Agile Delivery Manager, coaching a few teams through their discovery of Agile principles and values. Focused on _individuals and interactions first_: collaboration, face to face communication, courage, respect and vulnerability, explicit policies, pairing and mobbing.
 
-Experimenting with Web APIs like _Canvas and WebAudio_.
+Then, collaboratively exploring _Lean, Kanban, Kaizen_ and others, experimenting with practices and tools, evolving towards _flow, purpose and predictability_, reducing waste, defects, inventory and technical debt along the way.
+
+<p class="year">2018</p>
+
+At [Ironhack](https://www.ironhack.com/) as Lead Teacher for the WebDev bootcamp in Barcelona, _teaching full-stack web development_ - concepts, hacks and best practices - and sharing the love for _Agile values and practices_.
+
+Great times at the [Barcelona campus](https://www.youtube.com/watch?v=s2cv8AV-lFs), working with an awesome team of motivated people with a growth mindset and a beautiful passion for continuous improvement. We iterated continuously on the curriculum, practices, and tools, establishing _feedback loops everywhere_ and capturing the process in _living documentation_.
+
+Another highlight here, the constant collaboration between the UX/UI and WebDev bootcamps. It inspired an atmosphere of possibility, of a world where the "hand-over" is no longer a thing. Also, I guess along the way, I must have picked up a few things about _Design Thinking_ and _Service Design_.
+
+Such a privilege to meet so many people, listen to _the most incredible life stories_, and learn new and unexpected things. Also a privilege to cross paths with all these students - ninety three of them - at such an extraordinary moment of their lives. :-)
+
+<p class="year">2019</p>
+
+At [Thoughtworks Spain](https://www.thoughtworks.com/), as Lead Consultant, trying to learn some serious consulting and influencing skills, as well as strengthen my XP and Software Design. Did not disappoint: such a wonderful group of talented individuals, so much knowledge sharing going on, and so much expertise everywhere, it can even become overwhelming and hard to keep up with!
+
+I was lucky to work on a project with a mature CI/CD culture, and alongside experienced engineers, committed to best practices and quality. Great opportunity to work hands-on - mostly mobbing/pairing - with _serverless architecture_, _infrastructure as code_, _observability_, and other fancy stuff.
 
 ### Keyword dump
 
-- **Agile/Lean:** Systems Thinking, Kanban, Scrum, Product Development, Coaching, Mentoring, Facilitation, Agile Modelling, XP, TDD, BDD, CI, CD
-- **Engineering:** Architecture, Microservices, DDD, SOA, Distributed Systems, Scaling, Web Standards, Styleguide Driven Development, Javascript, Angularjs, Riotjs, HTML, CSS, SCSS, Web Apis, Tooling, Nodejs, PHP, MongoDB, MySql, Redis, Dynamo, RabbitMQ, Nginx, Ansible, AWS, Docker
+- **Agile/Lean:** Systems Thinking, Design Thinking, Kanban, Scrum, Product Development, Coaching, Mentoring, Facilitation, Agile Modeling, XP, TDD, BDD, CI, CD
+- **Engineering:** Architecture, Micro-services, DDD, SOA, Distributed Systems, Scaling, Web Standards, Styleguide Driven Development, Javascript, React, Angularjs, Riotjs, HTML, CSS, SCSS, Web Apis, Tooling, Node.js, Scala, Python, MongoDB, Couchbase, MySql, Redis, Dynamo, RabbitMQ, Nginx, Ansible, AWS, Docker
 
 ### Kudos
 
-Throughout these awesome 2 decades, I have had the privilege of working in _remarkable teams_. Together, we have experimented different ways of creating value and experienced the joy of positively impacting lives through our work.
+Throughout these awesome 2 decades, I have had the chance of working in _remarkable teams_. Together, we have experimented different ways of creating value and experienced the joy of positively impacting lives through our work.
 
-It has been an absolute _privilege and pleasure_ to work alongside so many talented and inspiring individuals: business people, academics, engineers and artists.
+It has been an absolute _privilege and pleasure_ to work alongside so many talented and inspiring individuals: business people, academics, engineers, and artists.
 
 Particularly, the ones I had the even greater privilege of mentoring along the way. You all rock! And you will rule!
 
 ### Next
 
-You can learn a bit more about my work in my [Linkedin profile](https://linkedin/in/andretorgal).
+You can learn more about my work in my [LinkedIn profile](https://linkedin/in/andretorgal).
 
-Or more about my [back story](/about/story).
+Or more about my [back story](/about/story), right here on this website.
 
 And always feel free to [get in touch](/about#see-you-around).

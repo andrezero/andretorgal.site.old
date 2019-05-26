@@ -89,7 +89,7 @@ Well, MP2 sounded terrible. But you could totally see the future coming.
 
 <p class="year">1995</p>
 
-When I learned about Adam Curry's unofficial MTV website, I gave it a go and learned just enough HTML to uploaded my band's lyrics and concert dates to [geocities](https://geocities). But it was a pointless exercise, I thought. The people attending our shows were the least interested in the school library.
+When I learned about Adam Curry's unofficial MTV website, I gave it a go and learned just enough HTML to uploaded my band's lyrics and concert dates to [Geocities](https://geocities). But it was a pointless exercise, I thought. The people attending our shows were the least interested in the school library.
 
 Besides, the rock life was in decline. The 90s were a glorious rock decade, but ironically, MTV, the Internet, digital access and the massive summer festivals did nothing for the local music scene. On the contrary, small live venues were closing doors, bands were dissolving, band members were getting jobs and not turning back.
 
@@ -97,7 +97,7 @@ Besides, the rock life was in decline. The 90s were a glorious rock decade, but 
 
 <p class="year">1996</p>
 
-Despite all the art in my life, I did learn a lot during my Economics degree. The insane amount of maths, statistics and econometrics was too much for me to cope with. But I did acquire an incredible set of tools for modelling reality and developed strong analytical skills.
+Despite all the art in my life, I did learn a lot during my Economics degree. The insane amount of maths, statistics and econometrics was too much for me to cope with. But I did acquire an incredible set of tools for modeling reality and developed strong analytical skills.
 
 My favourite subjects were Behavioural Economics, Political Economy and History of Economic Thought. But, being pragmatic about my chances at a good job, I took on some Marketing and Management classes and even threw a bit of Finance in the mix.
 
@@ -107,7 +107,7 @@ My favourite subjects were Behavioural Economics, Political Economy and History 
 
 Not surprisingly, I soon found myself in a suit, making enough money to muddle through early independence. But my lack of academic focus through college got me the job I deserved. An irrelevant position in a stalling company with antiquated methods and backwards values.
 
-Despite being no business visionaire, I knew for sure this wasn't the future. But most importantly, I felt there was nothing I could do to change things around me in such an environment. I definitely did not have the skills to do it. And definitely, I did not feel the passion.
+Despite being no business visionary, I knew for sure this wasn't the future. But most importantly, I felt there was nothing I could do to change things around me in such an environment. I definitely did not have the skills to do it. And definitely, I did not feel the passion.
 
 ## Referendum
 
@@ -115,7 +115,7 @@ Despite being no business visionaire, I knew for sure this wasn't the future. Bu
 
 The next chapter was triggered by political events across the globe. East-Timor was on the verge of independence from Indonesia. The neighbouring countries were pressuring the occupiers and the situation was delicate. A tragedy like the 1991 Santa Cruz massacre felt eminent.
 
-Triggered by the lack of mentions in European media, I decided to create a website in [tripod](https://tripod). In a couple of hours I had several pages up. In a couple of days, I knew all the HTML there was to know at the time. The website now had headlines, news, quotes, galleries and blinking banners.
+Triggered by the lack of mentions in European media, I decided to create a website in [Tripod](https://tripod). In a couple of hours I had several pages up. In a couple of days, I knew all the HTML there was to know at the time. The website now had headlines, news, quotes, galleries and blinking banners.
 
 ## Going full-circle
 

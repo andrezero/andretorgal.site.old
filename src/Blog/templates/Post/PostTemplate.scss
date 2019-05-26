@@ -37,7 +37,7 @@
   }
 
   /* stylelint-disable-line selector-max-compound-selectors */
-  .post-contents p:first-child::first-letter {
+  .post-contents > p:first-child::first-letter {
     float: left;
     padding-top: 5px;
     padding-right: gap('small', 1.5);

@@ -9,11 +9,7 @@ What is happening, what is new, and what comes next.
 
 <!-- abstract -->
 
-![finally, a new version of my website](./blog/andretorgal-com/v2.jpg)
-
-Finished porting my website to React Static. Yay!
-
-More importantly, today I setup S3 and Cloudfront to serve the static site under HTTPS.
+Finished porting my website to React Static. Yay! But More importantly, today I setup S3 and Cloudfront to serve the static site under HTTPS.
 
 I would love to say I had it all done in 1 hour, thanks to nice guides like this one: [Hosting Static React Websites on AWS S3 (& CloudFront) with SSL
 ](https://hackernoon.com/hosting-static-react-websites-on-aws-s3-cloudfront-with-ssl-924e5c134455). Unfortunately, the AWS experience is not the best so things got complicated a few times.
@@ -58,6 +54,8 @@ For now, the entire `dist/` is synced up to S3 in a few seconds. I couldn't be h
 
 Publish my "design system". Get it up with [Storybook](https://storybook.js.org/use-cases/) first, then suit it up. Thank you [Hanseo](https://medium.com/@hanseopark) for the tips. I'll be glad to pay you back helping you out of Medium ;-)
 
-Plenty of other [features, fixes and tweaks](/meta/project/backlog).
+![plenty of features to come](./blog/andretorgal-com/v2.jpg)
+
+Plenty of other [features, fixes and tweaks](/meta/project/backlog) to develop.
 
 And a lot more content.
