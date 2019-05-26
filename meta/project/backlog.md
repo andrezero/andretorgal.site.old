@@ -23,7 +23,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [x] fix missing dropcaps style
   - [x] fix media list item in feed not rendering image
   - [x] mute recently updated
-  - [ ] fix empty tag list rendering empty `<ul>` is annoying for screen reading
+  - [x] fix empty tag list rendering empty `<ul>` is annoying for screen reading
   - [ ] fix noselect missing in some navigation and meta
   - [ ] add banners to drafts and staging
   - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)

@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const TagList: React.StatelessComponent<Props> = ({ tags }) => {
-  if (!tags) {
+  if (!tags.length) {
     return <></>;
   }
   return (
