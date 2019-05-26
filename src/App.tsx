@@ -9,6 +9,7 @@ interface Props {
 }
 
 export function App() {
+  // @todo extract titleTemplate and defaultTitle to config
   return (
     <Root>
       <Head titleTemplate="%s - André Torgal" defaultTitle="André Torgal" />

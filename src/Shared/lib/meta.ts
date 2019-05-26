@@ -3,7 +3,80 @@ import { resolve as urlResolve } from 'url';
 import { stripAll } from './markdown';
 
 import { AssetLocator } from '../types/Asset.models';
-import { DocMeta, Node, NodeData, NodeMeta, OpenGraphMeta } from '../types/Node.models';
+import { DocMeta, Node, NodeData, NodeMeta, NodeMetaDefaults, OpenGraphMeta } from '../types/Node.models';
+
+const metaType = (node: Node, def: string) => {
+  const { meta } = node;
+  const { data, og } = meta;
+
+  const type = data.type || def;
+
+  og.push({ property: 'og:type', content: type });
+};
+
+const metaDescription = (node: Node, defaultDescription: string) => {
+  const { abstract, content, meta } = node;
+  const { data, doc, og } = meta;
+
+  let description = defaultDescription;
+
+  if (data.description) {
+    description = data.description;
+  } else if (abstract) {
+    description = stripAll(abstract); // @todo truncate
+  } else if (content) {
+    description = stripAll(content); // @todo truncate
+  }
+
+  doc.push({ name: 'description', content: description });
+  doc.push({ name: 'twitter:description', content: description });
+  og.push({ property: 'og:description', content: description });
+};
+
+const metaAuthor = (node: Node, defaultAuthor: string) => {
+  const { meta } = node;
+  const { data, doc } = meta;
+
+  const author = data.author || defaultAuthor;
+
+  doc.push({ name: 'author', content: author });
+};
+
+const metaUrl = (node: Node, baseUrl: string, canonicalUrl: string) => {
+  const { meta } = node;
+  const { doc, og } = meta;
+
+  const url = urlResolve(baseUrl, node.path);
+  const canonical = urlResolve(canonicalUrl, node.path);
+
+  og.push({ property: 'og:url', content: url });
+  doc.push({ name: 'canonical', content: canonical });
+};
+
+const metaKeywords = (node: Node) => {
+  const { meta } = node;
+  const { doc } = meta;
+
+  if (node.tags) {
+    doc.push({ name: 'keywords', content: node.tags.join(', ') });
+  }
+};
+
+const metaImage = (node: Node, locator: AssetLocator, defaultImage: string) => {
+  const { meta } = node;
+  const { assets, data, doc, og } = meta;
+
+  let image = defaultImage;
+
+  if (data.image) {
+    image = data.image;
+  } else if (assets.length) {
+    image = locator.url(assets[0], 'image.medium');
+  }
+
+  og.push({ property: 'og:image', content: image });
+  doc.push({ name: 'twitter:image:src', content: image });
+};
 
 export const newMeta = (
   sourceType: string,
@@ -46,73 +119,16 @@ export const newMeta = (
   };
 };
 
-export const metaType = (node: Node, def: string) => {
-  const { meta } = node;
-  const { data, og } = meta;
-
-  const type = data.type || def;
-
-  og.push({ property: 'og:type', content: type });
-};
-
-export const metaDescription = (node: Node, defaultDescription: string) => {
-  const { abstract, content, meta } = node;
-  const { data, doc, og } = meta;
-
-  let description = defaultDescription;
-
-  if (data.description) {
-    description = data.description;
-  } else if (abstract) {
-    description = stripAll(abstract); // @todo truncate
-  } else if (content) {
-    description = stripAll(content); // @todo truncate
-  }
-
-  doc.push({ name: 'description', content: description });
-  doc.push({ name: 'twitter:description', content: description });
-  og.push({ property: 'og:description', content: description });
-};
-
-export const metaAuthor = (node: Node, defaultAuthor: string) => {
-  const { meta } = node;
-  const { data, doc } = meta;
-
-  const author = data.author || defaultAuthor;
-
-  doc.push({ name: 'author', content: author });
-};
-
-export const metaUrl = (node: Node, baseUrl: string) => {
-  const { meta } = node;
-  const { og } = meta;
-
-  const url = urlResolve(baseUrl, node.path);
-
-  og.push({ property: 'og:url', content: url });
-};
-
-export const metaKeywords = (node: Node) => {
-  const { meta } = node;
-  const { doc } = meta;
-
-  if (node.tags) {
-    doc.push({ name: 'keywords', content: node.tags.join(', ') });
-  }
-};
-
-export const metaImage = (node: Node, locator: AssetLocator, defaultImage: string) => {
-  const { meta } = node;
-  const { assets, data, doc, og } = meta;
-
-  let image = defaultImage;
-
-  if (data.image) {
-    image = data.image;
-  } else if (assets.length) {
-    image = locator.url(assets[0], 'image.medium');
-  }
-
-  og.push({ property: 'og:image', content: image });
-  doc.push({ name: 'twitter:image:src', content: image });
+export const resolveNodeMeta = (
+  node: Node,
+  type: string,
+  assetLocator: AssetLocator,
+  metaDefaults: NodeMetaDefaults
+) => {
+  metaType(node, type);
+  metaAuthor(node, metaDefaults.author);
+  metaDescription(node, metaDefaults.description);
+  metaUrl(node, metaDefaults.baseUrl, metaDefaults.canonicalUrl);
+  metaKeywords(node);
+  metaImage(node, assetLocator, metaDefaults.image);
 };

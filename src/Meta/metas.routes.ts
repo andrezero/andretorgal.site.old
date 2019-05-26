@@ -1,6 +1,5 @@
-import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
 import { newRoute } from '../Shared/lib/routes';
-import { Route } from '../Shared/types/Route.models';
+import { Route, RouteContext } from '../Shared/types/Route.models';
 
 import { MetaNode } from './types/Meta.models';
 
@@ -10,9 +9,9 @@ interface Data {
   metas: MetaNode[];
 }
 
-export const buildRoutes = async (stage: string, templates: TemplateLocator, data: Data): Promise<Route[]> => {
+export const buildRoutes = async (context: RouteContext, data: Data): Promise<Route[]> => {
   const routes = data.metas.map(meta => {
-    return newRoute<PageTemplateRouteData>(templates, meta, {
+    return newRoute<PageTemplateRouteData>(context, meta, {
       meta
     });
   });

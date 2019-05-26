@@ -35,9 +35,9 @@ export const IndexTemplate: React.StatelessComponent<Props> = ({ page, medias })
             <MediaListItem key={media.path} media={media} />
           ))}
         </ul>
-
-        <LinkToTop />
       </section>
+
+      <LinkToTop />
     </Layout>
   );
 };

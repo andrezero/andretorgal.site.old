@@ -1,8 +1,7 @@
-import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
-import { metaKeywords } from '../Shared/lib/meta';
+import { resolveNodeMeta } from '../Shared/lib/meta';
 import { dedupeTags } from '../Shared/lib/nodes';
 import { findRoute, newRoute, replaceRoute } from '../Shared/lib/routes';
-import { Route } from '../Shared/types/Route.models';
+import { Route, RouteContext } from '../Shared/types/Route.models';
 
 import { PostNode } from '../Blog/types/Post.models';
 import { PageNode } from '../Shared/types/Page.models';
@@ -10,13 +9,14 @@ import { PageNode } from '../Shared/types/Page.models';
 import { HomeTemplateRouteData } from './templates/Home/HomeTemplate.component';
 import { PageTemplateRouteData } from './templates/Page/PageTemplate.component';
 
-const homePageRoute = (templates: TemplateLocator, originalHome: Route, posts: PostNode[]): Route => {
+const homePageRoute = (context: RouteContext, originalHome: Route, posts: PostNode[]): Route => {
   const page = originalHome.getData().page as PageNode;
   page.meta.template = 'Site/Home';
   page.tags = dedupeTags(posts.reduce((t, post) => t.concat(post.tags), []));
-  metaKeywords(page);
 
-  return newRoute<HomeTemplateRouteData>(templates, page, {
+  resolveNodeMeta(page, 'website', context.assetLocator, context.metaDefaults);
+
+  return newRoute<HomeTemplateRouteData>(context, page, {
     page,
     posts
   });
@@ -27,15 +27,15 @@ interface Data {
   posts: PostNode[];
 }
 
-export const buildRoutes = async (stage: string, templates: TemplateLocator, data: Data): Promise<Route[]> => {
+export const buildRoutes = async (context: RouteContext, data: Data): Promise<Route[]> => {
   let pagesRoutes: Route[] = data.pages.map(page => {
-    return newRoute<PageTemplateRouteData>(templates, page, {
+    return newRoute<PageTemplateRouteData>(context, page, {
       page
     });
   });
 
   const originalHome = findRoute(pagesRoutes, '/');
-  const homeRoute = homePageRoute(templates, originalHome, data.posts);
+  const homeRoute = homePageRoute(context, originalHome, data.posts);
   pagesRoutes = replaceRoute(pagesRoutes, '/', homeRoute);
 
   return [...pagesRoutes];

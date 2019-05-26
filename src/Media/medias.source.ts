@@ -1,10 +1,13 @@
 import { parseFileContents } from '../Shared/lib/content';
 import { collect, flatten } from '../Shared/lib/files';
+import { resolveNodeMeta } from '../Shared/lib/meta';
 import { filterHasNotTag, newNode, newNodeFromFile } from '../Shared/lib/nodes';
 import { FileSysNode } from '../Shared/lib/types/File.types';
-import { Asset } from '../Shared/types/Asset.models';
+import { Asset, AssetLocator } from '../Shared/types/Asset.models';
+import { NodeMetaDefaults } from '../Shared/types/Node.models';
 
 import { slug } from '../Shared/lib/strings';
+import { RouteContext } from '../Shared/types/Route.models';
 import { MediaNode } from './types/Media.models';
 
 const nodeDefaults = {
@@ -27,12 +30,12 @@ const newMediaFromAsset = (asset: Asset): MediaNode => {
     template: 'Media/Page',
     prefix: 'media'
   };
-  const mediaNode = newNode('asset', asset.title || slug(asset.url), defaults) as MediaNode;
-  mediaNode.abstract = asset.alt;
-  mediaNode.meta.asset = asset;
-  mediaNode.meta.assets.push(asset);
+  const media = newNode('media', asset.title || slug(asset.url), defaults) as MediaNode;
+  media.abstract = asset.alt;
+  media.meta.asset = asset;
+  media.meta.assets.push(asset);
 
-  return mediaNode;
+  return media;
 };
 
 interface MediaIndex {
@@ -75,7 +78,7 @@ export const loadMedias = async (stage: string): Promise<MediaNode[]> => {
   return filtered;
 };
 
-export const generateMedias = (stage: string, mediaNodes: MediaNode[], assets: Asset[]): MediaNode[] => {
+export const generateMedias = (mediaNodes: MediaNode[], assets: Asset[]): MediaNode[] => {
   const mediaIndex = indexMediaNodes(mediaNodes);
   const ret = [...mediaNodes];
   assets.forEach(asset => {

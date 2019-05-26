@@ -1,19 +1,5 @@
 # andretorgal.com
 
-## Deploy
-
-dist folder
-
-```
-aws s3 sync . s3://site-andretorgal-com/site/ --acl public-read
-```
-
-statics
-
-```
-aws s3 sync . s3://statics-andretorgal-com/statics/ --acl public-read
-```
-
 ## Develop
 
 ### Debug

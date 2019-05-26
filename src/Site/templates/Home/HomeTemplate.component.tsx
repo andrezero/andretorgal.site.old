@@ -49,9 +49,9 @@ export const HomeTemplate: React.StatelessComponent<Props> = ({ page, posts }) =
         <h2 className="page-title">{page.title}</h2>
 
         <PostList posts={posts} level={3} />
-
-        <LinkToTop />
       </section>
+
+      <LinkToTop />
     </Layout>
   );
 };

@@ -1,12 +1,10 @@
-import { TemplateLocator } from './classes/TemplateLocator';
-
 import { Node } from '../types/Node.models';
-import { Route } from '../types/Route.models';
+import { Route, RouteContext } from '../types/Route.models';
 
-export const newRoute = <T>(templates: TemplateLocator, node: Node, data: T): Route => {
+export const newRoute = <T>(context: RouteContext, node: Node, data: T): Route => {
   return {
     path: node.path,
-    template: templates.locate(node.meta.template),
+    template: context.templateLocator.locate(node.meta.template),
     getData: (): T => ({
       ...data,
       classes: node.meta.classes

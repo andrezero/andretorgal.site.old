@@ -42,9 +42,9 @@ export const IndexTemplate: React.StatelessComponent<Props> = ({ page, latest, f
 
         <h2>Recently updated</h2>
         <NodeList nodes={updated} level={3} />
-
-        <LinkToTop />
       </section>
+
+      <LinkToTop />
     </Layout>
   );
 };

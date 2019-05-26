@@ -1,6 +1,7 @@
 import { TemplateLocator } from './Shared/lib/classes/TemplateLocator';
-import { Route } from './Shared/types/Route.models';
-import { Sources } from './sources';
+import { AssetLocator } from './Shared/types/Asset.models';
+import { NodeMetaDefaults } from './Shared/types/Node.models';
+import { Route, RouteBuilder, RouteContext } from './Shared/types/Route.models';
 
 import { buildRoutes as buildBlogRoutes } from './Blog/posts.routes';
 import { buildRoutes as buildFeedRoutes } from './Feed/feed.routes';
@@ -9,6 +10,8 @@ import { buildRoutes as buildMetasRoutes } from './Meta/metas.routes';
 import { buildRoutes as buildPagesRoutes } from './Site/pages.routes';
 import { buildRoutes as buildSiteRoutes } from './Site/site.routes';
 import { buildRoutes as buildTaxonomyRoutes } from './Taxonomy/tags.routes';
+
+import { Sources } from './sources';
 
 const debug = (routes: Route[]) => {
   // tslint:disable
@@ -21,26 +24,21 @@ const debug = (routes: Route[]) => {
   // tslint:enable
 };
 
-export type SourceLoader = () => Promise<Sources>;
-export type RouteBuilder = () => Promise<Route[]>;
+type SourceLoader = () => Promise<Sources>;
 
-export const createRouteBuilder = (
-  stage: string,
-  sourceLoader: SourceLoader,
-  templateLocator: TemplateLocator
-): RouteBuilder => {
+export const createRouteBuilder = (sourceLoader: SourceLoader, context: RouteContext): RouteBuilder => {
   const routeBuilder: RouteBuilder = async () => {
     const sources = await sourceLoader();
     const { nodes, pages, posts, metas, tags, medias } = sources;
 
     const groups = await Promise.all([
-      buildSiteRoutes(stage, templateLocator),
-      buildPagesRoutes(stage, templateLocator, { pages, posts }),
-      buildBlogRoutes(stage, templateLocator, { posts }),
-      buildMetasRoutes(stage, templateLocator, { metas }),
-      buildFeedRoutes(stage, templateLocator, { nodes }),
-      buildTaxonomyRoutes(stage, templateLocator, { tags, nodes }),
-      buildMediaRoutes(stage, templateLocator, { medias })
+      buildSiteRoutes(context),
+      buildPagesRoutes(context, { pages, posts }),
+      buildBlogRoutes(context, { posts }),
+      buildMetasRoutes(context, { metas }),
+      buildFeedRoutes(context, { nodes }),
+      buildTaxonomyRoutes(context, { tags, nodes }),
+      buildMediaRoutes(context, { medias })
     ]);
 
     const routes = groups.reduce((all, group) => all.concat(group), [] as Route[]);

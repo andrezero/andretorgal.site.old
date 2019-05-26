@@ -17,6 +17,9 @@ The done stuff is on the [changelog](./changelog) page.
   - [x] s3 sync in dev time
   - [x] add a `!-- notes --` section to articles (stripped out in prod)
   - [x] production build: strip notes & filter drafts
+  - [x] recreate separate buckers and distributions for staging/prod
+  - [x] render different custom metas depending on stage (e.g. robots)
+  - [ ] add custom robots.txt to dist/ folder depending on stage
 
 ## Next
 

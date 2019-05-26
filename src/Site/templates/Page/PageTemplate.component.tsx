@@ -28,9 +28,9 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ page }) => {
         <h1 className="page-title">{page.title}</h1>
 
         <MarkdownBase>{page.content}</MarkdownBase>
-
-        <LinkToTop />
       </section>
+
+      <LinkToTop />
     </Layout>
   );
 };

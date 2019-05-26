@@ -1,9 +1,8 @@
-import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
-import { metaKeywords } from '../Shared/lib/meta';
+import { resolveNodeMeta } from '../Shared/lib/meta';
 import { dedupeTags } from '../Shared/lib/nodes';
 import { filterHasTag, filterNoRoot, newNode, sortCreated, sortUpdated } from '../Shared/lib/nodes';
 import { newRoute } from '../Shared/lib/routes';
-import { Route } from '../Shared/types/Route.models';
+import { Route, RouteContext } from '../Shared/types/Route.models';
 
 import { Node } from '../Shared/types/Node.models';
 import { PageNode } from '../Shared/types/Page.models';
@@ -32,7 +31,7 @@ const updatedNodes = (nodes: Node[]): Node[] => {
     .splice(0, 20);
 };
 
-const feedPageRoute = (templates: TemplateLocator, nodes: Node[]): Route => {
+const feedPageRoute = (context: RouteContext, nodes: Node[]): Route => {
   const featured = featuredNodes(nodes);
   const latest = latestNodes(nodes);
   const updated = updatedNodes(nodes);
@@ -43,9 +42,10 @@ const feedPageRoute = (templates: TemplateLocator, nodes: Node[]): Route => {
   };
   const page = newNode('page', 'A Bit of Everything', newLocal) as PageNode;
   page.tags = dedupeTags([...featured, ...latest, ...updated].reduce((t, node) => t.concat(node.tags), []));
-  metaKeywords(page);
 
-  return newRoute<IndexTemplateRouteData>(templates, page, {
+  resolveNodeMeta(page, 'website', context.assetLocator, context.metaDefaults);
+
+  return newRoute<IndexTemplateRouteData>(context, page, {
     page,
     featured: featuredNodes(nodes),
     latest: latestNodes(nodes),
@@ -57,7 +57,7 @@ interface Data {
   nodes: Node[];
 }
 
-export const buildRoutes = async (stage: string, templates: TemplateLocator, data: Data): Promise<Route[]> => {
-  const feedRoute = feedPageRoute(templates, data.nodes);
+export const buildRoutes = async (context: RouteContext, data: Data): Promise<Route[]> => {
+  const feedRoute = feedPageRoute(context, data.nodes);
   return [feedRoute];
 };

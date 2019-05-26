@@ -38,13 +38,14 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ meta }) => {
           <NodeMarkdown node={meta}>{meta.abstract}</NodeMarkdown>
           <NodeChildren children={meta.meta.links.children} />
           <NodeMarkdown node={meta}>{meta.content}</NodeMarkdown>
-          <LinkToTop />
         </article>
         <footer>
           {meta.meta.notes && <NodeNotes node={meta} />}
           <NodeMeta node={meta} showUpdated={true} />
         </footer>
       </section>
+
+      <LinkToTop />
     </Layout>
   );
 };

@@ -71,6 +71,7 @@ export interface NodeMetaDefaults {
   image: string;
   assetsUrl: string;
   baseUrl: string;
+  canonicalUrl: string;
 }
 
 export interface NodeIndex {

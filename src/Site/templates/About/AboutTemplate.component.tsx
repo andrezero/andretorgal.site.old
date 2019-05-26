@@ -54,9 +54,9 @@ export const AboutTemplate: React.StatelessComponent<Props> = ({ page }) => {
         {!hero && renderHeader(page)}
 
         <NodeMarkdown node={page}>{page.content}</NodeMarkdown>
-
-        <LinkToTop />
       </section>
+
+      <LinkToTop />
     </Layout>
   );
 };

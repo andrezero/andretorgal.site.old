@@ -1,7 +1,7 @@
-import { TemplateLocator } from '../Shared/lib/classes/TemplateLocator';
+import { resolveNodeMeta } from '../Shared/lib/meta';
 import { newNode } from '../Shared/lib/nodes';
 import { newRoute } from '../Shared/lib/routes';
-import { Route } from '../Shared/types/Route.models';
+import { Route, RouteContext } from '../Shared/types/Route.models';
 
 import { PageNode } from '../Shared/types/Page.models';
 import { MediaNode } from './types/Media.models';
@@ -9,20 +9,22 @@ import { MediaNode } from './types/Media.models';
 import { IndexTemplateRouteData } from './templates/Index/IndexTemplate.component';
 import { PageTemplateRouteData } from './templates/Page/PageTemplate.component';
 
-const mediaRoute = (templates: TemplateLocator, media: MediaNode): Route => {
-  return newRoute<PageTemplateRouteData>(templates, media, {
+const mediaRoute = (context: RouteContext, media: MediaNode): Route => {
+  return newRoute<PageTemplateRouteData>(context, media, {
     media
   });
 };
 
-const mediaListPageRoute = (templates: TemplateLocator, medias: MediaNode[]): Route => {
+const mediaListPageRoute = (context: RouteContext, medias: MediaNode[]): Route => {
   const defaults = {
     path: 'media',
     template: 'Media/Index'
   };
   const page = newNode('page', 'All Media', defaults) as PageNode;
 
-  return newRoute<IndexTemplateRouteData>(templates, page, {
+  resolveNodeMeta(page, 'website', context.assetLocator, context.metaDefaults);
+
+  return newRoute<IndexTemplateRouteData>(context, page, {
     page,
     medias
   });
@@ -32,12 +34,12 @@ interface Data {
   medias: MediaNode[];
 }
 
-export const buildRoutes = async (stage: string, templates: TemplateLocator, data: Data): Promise<Route[]> => {
+export const buildRoutes = async (context: RouteContext, data: Data): Promise<Route[]> => {
   const mediasRoutes = data.medias.map(media => {
-    return mediaRoute(templates, media);
+    return mediaRoute(context, media);
   });
 
-  const pageRoute = mediaListPageRoute(templates, data.medias);
+  const pageRoute = mediaListPageRoute(context, data.medias);
   const routes = [...mediasRoutes, pageRoute];
 
   return routes;
