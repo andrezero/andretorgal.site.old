@@ -11,8 +11,6 @@ My first website was hosted in [tripod](https://en.wikipedia.org/wiki/Tripod.com
 
 I am working on a few thoughts about why I am coming back to my own space on the Internet.
 
-![animal-cat-cute](./animal-cat-cute-45201.jpg)
-
 First things first: I always had the choice to keep going.
 
 I've been writing about this in _train of thought_ mode for a couple of days, asking a lot of whys and trying to reconstruct the narrative.

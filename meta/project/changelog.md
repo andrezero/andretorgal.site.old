@@ -4,7 +4,7 @@ updated: '2019-05-13'
 tags: ['andretorgal-com']
 ---
 
-Tasks from [my website](/about)'s [backlog](./backlog), eventually done (or archived).
+Tasks from [my website](/about)'s [backlog](/meta/project/backlog), eventually done (or archived).
 
 <!-- abstract -->
 
@@ -163,5 +163,5 @@ Tasks from [my website](/about)'s [backlog](./backlog), eventually done (or arch
   - [ ] `react-static` ssg time vs client time hydration of css module classes breaks down
         / using [typings-for-css-modules-loader](https://github.com/Jimdo/typings-for-css-modules-loader)
         / following [issue here](https://github.com/nozzle/react-static/issues/984)
-        / see [loggbook](./logbook-accepted.md)
+        / see [loggbook](/meta/records/logbook-accepted.md)
   - [ ] `react-static` tries to build pages for sass typings `404.scss.d.ts`

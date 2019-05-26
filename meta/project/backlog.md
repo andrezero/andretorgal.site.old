@@ -6,17 +6,18 @@ tags: ['andretorgal-com']
 
 Stuff to do on [my website](/about).
 
-The done stuff is on the [changelog](./changelog) page.
+The done stuff is on the [changelog](/meta/project/changelog) page.
 
 <!-- abstract -->
 
 ## Now
 
+- [x] fix! a couple of 404 in feed
+
 ## Next
 
 - [ ] [sitemap](https://support.google.com/webmasters/answer/156184)
 
-- [ ] fix! a couple of 404 in feed
 - [ ] style suspense fallback loading component
 - [ ] replace link to top with javascript scroll to top, otherwise bottom of page stays as an entry in history
 

@@ -8,7 +8,7 @@ hero:
   img: './assets/heros/about-hero.jpg'
 ---
 
-My name is André Torgal and this is my website, a place where I [blog](/posts) some thoughts and run a few [experiments](/experiments).
+My name is André Torgal and this is my website, a place where I [blog](/posts) some thoughts and run a few experiments.
 
 Here, you can learn more about me, [my work](/about/work), and other stuff I have been up to.
 
