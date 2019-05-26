@@ -25,7 +25,7 @@ export const SiteFooterContacts: React.StatelessComponent<{}> = () => {
         </li>
         <li>
           <Link className="linkedin" href="https://linkedin.com/in/andretorgal">
-            Linkedin
+            LinkedIn
           </Link>
         </li>
       </ul>

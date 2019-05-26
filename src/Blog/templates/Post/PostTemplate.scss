@@ -39,10 +39,10 @@
   /* stylelint-disable-line selector-max-compound-selectors */
   .post-contents p:first-child::first-letter {
     float: left;
-    padding-top: 2px;
+    padding-top: 5px;
     padding-right: gap('small', 1.5);
-    font-size: 320%;
-    line-height: 1;
+    font-size: 350%;
+    line-height: 0.9;
     color: color('base', 'muted');
   }
 }

@@ -37,7 +37,9 @@ export const PostTemplate: React.StatelessComponent<Props> = ({ post }) => {
           <NodeMarkdown node={post} className="post-abstract">
             {post.abstract}
           </NodeMarkdown>
-          <NodeMarkdown node={post}>{post.content}</NodeMarkdown>
+          <NodeMarkdown node={post} className="post-contents">
+            {post.content}
+          </NodeMarkdown>
         </article>
 
         <footer>
