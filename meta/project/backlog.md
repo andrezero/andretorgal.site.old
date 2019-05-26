@@ -12,7 +12,14 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 
 ## Now
 
-- [x] fix! a couple of 404 in feed
+- [x] fix! a couple of 404 in `feed/`
+- [x] fix nested `<a>` in `tags/` page, improve tag list style
+- [ ] fix duplicate key in list in `tags/` page
+- [ ] fix missing dropcaps style
+- [ ] fix markdown is rendering an extra div (definitely messing with first/last-child margin resets)
+- [ ] fix media list item in feed not rendering image
+- [ ] fix media list item shown as "asset"
+- [ ] fix empty tag list rendering empty `<ul>` is annoying for screen reading
 
 ## Next
 
@@ -20,12 +27,6 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 
 - [ ] style suspense fallback loading component
 - [ ] replace link to top with javascript scroll to top, otherwise bottom of page stays as an entry in history
-
-- [ ] fix missing dropcaps style
-- [ ] fix markdown is rendering an extra div (definitely messing with first/last-child margin resets)
-- [ ] fix media list item in feed not rendering image
-- [ ] fix media list item shown as "asset"
-- [ ] fix empty tag list rendering empty `<ul>` is annoying for screen reading
 
 - [ ] continuous deployment with [gitlab](https://hackernoon.com/using-gitlab-ci-cd-to-auto-deploy-your-vue-js-application-to-aws-s3-9affe1eb3457)
 

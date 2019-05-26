@@ -9,29 +9,27 @@
 
   .node-contents {
     @include scheme-secondary;
-
-    padding-top: gap('tiny');
-    padding-bottom: gap('tiny');
+    padding-top: gap('small');
+    padding-bottom: gap('small');
     padding-left: gap('medium');
   }
 
   .node-title {
     @include text-truncate;
-
     display: flex;
     align-items: center;
     margin: 0;
     font-size: responsive-type-size('h2');
   }
 
-  .markdown-basic {
+  .node-markdown {
     margin-bottom: gap('small');
     padding-top: gap('small');
   }
 
   .tag-count {
     @include scheme-base;
-
+    flex-shrink: 0;
     font-size: responsive-type-size('h3');
     color: color('secondary', 'bg');
   }

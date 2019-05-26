@@ -6,6 +6,7 @@ import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase
 import { TagCount } from '../../elements/TagCount/TagCount.component';
 import { TagNode } from '../../types/Tag.models';
 
+import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';
 import './TagListItem.scss';
 
 interface Props {
@@ -24,7 +25,11 @@ export const TagListItem: React.StatelessComponent<Props> = ({ node: tag, level 
   );
   return (
     <BaseListItem className="tag-list-item" node={tag} header={header} footer={footer} href={tag.path}>
-      <MarkdownBase>{tag.abstract}</MarkdownBase>
+      {tag.abstract && (
+        <NodeMarkdown node={tag} strip={true}>
+          {tag.abstract}
+        </NodeMarkdown>
+      )}
     </BaseListItem>
   );
 };
