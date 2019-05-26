@@ -14,7 +14,7 @@ const nodeDefaults = {
 
 const newMetaFromFile = (stage: string, file: FileSysNode): MetaNode => {
   const fileContents = parseFileContents(stage, file);
-  const { node } = newNodeFromFile('page', fileContents, nodeDefaults);
+  const { node } = newNodeFromFile('meta', fileContents, nodeDefaults);
 
   const meta = node as MetaNode;
 

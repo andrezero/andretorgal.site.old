@@ -34,21 +34,21 @@ export const IndexTemplate: React.StatelessComponent<Props> = ({ page, latest, f
       <section className="container">
         <h1 className="page-title">{page.title}</h1>
 
-        {featured.length && (
+        {featured.length > 0 && (
           <>
             <h2>Featured content</h2>
             <NodeList nodes={featured} level={3} />
           </>
         )}
 
-        {latest.length && (
+        {latest.length > 0 && (
           <>
             <h2>Recently published</h2>
             <NodeList nodes={latest} level={3} />
           </>
         )}
 
-        {updated.length && (
+        {updated.length > 0 && (
           <>
             <h2>Recently updated</h2>
             <NodeList nodes={updated} level={3} />

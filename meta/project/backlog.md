@@ -24,10 +24,15 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [x] fix media list item in feed not rendering image
   - [x] mute recently updated
   - [x] fix empty tag list rendering empty `<ul>` is annoying for screen reading
-  - [ ] fix noselect missing in some navigation and meta
+  - [x] fix noselect missing in some navigation and meta
+  - [x] fix meta list item is not picking up the right component
+  - [ ] exclude `home/`, `media/`, `feed/` from feed, as they pick up tags from the listed items
   - [ ] add banners to drafts and staging
   - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)
   - [ ] fix style suspense fallback loading component
+  - [ ] fix media pages not showing sources
+  - [ ] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
+  - [ ] `ResponsiveImg` load on scroll into view
   - [ ] replace link to top with javascript scroll to top, otherwise bottom of page stays as an entry in history
 
 ## Next
@@ -36,16 +41,11 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 
   - [ ] purge assets not in use before sync
 
-- [ ] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
-- [ ] `ResponsiveImg` load on scroll into view
-- [ ] add crono to changelog and to my story
-
 - [ ] poc: header colour switch (re-check class switching)
 - [ ] poc: minimalistic header
 
 - [ ] blog roll
-
-- [ ] fix media pages not showing sources
+- [ ] add crono to changelog and to my story
 
 - [ ] internal navigation
 
