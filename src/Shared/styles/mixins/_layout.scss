@@ -111,6 +111,36 @@ $container-large: space-container('large');
   }
 }
 
+@mixin spacing-h-negative {
+  margin-left: gap('base', -1);
+  margin-right: gap('base', -1);
+
+  @include breakpoint-small {
+    margin-left: gap('medium', -1);
+    margin-right: gap('medium', -1);
+  }
+
+  @include breakpoint-compact {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@mixin spacing-h-positive {
+  padding-left: gap('base');
+  padding-right: gap('base');
+
+  @include breakpoint-small {
+    padding-left: gap('medium');
+    padding-right: gap('medium');
+  }
+
+  @include breakpoint-compact {
+    padding-left: gap('large');
+    padding-right: gap('large');
+  }
+}
+
 @mixin spacing-v {
   padding-top: gap('base');
   padding-bottom: gap('base');

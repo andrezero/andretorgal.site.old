@@ -30,7 +30,7 @@ export const ImageListItem: React.StatelessComponent<Props> = ({ media, level = 
   const profiles = ['image.small', 'image.medium', 'image.large'];
   return (
     <BaseListItem className="media-image-list-item" node={media} header={header} footer={footer}>
-      <Link href={media.path}>
+      <Link className="image" href={media.path}>
         <NodeImg node={media} src={media.meta.asset.url} profiles={profiles} />
       </Link>
       <NodeMarkdown node={media} strip={true}>

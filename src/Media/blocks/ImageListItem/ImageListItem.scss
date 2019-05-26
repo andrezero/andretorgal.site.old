@@ -1,9 +1,48 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/scheme';
 @import '../../../Shared/blocks/BaseListItem/BaseListItem.mixin';
 
 .media-image-list-item {
-  @include base-list-item;
+  @include base-list-item-block;
+  @include spacing-h-negative;
+  @include rhythm-v;
 
   .node-contents {
-    @include base-list-item-style;
+    @include rhythm-v-compact;
+    background-color: color('bright', 2);
+  }
+
+  .node-header,
+  .node-markdown,
+  .node-footer {
+    @include spacing-h-positive;
+  }
+
+  .node-header {
+    @include spacing-v;
+    overflow: hidden;
+  }
+
+  .node-date {
+    @include type-small;
+    display: inline-block;
+  }
+
+  .node-title {
+    @include heading-2;
+    margin: 0;
+  }
+
+  .image {
+    display: block;
+
+    @include breakpoint-compact {
+      padding-left: gap('large');
+      padding-right: gap('large');
+    }
+  }
+
+  .node-markdown {
+    @include spacing-v;
   }
 }

@@ -32,7 +32,7 @@ export const IndexTemplate: React.StatelessComponent<Props> = ({ page, medias })
 
         <ul className="media-list">
           {medias.map(media => (
-            <MediaListItem key={media.path} media={media} />
+            <MediaListItem key={media.path} node={media} />
           ))}
         </ul>
       </section>

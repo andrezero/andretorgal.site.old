@@ -1,6 +1,12 @@
 @import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/scheme';
 @import '../../../Shared/templates/BasePage.mixin';
 
 .media-page {
   @include base-page;
+  background-color: color('bright', 2);
+
+  picture {
+    @include rhythm-v;
+  }
 }

@@ -25,10 +25,11 @@ const latestNodes = (nodes: Node[]): Node[] => {
 };
 
 const updatedNodes = (nodes: Node[]): Node[] => {
-  return nodes
-    .filter(filterNoRoot)
-    .sort(sortUpdated)
-    .splice(0, 20);
+  return [];
+  // return nodes
+  //   .filter(filterNoRoot)
+  //   .sort(sortUpdated)
+  //   .splice(0, 20);
 };
 
 const feedPageRoute = (context: RouteContext, nodes: Node[]): Route => {

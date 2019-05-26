@@ -20,14 +20,14 @@
 
   .node-date {
     display: block;
-    margin-bottom: gap('medium');
+    margin-bottom: gap('base');
   }
 
   .post-abstract {
     padding-bottom: gap('medium');
     margin-bottom: gap('huge');
     color: color('base', 'muted');
-    font-size: responsive-type-size('large');
+    font-size: responsive-type-size('medium');
     font-style: italic;
     border-bottom: 1px solid color('base', 'dim');
 

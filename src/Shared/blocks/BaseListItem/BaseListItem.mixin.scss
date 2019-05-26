@@ -17,13 +17,11 @@
 @mixin base-list-item-style {
   .node-date {
     @include type-small;
-
     display: inline-block;
   }
 
   .node-title {
     @include heading-2;
-
     margin-top: 0;
   }
 

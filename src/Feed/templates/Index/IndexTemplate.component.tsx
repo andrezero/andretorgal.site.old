@@ -34,14 +34,26 @@ export const IndexTemplate: React.StatelessComponent<Props> = ({ page, latest, f
       <section className="container">
         <h1 className="page-title">{page.title}</h1>
 
-        <h2>Featured content</h2>
-        <NodeList nodes={featured} level={3} />
+        {featured.length && (
+          <>
+            <h2>Featured content</h2>
+            <NodeList nodes={featured} level={3} />
+          </>
+        )}
 
-        <h2>Recently published</h2>
-        <NodeList nodes={latest} level={3} />
+        {latest.length && (
+          <>
+            <h2>Recently published</h2>
+            <NodeList nodes={latest} level={3} />
+          </>
+        )}
 
-        <h2>Recently updated</h2>
-        <NodeList nodes={updated} level={3} />
+        {updated.length && (
+          <>
+            <h2>Recently updated</h2>
+            <NodeList nodes={updated} level={3} />
+          </>
+        )}
       </section>
 
       <LinkToTop />

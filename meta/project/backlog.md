@@ -14,21 +14,23 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 
 ## Now
 
-- [x] fix! a couple of 404 in `feed/`
-- [x] fix nested `<a>` in `tags/` page, improve tag list style
-- [x] fix blog post abstract style missing
-- [x] fix markdown is rendering an extra div (definitely messing with first/last-child margin resets)
-- [x] fix missing dropcaps style
-- [ ] fix media list item in feed not rendering image
-- [ ] fix media list item shown as "asset"
-- [ ] fix empty tag list rendering empty `<ul>` is annoying for screen reading
+- [ ] feedback and hotfixes
+
+  - [x] fix! a couple of 404 in `feed/`
+  - [x] fix nested `<a>` in `tags/` page, improve tag list style
+  - [x] fix blog post abstract style missing
+  - [x] fix markdown is rendering an extra div (definitely messing with first/last-child margin resets)
+  - [x] fix missing dropcaps style
+  - [x] fix media list item in feed not rendering image
+  - [x] mute recently updated
+  - [ ] fix empty tag list rendering empty `<ul>` is annoying for screen reading
+  - [ ] fix noselect missing in some navigation and meta
+  - [ ] add banners to drafts and staging
+  - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)
+  - [ ] fix style suspense fallback loading component
+  - [ ] replace link to top with javascript scroll to top, otherwise bottom of page stays as an entry in history
 
 ## Next
-
-- [ ] [sitemap](https://support.google.com/webmasters/answer/156184)
-
-- [ ] style suspense fallback loading component
-- [ ] replace link to top with javascript scroll to top, otherwise bottom of page stays as an entry in history
 
 - [ ] continuous deployment with [gitlab](https://hackernoon.com/using-gitlab-ci-cd-to-auto-deploy-your-vue-js-application-to-aws-s3-9affe1eb3457)
 
@@ -42,6 +44,8 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 - [ ] poc: minimalistic header
 
 - [ ] blog roll
+
+- [ ] fix media pages not showing sources
 
 - [ ] internal navigation
 
@@ -69,11 +73,10 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
     - [ ] navigation (breadcrumbs)
 
 - [ ] fix create/update dates (assets are getting the latest date)
+- [ ] node type should also be a tag
 - [ ] ui: responsively reposition dates along with node type, as well as meta and tags
 
 - [ ] a11y tooling: linting with [tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib) and run time analysis with [react-axe](https://github.com/dequelabs/react-axe)
-
-- [ ] node type should also be a tag
 
 - [ ] footnotes
 

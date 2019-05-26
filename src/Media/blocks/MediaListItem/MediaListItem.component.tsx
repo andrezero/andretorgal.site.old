@@ -12,7 +12,7 @@ import { MediaNode } from '../../types/Media.models';
 import './MediaListItem.scss';
 
 interface Props {
-  media: MediaNode;
+  node: MediaNode;
   level?: number;
   footer?: React.ReactNode;
 }
@@ -21,24 +21,24 @@ const map = {
   image: ImageListItem
 };
 
-const DefaultListItem: React.StatelessComponent<Props> = ({ media, level = 2, footer }) => {
+const DefaultListItem: React.StatelessComponent<Props> = ({ node, level = 2, footer }) => {
   const Tag = ('h' + level) as React.ElementType;
   const header = (
     <Tag className="node-title">
-      <Link href={media.path}>{media.title}</Link>
+      <Link href={node.path}>{node.title}</Link>
     </Tag>
   );
   return (
-    <BaseListItem className="media-list-item" node={media} header={header} footer={footer}>
-      <MarkdownBase>{media.abstract}</MarkdownBase>
+    <BaseListItem className="media-list-item" node={node} header={header} footer={footer}>
+      <MarkdownBase>{node.abstract}</MarkdownBase>
     </BaseListItem>
   );
 };
 
-export const MediaListItem: React.StatelessComponent<Props> = ({ media, level = 2, footer }) => {
-  const Component = map[media.meta.asset.type];
+export const MediaListItem: React.StatelessComponent<Props> = ({ node, level = 2, footer }) => {
+  const Component = map[node.meta.asset.type];
   if (Component) {
-    return <Component media={media} level={level} footer={footer} />;
+    return <Component media={node} level={level} footer={footer} />;
   }
-  return <DefaultListItem media={media} level={level} footer={footer} />;
+  return <DefaultListItem node={node} level={level} footer={footer} />;
 };

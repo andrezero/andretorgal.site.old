@@ -7,6 +7,7 @@ import { ReadMore } from '../../../Shared/elements/ReadMore/ReadMore.component';
 import { Node } from '../../../Shared/types/Node.models';
 
 import { PostListItem } from '../../../Blog/blocks/PostListItem/PostListItem.component';
+import { MediaListItem } from '../../../Media/blocks/MediaListItem/MediaListItem.component';
 import { MetaListItem } from '../../../Meta/blocks/MetaListItem/MetaListItem.component';
 import { PageListItem } from '../../../Site/blocks/PageListItem/PageListItem.component';
 import { TagListItem } from '../../../Taxonomy/blocks/TagListItem/TagListItem.component';
@@ -23,6 +24,7 @@ const map = {
   page: PageListItem,
   post: PostListItem,
   meta: MetaListItem,
+  media: MediaListItem,
   tag: TagListItem
 };
 
