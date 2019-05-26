@@ -14,7 +14,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 
 - [x] fix! a couple of 404 in `feed/`
 - [x] fix nested `<a>` in `tags/` page, improve tag list style
-- [ ] fix duplicate key in list in `tags/` page
+- [x] fix blog post abstract style missing
 - [ ] fix missing dropcaps style
 - [ ] fix markdown is rendering an extra div (definitely messing with first/last-child margin resets)
 - [ ] fix media list item in feed not rendering image

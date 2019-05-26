@@ -5,7 +5,7 @@ created: '2019-05-23'
 
 Today my V2 is uploaded to https://staging.andretorgal.com/.
 
-What is happening, what is new and what comes next?
+What is happening, what is new, and what comes next.
 
 <!-- abstract -->
 

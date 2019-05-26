@@ -19,7 +19,7 @@ When I relaunched this website a little over 2 years ago, I was hoping to be pos
 
 <!-- abstract -->
 
-I wrote here _a while_ ago why [the 8 years without a site of my own](/posts/2017-jan/hello-world). Meanwhile, I moved jobs a couple of times and even moved to a different country altogether, abandoning these plans in the process.
+I wrote here a while ago why [the 8 years without a site of my own](/posts/2017-jan/hello-world). Meanwhile, I moved jobs a couple of times and even moved to a different country altogether, abandoning these plans in the process.
 
 Blah, blah.
 
@@ -51,7 +51,7 @@ Feels like 2008 again (don't confuse with [1998](https://24ways.org/2018/designi
 
 Best of times, so far.
 
-## Then what's next?
+## What's next?
 
 There is a big [backlog](/meta/project/backlog). It includes better navigation, blog rolls, footnotes, publishing my design system, continuous integration and so much more.
 

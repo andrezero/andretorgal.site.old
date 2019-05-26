@@ -18,12 +18,22 @@
     );
   }
 
+  .node-date {
+    display: block;
+    margin-bottom: gap('medium');
+  }
+
   .post-abstract {
-    margin-bottom: gap('large');
-    padding-left: gap('medium');
+    padding-bottom: gap('medium');
+    margin-bottom: gap('huge');
     color: color('base', 'muted');
-    font-size: responsive-type-size('small');
-    border-left: 3px solid color('base', 'edge');
+    font-size: responsive-type-size('large');
+    font-style: italic;
+    border-bottom: 1px solid color('base', 'dim');
+
+    p {
+      margin: gap('medium') 0;
+    }
   }
 
   /* stylelint-disable-line selector-max-compound-selectors */

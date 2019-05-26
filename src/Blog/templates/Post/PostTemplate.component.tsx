@@ -34,7 +34,9 @@ export const PostTemplate: React.StatelessComponent<Props> = ({ post }) => {
             <NodeDate date={post.created} />
             <h1 className="page-title">{post.title}</h1>
           </header>
-          <NodeMarkdown node={post}>{post.abstract}</NodeMarkdown>
+          <NodeMarkdown node={post} className="post-abstract">
+            {post.abstract}
+          </NodeMarkdown>
           <NodeMarkdown node={post}>{post.content}</NodeMarkdown>
         </article>
 
