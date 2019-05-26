@@ -12,14 +12,17 @@ The done stuff is on the [changelog](./changelog) page.
 
 ## Now
 
-- [ ] deploy to prod
+- [x] deploy to prod
   - [x] setup staging buckets, cloudfront, cname
   - [x] s3 sync in dev time
   - [x] add a `!-- notes --` section to articles (stripped out in prod)
   - [x] production build: strip notes & filter drafts
-  - [x] recreate separate buckers and distributions for staging/prod
+  - [x] recreate separate buckets and distributions for staging/prod
   - [x] render different custom metas depending on stage (e.g. robots)
-  - [ ] add custom robots.txt to dist/ folder depending on stage
+  - [x] add custom `robots.txt` to `dist/` folder depending on build stage
+  - [x] local deploy scripts
+  - [x] bounce andretorgal.com
+  - [x] create R53 > CF > S3 > redirection `www.andretorgal.com` to `andretorgal.com`
 
 ## Next
 
@@ -35,7 +38,7 @@ The done stuff is on the [changelog](./changelog) page.
 - [ ] fix media list item in feed not rendering image
 - [ ] fix media list item shown as "asset"
 
-- [ ] continuous deployment
+- [ ] continuous deployment with [gitlab](https://hackernoon.com/using-gitlab-ci-cd-to-auto-deploy-your-vue-js-application-to-aws-s3-9affe1eb3457)
 
   - [ ] purge assets not in use before sync
 
@@ -99,8 +102,6 @@ The done stuff is on the [changelog](./changelog) page.
       typography-in-design-systems-6ed771432f1e) and [space here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62), and [some inspiration](https://zeit.co/design) too
 - [ ] jest + enzyme
 - [ ] husky + lint staged
-- [ ] spike: gitlab + pages
-- [ ] spike: gitlab + s3
 
 ## Later
 

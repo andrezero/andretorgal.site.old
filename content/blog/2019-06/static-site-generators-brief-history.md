@@ -4,13 +4,11 @@ tags: ['draft', 'static-websites', 'web-history', 'server-side-rendering']
 created: '2019-06-02'
 ---
 
-Hype is building up around [static site generators](https://medium.com/codingthesmartway-com-blog/top-static-site-generators-for-2019-26a4c8afcc05). To me, it all sounds like history repeating itself.
+Hype keeps building up around [static site generators](https://www.google.com/search?q=best+static+site+generator+2019). But this approach has been around for much longer than most people think.
 
-Static site generators have been around for much longer than [most people think](https://jonpersson.co/static-sites/). Our industry's collective memory is very short. Let me see if I can help with a little perspective here.
+Our industry's collective memory is very short. Let me see if I can help with a little perspective.
 
 <!-- abstract -->
-
-## Old-skool was cool
 
 In the beginning the whole web was [static](http://info.cern.ch/). Then there was [CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface) and people could stitch together some dynamic rendering as well as respond to forms posted by users.
 
@@ -20,13 +18,15 @@ In the beginning the whole web was [static](http://info.cern.ch/). Then there wa
 
 With the rise of these scripting languages @todo and the free relational databases @todo, [dynamic server-side rendering](https://dev.to/sunnysingh/the-benefits-and-origins-of-server-side-rendering-4doh) went from being the next big thing to completely taking over the landscape, all in a couple of years.
 
-Now MVC was everywhere, OO was the craft, and with it, a hundred ColdFusion, PHP, Ruby, Python, Java, and .Net frameworks. And soon enough, the scene matured into CMSs of all sizes and flavors, typically of the monolithic kind.
+At some point, MVC was everywhere, and OO was the craft. And with them, a hundred ColdFusion, PHP, Ruby, Python, Java, and .Net frameworks. And soon enough, the scene matured into CMSs of all sizes and flavors. Here's an article from 2007 about the [history of the dynamic web](https://royal.pingdom.com/a-history-of-the-dynamic-web/) for a bit of perspective, from deep within the bubble.
 
 ## Actually, the dark age of MVC
 
 When I joined SAPO in 2008 I had totally jumped on the MVC framework bandwagon and I didn't really know better. One code base for front (html, rss, atom) and back office (a CMS). A nice object oriented approach. It all looked good, no smell.
 
-Unfortunately, these "database driven websites" were scaling terribly. Don't get me wrong, they were dealing with complexity pretty fine, consuming and producing a variety of services, plugged into offline distributed processes, brokers, full-on SOA, the works. But writes and reads were competing for stretched out DB servers. Operational costs were spiking to maintain latency acceptable and availability decent.
+Unfortunately, these "database driven websites" were scaling terribly. Don't get me wrong, they were dealing with complexity pretty fine, consuming and producing a variety of services, plugged into offline distributed processes, brokers, full-on SOA, the works.
+
+Run-time, though, writes and reads were competing for stretched out DB servers. Operational costs were spiking to maintain latency acceptable and availability decent.
 
 But I was so by blinded by magical light, that the feeling was these were just optimization problems. Caching partials and responses, using reverse proxies, abusing cache farms, replicating the DB, optimizing code, ... There would always be a technical solution for that.
 

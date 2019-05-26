@@ -2,6 +2,7 @@
 node_modules/
 !src/node_modules/
 artifacts/
+statics/
 dist/
 tmp/
 *.scss.d.ts
