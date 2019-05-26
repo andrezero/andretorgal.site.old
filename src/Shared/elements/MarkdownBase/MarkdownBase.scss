@@ -1,17 +1,6 @@
 @import '../Markdown/Markdown.mixins';
 
-@mixin markdown-base {
-  @include markdown;
-
-  & > :first-child {
-    margin-top: 0;
-  }
-
-  & > :last-child {
-    margin-bottom: 0;
-  }
-}
-
 .markdown-base {
+  @include markdown;
   @include markdown-base;
 }

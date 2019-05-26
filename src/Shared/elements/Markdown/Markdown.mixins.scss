@@ -8,3 +8,15 @@
     list-style-type: none;
   }
 }
+
+@mixin markdown-base {
+  @include markdown;
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

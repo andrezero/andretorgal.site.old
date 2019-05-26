@@ -47,8 +47,12 @@ const renderer = (processor: unified.Processor, componentMap: MarkdownComponentM
 
   processor.use(rehypeReact, { createElement });
 
-  return (text: string): VFileContents => {
-    return processor().processSync(text).contents;
+  return (text: string): React.ReactElement => {
+    const node = (processor().processSync(text).contents as unknown) as React.ReactElement;
+    if (node.type === 'div') {
+      return node.props.children;
+    }
+    return node;
   };
 };
 
