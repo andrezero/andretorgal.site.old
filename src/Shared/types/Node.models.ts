@@ -5,14 +5,16 @@ export type Tag = string;
 export type NodeFeature = any;
 
 export interface DocMeta {
-  name: string;
-  content: string;
+  [name: string]: string;
 }
 
+export type DocMetaList = Array<{ name: string; content: string }>;
+
 export interface OpenGraphMeta {
-  property: string;
-  content: string;
+  [property: string]: string;
 }
+
+export type OgMetaList = Array<{ property: string; content: string }>;
 
 export interface NodeLink {
   type: string;
@@ -44,8 +46,8 @@ export interface NodeMeta {
   template: string;
   notes: string;
   classes: string;
-  doc: DocMeta[];
-  og: OpenGraphMeta[];
+  doc: DocMeta;
+  og: OpenGraphMeta;
   links: NodeLinks;
   assets: Asset[];
 }

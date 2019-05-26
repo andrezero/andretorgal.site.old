@@ -3,7 +3,16 @@ import { resolve as urlResolve } from 'url';
 import { stripAll } from './markdown';
 
 import { AssetLocator } from '../types/Asset.models';
-import { DocMeta, Node, NodeData, NodeMeta, NodeMetaDefaults, OpenGraphMeta } from '../types/Node.models';
+import {
+  DocMeta,
+  DocMetaList,
+  Node,
+  NodeData,
+  NodeMeta,
+  NodeMetaDefaults,
+  OgMetaList,
+  OpenGraphMeta
+} from '../types/Node.models';
 
 const metaType = (node: Node, def: string) => {
   const { meta } = node;
@@ -11,7 +20,7 @@ const metaType = (node: Node, def: string) => {
 
   const type = data.type || def;
 
-  og.push({ property: 'og:type', content: type });
+  og['og:type'] = type;
 };
 
 const metaDescription = (node: Node, defaultDescription: string) => {
@@ -28,9 +37,9 @@ const metaDescription = (node: Node, defaultDescription: string) => {
     description = stripAll(content); // @todo truncate
   }
 
-  doc.push({ name: 'description', content: description });
-  doc.push({ name: 'twitter:description', content: description });
-  og.push({ property: 'og:description', content: description });
+  doc.description = description;
+  doc['twitter:description'] = description;
+  og['og:description'] = description;
 };
 
 const metaAuthor = (node: Node, defaultAuthor: string) => {
@@ -39,7 +48,7 @@ const metaAuthor = (node: Node, defaultAuthor: string) => {
 
   const author = data.author || defaultAuthor;
 
-  doc.push({ name: 'author', content: author });
+  doc.author = author;
 };
 
 const metaUrl = (node: Node, baseUrl: string, canonicalUrl: string) => {
@@ -49,16 +58,16 @@ const metaUrl = (node: Node, baseUrl: string, canonicalUrl: string) => {
   const url = urlResolve(baseUrl, node.path);
   const canonical = urlResolve(canonicalUrl, node.path);
 
-  og.push({ property: 'og:url', content: url });
-  doc.push({ name: 'canonical', content: canonical });
+  og['og:url'] = url;
+  doc.canonical = canonical;
 };
 
 const metaKeywords = (node: Node) => {
   const { meta } = node;
   const { doc } = meta;
 
-  if (node.tags) {
-    doc.push({ name: 'keywords', content: node.tags.join(', ') });
+  if (node.tags.length) {
+    doc.keywords = node.tags.join(', ');
   }
 };
 
@@ -74,8 +83,30 @@ const metaImage = (node: Node, locator: AssetLocator, defaultImage: string) => {
     image = locator.url(assets[0], 'image.medium');
   }
 
-  og.push({ property: 'og:image', content: image });
-  doc.push({ name: 'twitter:image:src', content: image });
+  og['og:image'] = image;
+  doc['twitter:image:src'] = image;
+};
+
+const sortDocMetaList = (list: DocMetaList): DocMetaList => {
+  return list.sort((a: DocMeta, b: DocMeta) => {
+    if (a.name > b.name) {
+      return 1;
+    } else if (a.name < b.name) {
+      return -1;
+    }
+    return 0;
+  });
+};
+
+const sortOgMetaList = (list: OgMetaList): OgMetaList => {
+  return list.sort((a: OpenGraphMeta, b: OpenGraphMeta) => {
+    if (a.property > b.property) {
+      return 1;
+    } else if (a.property < b.property) {
+      return -1;
+    }
+    return 0;
+  });
 };
 
 export const newMeta = (
@@ -89,18 +120,18 @@ export const newMeta = (
   updated: Date,
   data?: NodeData
 ): NodeMeta => {
-  const doc: DocMeta[] = [];
-  const og: OpenGraphMeta[] = [];
+  const doc: DocMeta = {};
+  const og: OpenGraphMeta = {};
 
   const createdStr = created.toISOString();
   const updatedStr = updated.toISOString();
 
-  og.push({ property: 'og:title', content: title });
-  doc.push({ name: 'twitter:title', content: title });
+  og['og:title'] = title;
+  doc['twitter:title'] = title;
 
-  doc.push({ name: 'created', content: createdStr });
+  doc.created = createdStr;
   if (createdStr !== updatedStr) {
-    doc.push({ name: 'updated', content: updatedStr });
+    doc.updated = updatedStr;
   }
 
   return {
@@ -131,4 +162,18 @@ export const resolveNodeMeta = (
   metaUrl(node, metaDefaults.baseUrl, metaDefaults.canonicalUrl);
   metaKeywords(node);
   metaImage(node, assetLocator, metaDefaults.image);
+};
+
+export const docMetaToArray = (doc: DocMeta): DocMetaList => {
+  const list = Object.keys(doc)
+    .filter(key => !!doc[key])
+    .map(key => ({ name: key, content: doc[key] }));
+  return sortDocMetaList(list);
+};
+
+export const ogMetaToArray = (og: OpenGraphMeta): OgMetaList => {
+  const list = Object.keys(og)
+    .filter(key => !!og[key])
+    .map(key => ({ property: key, content: og[key] }));
+  return sortOgMetaList(list);
 };

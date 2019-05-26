@@ -27,6 +27,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [x] fix noselect missing in some navigation and meta
   - [x] fix meta list item is not picking up the right component
   - [x] exclude `home/`, `media/`, `feed/`, and `tags/` from feed, as they pick up tags from the listed items
+  - [x] fix empty/repeated meta tags: refactor node meta tag objects to dicts, convert to array just before rendering
   - [ ] add banners to drafts and staging
   - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)
   - [ ] fix style suspense fallback loading component

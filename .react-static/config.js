@@ -48,13 +48,13 @@ export const configure = options => {
   const sourceLoader = async () => loadSources(stage, assetLocator, assetPresets, metaDefaults);
 
   const robots = stage === 'prod' ? 'index,follow' : 'noindex';
-  const metaTags = [
-    { name: 'robots', value: robots },
-    { name: 'application-name', value: 'andretorgal.com' },
-    { name: 'generator', value: 'react-static' },
-    { name: 'copyright', value: 'Copyright 2019 André Torgal' },
-    { name: 'twitter:site', value: '@andrezero' }
-  ];
+  const metaTags = {
+    robots: robots,
+    'application-name': 'andretorgal.com',
+    generator: 'react-static',
+    copyright: 'Copyright 2019 André Torgal',
+    'twitter:site': '@andrezero'
+  };
   const siteData = {
     title: 'André Torgal',
     metaTags
