@@ -17,6 +17,7 @@ echo "----- sync dist"
 aws s3 sync dist/ s3://prod-site-andretorgal-com/ \
   --exclude "*.json" \
   --exclude "*.xml" \
+  --exclude "*.DS_Store*" \
   --acl public-read \
   --cache-control max-age=86400
 
@@ -30,5 +31,6 @@ aws s3 sync dist/ s3://prod-site-andretorgal-com/ \
 
 echo "----- sync statics"
 aws s3 sync statics/ s3://prod-statics-andretorgal-com/ \
+  --exclude "*.DS_Store*" \
   --acl public-read \
   --cache-control max-age=2592000

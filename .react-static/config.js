@@ -27,7 +27,7 @@ export const configure = options => {
     scan: [path.resolve('../andretorgal.assets')],
     statics: {
       shard: 1,
-      dir: path.resolve('../andretorgal.statics'),
+      dir: path.resolve('./statics'),
       url: staticsUrl[stage]
     }
   };

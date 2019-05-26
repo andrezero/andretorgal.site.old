@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "node -r ts-node/register node_modules/.bin/react-static start",
-    "serve-statics": "serve ../andretorgal.statics/ -p 3333",
+    "serve-statics": "serve statics/ -p 3333",
     "start": "concurrently --kill-others 'yarn serve-statics' 'yarn dev'",
     "clean": "find . -name '*.scss.d.ts' -type f -delete && rm -rf artifacts/ dist/ tmp/",
     "lint": "yarn lint-style && yarn lint-es && yarn lint-ts",

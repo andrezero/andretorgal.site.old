@@ -12,31 +12,19 @@ The done stuff is on the [changelog](./changelog) page.
 
 ## Now
 
-- [x] deploy to prod
-  - [x] setup staging buckets, cloudfront, cname
-  - [x] s3 sync in dev time
-  - [x] add a `!-- notes --` section to articles (stripped out in prod)
-  - [x] production build: strip notes & filter drafts
-  - [x] recreate separate buckets and distributions for staging/prod
-  - [x] render different custom metas depending on stage (e.g. robots)
-  - [x] add custom `robots.txt` to `dist/` folder depending on build stage
-  - [x] local deploy scripts
-  - [x] bounce andretorgal.com
-  - [x] create R53 > CF > S3 > redirection `www.andretorgal.com` to `andretorgal.com`
-
 ## Next
-
-- [ ] how to enable [gzip in Cloudfront?]([https://medium.com/faun/this-is-how-i-reduced-my-cloudfront-bills-by-80-a7b0dfb24128])
 
 - [ ] [sitemap](https://support.google.com/webmasters/answer/156184)
 
 - [ ] fix! a couple of 404 in feed
-- [ ] suspense fallback loading component
+- [ ] style suspense fallback loading component
+- [ ] replace link to top with javascript scroll to top, otherwise bottom of page stays as an entry in history
 
 - [ ] fix missing dropcaps style
 - [ ] fix markdown is rendering an extra div (definitely messing with first/last-child margin resets)
 - [ ] fix media list item in feed not rendering image
 - [ ] fix media list item shown as "asset"
+- [ ] fix empty tag list rendering empty `<ul>` is annoying for screen reading
 
 - [ ] continuous deployment with [gitlab](https://hackernoon.com/using-gitlab-ci-cd-to-auto-deploy-your-vue-js-application-to-aws-s3-9affe1eb3457)
 
