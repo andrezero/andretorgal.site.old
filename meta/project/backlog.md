@@ -32,7 +32,8 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [x] fix layout, section v spacing
   - [x] fix feed path filter was duh
   - [x] enhance link to top with javascript scroll to top, prevents bottom & top of page from both being entries in browser history
-  - [ ] add banners to drafts and staging
+  - [x] add banner to staging
+  - [ ] add banner to drafts
   - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)
   - [ ] fix style suspense fallback loading component
   - [ ] fix media pages not showing sources
@@ -41,6 +42,8 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [ ] replace utf chars with svg (external link and link to top)
 
 ## Next
+
+- [ ] new relic browser
 
 - [ ] continuous deployment with [gitlab](https://hackernoon.com/using-gitlab-ci-cd-to-auto-deploy-your-vue-js-application-to-aws-s3-9affe1eb3457)
 

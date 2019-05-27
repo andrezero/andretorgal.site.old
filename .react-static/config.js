@@ -57,6 +57,9 @@ export const configure = options => {
   };
   const siteData = {
     title: 'André Torgal',
+    stage,
+    baseUrl: baseUrl[stage],
+    canonicalUrl: baseUrl.prod,
     metaTags
   };
 

@@ -1,0 +1,30 @@
+#staging-banner {
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100vw;
+  padding: 0 10px;
+  color: #111;
+  background: hsl(58, 93%, 48%);
+  border: solid #111;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+
+  * {
+    display: inline-block;
+    margin: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  a {
+    color: #111;
+  }
+}

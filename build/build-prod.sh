@@ -3,8 +3,8 @@
 set -e
 set -o pipefail
 
-echo "----- sync statics"
-aws s3 sync s3://prod-statics-andretorgal-com/ statics/
+# echo "----- sync statics"
+# aws s3 sync s3://prod-statics-andretorgal-com/ statics/
 
 export DEBUG_NODES=1
 export DEBUG_ROUTES=1
