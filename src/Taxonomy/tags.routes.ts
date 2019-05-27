@@ -1,4 +1,4 @@
-import { dedupeTags, filterHasTag, newNode } from '../Shared/lib/nodes';
+import { dedupeTags, filterHasTag, filterNotPaths, newNode } from '../Shared/lib/nodes';
 import { newRoute } from '../Shared/lib/routes';
 import { Node } from '../Shared/types/Node.models';
 import { PageNode } from '../Shared/types/Page.models';
@@ -11,6 +11,7 @@ import { TagTemplateRouteData } from './templates/Tag/TagTemplate.component';
 import { TagsTemplateRouteData } from './templates/Tags/TagsTemplate.component';
 
 const TOP_TAG_COUNT = 5;
+const EXCLUDE_PATHS = ['/', '/tags', '/medias', '/feed'];
 
 const tagRoute = (context: RouteContext, tag: TagNode, nodes: Node[]): Route => {
   return newRoute<TagTemplateRouteData>(context, tag, {
@@ -45,8 +46,10 @@ interface Data {
 }
 
 export const buildRoutes = async (context: RouteContext, data: Data): Promise<Route[]> => {
+  const excludeFilter = filterNotPaths(EXCLUDE_PATHS);
   const tagRoutes = data.tags.map(tag => {
-    const taggedNodes = data.nodes.filter(filterHasTag(tag.title));
+    const tagFilter = filterHasTag(tag.title);
+    const taggedNodes = data.nodes.filter(node => excludeFilter(node) && tagFilter(node));
     return tagRoute(context, tag, taggedNodes);
   });
 

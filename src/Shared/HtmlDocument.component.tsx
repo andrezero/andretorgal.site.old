@@ -1,4 +1,5 @@
 import * as React from 'React';
+import { resolve as urlResolve } from 'url';
 
 import { StagingBanner } from './elements/StagingBanner/StagingBanner.component';
 
@@ -26,7 +27,7 @@ export const htmlDocument = (context: Context) => {
   const { Html, Head, Body, children, state } = context;
   const { siteData, renderMeta, routeInfo, staging } = state;
   const className = (routeInfo && routeInfo.data && routeInfo.data.className) || '';
-  const href = staging ? `${siteData.canonicalUrl}/${routeInfo.path}` : '';
+  const href = staging ? urlResolve(siteData.canonicalUrl, routeInfo.path) : '';
   return (
     <Html lang="en-US">
       <Head>

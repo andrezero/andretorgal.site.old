@@ -36,6 +36,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [x] add banner to drafts
   - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)
   - [x] style suspense fallback loading component
+  - [x] fix staging, link to prod was broken
   - [ ] fix media pages not showing sources
   - [x] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
   - [x] `ResponsiveImg` load on scroll into view
@@ -149,7 +150,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 - [ ] svg trickery
   - [ ] via [postcss](https://github.com/jonathantneal/postcss-write-svg)
 
-## Learn/Experiment
+## Read/Learn/Experiment
 
 - [ ] Ayy1: [On demand annoucements](https://github.com/Heydon/on-demand-live-region)
 - [ ] Microformats
@@ -158,4 +159,4 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 - [ ] React Portals - a first-class way to render children into a dom node
       that exists outside the dom hierarchy of the parent component.
 - [ ] React ErrorBoundary
-- [ ] [Image optimisation with HOC](https://medium.com/grailed-engineering/image-optimization-using-higher-order-components-f401e6b4e1b1)
+- [ ] [prefrocks](https://perf.rocks/)
