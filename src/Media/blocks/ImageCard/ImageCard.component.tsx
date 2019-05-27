@@ -22,18 +22,16 @@ export const ImageCard: React.StatelessComponent<Props> = ({ node, level = 2, fo
   const header = (
     <>
       <NodeDate date={node.created} />
-      <Tag className="node-title">
-        <Link href={node.path}>{node.title}</Link>
-      </Tag>
+      <Tag className="node-title">{node.title}</Tag>
     </>
   );
   const profiles = ['image.small', 'image.medium', 'image.large'];
   const draft = hasTag(node, 'draft');
   return (
     <BaseCard className="media-image-card" header={header} footer={footer} href={node.path} draft={draft}>
-      <Link className="image" href={node.path}>
+      <div className="image">
         <NodeImg node={node} src={node.meta.asset.url} profiles={profiles} />
-      </Link>
+      </div>
       <NodeMarkdown node={node} strip={true}>
         {node.abstract}
       </NodeMarkdown>

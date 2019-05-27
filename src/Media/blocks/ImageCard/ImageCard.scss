@@ -10,7 +10,6 @@
 
   .contents {
     @include rhythm-v-compact;
-    background-color: color('bright', 2);
   }
 
   header,
@@ -30,14 +29,19 @@
   }
 
   .image {
-    display: block;
-
     @include breakpoint-compact {
-      padding: 0 gap('large') gap('large');
+      padding: 0 gap('base') gap('huge');
     }
   }
 
   .node-markdown {
     @include spacing-v;
+    color: var(--root-scheme-fg);
+
+    @include breakpoint-compact {
+      margin-top: gap('large', -1);
+      padding-top: 0;
+      padding-bottom: gap('huge');
+    }
   }
 }
