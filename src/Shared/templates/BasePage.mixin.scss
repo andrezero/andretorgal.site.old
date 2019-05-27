@@ -3,6 +3,10 @@
 
 @mixin base-page {
   section {
+    margin-bottom: gap('huge');
+  }
+
+  > section:first-of-type {
     padding-top: gap('huge');
   }
 

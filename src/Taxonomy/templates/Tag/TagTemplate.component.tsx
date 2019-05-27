@@ -32,6 +32,9 @@ export const TagTemplate: React.StatelessComponent<Props> = ({ tag, nodes }) => 
 
       <section className="container">
         <TagItem tag={tag} />
+      </section>
+
+      <section className="container">
         <h2>All items under {title}</h2>
         <NodeList nodes={nodes} level={3} />
       </section>

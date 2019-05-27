@@ -15,16 +15,10 @@
   }
 
   .node-title {
-    @include text-truncate;
     display: flex;
     align-items: center;
     margin: 0;
     font-size: responsive-type-size('h2');
-  }
-
-  .node-markdown {
-    margin-bottom: gap('small');
-    padding-top: gap('small');
   }
 
   .tag-count {
@@ -32,5 +26,14 @@
     flex-shrink: 0;
     font-size: responsive-type-size('h3');
     color: color('secondary', 'bg');
+  }
+
+  .hashtag {
+    @include text-truncate;
+  }
+
+  .node-markdown {
+    margin-bottom: gap('small');
+    padding-top: gap('small');
   }
 }
