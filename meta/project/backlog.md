@@ -28,6 +28,9 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [x] fix meta list item is not picking up the right component
   - [x] exclude `home/`, `media/`, `feed/`, and `tags/` from feed, as they pick up tags from the listed items
   - [x] fix empty/repeated meta tags: refactor node meta tag objects to dicts, convert to array just before rendering
+  - [x] fix tag page, tag count truncated
+  - [x] fix layout, section v spacing
+  - [x] fix feed path filter was duh
   - [ ] add banners to drafts and staging
   - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)
   - [ ] fix style suspense fallback loading component
@@ -35,6 +38,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [ ] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
   - [ ] `ResponsiveImg` load on scroll into view
   - [ ] replace link to top with javascript scroll to top, otherwise bottom of page stays as an entry in history
+  - [ ] replace utf chars with svg (external link and link to top)
 
 ## Next
 
