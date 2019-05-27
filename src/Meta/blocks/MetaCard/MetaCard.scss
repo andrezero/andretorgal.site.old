@@ -6,12 +6,6 @@
   @include base-card;
   @include meta-node-style;
 
-  .contents {
-    background-color: color('bright', 0);
-    border-left-color: transparent;
-    border-right-color: transparent;
-  }
-
   .last-updated {
     @include type-small;
     margin: 0 0 gap('medium');
@@ -24,12 +18,5 @@
   .markdown-base {
     margin-bottom: gap('base');
     line-height: var(--root-type-heights-small);
-  }
-
-  @include breakpoint-compact {
-    .contents {
-      border-left-color: color('base', 'edge');
-      border-right-color: color('base', 'edge');
-    }
   }
 }

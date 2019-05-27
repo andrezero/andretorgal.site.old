@@ -33,7 +33,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [x] fix feed path filter was duh
   - [x] enhance link to top with javascript scroll to top, prevents bottom & top of page from both being entries in browser history
   - [x] add banner to staging
-  - [ ] add banner to drafts
+  - [x] add banner to drafts
   - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)
   - [ ] fix style suspense fallback loading component
   - [ ] fix media pages not showing sources
@@ -41,7 +41,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [ ] `ResponsiveImg` load on scroll into view
   - [ ] replace utf chars with svg (external link and link to top)
   - [x] refactor details and cards; introducing node type mixins
-  - [ ] refactor schemes
+  - [x] refactor schemes
 
 ## Next
 

@@ -21,10 +21,10 @@
   .post-abstract {
     padding-bottom: gap('medium');
     margin-bottom: gap('huge');
-    color: color('base', 'muted');
+    color: var(--root-scheme-muted);
     font-size: responsive-type-size('medium');
     font-style: italic;
-    border-bottom: 1px solid color('base', 'dim');
+    border-bottom: 1px solid var(--root-scheme-dim);
 
     p {
       margin: gap('base') 0;
@@ -38,6 +38,6 @@
     padding-right: gap('small', 1.5);
     font-size: 350%;
     line-height: 0.9;
-    color: color('base', 'muted');
+    color: var(--root-scheme-muted);
   }
 }

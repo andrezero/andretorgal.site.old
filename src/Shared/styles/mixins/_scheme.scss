@@ -2,76 +2,71 @@
 @import '../lib/vars/vars-declare.mixin';
 @import '../settings';
 
-$root-scheme-base: vars-from-map('root-scheme-base', color-group('base'));
-$root-scheme-feature: vars-from-map('root-scheme-feature', color-group('feature'));
-$root-scheme-primary: vars-from-map('root-scheme-primary', color-group('primary'));
-$root-scheme-secondary: vars-from-map('root-scheme-secondary', color-group('secondary'));
-
 @mixin scheme-root {
-  @include vars-declare($root-scheme-base);
-  @include vars-declare($root-scheme-feature);
-  @include vars-declare($root-scheme-primary);
-  @include vars-declare($root-scheme-secondary);
+  $root-scheme: vars-from-map('root-scheme', color-group('base'));
+  @include vars-declare($root-scheme);
 }
 
 @mixin scheme-base {
-  color: var(--root-scheme-base-fg);
-  background-color: var(--root-scheme-base-bg);
+  @include scheme-root;
+
+  color: var(--root-scheme-fg);
+  background-color: var(--root-scheme-bg);
 
   a {
-    color: var(--root-scheme-base-a);
+    color: var(--root-scheme-a);
     font-weight: var(--root-type-weights-bold);
 
     &:hover {
-      color: var(--root-scheme-base-active);
+      color: var(--root-scheme-active);
     }
-  }
-
-  em {
-    color: var(--root-scheme-base-alt);
   }
 }
 
 @mixin scheme-feature {
-  color: var(--root-scheme-feature-fg);
-  background-color: var(--root-scheme-feature-bg);
+  $scheme: vars-from-map('root-scheme', color-group('feature'));
+  @include vars-declare($scheme);
+
+  color: var(--root-scheme-fg);
+  background-color: var(--root-scheme-bg);
 
   a {
-    color: var(--root-scheme-feature-a);
-    text-decoration: none;
+    color: var(--root-scheme-a);
 
     &:hover {
-      color: var(--root-scheme-feature-active);
+      color: var(--root-scheme-active);
     }
   }
 }
 
 @mixin scheme-primary {
-  color: var(--root-scheme-primary-fg);
-  background-color: var(--root-scheme-primary-bg);
+  $scheme: vars-from-map('root-scheme', color-group('primary'));
+  @include vars-declare($scheme);
+
+  color: var(--root-scheme-fg);
+  background-color: var(--root-scheme-bg);
 
   a {
-    color: var(--root-scheme-primary-a);
-    text-decoration: none;
+    color: var(--root-scheme-a);
 
     &:hover {
-      color: var(--root-scheme-primary-active);
-      text-decoration: underline;
+      color: var(--root-scheme-active);
     }
   }
 }
 
 @mixin scheme-secondary {
-  color: var(--root-scheme-secondary-fg);
-  background-color: var(--root-scheme-secondary-bg);
+  $scheme: vars-from-map('root-scheme', color-group('secondary'));
+  @include vars-declare($scheme);
+
+  color: var(--root-scheme-fg);
+  background-color: var(--root-scheme-bg);
 
   a {
-    color: var(--root-scheme-secondary-a);
-    text-decoration: none;
+    color: var(--root-scheme-a);
 
     &:hover {
-      color: var(--root-scheme-secondary-active);
-      text-decoration: underline;
+      color: var(--root-scheme-active);
     }
   }
 }

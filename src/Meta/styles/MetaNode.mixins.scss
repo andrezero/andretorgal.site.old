@@ -1,11 +1,21 @@
 @import '../../Shared/styles/mixins/scheme';
 
 @mixin meta-node-scheme {
-  background-color: color('bright', 0);
+  background-color: color('bright', 5);
 }
 
 @mixin meta-node-style {
   .contents {
     @include meta-node-scheme;
+    border: 1px dashed var(--root-scheme-edge);
+    border-left-width: 0px;
+    border-right-width: 0px;
+  }
+
+  @include breakpoint-compact {
+    .contents {
+      border-left-width: 1px;
+      border-right-width: 1px;
+    }
   }
 }

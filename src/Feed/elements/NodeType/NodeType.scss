@@ -9,9 +9,8 @@
     @include type-small;
     @include type-alt;
     @include noselect;
-
-    color: color('base', 'alt');
     padding: gap('tiny') gap('base');
+    color: var(--root-scheme-alt);
     border-radius: gap('small');
   }
 }

@@ -7,8 +7,8 @@
   display: inline-block;
   height: 1em;
   width: 1em;
-  border: 0.05em solid color('base', 'fg');
-  box-shadow: inset 0 0 color('base', 'fg');
+  border: 0.05em solid var(--root-scheme-muted);
+  box-shadow: inset 0 0 var(--root-scheme-muted);
   border-radius: 0.15em;
 
   input {
@@ -23,7 +23,7 @@
       left: -0.08em;
       width: 0.5em;
       height: 0.75em;
-      border: 0.1em solid color('base', 'fg');
+      border: 0.1em solid var(--root-scheme-muted);
       border-top-color: transparent;
       border-left-color: transparent;
       transform: rotate(40deg);

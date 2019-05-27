@@ -4,6 +4,7 @@ import { BaseCard } from '../../../Shared/blocks/BaseCard/BaseCard.component';
 import { Link } from '../../../Shared/elements/Link/Link.component';
 import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
 import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
+import { NodeLastUpdated } from '../../../Shared/elements/NodeLastUpdated/NodeLastUpdated.component';
 import { ReadMore } from '../../../Shared/elements/ReadMore/ReadMore.component';
 import { hasTag } from '../../../Shared/lib/nodes';
 
@@ -24,9 +25,7 @@ export const MetaCard: React.StatelessComponent<Props> = ({ node, level = 2, foo
       <Tag className="node-title">
         <Link href={node.path}>{node.title}</Link>
       </Tag>
-      <p className="last-updated">
-        Last updated <NodeDate date={node.updated} />
-      </p>
+      <NodeLastUpdated node={node} />
     </>
   );
   const draft = hasTag(node, 'draft');

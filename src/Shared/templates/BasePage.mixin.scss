@@ -1,7 +1,7 @@
 @import '../styles/mixins/layout';
 @import '../styles/mixins/type';
 
-@mixin base-page {
+@mixin -page {
   section {
     margin-bottom: gap('huge');
   }
@@ -10,13 +10,24 @@
     padding-top: gap('huge');
   }
 
+  .page-title {
+    @include heading-1;
+    margin-top: 0;
+  }
+}
+
+@mixin base-page {
+  @include -page;
+
   .container {
     @include container-compact;
   }
+}
 
-  .page-title {
-    @include heading-1;
+@mixin wide-page {
+  @include -page;
 
-    margin-top: 0;
+  .container {
+    @include container;
   }
 }

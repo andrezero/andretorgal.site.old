@@ -3,6 +3,7 @@
 @import '../../../Shared/styles/mixins/type';
 
 .site-nav {
+  @include styled-link;
   margin: 0 0 gap('small');
   margin-left: gap('small', -1);
 

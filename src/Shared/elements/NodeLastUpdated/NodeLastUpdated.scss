@@ -1,0 +1,9 @@
+@import '../../styles/mixins/scheme';
+
+.node-last-updated {
+  color: var(--root-scheme-muted);
+
+  .node-date {
+    color: var(--root-scheme-muted);
+  }
+}

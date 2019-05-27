@@ -23,7 +23,7 @@
     width: $size;
     height: $size;
     border-radius: 3px;
-    border: 1px solid color('base', 'edge');
+    border: 1px solid var(--root-scheme-edge);
     background: $bg-bright;
   }
 

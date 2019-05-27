@@ -9,7 +9,7 @@
     @include type-alt;
     font-style: initial;
     font-weight: type-weight('heavy');
-    color: color('primary', 'bg');
+    color: var(--root-scheme-alt);
   }
 
   .node-published,

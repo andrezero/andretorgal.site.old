@@ -112,6 +112,16 @@ $scalars: settings('type-scalars');
   font-weight: var(--root-type-weights-medium);
 }
 
+@mixin styled-link {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 @mixin copy {
   h1 {
     @include heading-1;
@@ -127,6 +137,10 @@ $scalars: settings('type-scalars');
 
   h4 {
     @include heading-4;
+  }
+
+  em {
+    color: var(--root-scheme-alt);
   }
 }
 

@@ -50,7 +50,7 @@
   h3,
   h4,
   p {
-    @include scheme-secondary;
+    background-color: var(--root-scheme-bg);
     display: inline;
   }
 

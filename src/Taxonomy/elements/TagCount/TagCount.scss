@@ -1,9 +1,10 @@
 @import '../../../Shared/styles/mixins/type';
 @import '../../../Shared/styles/mixins/layout';
 @import '../../../Shared/styles/mixins/scheme';
+@import '../../styles/TagNode.mixins.scss';
 
 .tag-count {
-  @include scheme-secondary;
+  @include tag-node-scheme;
   @include type-deco;
   min-width: 1.2em;
   height: 1.15em;
@@ -12,6 +13,6 @@
   line-height: 1.15em;
   text-align: center;
   font-weight: type-weight('heavy');
-  color: color('secondary', 'alt');
+  color: var(--root-scheme-alt);
   border-radius: gap('tiny');
 }

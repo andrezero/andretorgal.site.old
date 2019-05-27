@@ -6,7 +6,7 @@
   @include reset-list;
   @include scheme-feature;
 
-  border-bottom: 1px solid var(--root-scheme-feature-alt);
+  border-bottom: 1px solid var(--root-scheme-alt);
 
   .container {
     @include container;

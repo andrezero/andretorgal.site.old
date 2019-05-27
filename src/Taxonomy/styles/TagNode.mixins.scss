@@ -4,6 +4,12 @@
   @include scheme-secondary;
 }
 
+@mixin tag-color-inverse {
+  @include scheme-secondary;
+  color: var(--root-scheme-bg);
+  background-color: var(--root-scheme-fg);
+}
+
 @mixin tag-node-style {
   .contents {
     @include tag-node-scheme;

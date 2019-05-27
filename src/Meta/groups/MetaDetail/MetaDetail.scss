@@ -6,6 +6,8 @@
 
   .contents {
     @include rhythm-v;
+    @include spacing-v;
+    @include spacing-h;
   }
 
   .node-parent {
@@ -13,6 +15,6 @@
   }
 
   .meta-abstract {
-    @include rhythm-v;
+    @include rhythm-v-compact;
   }
 }

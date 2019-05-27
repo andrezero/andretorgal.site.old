@@ -9,7 +9,7 @@
   @include scheme-secondary;
   @include type-small;
   @include type-alt;
-
+  @include styled-link;
   line-height: var(--root-type-heights-large);
   padding-top: gap('huge');
   padding-bottom: gap('large');

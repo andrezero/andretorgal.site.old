@@ -1,7 +1,11 @@
 @import '../../../Shared/templates/BasePage.mixin';
+@import '../../styles/MetaNode.mixins.scss';
 
 .meta-page {
-  @include base-page;
+  @include wide-page;
+  @include meta-node-scheme;
 
-  background-color: color('bright', 0);
+  .node-parent {
+    @include rhythm-v-compact;
+  }
 }

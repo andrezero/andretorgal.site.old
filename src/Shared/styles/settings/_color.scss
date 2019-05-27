@@ -3,7 +3,7 @@ $color-primitives: (
   primary-bright: hsl(1, 68%, 38%),
   primary-contrast: hsl(39, 15%, 90%),
   secondary: hsl(205, 18%, 20%),
-  secondary-bright: hsl(205, 18%, 70%),
+  secondary-bright: hsl(205, 18%, 90%),
   secondary-contrast: hsl(205, 4%, 79%),
   feature-bg: hsl(205, 22%, 83%),
   feature-alt: hsl(205, 22%, 59%),
@@ -41,6 +41,7 @@ $c: $color-primitives;
 $color-groups: (
   base: (
     bg: map-get($c, 'bright'),
+    bg-alt: map-get($c, 'dark'),
     fg: map-get($c, 'dark'),
     a: map-get($c, 'interactive'),
     active: map-get($c, 'interactive-on'),
@@ -51,24 +52,36 @@ $color-groups: (
   ),
   feature: (
     bg: map-get($c, 'feature-bg'),
+    bg-alt: map-get($c, 'feature-bg'),
     fg: map-get($c, 'dark'),
     a: map-get($c, 'interactive'),
     active: map-get($c, 'interactive-on'),
-    alt: map-get($c, 'feature-alt')
+    alt: map-get($c, 'feature-alt'),
+    edge: map-get($c, 'muted'),
+    dim: map-get($c, 'dim'),
+    muted: map-get($c, 'muted')
   ),
   primary: (
     bg: map-get($c, 'primary'),
+    bg-alt: map-get($c, 'primary-contrast'),
     fg: map-get($c, 'primary-contrast'),
     a: map-get($c, 'primary-contrast'),
     active: map-get($c, 'bright'),
-    alt: map-get($c, 'bright')
+    alt: map-get($c, 'bright'),
+    edge: map-get($c, 'muted'),
+    dim: map-get($c, 'dim'),
+    muted: map-get($c, 'muted')
   ),
   secondary: (
     bg: map-get($c, 'secondary'),
+    bg-alt: map-get($c, 'secondary-bright'),
     fg: map-get($c, 'secondary-contrast'),
     a: map-get($c, 'interactive-bright'),
     active: map-get($c, 'interactive-on'),
-    alt: map-get($c, 'bright')
+    alt: map-get($c, 'bright'),
+    edge: map-get($c, 'muted'),
+    dim: map-get($c, 'secondary-bright'),
+    muted: map-get($c, 'muted')
   ),
   bright: (
     0: map-get($c, 'variants-0-bright'),

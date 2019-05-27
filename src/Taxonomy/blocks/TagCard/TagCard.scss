@@ -23,10 +23,10 @@
   }
 
   .tag-count {
-    @include scheme-base;
+    @include tag-color-inverse;
     flex-shrink: 0;
     font-size: responsive-type-size('h3');
-    color: color('secondary', 'bg');
+    background-color: var(--root-scheme-bg-alt);
   }
 
   .hashtag {
@@ -34,7 +34,10 @@
   }
 
   .node-markdown {
+    @include type-alt;
     margin-bottom: gap('small');
     padding-top: gap('small');
+    line-height: var(--root-line-height-large);
+    color: var(--root-scheme-bg-alt);
   }
 }

@@ -9,17 +9,22 @@
   .contents {
     @include rhythm-v-compact;
 
-    header {
-      display: flex;
-      align-items: baseline;
-      margin-bottom: gap('medium');
-    }
-
     .page-title {
       @include text-truncate;
       white-space: pre-wrap;
       margin: 0;
     }
+  }
+
+  header {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: gap('medium');
+  }
+
+  .node-markdown {
+    @include type-alt;
+    line-height: var(--root-line-height-large);
   }
 
   .tag-count {
