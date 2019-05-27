@@ -31,13 +31,13 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [x] fix tag page, tag count truncated
   - [x] fix layout, section v spacing
   - [x] fix feed path filter was duh
+  - [x] enhance link to top with javascript scroll to top, prevents bottom & top of page from both being entries in browser history
   - [ ] add banners to drafts and staging
   - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)
   - [ ] fix style suspense fallback loading component
   - [ ] fix media pages not showing sources
   - [ ] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
   - [ ] `ResponsiveImg` load on scroll into view
-  - [ ] replace link to top with javascript scroll to top, otherwise bottom of page stays as an entry in history
   - [ ] replace utf chars with svg (external link and link to top)
 
 ## Next
