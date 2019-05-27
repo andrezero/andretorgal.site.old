@@ -1,0 +1,11 @@
+@import '../../Shared/styles/mixins/scheme';
+
+@mixin tag-node-scheme {
+  @include scheme-secondary;
+}
+
+@mixin tag-node-style {
+  .contents {
+    @include tag-node-scheme;
+  }
+}

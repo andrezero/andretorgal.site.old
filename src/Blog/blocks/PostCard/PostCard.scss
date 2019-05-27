@@ -1,0 +1,17 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/blocks/BaseCard/BaseCard.mixin';
+@import '../../styles/PostNode.mixins.scss';
+
+.post-card {
+  @include base-card;
+  @include post-node-style;
+
+  .read-more {
+    margin-bottom: gap('small');
+  }
+
+  @include breakpoint-compact {
+    border-top-left-radius: gap('small');
+    border-top-right-radius: gap('small');
+  }
+}

@@ -1,0 +1,30 @@
+@import '../../styles/mixins/reset';
+@import '../../styles/mixins/layout';
+@import '../../styles/mixins/type';
+
+@mixin base-detail-block {
+  .contents {
+    display: block;
+  }
+
+  &.has-link {
+    .contents {
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin base-detail {
+  @include base-detail-block;
+  // @include rhythm-v;
+
+  // .contents {
+  //   @include spacing-h;
+  //   @include spacing-v;
+  //   @include rhythm-v-compact;
+  // }
+
+  // footer {
+  //   @include spacing-h;
+  // }
+}

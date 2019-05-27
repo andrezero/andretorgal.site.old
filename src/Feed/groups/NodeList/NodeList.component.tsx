@@ -3,7 +3,7 @@ import * as React from 'react';
 import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
 import { Node } from '../../../Shared/types/Node.models';
 
-import { NodeListItem } from '../../blocks/NodeListItem/NodeListItem.component';
+import { NodeCard } from '../../blocks/NodeCard/NodeCard.component';
 import { NodeType } from '../../elements/NodeType/NodeType.component';
 
 import './NodeList.scss';
@@ -23,7 +23,7 @@ export const NodeList: React.StatelessComponent<Props> = ({ nodes, level }) => {
             <NodeMeta node={node} />
           </>
         );
-        return <NodeListItem key={node.path} node={node} level={level} footer={footer} />;
+        return <NodeCard key={node.path} node={node} level={level} footer={footer} />;
       })}
     </div>
   );

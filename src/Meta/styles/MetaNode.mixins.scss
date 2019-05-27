@@ -1,0 +1,11 @@
+@import '../../Shared/styles/mixins/scheme';
+
+@mixin meta-node-scheme {
+  background-color: color('bright', 0);
+}
+
+@mixin meta-node-style {
+  .contents {
+    @include meta-node-scheme;
+  }
+}

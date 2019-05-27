@@ -4,10 +4,16 @@
 
 .node-notes {
   @include rhythm-v-compact;
-  background-color: color('bright', 0);
-  padding: gap('small');
+  @include spacing-h;
+  padding-top: gap('base');
+  padding-bottom: gap('base');
   font-size: responsive-type-size('small');
   line-height: var(--root-type-heights-small);
+  color: #111;
+  background: hsl(58, 93%, 48%);
+  border: dashed #111 0px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
 
   h3 {
     @include type-alt;

@@ -1,0 +1,18 @@
+@import '../../Shared/styles/mixins/scheme';
+
+@mixin page-node-scheme {
+  border: 1px solid color('base', 'edge');
+  border-left-color: transparent;
+  border-right-color: transparent;
+
+  @include breakpoint-compact {
+    border-left-color: color('base', 'edge');
+    border-right-color: color('base', 'edge');
+  }
+}
+
+@mixin page-node-style {
+  .contents {
+    @include page-node-scheme;
+  }
+}

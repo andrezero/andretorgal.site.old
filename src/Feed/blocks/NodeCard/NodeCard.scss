@@ -1,0 +1,11 @@
+@import '../../../Shared/blocks/BaseCard/BaseCard.mixin';
+
+.node-card {
+  @include base-card;
+
+  header h2,
+  header h3 {
+    @include heading-2;
+    margin-top: 0;
+  }
+}

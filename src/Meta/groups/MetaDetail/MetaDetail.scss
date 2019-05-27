@@ -1,0 +1,18 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../styles/MetaNode.mixins.scss';
+
+.meta-detail {
+  @include meta-node-style;
+
+  .contents {
+    @include rhythm-v;
+  }
+
+  .node-parent {
+    @include rhythm-v-compact;
+  }
+
+  .meta-abstract {
+    @include rhythm-v;
+  }
+}

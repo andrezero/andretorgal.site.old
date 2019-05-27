@@ -1,7 +1,9 @@
 $space-unit: 10;
 
 $space-gaps: (
-  huge: 5,
+  giga: 12,
+  mega: 8.5,
+  huge: 5.5,
   large: 3,
   medium: 2,
   base: 1,
@@ -13,12 +15,14 @@ $-container-base: 37;
 $-container-compact: 72;
 $-container-small: 80;
 $-container-medium: 120;
-$-container-large: 180;
+$-container-large: 160;
+$-container-huge: 200;
 
 $-gap-base: map-get($space-gaps, 'base');
 $-gap-small: map-get($space-gaps, 'medium');
 $-gap-medium: map-get($space-gaps, 'large');
 $-gap-large: map-get($space-gaps, 'huge');
+$-gap-huge: map-get($space-gaps, 'mega');
 
 $space-containers: (
   base: (
@@ -40,6 +44,10 @@ $space-containers: (
   large: (
     width: $-container-large,
     gap: $-gap-large
+  ),
+  huge: (
+    width: $-container-huge,
+    gap: $-gap-huge
   )
 );
 
@@ -55,5 +63,8 @@ $space-breakpoints: (
   ) * $space-unit,
   large: (
     $-container-medium + $-gap-medium * 2
+  ) * $space-unit,
+  huge: (
+    $-container-large + $-gap-large * 2
   ) * $space-unit
 );

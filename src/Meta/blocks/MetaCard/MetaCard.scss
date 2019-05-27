@@ -1,0 +1,35 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/blocks/BaseCard/BaseCard.mixin';
+@import '../../styles/MetaNode.mixins.scss';
+
+.meta-card {
+  @include base-card;
+  @include meta-node-style;
+
+  .contents {
+    background-color: color('bright', 0);
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+
+  .last-updated {
+    @include type-small;
+    margin: 0 0 gap('medium');
+  }
+
+  .node-title {
+    margin-bottom: gap('tiny');
+  }
+
+  .markdown-base {
+    margin-bottom: gap('base');
+    line-height: var(--root-type-heights-small);
+  }
+
+  @include breakpoint-compact {
+    .contents {
+      border-left-color: color('base', 'edge');
+      border-right-color: color('base', 'edge');
+    }
+  }
+}

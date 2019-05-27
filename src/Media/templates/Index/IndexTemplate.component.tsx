@@ -10,7 +10,7 @@ import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component
 import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
 import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
 
-import { MediaListItem } from '../../blocks/MediaListItem/MediaListItem.component';
+import { MediaCard } from '../../blocks/MediaCard/MediaCard.component';
 import { MediaNode } from '../../types/Media.models';
 
 import './IndexTemplate.scss';
@@ -32,7 +32,7 @@ export const IndexTemplate: React.StatelessComponent<Props> = ({ page, medias })
 
         <ul className="media-list">
           {medias.map(media => (
-            <MediaListItem key={media.path} node={media} />
+            <MediaCard key={media.path} node={media} />
           ))}
         </ul>
       </section>

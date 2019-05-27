@@ -9,7 +9,7 @@ import { SiteFooter } from '../../../Site/blocks/SiteFooter/SiteFooter.component
 import { SiteHeader } from '../../../Site/blocks/SiteHeader/SiteHeader.component';
 import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component';
 
-import { MediaItem } from '../../groups/MediaItem/Mediatem.component';
+import { MediaDetail } from '../../groups/MediaDetail/MediaDetail.component';
 import { MediaNode } from '../../types/Media.models';
 
 import './PageTemplate.scss';
@@ -25,7 +25,9 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ media }) => {
     <Layout className="media-page" header={header} footer={footer}>
       <Head node={media} />
 
-      <MediaItem media={media} />
+      <section className="container">
+        <MediaDetail media={media} />
+      </section>
 
       <LinkToTop />
     </Layout>

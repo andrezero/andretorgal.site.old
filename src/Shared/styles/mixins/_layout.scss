@@ -78,14 +78,14 @@ $container-large: space-container('large');
 }
 
 @mixin rhythm-v {
-  margin-bottom: gap('large');
-
-  @include breakpoint-small {
-    margin-bottom: gap('huge');
-  }
+  margin-bottom: gap('huge');
 
   @include breakpoint-compact {
-    margin-bottom: gap('huge', 1.5);
+    margin-bottom: gap('mega');
+  }
+
+  @include breakpoint-large {
+    margin-bottom: gap('giga');
   }
 }
 

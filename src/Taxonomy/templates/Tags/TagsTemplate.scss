@@ -4,7 +4,7 @@
 .taxonomy-tags {
   @include base-page;
 
-  .tag-list-item {
+  .tag-card {
     margin-bottom: gap('small');
 
     @include breakpoint-small {

@@ -40,6 +40,8 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [ ] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
   - [ ] `ResponsiveImg` load on scroll into view
   - [ ] replace utf chars with svg (external link and link to top)
+  - [x] refactor details and cards; introducing node type mixins
+  - [ ] refactor schemes
 
 ## Next
 
@@ -52,8 +54,8 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 - [ ] poc: header colour switch (re-check class switching)
 - [ ] poc: minimalistic header
 
-- [ ] blog roll
-- [ ] add crono to changelog and to my story
+- [ ] feature: blog roll
+- [ ] feature: add crono to changelog and to my story
 
 - [ ] internal navigation
 
@@ -81,19 +83,16 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
     - [ ] navigation (breadcrumbs)
 
 - [ ] fix create/update dates (assets are getting the latest date)
-- [ ] node type should also be a tag
+- [ ] feature: node type should also be a tag
 - [ ] ui: responsively reposition dates along with node type, as well as meta and tags
 
 - [ ] a11y tooling: linting with [tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib) and run time analysis with [react-axe](https://github.com/dequelabs/react-axe)
 
-- [ ] footnotes
+- [ ] feature: footnotes
 
-- [ ] router [transition](https://reach.tech/router/example/animation)
+- [ ] improve: router [transition](https://reach.tech/router/example/animation)
 
-- [ ] contents/tag/personal.md
-- [x] contents/meta abstracts (include in page body)
-- [x] contents/page abstracts (include in hero if hero is on)
-- [ ] migrate experiments
+- [ ] content: /tags/personal
 
 - [ ] emojis in timeline
 - [ ] use icons in footer external links
@@ -136,10 +135,9 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 ### Puzzles
 
 - [ ] `react-static` [docs](https://github.com/nozzle/react-static/blob/master/meta/api.md#reloadClientData) mentions `reloadCliendData()` should be used to re-render when data changes, but I only got it to work by using the undocumented api `rebuildRoutes()`
-- [ ] `@reach/router` [anchor link support](https://github.com/reach/router/issues/235) and how to tame [focus and scroll on long content](https://github.com/reach/router/issues/62)
 - [ ] [Lighthouse](https://developers.google.com/web/tools/lighthouse/) seems to report time to first interaction thinking that the page is waiting for react to render (when in fact is just hydrating)
 
-### Spikes
+## Spikes
 
 - [ ] [mdx](https://mdxjs.com/advanced/typescript) how to have side by side (or plugged to) the unified, remark, rehype pipeline
 
@@ -150,7 +148,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 - [ ] svg trickery
   - [ ] via [postcss](https://github.com/jonathantneal/postcss-write-svg)
 
-### Learn/Experiment
+## Learn/Experiment
 
 - [ ] Ayy1: [On demand annoucements](https://github.com/Heydon/on-demand-live-region)
 - [ ] Microformats

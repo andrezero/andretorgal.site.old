@@ -1,0 +1,40 @@
+@import '../../../Shared/styles/mixins/reset';
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/scheme';
+@import '../../../Shared/styles/mixins/type';
+@import '../../../Shared/blocks/BaseCard/BaseCard.mixin';
+@import '../../styles/TagNode.mixins.scss';
+
+.tag-card {
+  @include base-card;
+  @include tag-node-style;
+
+  .contents {
+    padding-top: gap('small');
+    padding-bottom: gap('small');
+    padding-left: gap('medium');
+  }
+
+  .node-title {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: responsive-type-size('h2');
+  }
+
+  .tag-count {
+    @include scheme-base;
+    flex-shrink: 0;
+    font-size: responsive-type-size('h3');
+    color: color('secondary', 'bg');
+  }
+
+  .hashtag {
+    @include text-truncate;
+  }
+
+  .node-markdown {
+    margin-bottom: gap('small');
+    padding-top: gap('small');
+  }
+}

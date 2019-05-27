@@ -9,6 +9,10 @@
     position: relative;
   }
 
+  article {
+    @include rhythm-v;
+  }
+
   .node-type {
     position: absolute;
     top: gap('base', -1.5);

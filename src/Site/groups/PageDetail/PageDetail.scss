@@ -1,0 +1,12 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/type';
+@import '../../styles/PageNode.mixins.scss';
+
+.page-detail {
+  @include page-node-style;
+
+  .content {
+    @include spacing-h;
+    @include spacing-v;
+  }
+}

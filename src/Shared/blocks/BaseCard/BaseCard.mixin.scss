@@ -1,0 +1,35 @@
+@import '../../styles/mixins/reset';
+@import '../../styles/mixins/layout';
+@import '../../styles/mixins/type';
+
+@mixin base-card-block {
+  .contents {
+    display: block;
+  }
+
+  &.has-link {
+    .contents {
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin base-card {
+  @include base-card-block;
+
+  .contents {
+    @include spacing-h;
+    @include spacing-v;
+    @include rhythm-v-compact;
+  }
+
+  header h2,
+  header h3 {
+    @include heading-2;
+    margin-top: 0;
+  }
+
+  footer {
+    @include spacing-h;
+  }
+}

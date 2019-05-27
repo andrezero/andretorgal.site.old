@@ -1,9 +1,0 @@
-@import '../../../Shared/blocks/BaseListItem/BaseListItem.mixin';
-
-.media-list-item {
-  @include base-list-item;
-
-  .node-contents {
-    @include base-list-item-style;
-  }
-}

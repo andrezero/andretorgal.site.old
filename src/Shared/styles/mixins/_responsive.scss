@@ -4,6 +4,7 @@ $small: space-breakpoint('small');
 $medium: space-breakpoint('medium');
 $compact: space-breakpoint('compact');
 $large: space-breakpoint('large');
+$huge: space-breakpoint('huge');
 
 @mixin breakpoint-small {
   @media only screen and (min-width: #{$small}px) {
@@ -25,6 +26,12 @@ $large: space-breakpoint('large');
 
 @mixin breakpoint-large {
   @media only screen and (min-width: #{$large}px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-huge {
+  @media only screen and (min-width: #{$huge}px) {
     @content;
   }
 }

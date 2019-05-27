@@ -1,5 +1,10 @@
 @import '../../../Shared/styles/mixins/reset';
+@import '../../../Shared/styles/mixins/layout';
 
 .post-list {
   @include reset-list;
+
+  article {
+    @include rhythm-v;
+  }
 }

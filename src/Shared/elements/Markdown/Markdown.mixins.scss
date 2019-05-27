@@ -4,7 +4,7 @@
 @mixin markdown {
   @include copy;
 
-  .task-list-item {
+  .task-card {
     list-style-type: none;
   }
 }

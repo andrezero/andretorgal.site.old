@@ -58,6 +58,8 @@ Tasks from [my website](/about)'s [backlog](/meta/project/backlog), eventually d
   - [x] fix sronly not being rendered
   - [x] fix headings
   - [x] differentiate external links
+  - [x] contents/meta abstracts (include in page body)
+  - [x] contents/page abstracts (include in hero if hero is on)
 
   - [x] models: tags
   - [x] page tags

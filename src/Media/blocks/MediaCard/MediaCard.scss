@@ -1,0 +1,5 @@
+@import '../../../Shared/blocks/BaseCard/BaseCard.mixin';
+
+.media-card {
+  @include base-card;
+}

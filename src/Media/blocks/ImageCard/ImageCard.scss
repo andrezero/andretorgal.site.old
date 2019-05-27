@@ -1,0 +1,43 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/scheme';
+@import '../../../Shared/blocks/BaseCard/BaseCard.mixin';
+@import '../../styles/ImageNode.mixins.scss';
+
+.media-image-card {
+  @include base-card-block;
+  @include spacing-h-negative;
+  @include image-node-style;
+
+  .contents {
+    @include rhythm-v-compact;
+    background-color: color('bright', 2);
+  }
+
+  header,
+  .node-markdown,
+  footer {
+    @include spacing-h-positive;
+  }
+
+  header {
+    @include spacing-v;
+    overflow: hidden;
+  }
+
+  .node-title {
+    @include heading-2;
+    margin: 0;
+  }
+
+  .image {
+    display: block;
+
+    @include breakpoint-compact {
+      padding: 0 gap('large') gap('large');
+    }
+  }
+
+  .node-markdown {
+    @include spacing-v;
+  }
+}

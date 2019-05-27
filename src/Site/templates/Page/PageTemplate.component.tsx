@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { Head } from '../../../Shared/elements/Head/Head.component';
-import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
 import { PageNode } from '../../../Shared/types/Page.models';
@@ -10,6 +9,7 @@ import { RouteData } from '../../../Shared/types/Route.models';
 import { SiteFooter } from '../../blocks/SiteFooter/SiteFooter.component';
 import { SiteHeader } from '../../blocks/SiteHeader/SiteHeader.component';
 import { LinkToTop } from '../../elements/LinkToTop/LinkToTop.component';
+import { PageDetail } from '../../groups/PageDetail/PageDetail.component';
 
 import './PageTemplate.scss';
 
@@ -25,9 +25,7 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ page }) => {
       <Head node={page} />
 
       <section className="container">
-        <h1 className="page-title">{page.title}</h1>
-
-        <MarkdownBase>{page.content}</MarkdownBase>
+        <PageDetail page={page} />
       </section>
 
       <LinkToTop />

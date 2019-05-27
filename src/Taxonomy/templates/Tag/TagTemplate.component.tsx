@@ -12,7 +12,7 @@ import { LinkToTop } from '../../../Site/elements/LinkToTop/LinkToTop.component'
 
 import { NodeList } from '../../../Feed/groups/NodeList/NodeList.component';
 
-import { TagItem } from '../../groups/TagItem/TagItem.component';
+import { TagDetail } from '../../groups/TagDetail/TagDetail.component';
 import { TagNode } from '../../types/Tag.models';
 
 import './TagTemplate.scss';
@@ -31,7 +31,7 @@ export const TagTemplate: React.StatelessComponent<Props> = ({ tag, nodes }) => 
       <Head node={tag} title={title} />
 
       <section className="container">
-        <TagItem tag={tag} />
+        <TagDetail tag={tag} />
       </section>
 
       <section className="container">

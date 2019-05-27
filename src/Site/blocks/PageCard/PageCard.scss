@@ -1,0 +1,17 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/blocks/BaseCard/BaseCard.mixin';
+@import '../../styles/PageNode.mixins.scss';
+
+.page-card {
+  @include base-card;
+  @include page-node-style;
+
+  .node-title {
+    margin-bottom: gap('tiny');
+  }
+
+  .last-updated {
+    @include type-small;
+    margin: 0 0 gap('medium');
+  }
+}

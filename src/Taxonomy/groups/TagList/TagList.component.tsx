@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { TagListItem } from '../../blocks/TagListItem/TagListItem.component';
+import { TagCard } from '../../blocks/TagCard/TagCard.component';
 import { TagNode } from '../../types/Tag.models';
 
 import './TagList.scss';
@@ -14,7 +14,7 @@ export const TagList: React.StatelessComponent<Props> = ({ tags, level }) => {
   return (
     <div className="tag-list">
       {tags.map((tag: TagNode) => (
-        <TagListItem key={tag.path} node={tag} level={level} />
+        <TagCard key={tag.path} node={tag} level={level} />
       ))}
     </div>
   );

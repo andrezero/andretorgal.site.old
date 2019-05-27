@@ -1,0 +1,18 @@
+@import '../../Shared/styles/mixins/layout';
+@import '../../Shared/styles/mixins/scheme';
+@import '../../Shared/styles/mixins/type';
+
+@mixin image-node-scheme {
+  background-color: color('bright', 2);
+}
+
+@mixin image-node-style {
+  .contents {
+    @include image-node-scheme;
+  }
+
+  .node-date {
+    @include type-small;
+    display: block;
+  }
+}
