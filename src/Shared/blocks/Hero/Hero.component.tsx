@@ -24,7 +24,7 @@ export const Hero: React.StatelessComponent<Props> = ({ img, node, className, ch
       <div className="banner">
         <NodeImg node={node} src={img} profiles={profiles} pad={false} blurup={false} className="cover" />
       </div>
-      <div className="content">{children}</div>;
+      <div className="content">{children}</div>
     </section>
   );
 };

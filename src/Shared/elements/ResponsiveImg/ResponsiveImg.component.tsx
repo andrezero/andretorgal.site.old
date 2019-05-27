@@ -1,4 +1,6 @@
+import 'intersection-observer';
 import * as React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export type SrcSetItem = [string, string];
 
@@ -55,13 +57,23 @@ export const ResponsiveImg: React.StatelessComponent<Props> = ({ src, ratio, bg,
   const { defaultSrc, srcSet, sizes } = makeSrc(src);
   const style: React.CSSProperties = makePictureStyle(bg);
   const imgStyle: React.CSSProperties = makeImageStyle(ratio, style);
-  const handleImageLoaded = () => {
-    // console.log('loaded'!);
+  const handleImageLoaded = (ev: React.SyntheticEvent) => {
+    const picture = (ev.target as any).parentElement;
+    if (picture) {
+      picture.classList.add('is-loaded');
+    }
   };
+  const [ref, inView] = useInView({
+    threshold: 0
+  });
   return (
-    <picture className={`fluid ${className}`} style={style}>
-      {children}
-      <img sizes={sizes} srcSet={srcSet} src={defaultSrc} style={imgStyle} onLoad={handleImageLoaded} />
+    <picture ref={ref} className={`r-img ${className}`} style={style}>
+      {inView && (
+        <>
+          {children}
+          <img sizes={sizes} srcSet={srcSet} src={defaultSrc} style={imgStyle} onLoad={handleImageLoaded} />
+        </>
+      )}
     </picture>
   );
 };

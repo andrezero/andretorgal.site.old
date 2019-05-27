@@ -37,11 +37,12 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)
   - [x] style suspense fallback loading component
   - [ ] fix media pages not showing sources
-  - [ ] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
-  - [ ] `ResponsiveImg` load on scroll into view
+  - [x] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
+  - [x] `ResponsiveImg` load on scroll into view
   - [ ] replace utf chars with svg (external link and link to top)
   - [x] refactor details and cards; introducing node type mixins
   - [x] refactor schemes
+  - [ ] smooth scroll `scrollIntoView({block: 'end', behavior: 'smooth'});`
 
 ## Next
 
