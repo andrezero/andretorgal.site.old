@@ -1,0 +1,19 @@
+.site-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--root-type-families-alt);
+  font-style: italic;
+  font-size: 3rem;
+  opacity: 1 !important;
+
+  label {
+    padding: 0.1rem 4rem;
+    color: hsl(1, 71%, 36%);
+  }
+}

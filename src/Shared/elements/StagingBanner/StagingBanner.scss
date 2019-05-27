@@ -1,6 +1,9 @@
+@import '../../styles/mixins/type';
+
 #staging-banner {
-  opacity: 0.9;
+  @include type-alt;
   position: absolute;
+  opacity: 0.9 !important;
   top: 0;
   display: flex;
   justify-content: space-between;
@@ -9,7 +12,7 @@
   padding: 0 10px;
   color: #111;
   background: hsl(58, 93%, 48%);
-  border: solid #111;
+  border: solid #111 0px;
   border-top-width: 2px;
   border-bottom-width: 2px;
 
@@ -26,5 +29,6 @@
 
   a {
     color: #111;
+    text-decoration: none;
   }
 }

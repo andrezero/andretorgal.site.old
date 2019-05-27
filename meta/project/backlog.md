@@ -35,7 +35,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [x] add banner to staging
   - [x] add banner to drafts
   - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)
-  - [ ] fix style suspense fallback loading component
+  - [x] style suspense fallback loading component
   - [ ] fix media pages not showing sources
   - [ ] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
   - [ ] `ResponsiveImg` load on scroll into view

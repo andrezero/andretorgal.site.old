@@ -7,6 +7,7 @@
   @include spacing-h;
   padding-top: gap('base');
   padding-bottom: gap('base');
+  opacity: 0.9;
   font-size: responsive-type-size('small');
   line-height: var(--root-type-heights-small);
   color: #111;
@@ -18,7 +19,7 @@
   h3 {
     @include type-alt;
     @include type-alt;
-    margin: 0;
+    margin: 0 0 gap('base');
     font-size: responsive-type-size('medium');
   }
 }

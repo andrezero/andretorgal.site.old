@@ -1,0 +1,22 @@
+@import '../../styles/mixins/layout';
+@import '../../styles/mixins/type';
+
+.is-draft {
+  position: relative;
+
+  &::after {
+    @include type-alt;
+    position: absolute;
+    top: gap('base', -1);
+    left: 0;
+    display: inline-block;
+    content: 'Draft';
+    padding: 0 2rem;
+    opacity: 0.9;
+    font-size: 14px;
+    color: #111;
+    background: hsl(58, 93%, 48%);
+    border-top: 2px dashed #111;
+    border-bottom: 2px dashed #111;
+  }
+}

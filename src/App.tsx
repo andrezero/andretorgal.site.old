@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Switch } from 'react-router-dom';
 import { Head, Root, Routes } from 'react-static';
 
+import { SiteLoading } from './Shared/elements/SiteLoading/SiteLoading.component';
+
 import './Shared/styles/_index.scss';
 
 interface Props {
@@ -13,7 +15,7 @@ export function App() {
   return (
     <Root>
       <Head titleTemplate="%s - André Torgal" defaultTitle="André Torgal" />
-      <React.Suspense fallback={<em>Loading...</em>}>
+      <React.Suspense fallback={<SiteLoading />}>
         <Switch>
           <Routes path="" />
         </Switch>
