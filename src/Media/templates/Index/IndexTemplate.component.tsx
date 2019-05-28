@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import { NodeMeta } from '../../../Shared/blocks/NodeMeta/NodeMeta.component';
 import { Head } from '../../../Shared/elements/Head/Head.component';
 import { DefaultLayout as Layout } from '../../../Shared/layout/DefaultLayout/DefaultLayout.component';
 import { templateContainer } from '../../../Shared/TemplateContainer';
@@ -32,7 +33,7 @@ export const IndexTemplate: React.StatelessComponent<Props> = ({ page, medias })
 
         <ul className="media-list">
           {medias.map(media => (
-            <MediaCard key={media.path} node={media} />
+            <MediaCard key={media.path} node={media} footer={<NodeMeta node={media} />} />
           ))}
         </ul>
       </section>

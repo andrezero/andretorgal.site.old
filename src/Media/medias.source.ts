@@ -1,13 +1,10 @@
 import { parseFileContents } from '../Shared/lib/content';
 import { collect, flatten } from '../Shared/lib/files';
-import { resolveNodeMeta } from '../Shared/lib/meta';
 import { filterHasNotTag, newNode, newNodeFromFile } from '../Shared/lib/nodes';
 import { FileSysNode } from '../Shared/lib/types/File.types';
-import { Asset, AssetLocator } from '../Shared/types/Asset.models';
-import { NodeMetaDefaults } from '../Shared/types/Node.models';
+import { Asset } from '../Shared/types/Asset.models';
 
 import { slug } from '../Shared/lib/strings';
-import { RouteContext } from '../Shared/types/Route.models';
 import { MediaNode } from './types/Media.models';
 
 const nodeDefaults = {

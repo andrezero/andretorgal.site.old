@@ -1,5 +1,21 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/type';
 @import '../../styles/ImageNode.mixins.scss';
 
 .image-detail {
   @include image-node-style;
+
+  .contents {
+    @include rhythm-v-compact;
+  }
+
+  picture {
+    @include rhythm-v-compact;
+  }
+
+  .used-in {
+    h3 {
+      @include heading-3;
+    }
+  }
 }

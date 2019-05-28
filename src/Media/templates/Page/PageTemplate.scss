@@ -5,8 +5,4 @@
 .media-page {
   @include base-page;
   background-color: color('bright', 2);
-
-  picture {
-    @include rhythm-v;
-  }
 }

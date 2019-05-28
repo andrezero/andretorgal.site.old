@@ -8,5 +8,9 @@
 
   .media-list {
     @include reset-list;
+
+    article {
+      @include rhythm-v;
+    }
   }
 }

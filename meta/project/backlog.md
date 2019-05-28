@@ -37,7 +37,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)
   - [x] style suspense fallback loading component
   - [x] fix staging, link to prod was broken
-  - [ ] fix media pages not showing sources
+  - [x] fix media pages not showing sources
   - [x] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
   - [x] `ResponsiveImg` load on scroll into view
   - [ ] replace utf chars with svg (external link and link to top)
