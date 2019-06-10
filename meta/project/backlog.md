@@ -14,20 +14,26 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 
 ## Now
 
-- [ ] small fixes and improvements
-  - [ ] smooth scroll `scrollIntoView({block: 'end', behavior: 'smooth'});`
-  - [ ] favicon
+- [ ] google search verification / sitemap submit
 
 ## Next
 
-- [ ] new relic browser
-
-- [ ] continuous deployment with [gitlab](https://hackernoon.com/using-gitlab-ci-cd-to-auto-deploy-your-vue-js-application-to-aws-s3-9affe1eb3457)
-
+- [ ] ci/cd and analytics
   - [ ] purge assets not in use before sync
+  - [ ] continuous deployment with [gitlab](https://hackernoon.com/using-gitlab-ci-cd-to-auto-deploy-your-vue-js-application-to-aws-s3-9affe1eb3457)
+  - [ ] new relic browser
+  - [ ] google analytics
 
-- [ ] poc: header colour switch (re-check class switching)
-- [ ] poc: minimalistic header
+- [ ] small fixes and improvements
+  - [ ] smooth scroll `scrollIntoView({block: 'end', behavior: 'smooth'});`
+  - [ ] improve: router [transition](https://reach.tech/router/example/animation)
+  - [ ] favicon
+  - [ ] fix create/update dates (assets are getting the build date instead of post date)
+  - [ ] feature: `feed/{node-type}`
+
+- [ ] poc: themeing
+  - [ ] header colour switch (re-check class switching)
+  - [ ] minimalistic header
 
 - [ ] feature: blog roll
 - [ ] feature: add crono to changelog and to my story
@@ -57,15 +63,11 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [ ] meta page
     - [ ] navigation (breadcrumbs)
 
-- [ ] fix create/update dates (assets are getting the latest date)
-- [ ] feature: node type should also be a tag
 - [ ] ui: responsively reposition dates along with node type, as well as meta and tags
 
 - [ ] a11y tooling: linting with [tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib) and run time analysis with [react-axe](https://github.com/dequelabs/react-axe)
 
 - [ ] feature: footnotes
-
-- [ ] improve: router [transition](https://reach.tech/router/example/animation)
 
 - [ ] content: /tags/personal
 

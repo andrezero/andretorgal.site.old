@@ -19,7 +19,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "chokidar": "^2.1.6",
     "concurrently": "^4.1.0",
     "css-loader": "^2.1.1",
@@ -107,7 +107,8 @@
     "tslint-react": "^4.0.0"
   },
   "resolutions": {
-    "react-static/webpack-dev-server": "3.2.1"
+    "react-static/webpack-dev-server": "3.2.1",
+    "react-static/axios": "0.18.1"
   },
   "browserslist": [
     "last 2 years",
