@@ -34,7 +34,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [x] enhance link to top with javascript scroll to top, prevents bottom & top of page from both being entries in browser history
   - [x] add banner to staging
   - [x] add banner to drafts
-  - [ ] check [sitemap](https://support.google.com/webmasters/answer/156184)
+  - [x] check [sitemap](https://support.google.com/webmasters/answer/156184)
   - [x] style suspense fallback loading component
   - [x] fix staging, link to prod was broken
   - [x] fix media pages not showing sources

@@ -82,9 +82,8 @@ export const configure = options => {
     ]
   };
 
-  if (stage === 'prod') {
-    // config.siteRoot = 'http://andretorgal.com';
-  }
+  config.siteRoot = 'http://andretorgal.com';
+  config.stagingSiteRoot = 'http://staging.andretorgal.com';
 
   return config;
 };
