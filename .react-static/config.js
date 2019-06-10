@@ -82,8 +82,8 @@ export const configure = options => {
     ]
   };
 
-  config.siteRoot = 'http://andretorgal.com';
-  config.stagingSiteRoot = 'http://staging.andretorgal.com';
+  config.siteRoot = 'https://andretorgal.com';
+  config.stagingSiteRoot = 'https://staging.andretorgal.com';
 
   return config;
 };
