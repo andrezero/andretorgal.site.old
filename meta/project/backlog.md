@@ -40,7 +40,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [x] fix media pages not showing sources
   - [x] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
   - [x] `ResponsiveImg` load on scroll into view
-  - [ ] replace utf chars with svg (external link and link to top)
+  - [x] replace utf chars with svg (external link and link to top)
   - [x] refactor details and cards; introducing node type mixins
   - [x] refactor schemes
   - [ ] smooth scroll `scrollIntoView({block: 'end', behavior: 'smooth'});`

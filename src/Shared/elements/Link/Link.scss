@@ -10,10 +10,22 @@ a.external-link {
   }
 
   &::after {
-    content: '\21AA';
+    content: ' ';
+    position: relative;
+    display: inline-block;
     position: relative;
     top: gap('tiny');
-    padding-left: gap('tiny');
-    font-size: 75%;
+    margin-left: gap('tiny');
+    width: gap('base', 1.5);
+    height: gap('base', 1.5);
+    background-color: var(--root-scheme-a);
+    mask-image:  url('/assets/icons/curved-arrow-svgrepo-com.svg');
+  }
+
+  &:hover {
+
+    &::after {
+      background-color: var(--root-scheme-active);
+    }
   }
 }

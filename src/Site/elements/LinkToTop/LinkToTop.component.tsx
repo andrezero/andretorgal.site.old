@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { SROnly } from '../../../Shared/elements/SROnly/SROnly.component';
 
 import './LinkToTop.scss';
 
@@ -11,7 +12,7 @@ export const LinkToTop: React.StatelessComponent<{}> = () => {
   return (
     <p className="link-to-top" role="navigation">
       <a className="link" href="#top" aria-label="back to the top of the page" onClick={onClick}>
-        &#8679;
+        <SROnly>To the top</SROnly>
       </a>
     </p>
   );

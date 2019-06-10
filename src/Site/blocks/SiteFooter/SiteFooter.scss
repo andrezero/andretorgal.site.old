@@ -28,12 +28,12 @@
     font-size: responsive-type-size('base');
 
     nav {
-      margin-right: gap('large');
+      margin-right: gap('large', 1.5);
     }
 
     @include breakpoint-medium {
       nav {
-        margin-right: gap('huge');
+        margin-right: gap('huge', 1.5);
       }
     }
 

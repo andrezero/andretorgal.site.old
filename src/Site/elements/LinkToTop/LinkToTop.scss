@@ -8,11 +8,13 @@
   100% {
     top: 0;
     opacity: 1;
+    background-color: var(--root-scheme-a);
   }
 
-  90% {
-    top: u(-1/2);
-    opacity: 0.5;
+  80% {
+    top: gap('base');
+    opacity: 1;
+    background-color: var(--root-scheme-active);
   }
 }
 
@@ -27,12 +29,24 @@
   .link {
     display: inline-block;
     position: relative;
-    width: gap(large);
-    height: gap(large);
+    width: gap('large');
+    height: gap('large');
+    background-color: var(--root-scheme-a);
+    mask-image: url('/assets/icons/up-arrow-svgrepo-com.svg');
+
+    @include breakpoint-medium {
+      width: gap('large', 1.5);
+      height: gap('large', 1.5);
+    }
+
+    @include breakpoint-large {
+      width: gap('huge');
+      height: gap('huge');
+    }
 
     &:hover,
     &:active {
-      animation: animation-spring 1s infinite ease-in-out;
+      animation: animation-spring 0.75s infinite ease-in-out;
     }
   }
 }

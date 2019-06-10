@@ -12,6 +12,12 @@
 @mixin markdown-base {
   @include markdown;
 
+  .icon {
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+  }
+
   & > :first-child {
     margin-top: 0;
   }

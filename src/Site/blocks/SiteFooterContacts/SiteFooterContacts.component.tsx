@@ -9,22 +9,22 @@ export const SiteFooterContacts: React.StatelessComponent<{}> = () => {
     <nav className="site-footer-contacts" aria-label="you can find me elsewhere at">
       <ul className="nav-extenral">
         <li>
-          <Link className="github" href="https://github.com/andrezero">
+          <Link className="external-link github" href="https://github.com/andrezero">
             Github
           </Link>
         </li>
         <li>
-          <Link className="twitter" href="https://twitter.com/andrezero">
+          <Link className="external-link twitter" href="https://twitter.com/andrezero">
             Twitter
           </Link>
         </li>
         <li>
-          <Link className="facebook" href="https://facebook.com/andrezero">
+          <Link className="external-link facebook" href="https://facebook.com/andrezero">
             Facebook
           </Link>
         </li>
         <li>
-          <Link className="linkedin" href="https://linkedin.com/in/andretorgal">
+          <Link className="external-link linkedin" href="https://linkedin.com/in/andretorgal">
             LinkedIn
           </Link>
         </li>
