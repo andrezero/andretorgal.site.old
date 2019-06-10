@@ -5,10 +5,6 @@ a.external-link {
   position: relative;
   text-decoration: none;
 
-  span {
-    text-decoration: underline;
-  }
-
   &::after {
     content: ' ';
     position: relative;

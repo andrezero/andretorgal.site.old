@@ -4,9 +4,11 @@ import './SROnly.scss';
 
 interface Props {
   children?: React.ReactNode;
+  inline?: boolean
 }
 
 // @todo rename to <ReaderOnly>
-export const SROnly: React.StatelessComponent<Props> = ({ children }) => {
-  return <p className="reader-only">{children}</p>;
+export const SROnly: React.StatelessComponent<Props> = ({ children, inline }) => {
+  const Tag = inline ? 'span' : 'p';
+  return <Tag className="reader-only">{children}</Tag>;
 };

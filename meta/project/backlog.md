@@ -14,36 +14,9 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 
 ## Now
 
-- [ ] feedback and hotfixes
-
-  - [x] fix! a couple of 404 in `feed/`
-  - [x] fix nested `<a>` in `tags/` page, improve tag list style
-  - [x] fix blog post abstract style missing
-  - [x] fix markdown is rendering an extra div (definitely messing with first/last-child margin resets)
-  - [x] fix missing dropcaps style
-  - [x] fix media list item in feed not rendering image
-  - [x] mute recently updated
-  - [x] fix empty tag list rendering empty `<ul>` is annoying for screen reading
-  - [x] fix noselect missing in some navigation and meta
-  - [x] fix meta list item is not picking up the right component
-  - [x] exclude `home/`, `media/`, `feed/`, and `tags/` from feed, as they pick up tags from the listed items
-  - [x] fix empty/repeated meta tags: refactor node meta tag objects to dicts, convert to array just before rendering
-  - [x] fix tag page, tag count truncated
-  - [x] fix layout, section v spacing
-  - [x] fix feed path filter was duh
-  - [x] enhance link to top with javascript scroll to top, prevents bottom & top of page from both being entries in browser history
-  - [x] add banner to staging
-  - [x] add banner to drafts
-  - [x] check [sitemap](https://support.google.com/webmasters/answer/156184)
-  - [x] style suspense fallback loading component
-  - [x] fix staging, link to prod was broken
-  - [x] fix media pages not showing sources
-  - [x] `ResponsiveImg` handle image [loaded](https://www.javascriptstuff.com/detect-image-load/) transition
-  - [x] `ResponsiveImg` load on scroll into view
-  - [x] replace utf chars with svg (external link and link to top)
-  - [x] refactor details and cards; introducing node type mixins
-  - [x] refactor schemes
+- [ ] small fixes and improvements
   - [ ] smooth scroll `scrollIntoView({block: 'end', behavior: 'smooth'});`
+  - [ ] favicon
 
 ## Next
 
@@ -125,6 +98,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 ### React Static
 
 - [ ] `7.0.10` errors when builing for production: `Error: React-Hot-Loader: Hot Module Replacement is not enabled`
+- [ ] `7.0.9` error in console `Prop href did not match. Server: "https://staging.andretorgal.com/" Client: "/"` is a [WONT FIX](https://github.com/nozzle/react-static/issues/356) from the maintainers
 - [ ] `7.0.9` noise when building for production
 - [ ] `7.0.9` error with webpack-dev-server - `Uncaught SyntaxError: The URL 'http:/[http//localhost]:3000' is invalid` - patched with `"resolutions": { "react-static/webpack-dev-server": "3.2.1" }` in `package.json`
 - [ ] maximum call stack error when using helmet with children, following [issue here](https://github.com/nozzle/react-static/issues/1119)

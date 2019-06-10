@@ -12,7 +12,7 @@ export const LinkToTop: React.StatelessComponent<{}> = () => {
   return (
     <p className="link-to-top" role="navigation">
       <a className="link" href="#top" aria-label="back to the top of the page" onClick={onClick}>
-        <SROnly>To the top</SROnly>
+        <SROnly inline={true}>To the top</SROnly>
       </a>
     </p>
   );
