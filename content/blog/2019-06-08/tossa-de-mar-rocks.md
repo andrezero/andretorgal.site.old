@@ -19,9 +19,13 @@ Last weekend, we booked a couple of nights in Tossa de Mar and took the bus from
 
 Tossa is a classic postcard place, with a medieval walled town and a lighthouse at the top of this curious hill. You can tell that the entire place is devoted to tourism and I would not recommend visiting in the crowded months. But this year, summer had a slow start so we were pretty lucky here.
 
-<iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/JcqUvZDgiuo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+It seems like this was one of the first places in the region to be hit by mass tourism, back in the 1950s. The local narrative attributes this to the movie [Pandora and the Flying Dutchman (1951)](https://www.imdb.com/title/tt0043899/), Ava Gardner's long stay in town, and [Frank Sinatra's jealous visit](https://elpais.com/elpais/2015/06/25/inenglish/1435226239_810968.html).
 
-Actually, it seems like this was one of the first places in the region to be hit by mass tourism, back in the 1950s. The local narrative attributes this to the movie [Pandora and the Flying Dutchman (1951)](https://www.imdb.com/title/tt0043899/), Ava Gardner's long stay in town, and [Frank Sinatra's jealous visit](https://elpais.com/elpais/2015/06/25/inenglish/1435226239_810968.html).
+<img width="512" alt="Escultura de Ava Gardner-Tossa de Mar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Escultura_de_Ava_Gardner-Tossa_de_Mar.JPG/512px-Escultura_de_Ava_Gardner-Tossa_de_Mar.JPG">
+
+There's even a statue of Ava Gardner in medieval town. A photo I forgot to take, so borrowed from <a title="Alberto-g-rovi [CC BY 3.0 (https://creativecommons.org/licenses/by/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Escultura_de_Ava_Gardner-Tossa_de_Mar.JPG">wikimedia.org</a>, this photo by [User:Alberto-g-rovi](https://commons.wikimedia.org/wiki/User:Alberto-g-rovi).
+
+One more note before we take of to the beach: plenty of sculptures all around town, almost every corner, almost too many. Again, no pictures of those, but a quick [google search for "tossa+de+mar+escultura"](https://www.google.com/search?q=tossa+de+mar+escultura&tbm=isch) does the trick.
 
 ## The calas around Tossa
 
