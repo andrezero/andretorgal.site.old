@@ -21,6 +21,9 @@ aws s3 sync dist/ s3://staging-site-andretorgal-com/ \
   --acl public-read \
   --cache-control max-age=86400
 
+echo "----- disable sitemap"
+rm dist/sitemap.staging.xml
+
 echo "----- sync dist (data)"
 aws s3 sync dist/ s3://staging-site-andretorgal-com/ \
   --exclude "*" \
