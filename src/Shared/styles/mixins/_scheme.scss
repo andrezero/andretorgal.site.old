@@ -2,14 +2,14 @@
 @import '../lib/vars/vars-declare.mixin';
 @import '../settings';
 
+$__root-scheme: vars-from-map('root-scheme', color-group('base'));
+
 @mixin scheme-root {
-  $root-scheme: vars-from-map('root-scheme', color-group('base'));
-  @include vars-declare($root-scheme);
+  @include vars-declare($__root-scheme);
 }
 
 @mixin scheme-base {
   @include scheme-root;
-
   color: var(--root-scheme-fg);
   background-color: var(--root-scheme-bg);
 
@@ -23,10 +23,10 @@
   }
 }
 
-@mixin scheme-feature {
-  $scheme: vars-from-map('root-scheme', color-group('feature'));
-  @include vars-declare($scheme);
+$__scheme_feature: vars-from-map('root-scheme', color-group('feature'));
 
+@mixin scheme-feature {
+  @include vars-declare($__scheme_feature);
   color: var(--root-scheme-fg);
   background-color: var(--root-scheme-bg);
 
@@ -38,11 +38,11 @@
     }
   }
 }
+
+$__scheme_primary: vars-from-map('root-scheme', color-group('primary'));
 
 @mixin scheme-primary {
-  $scheme: vars-from-map('root-scheme', color-group('primary'));
-  @include vars-declare($scheme);
-
+  @include vars-declare($__scheme_primary);
   color: var(--root-scheme-fg);
   background-color: var(--root-scheme-bg);
 
@@ -55,10 +55,10 @@
   }
 }
 
-@mixin scheme-secondary {
-  $scheme: vars-from-map('root-scheme', color-group('secondary'));
-  @include vars-declare($scheme);
+$__scheme_secondary: vars-from-map('root-scheme', color-group('secondary'));
 
+@mixin scheme-secondary {
+  @include vars-declare($__scheme_secondary);
   color: var(--root-scheme-fg);
   background-color: var(--root-scheme-bg);
 

@@ -26,7 +26,7 @@ const latestNodes = (nodes: Node[]): Node[] => {
     .splice(0, 20);
 };
 
-const updatedNodes = (nodes: Node[]): Node[] => {
+const updatedNodes = (/*nodes: Node[]*/): Node[] => {
   return [];
   // return nodes
   //   .filter(filterNotPaths(EXCLUDE_PATHS))
@@ -37,7 +37,7 @@ const updatedNodes = (nodes: Node[]): Node[] => {
 const feedPageRoute = (context: RouteContext, nodes: Node[]): Route => {
   const featured = featuredNodes(nodes);
   const latest = latestNodes(nodes);
-  const updated = updatedNodes(nodes);
+  const updated = updatedNodes();
 
   const newLocal = {
     path: 'feed',
@@ -52,7 +52,7 @@ const feedPageRoute = (context: RouteContext, nodes: Node[]): Route => {
     page,
     featured: featuredNodes(nodes),
     latest: latestNodes(nodes),
-    updated: updatedNodes(nodes)
+    updated: updatedNodes()
   });
 };
 

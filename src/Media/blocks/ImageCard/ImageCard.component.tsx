@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { BaseCard } from '../../../Shared/blocks/BaseCard/BaseCard.component';
-import { Link } from '../../../Shared/elements/Link/Link.component';
 import { NodeDate } from '../../../Shared/elements/NodeDate/NodeDate.component';
 import { NodeImg } from '../../../Shared/elements/NodeImg/NodeImg.component';
 import { NodeMarkdown } from '../../../Shared/elements/NodeMarkdown/NodeMarkdown.component';

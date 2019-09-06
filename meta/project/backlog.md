@@ -14,15 +14,20 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 
 ## Now
 
-- [ ] google search verification / sitemap submit
 
 ## Next
 
 - [ ] ci/cd and analytics
   - [ ] purge assets not in use before sync
   - [ ] continuous deployment with [gitlab](https://hackernoon.com/using-gitlab-ci-cd-to-auto-deploy-your-vue-js-application-to-aws-s3-9affe1eb3457)
+
+- [ ] observability
   - [ ] new relic browser
   - [ ] google analytics
+
+- [ ] feature: rss
+- [ ] feature: blog roll
+- [ ] feature: add crono to changelog and to my story
 
 - [ ] small fixes and improvements
   - [ ] smooth scroll `scrollIntoView({block: 'end', behavior: 'smooth'});`
@@ -34,9 +39,6 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 - [ ] poc: themeing
   - [ ] header colour switch (re-check class switching)
   - [ ] minimalistic header
-
-- [ ] feature: blog roll
-- [ ] feature: add crono to changelog and to my story
 
 - [ ] internal navigation
 

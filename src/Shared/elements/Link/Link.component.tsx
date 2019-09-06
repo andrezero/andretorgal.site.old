@@ -16,7 +16,7 @@ type Props = ComponentProps & React.HTMLProps<HTMLElement>;
 const external = (url: string, props: Props) => {
   const { children, ...rest } = props;
   return (
-    <a className="external-link" {...rest as React.ClassAttributes<HTMLAnchorElement>} href={url}>
+    <a className="external-link" {...(rest as React.ClassAttributes<HTMLAnchorElement>)} href={url}>
       <span>{children}</span>
     </a>
   );
@@ -25,7 +25,7 @@ const external = (url: string, props: Props) => {
 const internal = (url: string, props: Props) => {
   const { children, ...rest } = props;
   return (
-    <RouterLink {...rest as React.ClassAttributes<RouterLink>} to={url}>
+    <RouterLink {...(rest as React.ClassAttributes<RouterLink>)} to={url}>
       {children}
     </RouterLink>
   );

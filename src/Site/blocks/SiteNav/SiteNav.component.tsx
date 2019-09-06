@@ -9,7 +9,7 @@ interface Props {
   page: Node;
 }
 
-export const SiteNav: React.StatelessComponent<Props> = ({ page }) => {
+export const SiteNav: React.StatelessComponent<Props> = () => {
   return (
     <nav className="site-nav" role="navigation" aria-label="Main sections of the site">
       <ul>

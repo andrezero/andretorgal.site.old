@@ -1,7 +1,6 @@
 import * as React from 'react';
 import rehypeReact from 'rehype-react';
 import unified from 'unified';
-import { VFileContents } from 'vfile';
 
 import { Anchor } from '../Anchor/Anchor.component';
 import { anchoredHeading } from '../AnchoredHeading/AnchoredHeading.factory';
@@ -68,7 +67,7 @@ export const markdownFactory = (
   staticProps?: StaticProps
 ): React.StatelessComponent<MarkdownComponentProps> => {
   const render = renderer(processor, componentMap);
-  return (props: StaticProps | MarkdownComponentProps) => {
+  const MarkdownFactory = (props: StaticProps | MarkdownComponentProps) => {
     const { children, className } = props;
     if (!children) {
       return <></>;
@@ -79,6 +78,7 @@ export const markdownFactory = (
       </div>
     );
   };
+  return MarkdownFactory;
 };
 
 export const basicComponentMap: MarkdownComponentMap = {

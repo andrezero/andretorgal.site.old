@@ -1,3 +1,4 @@
+import crypto from 'crypto';
 import { existsAsync, moveAsync } from 'fs-extra-promise';
 import { dirname, join as pathJoin, parse as pathParse, resolve as pathResolve } from 'path';
 import { format as formatUrl, parse as parseUrl } from 'url';
@@ -6,7 +7,6 @@ import { slug } from '../Shared/lib/strings';
 import { Asset, AssetLocator, AssetSourceNode } from '../Shared/types/Asset.models';
 
 const shardPrefix = (str: string, sharding: number): string => {
-  const crypto = require('crypto');
   return crypto
     .createHash('md5')
     .update(str)
@@ -42,11 +42,11 @@ const moveIfExists = async (asset: Asset, fromDir: string, toDir: string, shardi
   }
 };
 
-const isLocal = (url: string): boolean => {
-  const isRelative = url.startsWith('./');
-  const isIllegal = url.indexOf('..') > 0;
-  return isRelative && !isIllegal;
-};
+// const isLocal = (url: string): boolean => {
+//   const isRelative = url.startsWith('./');
+//   const isIllegal = url.indexOf('..') > 0;
+//   return isRelative && !isIllegal;
+// };
 
 const scanDir = async (asset: Asset, dir: string, staticsDir: string, sharding: number): Promise<boolean> => {
   const destination = await moveIfExists(asset, dir, staticsDir, sharding);

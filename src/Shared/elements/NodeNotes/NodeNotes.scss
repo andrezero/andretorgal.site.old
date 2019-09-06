@@ -10,9 +10,9 @@
   opacity: 0.9;
   font-size: responsive-type-size('small');
   line-height: var(--root-type-heights-small);
-  color: #111;
-  background: hsl(58, 93%, 48%);
-  border: dashed #111 0px;
+  color: hsl(0, 0%, 7%);
+  background: hsla(58, 93%, 48%, 75%);
+  border: dashed hsl(0, 0%, 7%) 0;
   border-top-width: 2px;
   border-bottom-width: 2px;
 

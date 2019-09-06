@@ -22,7 +22,7 @@ export const MetaDetail: React.StatelessComponent<Props> = ({ meta }) => {
       <NodeMarkdown node={meta} className="meta-abstract">
         {meta.abstract}
       </NodeMarkdown>
-      <NodeChildren children={meta.meta.links.children} />
+      <NodeChildren>{meta.meta.links.children}</NodeChildren>
     </>
   );
   const footer = <NodeMeta node={meta} showUpdated={true} />;

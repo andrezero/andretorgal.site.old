@@ -15,6 +15,8 @@ import './NotFoundTemplate.scss';
 //   page: ContentPage;
 // }
 
+export type NotFoundTemplateRouteData = RouteData;
+
 export const NotFoundTemplate: React.StatelessComponent<{}> = () => {
   const props = {
     page: newNode('page', '404 - Not Found', { template: 'Site/NotFound' })
@@ -31,8 +33,6 @@ export const NotFoundTemplate: React.StatelessComponent<{}> = () => {
     </Layout>
   );
 };
-
-export interface NotFoundTemplateRouteData extends RouteData {}
 
 const Container = templateContainer<NotFoundTemplateRouteData>(NotFoundTemplate);
 

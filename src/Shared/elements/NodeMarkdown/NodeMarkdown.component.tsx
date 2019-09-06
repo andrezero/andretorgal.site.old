@@ -16,11 +16,12 @@ interface NodeMarkdownProps {
 
 type Props = MarkdownComponentProps & NodeMarkdownProps;
 
-const withNodeAndProfiles = (WrappedComponent: React.ComponentType, node: Node): React.ComponentType => (
-  props: any
-) => {
-  const profiles = ['image.small', 'image.medium', 'image.large'];
-  return <WrappedComponent node={node} profiles={profiles} {...props} />;
+const withNodeAndProfiles = (WrappedComponent: React.ComponentType, node: Node): React.ComponentType => {
+  const WithNodeAndProfiles = (props: any) => {
+    const profiles = ['image.small', 'image.medium', 'image.large'];
+    return <WrappedComponent node={node} profiles={profiles} {...props} />;
+  };
+  return WithNodeAndProfiles;
 };
 
 export const NodeMarkdown: React.StatelessComponent<Props> = ({ node, strip, children, className, ...rest }: Props) => {

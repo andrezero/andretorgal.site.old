@@ -1,7 +1,8 @@
 import chokidar from 'chokidar';
 import { rebuildRoutes } from 'react-static/node';
 
-export const watch = options => {
+export const watch = () => {
+  // export const watch = options => {
   // const { stage } = options;
 
   const defaultOptions = {

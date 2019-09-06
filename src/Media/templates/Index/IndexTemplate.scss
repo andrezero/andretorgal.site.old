@@ -1,6 +1,8 @@
 @import '../../../Shared/styles/mixins/reset';
 @import '../../../Shared/styles/mixins/layout';
 
+// extend BasePage
+
 @import '../../../Shared/templates/BasePage.mixin';
 
 .media-index {

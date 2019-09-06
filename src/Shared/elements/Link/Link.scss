@@ -9,17 +9,15 @@ a.external-link {
     content: ' ';
     position: relative;
     display: inline-block;
-    position: relative;
     top: gap('tiny');
     margin-left: gap('tiny');
     width: gap('base', 1.5);
     height: gap('base', 1.5);
     background-color: var(--root-scheme-a);
-    mask-image:  url('/assets/icons/curved-arrow-svgrepo-com.svg');
+    mask-image: url('/assets/icons/curved-arrow-svgrepo-com.svg');
   }
 
   &:hover {
-
     &::after {
       background-color: var(--root-scheme-active);
     }

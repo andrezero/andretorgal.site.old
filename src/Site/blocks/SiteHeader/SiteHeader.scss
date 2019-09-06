@@ -6,20 +6,17 @@
 .site-header {
   @include noselect;
   @include scheme-primary;
-
   overflow: hidden;
   // position: fixed;
   width: 100%;
 
   .container {
     @include container-wide;
-
     padding-top: gap(base);
   }
 
   .site-title {
     @include type-brand;
-
     margin: 0 0 gap('small');
     font-size: responsive-type-size(huge);
     // transform: scale(0.8);

@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { AcessibleRouting } from '../../behaviours/AcessibleRouting/AcessibleRouting.component';
-import { Anchor } from '../../elements/Anchor/Anchor.component';
 
 import './DefaultLayout.scss';
 

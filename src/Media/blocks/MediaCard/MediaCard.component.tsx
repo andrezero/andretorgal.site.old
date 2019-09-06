@@ -3,7 +3,6 @@ import * as React from 'react';
 import { BaseCard } from '../../../Shared/blocks/BaseCard/BaseCard.component';
 import { Link } from '../../../Shared/elements/Link/Link.component';
 import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
-import { hasTag } from '../../../Shared/lib/nodes';
 
 import { ImageCard } from '../ImageCard/ImageCard.component';
 
@@ -28,7 +27,7 @@ const DefaultCard: React.StatelessComponent<Props> = ({ node, level = 2, footer 
       <Link href={node.path}>{node.title}</Link>
     </Tag>
   );
-  const draft = hasTag(node, 'draft');
+  // const draft = hasTag(node, 'draft');
   return (
     <BaseCard className="media-card" header={header} footer={footer}>
       <MarkdownBase>{node.abstract}</MarkdownBase>

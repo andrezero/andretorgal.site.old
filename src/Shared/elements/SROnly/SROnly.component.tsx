@@ -4,7 +4,7 @@ import './SROnly.scss';
 
 interface Props {
   children?: React.ReactNode;
-  inline?: boolean
+  inline?: boolean;
 }
 
 // @todo rename to <ReaderOnly>

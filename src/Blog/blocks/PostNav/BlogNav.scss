@@ -5,7 +5,6 @@
 .blog-nav {
   @include reset-list;
   @include scheme-feature;
-
   border-bottom: 1px solid var(--root-scheme-alt);
 
   .container {

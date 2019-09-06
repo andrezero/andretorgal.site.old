@@ -9,7 +9,10 @@ Tasks from [my website](/about)'s [backlog](/meta/project/backlog), eventually d
 <!-- abstract -->
 
 <!-- spellcheck-off -->
-
+- [x] migrate tslint to eslint
+- [x] seo
+  - [x] redirect www.andretorgal.com to andretorgal.com (Route53 > CF > S3 redirect)
+  - [x] google search sitemap submit / [domain verification](https://support.google.com/a/answer/6149686?hl=en&ref_topic=4487770)
 
 - [x] feedback and hotfixes
   - [x] fix! a couple of 404 in `feed/`

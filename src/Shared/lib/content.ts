@@ -28,6 +28,7 @@ export const parseFileContents = (stage: string, file: FileSysNode): ParsedFile 
   const { filename, path, name, created } = file;
 
   const { data, content: fullContents, excerpt } = matter(file.contents, {
+    // eslint-disable-next-line @typescript-eslint/camelcase
     excerpt_separator: ABSTRACT_DELIMITER
   });
   const abstract = excerpt.trim();

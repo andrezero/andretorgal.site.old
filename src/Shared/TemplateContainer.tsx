@@ -7,7 +7,7 @@ import { bodyClassSwitch } from './lib/dom';
 export function templateContainer<T extends RouteData>(
   Template: React.StatelessComponent
 ): React.StatelessComponent<{}> {
-  return () => {
+  const TemplateContainer = () => {
     const routeData: T = useRouteData();
     React.useEffect(() => {
       const className = routeData.className;
@@ -15,4 +15,6 @@ export function templateContainer<T extends RouteData>(
     });
     return <Template {...routeData} />;
   };
+
+  return TemplateContainer;
 }

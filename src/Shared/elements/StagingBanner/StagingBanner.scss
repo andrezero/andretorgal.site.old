@@ -3,16 +3,16 @@
 #staging-banner {
   @include type-alt;
   position: absolute;
-  opacity: 0.9 !important;
+  opacity: 0.9;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   width: 100vw;
   padding: 0 10px;
-  color: #111;
-  background: hsl(58, 93%, 48%);
-  border: solid #111 0px;
+  color: hsl(0, 0%, 7%);
+  background: hsla(58, 93%, 48%, 75%);
+  border: solid hsl(0, 0%, 7%) 0;
   border-top-width: 2px;
   border-bottom-width: 2px;
 
@@ -28,7 +28,7 @@
   }
 
   a {
-    color: #111;
+    color: hsl(0, 0%, 7%);
     text-decoration: none;
   }
 }

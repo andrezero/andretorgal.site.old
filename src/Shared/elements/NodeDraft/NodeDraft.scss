@@ -12,11 +12,10 @@
     display: inline-block;
     content: 'Draft';
     padding: 0 2rem;
-    opacity: 0.9;
     font-size: 14px;
-    color: #111;
-    background: hsl(58, 93%, 48%);
-    border-top: 2px dashed #111;
-    border-bottom: 2px dashed #111;
+    color: hsl(0, 0%, 7%);
+    background: hsla(58, 93%, 48%, 75%);
+    border-top: 2px dashed hsl(0, 0%, 7%);
+    border-bottom: 2px dashed hsl(0, 0%, 7%);
   }
 }

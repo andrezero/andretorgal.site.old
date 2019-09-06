@@ -1,6 +1,3 @@
-import { TemplateLocator } from './Shared/lib/classes/TemplateLocator';
-import { AssetLocator } from './Shared/types/Asset.models';
-import { NodeMetaDefaults } from './Shared/types/Node.models';
 import { Route, RouteBuilder, RouteContext } from './Shared/types/Route.models';
 
 import { buildRoutes as buildBlogRoutes } from './Blog/posts.routes';

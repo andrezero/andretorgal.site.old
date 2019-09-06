@@ -34,7 +34,8 @@ export const PageTemplate: React.StatelessComponent<Props> = ({ page }) => {
 };
 
 export interface PageTemplateRouteData extends RouteData, Props {}
-export interface PageTemplateProps extends Props {}
+
+export type PageTemplateProps = Props;
 
 const Container = templateContainer<PageTemplateRouteData>(PageTemplate);
 
