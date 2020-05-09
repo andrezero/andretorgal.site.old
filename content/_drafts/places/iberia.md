@@ -1,5 +1,5 @@
 ---
-tags: ['places', 'beach', 'mountain']
+tags: ['places', 'beach', 'mountain', 'portugal', 'spain', 'iberia']
 created: '2019-06-08'
 ---
 
