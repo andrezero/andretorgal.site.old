@@ -1,0 +1,18 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/styles/mixins/type';
+
+.asset-caption {
+  font-style: italic;
+  margin: 0 0 gap('large');
+  padding: gap('medium') 0 0;
+
+  p {
+    margin: 0;
+  }
+
+  .meta {
+    @include type-base;
+    margin: 0 0 0 gap('medium');
+    color: var(--root-scheme-muted);
+  }
+}

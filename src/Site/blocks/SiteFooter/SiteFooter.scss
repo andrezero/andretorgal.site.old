@@ -23,9 +23,9 @@
   }
 
   .navigation {
+    @include type-base;
     display: flex;
     margin-bottom: gap('large');
-    font-size: responsive-type-size('base');
 
     nav {
       margin-right: gap('large', 1.5);

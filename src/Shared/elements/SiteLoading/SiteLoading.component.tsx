@@ -41,7 +41,7 @@ export const SiteLoading: React.StatelessComponent<Props> = props => {
   const labelOpacity = slow ? 1 : 0;
   return (
     <div style={{ ...layoutStyle, opacity: show ? 1 : 0 }}>
-      <svg focusable="no" width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+      <svg focusable="false" width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
         <circle cx="25" cy="25" r="9.34496" fill="#a2211f">
           <animate
             attributeName="r"

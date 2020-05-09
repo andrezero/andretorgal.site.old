@@ -12,8 +12,8 @@
   }
 
   .tag-count {
+    @include type-small;
     display: inline-block;
     margin-right: gap('small');
-    font-size: responsive-type-size('small');
   }
 }

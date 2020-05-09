@@ -1,22 +1,22 @@
 import { collect, dedupe, transform } from '../Shared/lib/assets';
-import {
-  Asset,
-  AssetExtractor,
-  AssetLocator,
-  AssetPreset,
-  AssetSourceNode,
-  ExtractedAsset
-} from '../Shared/types/Asset.models';
+import { Asset, AssetExtractor, AssetLocator, AssetPreset, AssetSourceNode } from '../Shared/types/Asset.models';
 import { Node, NodeIndex } from '../Shared/types/Node.models';
 
-const assetExtractor: AssetExtractor = (node: Node): ExtractedAsset[] => {
-  const assets: ExtractedAsset[] = [];
+const assetExtractor: AssetExtractor = (node: Node): Asset[] => {
+  const assets: Asset[] = [];
   const { hero } = node.features;
   if (hero) {
+    const url = `${hero.img}#image:hero`;
+    const title = `${node.title} banner image`;
     assets.push({
+      sources: [],
       type: 'image',
-      title: `${node.title} banner image`,
-      url: `${hero.img}#image:hero`
+      title,
+      alt: title,
+      url,
+      originalUrl: url,
+      presets: [],
+      profiles: {}
     });
   }
   return assets;

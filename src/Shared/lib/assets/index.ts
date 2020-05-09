@@ -26,13 +26,13 @@ const extractPresets = (url: ParsedUrl): string[] => {
 };
 
 const findAssetsInNode = (node: Node, presets: string[] = [], assetExtractor?: AssetExtractor): Asset[] => {
-  const assets = findImages(node.content);
+  const assets = findImages(node.content) as Asset[];
   if (assetExtractor) {
     assets.push(...assetExtractor(node));
   }
-  return assets.map((asset: any) => {
-    const url = parseUrl(asset.url);
-    const urlPresets = extractPresets(url);
+  const allAssets = assets.map((asset: any) => {
+    const parsedUrl = parseUrl(asset.url);
+    const urlPresets = extractPresets(parsedUrl);
     const assetSource: AssetSourceNode = {
       type: 'node',
       node: {
@@ -40,17 +40,21 @@ const findAssetsInNode = (node: Node, presets: string[] = [], assetExtractor?: A
         link: linkToNode(node)
       }
     };
+    const { type, title, alt, author, license, url } = asset;
     return {
       sources: [assetSource],
-      type: asset.type,
-      title: asset.title,
-      alt: asset.alt,
-      url: formatUrl({ ...url, hash: null }),
-      originalUrl: asset.url,
+      type,
+      title: title || alt,
+      alt: alt || title,
+      url: formatUrl({ ...parsedUrl, hash: null }),
+      author,
+      license,
+      originalUrl: url,
       presets: [...presets, ...urlPresets],
       profiles: {}
     };
   });
+  return allAssets;
 };
 
 const dedupAssets = (asset: Asset, index: number, assets: Asset[]): boolean => {
@@ -103,12 +107,9 @@ const presetProfiles = (asset: Asset, presetName: string, presets: AssetPreset[]
 const dedupeProfiles = (profiles: AssetProfile[]) => profiles.filter((item, pos) => profiles.indexOf(item) === pos);
 
 const assetProfiles = (asset: Asset, presets: AssetPreset[]): AssetProfile[] => {
-  const profiles = asset.presets.reduce(
-    (acc, presetName) => {
-      return acc.concat(presetProfiles(asset, presetName, presets));
-    },
-    [] as AssetProfile[]
-  );
+  const profiles = asset.presets.reduce((acc, presetName) => {
+    return acc.concat(presetProfiles(asset, presetName, presets));
+  }, [] as AssetProfile[]);
   return dedupeProfiles(profiles);
 };
 
@@ -156,10 +157,10 @@ export const findAssetSrc = (asset: Asset, profile: string): AssetSrc => {
   return asset.profiles[profile];
 };
 
-export const findAssetSrcInAssetList = (assets: Asset[], url: string, profile: string): AssetSrc => {
+export const findAssetInNodeAssets = (assets: Asset[], url: string): Asset => {
   const asset = assets.find(a => a.url === url || a.originalUrl === url);
   if (!asset) {
     throw new Error(`Unknown asset url: "${url}"`);
   }
-  return findAssetSrc(asset, profile);
+  return asset;
 };

@@ -17,6 +17,7 @@ interface Props {
   ratio?: number;
   className?: string;
   children?: React.ReactNode;
+  caption?: () => React.ReactNode;
 }
 
 import './ResponsiveImg.scss';
@@ -70,8 +71,8 @@ export const ResponsiveImg: React.StatelessComponent<Props> = ({ src, ratio, bg,
     <picture ref={ref} className={`r-img ${className}`} style={style}>
       {inView && (
         <>
-          {children}
           <img sizes={sizes} srcSet={srcSet} src={defaultSrc} style={imgStyle} onLoad={handleImageLoaded} />
+          {children}
         </>
       )}
     </picture>

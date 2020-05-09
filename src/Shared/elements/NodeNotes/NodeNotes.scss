@@ -5,10 +5,10 @@
 .node-notes {
   @include rhythm-v-compact;
   @include spacing-h;
+  @include type-small;
   padding-top: gap('base');
   padding-bottom: gap('base');
   opacity: 0.9;
-  font-size: responsive-type-size('small');
   line-height: var(--root-type-heights-small);
   color: hsl(0, 0%, 7%);
   background: hsla(58, 93%, 48%, 75%);
@@ -18,8 +18,7 @@
 
   h3 {
     @include type-alt;
-    @include type-alt;
+    @include type-medium;
     margin: 0 0 gap('base');
-    font-size: responsive-type-size('medium');
   }
 }

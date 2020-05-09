@@ -4,6 +4,7 @@ import { buildRoutes as buildBlogRoutes } from './Blog/posts.routes';
 import { buildRoutes as buildFeedRoutes } from './Feed/feed.routes';
 import { buildRoutes as buildMediaRoutes } from './Media/medias.routes';
 import { buildRoutes as buildMetasRoutes } from './Meta/metas.routes';
+import { buildRoutes as buildExpRoutes } from './Exp/exps.routes';
 import { buildRoutes as buildPagesRoutes } from './Site/pages.routes';
 import { buildRoutes as buildSiteRoutes } from './Site/site.routes';
 import { buildRoutes as buildTaxonomyRoutes } from './Taxonomy/tags.routes';
@@ -26,13 +27,14 @@ type SourceLoader = () => Promise<Sources>;
 export const createRouteBuilder = (sourceLoader: SourceLoader, context: RouteContext): RouteBuilder => {
   const routeBuilder: RouteBuilder = async () => {
     const sources = await sourceLoader();
-    const { nodes, pages, posts, metas, tags, medias } = sources;
+    const { nodes, pages, posts, metas, exps, tags, medias } = sources;
 
     const groups = await Promise.all([
       buildSiteRoutes(context),
       buildPagesRoutes(context, { pages, posts }),
       buildBlogRoutes(context, { posts }),
       buildMetasRoutes(context, { metas }),
+      buildExpRoutes(context, { exps }),
       buildFeedRoutes(context, { nodes }),
       buildTaxonomyRoutes(context, { tags, nodes }),
       buildMediaRoutes(context, { medias })

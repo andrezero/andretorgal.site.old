@@ -1,0 +1,20 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../styles/ExpNode.mixins.scss';
+
+.exp-detail {
+  @include exp-node-style;
+
+  .contents {
+    @include rhythm-v;
+    @include spacing-v;
+    @include spacing-h;
+  }
+
+  .node-parent {
+    @include rhythm-v-compact;
+  }
+
+  .exp-abstract {
+    @include rhythm-v-compact;
+  }
+}

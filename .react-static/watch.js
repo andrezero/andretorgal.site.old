@@ -15,7 +15,7 @@ export const watch = () => {
   const watchers = [];
 
   const contentOptions = { ...defaultOptions };
-  watchers.push(chokidar.watch(['content', 'meta'], contentOptions));
+  watchers.push(chokidar.watch(['content', 'meta', 'node_modules/@andrezero-xp'], contentOptions));
 
   // @todo react-static does not reload ./static.config.js file
   // const routesOptions = { ...defaultOptions, awaitWriteFinish: { stabilityThreshold: 1000 } };

@@ -1,0 +1,21 @@
+@import '../../Shared/styles/mixins/scheme';
+
+@mixin exp-node-scheme {
+  background-color: color('bright', 5);
+}
+
+@mixin exp-node-style {
+  .contents {
+    @include exp-node-scheme;
+    border: 1px dashed var(--root-scheme-edge);
+    border-left-width: 0;
+    border-right-width: 0;
+  }
+
+  @include breakpoint-compact {
+    .contents {
+      border-left-width: 1px;
+      border-right-width: 1px;
+    }
+  }
+}

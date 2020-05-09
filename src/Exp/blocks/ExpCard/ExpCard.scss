@@ -1,0 +1,22 @@
+@import '../../../Shared/styles/mixins/layout';
+@import '../../../Shared/blocks/BaseCard/BaseCard.mixin';
+@import '../../styles/ExpNode.mixins.scss';
+
+.exp-card {
+  @include base-card;
+  @include exp-node-style;
+
+  .last-updated {
+    @include type-small;
+    margin: 0 0 gap('medium');
+  }
+
+  .node-title {
+    margin-bottom: gap('tiny');
+  }
+
+  .markdown-base {
+    margin-bottom: gap('base');
+    line-height: var(--root-type-heights-small);
+  }
+}

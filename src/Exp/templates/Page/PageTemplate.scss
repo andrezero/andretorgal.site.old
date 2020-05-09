@@ -1,0 +1,11 @@
+@import '../../../Shared/templates/BasePage.mixin';
+@import '../../styles/ExpNode.mixins.scss';
+
+.exp-page {
+  @include wide-page;
+  @include exp-node-scheme;
+
+  .node-parent {
+    @include rhythm-v-compact;
+  }
+}

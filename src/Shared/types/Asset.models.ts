@@ -52,6 +52,14 @@ export interface Asset {
   title?: string;
   alt?: string;
   url: string;
+  author?: {
+    name?: string;
+    url?: string;
+  };
+  license?: {
+    name?: string;
+    url?: string;
+  };
   originalUrl: string;
   filename?: string;
   presets: string[];
@@ -60,11 +68,4 @@ export interface Asset {
   };
 }
 
-export interface ExtractedAsset {
-  type: string;
-  title?: string;
-  alt?: string;
-  url: string;
-}
-
-export type AssetExtractor = (node: Node) => ExtractedAsset[];
+export type AssetExtractor = (node: Node) => Asset[];

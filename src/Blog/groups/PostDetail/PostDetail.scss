@@ -19,10 +19,10 @@
   }
 
   .post-abstract {
+    @include type-medium;
     padding-bottom: gap('medium');
     margin-bottom: gap('huge');
     color: var(--root-scheme-muted);
-    font-size: responsive-type-size('medium');
     font-style: italic;
     border-bottom: 1px solid var(--root-scheme-dim);
 
