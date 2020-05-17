@@ -1,5 +1,5 @@
 ---
-tags: ['album', 'elliot-smith']
+tags: ['album', 'elliot-smith', 'rock', 'music', '2000']
 created: '2020-05-05'
 title: 'Elliott Smith - Figure 8'
 work-title: 'Figure 8'
@@ -24,31 +24,33 @@ And yet, whatever is on that record, existed before, and it's timeless, and eter
 
 And of course there is a but in here. Grace and Soup, even if they revolve entirely and lyrically around the author's impending tragedy, there's also a brilliant band. And there's Andy Wallace. And that is an imense proportion of other human beings. Their skills, technique, and own passion, surrounding, supporting and completing the author, with instruments and voices, interpretation and arrangements, engineering and production.
 
-In Figure 8, Elliot Smith alone, was jumping from instrument to instrument, who really knows for how many takes, how many loops, how much time, seaking perfection in lyrics, arrangements. All for the sake of it, "of doing it", round and round like a *figure 8*. There must have been some joy.
+In Figure 8, Elliott Smith alone, was jumping from instrument to instrument, who really knows for how many takes, how many loops, how much time, seaking perfection in lyrics, arrangements. All for the sake of it, "of doing it", round and round like a *figure 8*. There must have been some joy.
 
 ![Elliott Smith performing at the Henry Fonda Theater in Los Angeles, CA on 2-1-2003. |an llaurens@sweetadeline.net |ln CC BY-SA 3.0 |lu https://creativecommons.org/licenses/by-sa/3.0](./blog/figure-8/Elliott_Smith.jpg)
 
 And so do I, when I listen to this album back to back. Round and round, *Standing up to sit back down*, deeper and deeper into the intimate *world within a world?* of this genius that was *King for a day* but bored and depressed for all eternity.
 
-  "Now I'm a policeman directing traffic
-  Keeping everything moving, everything static
-  I'm the hitchhiker you'll recognize passing
-  On your way to some everlasting"
+> "Now I'm a policeman directing traffic
+> Keeping everything moving, everything static
+> I'm the hitchhiker you'll recognize passing
+> On your way to some everlasting"
 
 A long way to go, getting further away. Can't make a sound. And then a wordless *Bye*.
 
-Interviewer: Do you have any favorite tracks?
-Elliot Smith: I like the ones that are kind of weird, more idiosyncratic,... this one called "Everything means nothing to me"?
+**Interviewer:** Do you have any favorite tracks?
 
-<iframe width="100%" height="480" src="https://www.youtube.com/embed/SrXP7RLbm1I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+**Elliott Smith:** I like the ones that are kind of weird, more idiosyncratic,... this one called "Everything means nothing to me"?
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/SrXP7RLbm1I" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [watch on youtube](https://www.youtube.com/watch?v=SrXP7RLbm1I)
 
-Interviewer: You are going on tour with the full band?
-Elliot Smith: Yes, for the rest of my life.
+**Interviewer:** You are going on tour with the full band?
+
+**Elliott Smith:** Yes, for the rest of my life.
 
 *Figure 8 is the fifth studio album by American singer-songwriter Elliott Smith, and the final album he completed before his death*. [Wikipedia](https://en.wikipedia.org/wiki/Figure_8_(album)).
 
 ![Elliott Smith Wall in Silver Lake |an MacLeod |au https://www.flickr.com/people/76041334@N00 |ln CC BY 2.0 |lu https://creativecommons.org/licenses/by/2.0/deed.en](./blog/figure-8/Elliott_Smith_Memorial_Wall.jpg)
 
-This happens 3 years later, while he is recording his next album. *The autopsy evidence was inconclusive as to whether the wounds were self-inflicted or the result of homicide.* A Schrodinger tragedy in itself, Elliot both stabbed himself in the heart and was murdered by who knows who. The ultimate mistery of albums going like a figure 8, going all four ways, forever lapping onto itself.
+This happens 3 years later, while he is recording his next album. *The autopsy evidence was inconclusive as to whether the wounds were self-inflicted or the result of homicide.* A Schrodinger tragedy in itself, Elliott both stabbed himself in the heart and was murdered by who knows who. This ultimate mistery of Elliott's life, adds up to the album, forever going like a figure 8, going all four ways, forever lapping onto itself.
