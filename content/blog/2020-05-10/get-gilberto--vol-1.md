@@ -26,7 +26,7 @@ There are many documents about how Bossa Nova took the world by storm, and almos
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/V_s4S4wOats" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-By 1962, Bossa Nova is already soaring through the airwaves in the States. Gilberto comes to Carnegie Hall for the first time, along a few other musicians to take a part in a rather peculiar concert. What the critics in Brasil called a *pathetic and disorganised flop* was, for others, [the epicenter of the Bossa Nova phenomenon](https://www.carnegiehall.org/Blog/2012/06/Live-from-Carnegie-Hall-Bossa-Nova), and it was set to change the course of Jazz and popular music for good.
+By 1962, Bossa Nova is already soaring through the airwaves in the States. Gilberto comes to Carnegie Hall for the first time, along a few other musicians to take part in a rather peculiar concert. What the critics in Brasil called a *pathetic and disorganised flop* was, for others, [the epicenter of the Bossa Nova phenomenon](https://www.carnegiehall.org/Blog/2012/06/Live-from-Carnegie-Hall-Bossa-Nova), and it was set to change the course of Jazz and popular music for good.
 
 On to early 1963 and the marriage is being consummated in albums which titles leave very little to the imagination: [Getz and Byrd's Jazz Samba](https://en.wikipedia.org/wiki/Jazz_Samba) and [Dave Brubeck's Bossa Nova U.S.A](https://en.wikipedia.org/wiki/Bossa_Nova_U.S.A.). So when Getz and Gilberto first walk into the [A&R](https://en.wikipedia.org/wiki/A_%26_R_Recording) sessions in March, Bossa Nova is no novelty. However, its greatest chapter is still to unravel.
 
@@ -50,9 +50,9 @@ You can read more about how the history of Bossa Nova in the U.S. is intertwined
 
 Today we listen to these records without realising how unexpected, fresh, unheard they must have been to the crowds of the early 60s. *None of it surprises us now*. Bossa Jazz, Tropical Funk, Acid Jazz, Rock Hip-Hop, they might be playing in the background of your life before you even notice that they are a thing that had to be invented.
 
-Realise that someone, somewhere, for the first time, experimented adding a rhythmic element of this to that, and immediately thought *hum, this works*. And then someone else was listening and threw a baffled *hey, what is that!?*. But in 2020, it looks like you could throw one of these mashups at another one - throw Gipsy Jazz into Ska Punk - and there is no way it is going to sound fresh.
+Realise that someone, somewhere, for the first time, experimented adding a rhythmic element of this to that, and immediately thought *hm, this works*. And then someone else was listening and threw a baffled *hey, what is that!?*. But in 2020, it looks like you could throw one of these mashups at another one - throw Gipsy Jazz into Ska Punk - and there is no way it is going to sound fresh.
 
-So the only thing left, a hard task, but not an impossible one, is to try to listen with unspoiled ears. For me, that starts with trying to immerse myself in the scenario, get closer to the characters, then *try to identify the moment, and live what is happening there and when*. Reading an artist biography, learning about the socio-economic context, or even nerding about the microphones engineers were using at the time always help.
+So the only thing left is a hard task, but not an impossible one, to try to listen with unspoiled ears. For me, that starts with trying to immerse myself in the scenario, get closer to the characters, then *try to identify the moment, and live what is happening there and when*. Reading an artist biography, learning about the socio-economic context, or even nerding about the microphones engineers were using at the time always help.
 
 But the thing that helps me the most is listening to live albums. And that's as good a reason as any for you to now read the follow up to this post, about [Getz/Gilberto Vol. 2](/posts/2020-may/getz/gilberto-vol-2-live-from-carnegie-hall), one my favourite live recordings of all time.
 
