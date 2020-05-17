@@ -1,13 +1,18 @@
 import { resolveNodeMeta } from '../Shared/lib/meta';
-import { dedupeTags, newNode } from '../Shared/lib/nodes';
+import { dedupeTags, newNode, sortCreated } from '../Shared/lib/nodes';
 import { newRoute } from '../Shared/lib/routes';
 import { Route, RouteContext } from '../Shared/types/Route.models';
 
+import { Node } from '../Shared/types/Node.models';
 import { PageNode } from '../Shared/types/Page.models';
 import { MediaNode } from './types/Media.models';
 
 import { IndexTemplateRouteData } from './templates/Index/IndexTemplate.component';
 import { PageTemplateRouteData } from './templates/Page/PageTemplate.component';
+
+const mediaListNodes = (nodes: Node[]): Node[] => {
+  return nodes.sort(sortCreated).splice(0, 20);
+};
 
 const mediaRoute = (context: RouteContext, media: MediaNode): Route => {
   return newRoute<PageTemplateRouteData>(context, media, {
@@ -37,10 +42,11 @@ interface Data {
 
 export const buildRoutes = async (context: RouteContext, data: Data): Promise<Route[]> => {
   const mediasRoutes = data.medias.map(media => {
-    return mediaRoute(context, media);
+    return mediaRoute(context, media as MediaNode);
   });
 
-  const pageRoute = mediaListPageRoute(context, data.medias);
+  const latestMedias = mediaListNodes(data.medias);
+  const pageRoute = mediaListPageRoute(context, latestMedias as MediaNode[]);
   const routes = [...mediasRoutes, pageRoute];
 
   return routes;

@@ -10,8 +10,7 @@ Tasks from [my website](/about)'s [backlog](/meta/project/backlog), eventually d
 
 <!-- spellcheck-off -->
 
-- [x] fix create/update dates (assets are getting the build date instead of post date)
-- [x] fix media list sorted by
+- [x] fix media create/update dates and media list sorted by
 - [x] fix image card link withing link, image detail double title
 
 - [x] migrate tslint to eslint

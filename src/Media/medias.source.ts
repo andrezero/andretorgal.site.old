@@ -2,7 +2,7 @@ import { parseFileContents } from '../Shared/lib/content';
 import { collect, flatten } from '../Shared/lib/files';
 import { filterHasNotTag, newNode, newNodeFromFile } from '../Shared/lib/nodes';
 import { FileSysNode } from '../Shared/lib/types/File.types';
-import { Asset } from '../Shared/types/Asset.models';
+import { Asset, AssetSource, AssetSourceNode } from '../Shared/types/Asset.models';
 
 import { slug } from '../Shared/lib/strings';
 import { MediaNode } from './types/Media.models';
@@ -22,13 +22,21 @@ const newMediaFromFile = (stage: string, file: FileSysNode): MediaNode => {
   return media;
 };
 
+interface Dates {
+  created: Date;
+  updated: Date;
+}
+
 const newMediaFromAsset = (asset: Asset): MediaNode => {
   const defaults = {
     template: 'Media/Page',
     prefix: 'media'
   };
-  const media = newNode('media', asset.title || slug(asset.url), defaults) as MediaNode;
-  media.abstract = asset.alt;
+  const { title, alt, url, created, updated } = asset;
+  const media = newNode('media', title || slug(url), defaults) as MediaNode;
+  media.created = created;
+  media.updated = updated;
+  media.abstract = alt;
   media.meta.asset = asset;
   media.meta.assets.push(asset);
 
@@ -46,6 +54,7 @@ const indexNewMedia = (mediaIndex: MediaIndex, asset: Asset): MediaNode => {
 };
 
 const indexExistingMedia = (mediaIndex: MediaIndex, asset: Asset) => {
+  const media = mediaIndex[asset.url];
   mediaIndex[asset.url].meta.asset = asset;
   mediaIndex[asset.url].meta.assets.push(asset);
 };
@@ -75,7 +84,7 @@ export const loadMedias = async (stage: string): Promise<MediaNode[]> => {
   return filtered;
 };
 
-export const generateMedias = (mediaNodes: MediaNode[], assets: Asset[]): MediaNode[] => {
+export const generateMediasFromNodes = (mediaNodes: MediaNode[], assets: Asset[]): MediaNode[] => {
   const mediaIndex = indexMediaNodes(mediaNodes);
   const ret = [...mediaNodes];
   assets.forEach(asset => {

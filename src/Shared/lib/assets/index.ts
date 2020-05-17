@@ -43,6 +43,8 @@ const findAssetsInNode = (node: Node, presets: string[] = [], assetExtractor?: A
     const { type, title, alt, author, license, url } = asset;
     return {
       sources: [assetSource],
+      created: new Date(node.created.valueOf() - 1),
+      updated: new Date(node.updated.valueOf() - 1),
       type,
       title: title || alt,
       alt: alt || title,
@@ -133,11 +135,11 @@ const transformAsset = async (asset: Asset, locator: AssetLocator, presets: Asse
   }
 };
 
-export const collect = (nodes: Node[], presets?: string[], assetExtractor?: AssetExtractor): Asset[] => {
+export const extractAssetsFromNodes = (nodes: Node[], presets?: string[], assetExtractor?: AssetExtractor): Asset[] => {
   return nodes.reduce((acc, node) => acc.concat(findAssetsInNode(node, presets, assetExtractor)), [] as Asset[]);
 };
 
-export const dedupe = (assets: Asset[]): Asset[] => {
+export const dedupeAssets = (assets: Asset[]): Asset[] => {
   return assets.filter(dedupAssets).map(dedupePresetsAndSources);
 };
 
@@ -157,7 +159,8 @@ export const findAssetSrc = (asset: Asset, profile: string): AssetSrc => {
   return asset.profiles[profile];
 };
 
-export const findAssetInNodeAssets = (assets: Asset[], url: string): Asset => {
+export const findAssetInNodeMeta = (node: Node, url: string): Asset => {
+  const { assets } = node.meta;
   const asset = assets.find(a => a.url === url || a.originalUrl === url);
   if (!asset) {
     throw new Error(`Unknown asset url: "${url}"`);

@@ -73,7 +73,7 @@ const indexTagNodes = (tags: TagNode[]): TagIndex => {
   return index;
 };
 
-export const generateTags = (stage: string, tagNodes: TagNode[], nodes: Node[]): TagNode[] => {
+export const generateTagsFromNodes = (stage: string, tagNodes: TagNode[], nodes: Node[]): TagNode[] => {
   const tagIndex = indexTagNodes(tagNodes);
   const ret = [...tagNodes];
   const sortedNodes = [...nodes].sort(sortCreated);

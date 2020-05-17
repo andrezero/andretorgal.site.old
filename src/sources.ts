@@ -14,12 +14,12 @@ import { MetaNode } from './Meta/types/Meta.models';
 import { loadExps } from './Exp/exps.source';
 import { ExpNode } from './Exp/types/Exp.models';
 
-import { generateTags, loadTags } from './Taxonomy/tags.source';
+import { generateTagsFromNodes, loadTags } from './Taxonomy/tags.source';
 import { TagNode } from './Taxonomy/types/Tag.models';
 
-import { attachAssets, loadAssets, processAssets } from './Assets/assets.source';
+import { attachAssets, generateAssetsFromNodes, processAssets } from './Assets/assets.source';
 
-import { generateMedias, loadMedias } from './Media/medias.source';
+import { generateMediasFromNodes, loadMedias } from './Media/medias.source';
 import { MediaNode } from './Media/types/Media.models';
 
 const debug = (nodes: Node[]) => {
@@ -59,14 +59,14 @@ export const loadSources = async (
   const [pages, posts, metas, exps, loadedTags, loadedMedias] = results;
 
   const nodesWithTags: Node[] = [...pages, ...posts, ...metas, ...loadedTags, ...loadedMedias];
-  const tags = generateTags(stage, loadedTags, nodesWithTags);
+  const tags = generateTagsFromNodes(stage, loadedTags, nodesWithTags);
 
   const nodesWithAssets: Node[] = [...pages, ...posts, ...metas, ...loadedMedias, ...tags];
-  const assets = loadAssets(stage, nodesWithAssets);
+  const assets = generateAssetsFromNodes(stage, nodesWithAssets);
 
   await processAssets(stage, assets, assetLocator, assetPresets);
 
-  const medias = generateMedias(loadedMedias, assets);
+  const medias = generateMediasFromNodes(loadedMedias, assets);
 
   const sources: Sources = {
     nodes: [...pages, ...posts, ...metas, ...exps, ...medias, ...tags],

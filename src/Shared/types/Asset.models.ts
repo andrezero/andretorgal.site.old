@@ -48,6 +48,8 @@ export interface AssetSourceNode extends AssetSource {
 
 export interface Asset {
   sources: AssetSource[];
+  created: Date;
+  updated: Date;
   type: string;
   title?: string;
   alt?: string;
