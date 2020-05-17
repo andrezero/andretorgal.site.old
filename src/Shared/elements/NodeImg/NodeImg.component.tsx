@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { ImageAssetSrc } from '../../../Media/types/Media.models';
-import { findAssetInNodeAssets, findAssetSrc } from '../../lib/assets';
+import { findAssetInNodeMeta, findAssetSrc } from '../../lib/assets';
 import { Node } from '../../types/Node.models';
 import { ResponsiveImg, ResponsiveSrc } from '../ResponsiveImg/ResponsiveImg.component';
 
@@ -12,6 +12,7 @@ interface Props {
   node: Node;
   src: string;
   profiles?: string[];
+  hideCaption?: boolean;
   blurup?: boolean;
   pad?: boolean;
   className?: string;
@@ -23,6 +24,7 @@ export const NodeImg: React.StatelessComponent<Props> = ({
   node,
   src,
   profiles = [],
+  hideCaption,
   blurup = true,
   pad = true,
   className
@@ -32,8 +34,7 @@ export const NodeImg: React.StatelessComponent<Props> = ({
     cssClasses.push(className);
   }
   if (isLocal(src)) {
-    const { assets } = node.meta;
-    const asset = findAssetInNodeAssets(assets, src);
+    const asset = findAssetInNodeMeta(node, src);
     const background = blurup && findAssetSrc(asset, 'image.blurup').href;
     const srcs: ImageAssetSrc[] = profiles.map(profile => findAssetSrc(asset, profile) as ImageAssetSrc);
     const ratio = pad && srcs.length && srcs[0].ratio;
@@ -46,7 +47,7 @@ export const NodeImg: React.StatelessComponent<Props> = ({
     return (
       <figure className="node-img">
         <ResponsiveImg className={cssClasses.join(' ')} src={img} bg={background} ratio={ratio} />
-        {hasCaption && <AssetCaption asset={asset} />}
+        {!hideCaption && hasCaption && <AssetCaption asset={asset} />}
       </figure>
     );
   } else {

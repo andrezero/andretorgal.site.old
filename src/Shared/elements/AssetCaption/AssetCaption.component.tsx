@@ -44,6 +44,10 @@ const renderMeta = (asset: Asset) => {
   );
 };
 
+interface Props {
+  asset: Asset;
+}
+
 export const AssetCaption: React.StatelessComponent<Props> = ({ asset }) => {
   const { title, author, license } = asset;
   const hasMeta = author || license;

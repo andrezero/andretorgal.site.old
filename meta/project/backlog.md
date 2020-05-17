@@ -17,7 +17,11 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 
 ## Next
 
-- [ ] ci/cd and analytics
+- [ ] experiments
+  - [x] model, template, source, routes
+  - [ ] iframe
+
+- [ ] ci/cd
   - [ ] purge assets not in use before sync
   - [ ] continuous deployment with [gitlab](https://hackernoon.com/using-gitlab-ci-cd-to-auto-deploy-your-vue-js-application-to-aws-s3-9affe1eb3457)
 
@@ -33,7 +37,6 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
   - [ ] smooth scroll `scrollIntoView({block: 'end', behavior: 'smooth'});`
   - [ ] improve: router [transition](https://reach.tech/router/example/animation)
   - [ ] favicon
-  - [ ] fix create/update dates (assets are getting the build date instead of post date)
   - [ ] feature: `feed/{node-type}`
 
 - [ ] poc: themeing
@@ -79,8 +82,7 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 
 - [ ] add links to the source files on github
 
-- [ ] storybook: type, scheme, space [see typography here](https://medium.com/eightshapes-llc/
-      typography-in-design-systems-6ed771432f1e) and [space here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62), and [some inspiration](https://zeit.co/design) too
+- [ ] storybook: type, scheme, space [see typography here](https://medium.com/eightshapes-llc/typography-in-design-systems-6ed771432f1e) and [space here](https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62), and [some inspiration](https://zeit.co/design) too
 - [ ] jest + enzyme
 - [ ] husky + lint staged
 

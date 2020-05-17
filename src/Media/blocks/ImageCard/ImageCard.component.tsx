@@ -29,7 +29,7 @@ export const ImageCard: React.StatelessComponent<Props> = ({ node, level = 2, fo
   return (
     <BaseCard className="media-image-card" header={header} footer={footer} href={node.path} draft={draft}>
       <div className="image">
-        <NodeImg node={node} src={node.meta.asset.url} profiles={profiles} />
+        <NodeImg node={node} src={node.meta.asset.url} profiles={profiles} hideCaption={true} />
       </div>
       <NodeMarkdown node={node} strip={true}>
         {node.abstract}

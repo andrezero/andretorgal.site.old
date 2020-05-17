@@ -48,10 +48,12 @@ export const ImageDetail: React.StatelessComponent<Props> = ({ media }) => {
     </>
   );
 
+  const { asset } = media.meta;
+  const hasOwnAbstract = media.abstract !== asset.title;
   return (
     <BaseDetail className="image-detail" node={media} header={header} footer={footer}>
-      <NodeImg node={media} src={media.meta.asset.url} profiles={profiles} />
-      <NodeMarkdown node={media}>{media.abstract}</NodeMarkdown>
+      <NodeImg node={media} src={asset.url} profiles={profiles} />
+      {hasOwnAbstract && <NodeMarkdown node={media}>{media.abstract}</NodeMarkdown>}
       <NodeMarkdown node={media}>{media.content}</NodeMarkdown>
     </BaseDetail>
   );

@@ -27,19 +27,23 @@ const withNodeAndProfiles = (WrappedComponent: React.ComponentType, node: Node):
 export const NodeMarkdown: React.StatelessComponent<Props> = ({ node, strip, children, className, ...rest }: Props) => {
   const assetImgWithNode = withNodeAndProfiles(NodeImg, node);
   const componentMap = { ...basicComponentMap, img: assetImgWithNode };
-  const MarkdownStripped = markdownFactory(markdown.stripLinks(), basicComponentMap);
-  const MarkdownFull = markdownFactory(markdown.basic(), componentMap);
   const classes = ['node-markdown'];
   if (className) {
     classes.push(className);
   }
-  return strip ? (
-    <MarkdownStripped className={classes.join(' ')} {...rest}>
-      {children}
-    </MarkdownStripped>
-  ) : (
-    <MarkdownFull className={classes.join(' ')} {...rest}>
-      {children}
-    </MarkdownFull>
-  );
+  if (strip) {
+    const MarkdownStripped = markdownFactory(markdown.stripLinks(), basicComponentMap);
+    return (
+      <MarkdownStripped className={classes.join(' ')} {...rest}>
+        {children}
+      </MarkdownStripped>
+    );
+  } else {
+    const MarkdownFull = markdownFactory(markdown.basic(), componentMap);
+    return (
+      <MarkdownFull className={classes.join(' ')} {...rest}>
+        {children}
+      </MarkdownFull>
+    );
+  }
 };
