@@ -119,6 +119,8 @@ export const hasTag = (node: Node, tag: Tag): boolean => node.tags && node.tags.
 
 export const filterNotPaths = (paths: string[]) => (node: Node): boolean => paths.indexOf(node.path) === -1;
 
+export const filterNotPath = (path: string) => (node: Node): boolean => !node.path.match(path);
+
 export const filterHasTag = (tag: string) => (node: Node): boolean => hasTag(node, tag);
 
 export const filterHasNotTag = (tag: string) => (node: Node): boolean => !hasTag(node, tag);

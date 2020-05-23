@@ -20,12 +20,9 @@ interface Props {
 export const ExpCard: React.StatelessComponent<Props> = ({ node, level = 2, footer }) => {
   const Tag = ('h' + level) as React.ElementType;
   const header = (
-    <>
-      <Tag className="node-title">
-        <Link href={node.path}>{node.title}</Link>
-      </Tag>
-      <NodeLastUpdated node={node} />
-    </>
+    <Tag className="node-title">
+      <Link href={node.path}>{node.title}</Link>
+    </Tag>
   );
   const draft = hasTag(node, 'draft');
   return (

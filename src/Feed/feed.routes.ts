@@ -1,6 +1,6 @@
 import { resolveNodeMeta } from '../Shared/lib/meta';
 import { dedupeTags } from '../Shared/lib/nodes';
-import { filterHasTag, filterNotPaths, newNode, sortCreated } from '../Shared/lib/nodes';
+import { newNode, filterHasTag, filterNotPaths, sortCreated } from '../Shared/lib/nodes';
 import { newRoute } from '../Shared/lib/routes';
 import { Route, RouteContext } from '../Shared/types/Route.models';
 
@@ -16,14 +16,14 @@ const featuredNodes = (nodes: Node[]): Node[] => {
     .filter(filterNotPaths(EXCLUDE_PATHS))
     .filter(filterHasTag('featured'))
     .sort(sortCreated)
-    .splice(0, 20);
+    .splice(0, 5);
 };
 
 const latestNodes = (nodes: Node[]): Node[] => {
   return nodes
     .filter(filterNotPaths(EXCLUDE_PATHS))
     .sort(sortCreated)
-    .splice(0, 20);
+    .splice(0, 200);
 };
 
 const updatedNodes = (/*nodes: Node[]*/): Node[] => {

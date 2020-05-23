@@ -12,6 +12,7 @@ import { MediaCard } from '../../../Media/blocks/MediaCard/MediaCard.component';
 import { MetaCard } from '../../../Meta/blocks/MetaCard/MetaCard.component';
 import { PageCard } from '../../../Site/blocks/PageCard/PageCard.component';
 import { TagCard } from '../../../Taxonomy/blocks/TagCard/TagCard.component';
+import { ExpCard } from '../../../Exp/blocks/ExpCard/ExpCard.component';
 
 import './NodeCard.scss';
 
@@ -26,7 +27,8 @@ const map = {
   post: PostCard,
   meta: MetaCard,
   media: MediaCard,
-  tag: TagCard
+  tag: TagCard,
+  exp: ExpCard
 };
 
 const DefaultCard: React.StatelessComponent<Props> = ({ node, level = 2, footer }) => {

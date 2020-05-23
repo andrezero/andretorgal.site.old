@@ -6,6 +6,7 @@ import { Anchor } from '../Anchor/Anchor.component';
 import { anchoredHeading } from '../AnchoredHeading/AnchoredHeading.factory';
 import { Link } from '../Link/Link.component';
 import { MdChekbox } from '../MdCheckbox/MdCheckbox.component';
+import { MdIframe } from '../MdIframe/MdIframe.component';
 import { SROnly } from '../SROnly/SROnly.component';
 
 type ComponentType = string | React.ComponentType<any>;
@@ -88,6 +89,7 @@ export const basicComponentMap: MarkdownComponentMap = {
   h2: anchoredHeading('h2'),
   h3: anchoredHeading('h3'),
   h4: anchoredHeading('h4'),
+  iframe: MdIframe,
   input: {
     attr: 'type',
     map: {
