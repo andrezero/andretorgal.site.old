@@ -1,6 +1,6 @@
 ---
 title: 'Changelog'
-updated: '2019-05-13'
+updated: '2020-05-20'
 tags: ['andretorgal-com']
 ---
 
@@ -9,6 +9,11 @@ Tasks from [my website](/about)'s [backlog](/meta/project/backlog), eventually d
 <!-- abstract -->
 
 <!-- spellcheck-off -->
+
+- [x] experiments
+  - [x] model, template, source, routes
+  - [x] iframe
+  - [x] include experiments in feed
 
 - [x] fix media create/update dates and media list sorted by
 - [x] fix image card link withing link, image detail double title

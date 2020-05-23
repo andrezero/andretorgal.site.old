@@ -1,6 +1,6 @@
 ---
 title: 'Backlog'
-updated: '2019-05-13'
+updated: '2020-05-20'
 tags: ['andretorgal-com']
 ---
 
@@ -14,12 +14,12 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 
 ## Now
 
+- [ ] experiment's banner
+  - [ ] clicking banner goes to andretorgal.com homepage
+  - [ ] detect if framed, de-frame
+  - [ ] detect target URL in metas, re-frame
 
 ## Next
-
-- [ ] experiments
-  - [x] model, template, source, routes
-  - [ ] iframe
 
 - [ ] ci/cd
   - [ ] purge assets not in use before sync
