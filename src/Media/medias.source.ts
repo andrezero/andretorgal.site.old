@@ -2,7 +2,7 @@ import { parseFileContents } from '../Shared/lib/content';
 import { collect, flatten } from '../Shared/lib/files';
 import { filterHasNotTag, newNode, newNodeFromFile } from '../Shared/lib/nodes';
 import { FileSysNode } from '../Shared/lib/types/File.types';
-import { Asset, AssetSource, AssetSourceNode } from '../Shared/types/Asset.models';
+import { Asset } from '../Shared/types/Asset.models';
 
 import { slug } from '../Shared/lib/strings';
 import { MediaNode } from './types/Media.models';
@@ -54,7 +54,6 @@ const indexNewMedia = (mediaIndex: MediaIndex, asset: Asset): MediaNode => {
 };
 
 const indexExistingMedia = (mediaIndex: MediaIndex, asset: Asset) => {
-  const media = mediaIndex[asset.url];
   mediaIndex[asset.url].meta.asset = asset;
   mediaIndex[asset.url].meta.assets.push(asset);
 };

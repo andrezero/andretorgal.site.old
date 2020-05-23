@@ -16,17 +16,20 @@ interface Props {
 
 export class MdIframe extends React.Component<Props> {
   private ref: React.RefObject<HTMLIFrameElement>;
-  private resized = 0;
 
   constructor(props: Props) {
     super(props);
     this.ref = React.createRef();
 
-    window.addEventListener('message', this.handleMessage, false);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('message', this.handleMessage, false);
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('message', this.handleMessage, false);
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('message', this.handleMessage, false);
+    }
   }
 
   handleMessage = (event: Message) => {
@@ -39,7 +42,6 @@ export class MdIframe extends React.Component<Props> {
       return;
     }
     this.ref.current.height = height + 'px';
-    this.resized++;
   };
 
   render() {

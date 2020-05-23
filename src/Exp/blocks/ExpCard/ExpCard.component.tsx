@@ -3,7 +3,6 @@ import * as React from 'react';
 import { BaseCard } from '../../../Shared/blocks/BaseCard/BaseCard.component';
 import { Link } from '../../../Shared/elements/Link/Link.component';
 import { MarkdownBase } from '../../../Shared/elements/MarkdownBase/MarkdownBase.component';
-import { NodeLastUpdated } from '../../../Shared/elements/NodeLastUpdated/NodeLastUpdated.component';
 import { ReadMore } from '../../../Shared/elements/ReadMore/ReadMore.component';
 import { hasTag } from '../../../Shared/lib/nodes';
 

@@ -13,21 +13,18 @@ interface Options {
 }
 
 const filterNodes = (nodes: Array<FileSysNode | void>): FileSysNode[] => {
-  return nodes.reduce(
-    (acc, node: FileSysNode) => {
-      if (!node) {
-        return acc;
-      }
-      if (acc.find(item => item.path === node.path)) {
-        return acc;
-      }
-      if (node.type === 'dir' && !(node as DirectoryNode).hasIndex && !(node as DirectoryNode).children.length) {
-        return acc;
-      }
-      return acc.concat(node);
-    },
-    [] as FileSysNode[]
-  );
+  return nodes.reduce((acc, node: FileSysNode) => {
+    if (!node) {
+      return acc;
+    }
+    if (acc.find(item => item.path === node.path)) {
+      return acc;
+    }
+    if (node.type === 'dir' && !(node as DirectoryNode).hasIndex && !(node as DirectoryNode).children.length) {
+      return acc;
+    }
+    return acc.concat(node);
+  }, [] as FileSysNode[]);
 };
 
 const readNode = async (options: Options, root: string, filename: string): Promise<FileSysNode | void> => {
@@ -116,21 +113,18 @@ export const flatten = (
   if (!Array.isArray(nodes)) {
     nodes = [nodes];
   }
-  return nodes.reduce(
-    (acc, node: FileSysNode) => {
-      const n = { ...node };
-      if (n.type === 'file') {
-        acc.push(n as FileNode);
-        return acc;
-      }
-      const directory = n as DirectoryNode;
-      const children = directory.children;
-      if ((includeDirs === 'indexes' && directory.hasIndex) || includeDirs === 'all') {
-        delete directory.children;
-        acc.push(directory);
-      }
-      return acc.concat(flatten(children, includeDirs));
-    },
-    [] as Array<FileNode | DirectoryNode>
-  );
+  return nodes.reduce((acc, node: FileSysNode) => {
+    const n = { ...node };
+    if (n.type === 'file') {
+      acc.push(n as FileNode);
+      return acc;
+    }
+    const directory = n as DirectoryNode;
+    const children = directory.children;
+    if ((includeDirs === 'indexes' && directory.hasIndex) || includeDirs === 'all') {
+      delete directory.children;
+      acc.push(directory);
+    }
+    return acc.concat(flatten(children, includeDirs));
+  }, [] as Array<FileNode | DirectoryNode>);
 };
