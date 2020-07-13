@@ -1,5 +1,5 @@
 ---
-tags: ['song', 'jeff-buckley', 'rock', 'music', '1994']
+tags: ['song', 'jeff-buckley', 'music', '1994']
 created: '2020-05-13'
 title: 'Jeff Buckley - Eternal Life'
 work-title: 'Eternal Life'

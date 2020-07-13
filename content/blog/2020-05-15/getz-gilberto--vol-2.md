@@ -32,7 +32,7 @@ In the original release, clapping fades out agressively after the 6th song by Gi
 
 > On the night, the two headliners performed separate sets before being joined by Gilberto's then wife, Astrud — whose voice was heard on their big hit from the original album, "The Girl from Ipanema" — for the completion of the Carnegie Hall concert.
 
-![Carnegie Hall |ln Public Domain |lu https://picryl.com/media/alan-lomax-collection-manuscripts-new-york-1959-2](./blog/carnegie-hall.jpg)
+![Carnegie Hall |lu https://picryl.com/media/alan-lomax-collection-manuscripts-new-york-1959-2](./blog/carnegie-hall.jpg)
 
 Getz introduces act three, and as the band kicks off the first song, "It Might as Well be Spring", for some reason, *the husband and wife miss their cue*. Awkwardness ensues.
 

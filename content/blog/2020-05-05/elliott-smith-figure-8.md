@@ -1,5 +1,5 @@
 ---
-tags: ['album', 'elliot-smith', 'rock', 'music', '2000']
+tags: ['album', 'elliot-smith', 'music', '2000']
 created: '2020-05-05'
 title: 'Elliott Smith - Figure 8'
 work-title: 'Figure 8'
