@@ -25,4 +25,9 @@
   & > :last-child {
     margin-bottom: 0;
   }
+
+  audio {
+    width: 100%;
+    filter: contrast(90%) invert(90%);
+  }
 }
