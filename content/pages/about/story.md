@@ -37,9 +37,9 @@ In a couple of years there would be hundreds of games and a handful of mates to 
 
 ## All PC, no consoles
 
-<p class="year">1985</p>
-
 Consoles were finally breaking into mass market and everyone was piling up audio tapes, cartridges and floppy disks with games.
+
+<p class="year">1985</p>
 
 Thanks to my father constantly upgrading his PC, I was once again ahead of the game. From 8086/8 to 80286, 386, blazing fast at 20Mhz and immense at 20Mb. I was all over the first driving simulators and football managers.
 
@@ -47,15 +47,15 @@ And I was either playing them or trying to code a "better one" from scratch. I n
 
 ## Mix tapes
 
-<p class="year">1988</p>
-
 Meanwhile, I had become a teenager. I started riding my BMX around the block, building quarter pipes with new friends.
-
-And I was learning how to play guitar.
 
 During high-school, music seized my entire life. I learned how to listen, how to feel, how to play. The tapes became the medium where we captured each other's vinyl collections and the mixtapes, the most real, p2p music discovery system ever invented, was at the center of everything we did.
 
-I started a pop band, then a rock band, then a punk one and then on to metal. We spent countless hours in studios, played dozens of shows, and the tapes became demo tapes. Suddenly, computers didn't seem so relevant. I was acquiring other ways of expression. And growing a social conscience.
+<p class="year">1988</p>
+
+I had been learning how to play guitar for 2 years now. Very slowly at first. But as soon as met other people learning instruments, we started a pop band.
+
+And then a rock band, and then a punk one, and on to metal and several flavours of that. We spent countless hours in studios, played dozens of shows, and the mix tapes were replaced by our own demo tapes. Suddenly, computers didn't seem so relevant. I was acquiring other ways of expression. And growing a social conscience.
 
 ## Full-duplex sound cards
 
@@ -75,9 +75,9 @@ This primitive home studio would later evolve to a shiny full-duplex Terratec wi
 
 ## MP2
 
-<p class="year">1994</p>
-
 Meanwhile, the Internet had appeared. Some of my friends went straight to the bulletin boards, asking diligent questions, avid to learn how to build the web. But I was too busy finishing my degree and, at the same time, committed to a rock band and a drama group.
+
+<p class="year">1994</p>
 
 Don't get me wrong, the Internet was awesome. It had lyrics, tablatures, discographies and photos of setlists. There were fan clubs for all my favourite bands, both living and defunct ones.
 
@@ -87,9 +87,9 @@ Well, MP2 sounded terrible. But you could totally see the future coming.
 
 ## Adam Curry's unofficial MTV
 
-<p class="year">1995</p>
-
 When I learned about Adam Curry's unofficial MTV website, I gave it a go and learned just enough HTML to uploaded my band's lyrics and concert dates to [Geocities](https://geocities). But it was a pointless exercise, I thought. The people attending our shows were the least interested in the school library.
+
+<p class="year">1995</p>
 
 Besides, the rock life was in decline. The 90s were a glorious rock decade, but ironically, MTV, the Internet, digital access and the massive summer festivals did nothing for the local music scene. On the contrary, small live venues were closing doors, bands were dissolving, band members were getting jobs and not turning back.
 
@@ -137,6 +137,6 @@ My next website was my online CV, entirely built in Javascript and uploaded to a
 
 ## Next
 
-I have been working with web things and engineering teams since then. This story continues in a page [about my work](/about/work), where I cover 1999 to present day.
+I have been working with web things and engineering teams since then. This story continues in a page about [my work as a software engineer](/about/work), where I cover 1999 to present day.
 
 I'll soon write a continuation for the personal track as well. I am enjoying the exercise.

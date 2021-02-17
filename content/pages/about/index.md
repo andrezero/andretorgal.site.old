@@ -10,7 +10,7 @@ hero:
 
 My name is André Torgal and this is my website, a place where I [blog](/posts) some thoughts and run a few experiments.
 
-Here, you can learn more about me, [my work](/about/work), and other stuff I have been up to.
+Here, you can learn more about me, [my work as software engineer](/about/work), and other stuff I have been up to.
 
 <!-- abstract -->
 
