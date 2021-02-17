@@ -1,5 +1,5 @@
 ---
-tags: ['frontend', 'css']
+tags: ['web-development', 'css']
 ---
 
 <!-- abstract -->
