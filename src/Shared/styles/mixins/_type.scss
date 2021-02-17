@@ -58,6 +58,9 @@ $scalars: settings('type-scalars');
 @mixin type-medium {
   font-size: responsive-type-size('medium');
 }
+@mixin type-large {
+  font-size: responsive-type-size('large');
+}
 
 @mixin type-huge {
   font-size: responsive-type-size('huge');

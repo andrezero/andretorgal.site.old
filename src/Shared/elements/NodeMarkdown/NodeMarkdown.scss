@@ -3,4 +3,49 @@
 .node-markdown {
   @include markdown;
   @include markdown-base;
+
+  strong,
+  strong a {
+    font-weight: var(--root-type-weights-heavy);
+  }
+
+  .year {
+    display: inline;
+    padding-top: 6px;
+    color: var(--root-scheme-alt);
+    font-family: var(--root-type-families-alt);
+    line-height: var(--root-type-heights-small);
+    border-top: 1px dotted var(--root-scheme-alt);
+  }
+
+  @include breakpoint-medium {
+    .year {
+      display: block;
+      position: relative;
+      top: -4px;
+      margin-bottom: -27px;
+      left: -20px;
+      margin-left: -600px;
+      width: 600px;
+      height: 0;
+      padding-top: 6px;
+      text-align: right;
+    }
+  }
+
+  @include breakpoint-large {
+    .year {
+      @include heading-3;
+      display: block;
+      position: relative;
+      top: -4px;
+      margin-bottom: -27px;
+      left: -40px;
+      margin-left: -600px;
+      width: 600px;
+      height: 0;
+      padding-top: 6px;
+      text-align: right;
+    }
+  }
 }
