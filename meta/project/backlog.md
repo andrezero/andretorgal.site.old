@@ -14,11 +14,6 @@ The done stuff is on the [changelog](/meta/project/changelog) page.
 
 ## Now
 
-- [ ] experiment's banner
-  - [ ] clicking banner goes to andretorgal.com homepage
-  - [ ] detect if framed, de-frame
-  - [ ] detect target URL in metas, re-frame
-
 ## Next
 
 - [ ] ci/cd

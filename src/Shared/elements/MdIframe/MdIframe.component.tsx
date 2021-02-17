@@ -41,7 +41,9 @@ export class MdIframe extends React.Component<Props> {
     if (isNaN(height)) {
       return;
     }
-    this.ref.current.height = height + 'px';
+    if (this.ref.current) {
+      this.ref.current.style.height = height + 'px';
+    }
   };
 
   render() {

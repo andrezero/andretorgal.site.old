@@ -10,6 +10,10 @@ Tasks from [my website](/about)'s [backlog](/meta/project/backlog), eventually d
 
 <!-- spellcheck-off -->
 
+- [x] experiment's banner
+  - [x] clicking banner goes to andretorgal.com homepage
+  - [x] detect if framed, de-frame
+
 - [x] experiments
   - [x] model, template, source, routes
   - [x] iframe
