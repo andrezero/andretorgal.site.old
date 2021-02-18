@@ -30,4 +30,27 @@
     width: 100%;
     filter: contrast(90%) invert(90%);
   }
+
+  blockquote {
+    position: relative;
+    margin: gap('medium') gap('huge') gap('huge');
+  }
+
+  blockquote:before {
+    position: absolute;
+    width: 0;
+    height: 0;
+    color: var(--root-scheme-alt);
+    text-align: center;
+    font-family: var(--root-type-families-deco);
+    font-size: responsive-type-size('giga');
+    font-weight: type-weight('heavy');
+    background-color: pink;
+  }
+
+  blockquote:before {
+    content: '“';
+    left: calc(var(--root-space-unit, 10) * -5px);
+    top: calc(var(--root-space-unit, 10) * -3px);
+  }
 }
