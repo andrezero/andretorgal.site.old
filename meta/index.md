@@ -18,7 +18,7 @@ Source code is [available on github](https://github.com/andrezero/andretorgal.si
   - [CSS Variables](/meta/records/current/styling-sass-post-css)
   - [Unified remark+rehype](/meta/records/current/content-markdown-unified-remark-rehype)
 
-- Typography: [Maitree](https://fonts.google.com/specimen/Maitree) + [Fira Sanas](https://fonts.google.com/specimen/Fira+Sans)
+- Typography: [Maitree](https://fonts.google.com/specimen/Maitree) + [Fira Sans](https://fonts.google.com/specimen/Fira+Sans)
 - Navigation icons <img class="icon" src="/assets/icons/up-arrow-svgrepo-com.svg"> and <img class="icon" src="/assets/icons/curved-arrow-svgrepo-com.svg"> by [SVG REPO](https://www.svgrepo.com/svg/67834/curved-arrow), licensed [Creative Commons BY 3.0 BY](https://creativecommons.org/licenses/by/4.0/)
 
 
