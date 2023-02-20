@@ -1,5 +1,7 @@
 # andretorgal.com
 
+:warning: replaced by [andretorgal-site](https://github.com/andrezero/andretorgal-site) (Astro based)
+
 ## Develop
 
 ### Debug
